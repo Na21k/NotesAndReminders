@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 x:Class="NotesAndReminders.App">
+	<!--
+		Define global resources and styles here, that apply to all pages in your app.
+	-->
+	<Application.Resources>
+		<ResourceDictionary>
+			<Color x:Key="Accent">#ff9830</Color>
+			<Color x:Key="PageBackground">#ffffff</Color>
+			<Color x:Key="PageTitle">#ffffff</Color>
+			<Color x:Key="LabelTextColorPrimary">#000000</Color>
+			<Color x:Key="LabelTextColorSecondary">#696969</Color>
+			<Color x:Key="ButtonTextColorPrimary">#ffffff</Color>
+			<Color x:Key="ButtonBackgroundColorPrimary">#ff9830</Color>
+			<Color x:Key="ButtonBackgroundColorPrimaryDisabled">#ffb061</Color>
+
+			<Color x:Key="AccentDark">#eb8c2d</Color>
+			<Color x:Key="PageBackgroundDark">#2e2e2e</Color>
+			<Color x:Key="PageTitleDark">#ffffff</Color>
+			<Color x:Key="LabelTextColorPrimaryDark">#f2f2f2</Color>
+			<Color x:Key="LabelTextColorSecondaryDark">#a6a6a6</Color>
+			<Color x:Key="ButtonTextColorPrimaryDark">#ffffff</Color>
+			<Color x:Key="ButtonBackgroundColorPrimaryDark">#eb8c2d</Color>
+			<Color x:Key="ButtonBackgroundColorPrimaryDisabledDark">#e3ab74</Color>
+
+			<Style TargetType="ContentPage" ApplyToDerivedTypes="True">
+				<Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource PageBackground},
+																		   Dark={StaticResource PageBackgroundDark}}" />
+			</Style>
+
+			<Style TargetType="Label">
+				<Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LabelTextColorPrimary},
+																	 Dark={StaticResource LabelTextColorPrimaryDark}}" />
+			</Style>
+			<Style x:Key="LabelSecondary" TargetType="Label">
+				<Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LabelTextColorSecondary},
+																	 Dark={StaticResource LabelTextColorSecondaryDark}}" />
+			</Style>
+
+			<Style TargetType="Button">
+				<Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource ButtonTextColorPrimary},
+																	 Dark={StaticResource ButtonTextColorPrimaryDark}}" />
+				<Setter Property="VisualStateManager.VisualStateGroups">
+					<VisualStateGroupList>
+						<VisualStateGroup x:Name="CommonStates">
+							<VisualState x:Name="Normal">
+								<VisualState.Setters>
+									<Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource ButtonBackgroundColorPrimary},
+																							   Dark={StaticResource ButtonBackgroundColorPrimaryDark}}" />
+								</VisualState.Setters>
+							</VisualState>
+							<VisualState x:Name="Disabled">
+								<VisualState.Setters>
+									<Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource ButtonBackgroundColorPrimaryDisabled},
+																							   Dark={StaticResource ButtonBackgroundColorPrimaryDisabledDark}}" />
+								</VisualState.Setters>
+							</VisualState>
+						</VisualStateGroup>
+					</VisualStateGroupList>
+				</Setter>
+			</Style>
+		</ResourceDictionary>
+	</Application.Resources>
+</Application>

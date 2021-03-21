@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:resource="clr-namespace:NotesAndReminders.Resources"
+			 x:Class="NotesAndReminders.Views.ProfileView"
+			 Title="{x:Static resource:AppResources.Profile}">
+	<Grid>
+		<StackLayout IsVisible="{Binding IsLoggedIn, Converter={StaticResource InverseBoolConverter}}"
+					 Spacing="10"
+					 Padding="20"
+					 VerticalOptions="CenterAndExpand">
+			<Label Text="Log in or sign up to benefit from notes synchronization across your devices"
+				   FontSize="Medium"
+				   HorizontalTextAlignment="Center" />
+			<Button Command="{Binding LogIn}"
+					Text="{x:Static resource:AppResources.Log_In}"
+					HorizontalOptions="FillAndExpand" />
+			<Button Command="{Binding SingUp}"
+					Text="{x:Static resource:AppResources.Sign_Up}"
+					HorizontalOptions="FillAndExpand" />
+		</StackLayout>
+	</Grid>
+</ContentPage>

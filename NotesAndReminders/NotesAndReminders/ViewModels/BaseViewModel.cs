@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace NotesAndReminders.ViewModels
@@ -37,6 +38,16 @@ namespace NotesAndReminders.ViewModels
 			onChanged?.Invoke();
 			OnPropertyChanged(propertyName);
 			return true;
+		}
+
+		protected virtual async Task ReloadData()
+		{
+
+		}
+
+		public virtual void OnAppearing()
+		{
+
 		}
 
 		#region INotifyPropertyChanged

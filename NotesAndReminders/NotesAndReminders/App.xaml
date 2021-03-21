@@ -1,12 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
 			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:conv="clr-namespace:NotesAndReminders.Converters"
 			 x:Class="NotesAndReminders.App">
 	<!--
 		Define global resources and styles here, that apply to all pages in your app.
 	-->
 	<Application.Resources>
 		<ResourceDictionary>
+			<conv:InverseBoolConverter x:Key="InverseBoolConverter" />
+
 			<Color x:Key="Accent">#ff9830</Color>
 			<Color x:Key="PageBackground">#ffffff</Color>
 			<Color x:Key="PageTitle">#ffffff</Color>
@@ -42,6 +45,7 @@
 			<Style TargetType="Button">
 				<Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource ButtonTextColorPrimary},
 																	 Dark={StaticResource ButtonTextColorPrimaryDark}}" />
+				<Setter Property="HorizontalOptions" Value="CenterAndExpand" />
 				<Setter Property="VisualStateManager.VisualStateGroups">
 					<VisualStateGroupList>
 						<VisualStateGroup x:Name="CommonStates">

@@ -14,6 +14,8 @@ namespace NotesAndReminders
 
 			Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
 			Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
+
+			Routing.RegisterRoute(nameof(LogInView), typeof(LogInView));
 		}
 
 		//workaround to avoid menu lags

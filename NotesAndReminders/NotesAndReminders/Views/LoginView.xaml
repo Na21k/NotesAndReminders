@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:resource="clr-namespace:NotesAndReminders.Resources"
+             x:Class="NotesAndReminders.Views.LogInView"
+			 Title="{x:Static resource:AppResources.Log_In}">
+	<StackLayout Spacing="10"
+				 Padding="20">
+		<Label Text="Login to benefit from notes synchronization across your devices"
+			   FontSize="Medium"
+			   HorizontalTextAlignment="Center" />
+		<Entry Text="{Binding Login}" Placeholder="{x:Static resource:AppResources.Login}" />
+		<Entry Text="{Binding Password}" IsPassword="True" Placeholder="{x:Static resource:AppResources.Password}" />
+		<Button Command="{Binding LogIn}"
+				Text="{x:Static resource:AppResources.Log_In}"
+				HorizontalOptions="FillAndExpand" />
+	</StackLayout>
+</ContentPage>

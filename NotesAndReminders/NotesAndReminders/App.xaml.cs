@@ -1,8 +1,5 @@
 ﻿using NotesAndReminders.Services;
-using NotesAndReminders.Views;
-using System;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace NotesAndReminders
 {
@@ -14,6 +11,7 @@ namespace NotesAndReminders
 			InitializeComponent();
 
 			DependencyService.Register<MockDataStore>();
+
 			MainPage = new AppShell();
 		}
 

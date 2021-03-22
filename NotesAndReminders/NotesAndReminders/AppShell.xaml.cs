@@ -16,6 +16,7 @@ namespace NotesAndReminders
 			Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
 
 			Routing.RegisterRoute(nameof(LogInView), typeof(LogInView));
+			Routing.RegisterRoute(nameof(SignUpView), typeof(SignUpView));
 		}
 
 		//workaround to avoid menu lags
@@ -30,9 +31,9 @@ namespace NotesAndReminders
 			base.OnPropertyChanged(propertyName);
 		}
 
-		private async void OnMenuItemClicked(object sender, EventArgs e)
+		/*private async void OnMenuItemClicked(object sender, EventArgs e)
 		{
 			await Current.GoToAsync("//LoginPage", true);
-		}
+		}*/
 	}
 }

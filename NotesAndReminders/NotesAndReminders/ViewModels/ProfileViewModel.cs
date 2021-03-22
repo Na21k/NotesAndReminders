@@ -26,7 +26,7 @@ namespace NotesAndReminders.ViewModels
 
 		private async void SignUpAsync()
 		{
-
+			await Shell.Current.GoToAsync(nameof(SignUpView));
 		}
 	}
 }

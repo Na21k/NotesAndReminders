@@ -117,8 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Подтвердите пароль</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Электронная почта</value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>Логин</value>
+  </data>
+  <data name="LogIn_LogInOrSignUp" xml:space="preserve">
+    <value>Войдите чтобы синхронизироваь заметки между вашими устройствами</value>
   </data>
   <data name="Log_In" xml:space="preserve">
     <value>Войти</value>
@@ -129,7 +138,13 @@
   <data name="Profile" xml:space="preserve">
     <value>Профиль</value>
   </data>
+  <data name="Profile_LogInOrSignUp" xml:space="preserve">
+    <value>Войдите или зарегистрируйтесь чтобы синхронизироваь заметки между вашими устройствами</value>
+  </data>
+  <data name="SignUp_LogInOrSignUp" xml:space="preserve">
+    <value>Зарегистрируйтесь чтобы синхронизироваь заметки между вашими устройствами</value>
+  </data>
   <data name="Sign_Up" xml:space="preserve">
-    <value>зарегистрироваться</value>
+    <value>Зарегистрироваться</value>
   </data>
 </root>

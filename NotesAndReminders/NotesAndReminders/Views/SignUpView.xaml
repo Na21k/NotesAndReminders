@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:resource="clr-namespace:NotesAndReminders.Resources"
+			 x:Class="NotesAndReminders.Views.SignUpView"
+			 Title="{x:Static resource:AppResources.Sign_Up}">
+	<StackLayout Spacing="10"
+				 Padding="20">
+		<Label Text="{x:Static resource:AppResources.SignUp_LogInOrSignUp}"
+			   FontSize="Medium"
+			   HorizontalTextAlignment="Center" />
+		<Entry x:Name="emailEntry"
+			   Text="{Binding Email}"
+			   Keyboard="Email"
+			   Placeholder="{x:Static resource:AppResources.Email}"
+			   ReturnType="Next" />
+		<Entry Text="{Binding Password}"
+			   IsPassword="True"
+			   Placeholder="{x:Static resource:AppResources.Password}"
+			   ReturnType="Next" />
+		<Entry Text="{Binding ConfirmPassword}"
+			   IsPassword="True"
+			   Placeholder="{x:Static resource:AppResources.ConfirmPassword}"
+			   ReturnType="Done" />
+		<Button Command="{Binding SignUpCommand}"
+				Text="{x:Static resource:AppResources.Sign_Up}"
+				HorizontalOptions="FillAndExpand" />
+	</StackLayout>
+</ContentPage>

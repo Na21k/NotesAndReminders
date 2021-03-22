@@ -117,8 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Confirm password</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>Login</value>
+  </data>
+  <data name="LogIn_LogInOrSignUp" xml:space="preserve">
+    <value>Log in to benefit from notes synchronization across your devices</value>
   </data>
   <data name="Log_In" xml:space="preserve">
     <value>Log in</value>
@@ -128,6 +137,12 @@
   </data>
   <data name="Profile" xml:space="preserve">
     <value>Profile</value>
+  </data>
+  <data name="Profile_LogInOrSignUp" xml:space="preserve">
+    <value>Log in or sign up to benefit from notes synchronization across your devices</value>
+  </data>
+  <data name="SignUp_LogInOrSignUp" xml:space="preserve">
+    <value>Sign up to benefit from notes synchronization across your devices</value>
   </data>
   <data name="Sign_Up" xml:space="preserve">
     <value>Sign up</value>

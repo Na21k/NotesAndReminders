@@ -61,6 +61,24 @@ namespace NotesAndReminders.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Confirm password.
+        /// </summary>
+        internal static string ConfirmPassword {
+            get {
+                return ResourceManager.GetString("ConfirmPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        internal static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Log in.
         /// </summary>
         internal static string Log_In {
@@ -75,6 +93,15 @@ namespace NotesAndReminders.Resources {
         internal static string Login {
             get {
                 return ResourceManager.GetString("Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Log in to benefit from notes synchronization across your devices.
+        /// </summary>
+        internal static string LogIn_LogInOrSignUp {
+            get {
+                return ResourceManager.GetString("LogIn_LogInOrSignUp", resourceCulture);
             }
         }
         
@@ -97,11 +124,29 @@ namespace NotesAndReminders.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Log in or sign up to benefit from notes synchronization across your devices.
+        /// </summary>
+        internal static string Profile_LogInOrSignUp {
+            get {
+                return ResourceManager.GetString("Profile_LogInOrSignUp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sign up.
         /// </summary>
         internal static string Sign_Up {
             get {
                 return ResourceManager.GetString("Sign_Up", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sign up to benefit from notes synchronization across your devices.
+        /// </summary>
+        internal static string SignUp_LogInOrSignUp {
+            get {
+                return ResourceManager.GetString("SignUp_LogInOrSignUp", resourceCulture);
             }
         }
     }

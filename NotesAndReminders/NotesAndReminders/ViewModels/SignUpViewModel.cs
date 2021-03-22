@@ -3,10 +3,11 @@ using Xamarin.Forms;
 
 namespace NotesAndReminders.ViewModels
 {
-	public class LogInViewModel : BaseViewModel
+	public class SignUpViewModel : BaseViewModel
 	{
 		private string _email;
 		private string _password;
+		private string _confirmPassword;
 
 		public string Email
 		{
@@ -18,15 +19,20 @@ namespace NotesAndReminders.ViewModels
 			get => _password;
 			set => SetProperty(ref _password, value);
 		}
-
-		public ICommand LogInCommand { get; private set; }
-
-		public LogInViewModel()
+		public string ConfirmPassword
 		{
-			LogInCommand = new Command(LogInAsync);
+			get => _confirmPassword;
+			set => SetProperty(ref _confirmPassword, value);
 		}
 
-		private async void LogInAsync()
+		public ICommand SignUpCommand { get; private set; }
+
+		public SignUpViewModel()
+		{
+			SignUpCommand = new Command(SignUpAsync);
+		}
+
+		private async void SignUpAsync()
 		{
 
 		}

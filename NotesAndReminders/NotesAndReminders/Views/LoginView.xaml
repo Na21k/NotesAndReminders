@@ -6,12 +6,19 @@
 			 Title="{x:Static resource:AppResources.Log_In}">
 	<StackLayout Spacing="10"
 				 Padding="20">
-		<Label Text="Login to benefit from notes synchronization across your devices"
+		<Label Text="{x:Static resource:AppResources.LogIn_LogInOrSignUp}"
 			   FontSize="Medium"
 			   HorizontalTextAlignment="Center" />
-		<Entry Text="{Binding Login}" Placeholder="{x:Static resource:AppResources.Login}" />
-		<Entry Text="{Binding Password}" IsPassword="True" Placeholder="{x:Static resource:AppResources.Password}" />
-		<Button Command="{Binding LogIn}"
+		<Entry x:Name="loginEntry"
+			   Text="{Binding Login}"
+			   Keyboard="Email"
+			   Placeholder="{x:Static resource:AppResources.Login}"
+			   ReturnType="Next" />
+		<Entry Text="{Binding Password}"
+			   IsPassword="True"
+			   Placeholder="{x:Static resource:AppResources.Password}"
+			   ReturnType="Done" />
+		<Button Command="{Binding LogInCommand}"
 				Text="{x:Static resource:AppResources.Log_In}"
 				HorizontalOptions="FillAndExpand" />
 	</StackLayout>

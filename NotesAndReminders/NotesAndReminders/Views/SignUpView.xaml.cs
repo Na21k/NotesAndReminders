@@ -4,13 +4,13 @@ using Xamarin.Forms;
 
 namespace NotesAndReminders.Views
 {
-	public partial class LogInView : ContentPage
+	public partial class SignUpView : ContentPage
 	{
-		public LogInView()
+		public SignUpView()
 		{
 			InitializeComponent();
 
-			BindingContext = new LogInViewModel();
+			BindingContext = new SignUpViewModel();
 		}
 
 		protected async override void OnAppearing()
@@ -18,7 +18,7 @@ namespace NotesAndReminders.Views
 			base.OnAppearing();
 
 			await Task.Delay(500);
-			loginEntry.Focus();
+			emailEntry.Focus();
 		}
 	}
 }

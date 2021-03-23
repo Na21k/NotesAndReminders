@@ -12,6 +12,7 @@ namespace NotesAndReminders
 		private static Dictionary<string, object> _cache = new Dictionary<string, object>();
 
 		public static User User { get => Get<User>(); set => Set(value: value); }
+		public static string UserToken { get => Get<string>(); set => Set(value: value); }
 
 		private static T Get<T>([CallerMemberName] string name = null, T defaultValue = default)
 		{

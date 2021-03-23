@@ -7,6 +7,12 @@ namespace NotesAndReminders.Services
 	{
 		bool IsLoggedIn { get; }
 		Task<(User, string)> LogIn(string email, string password);
+
+		Task<(User, string)> SingUp(string email, string password);
+
+
 		bool LogOut();
+
+
 	}
 }

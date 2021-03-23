@@ -14,6 +14,7 @@ namespace NotesAndReminders.Droid.Services
 	{
 		private FirebaseAuth _auth = FirebaseAuth.Instance;
 
+
 		public bool IsLoggedIn
 		{
 			get
@@ -73,5 +74,32 @@ namespace NotesAndReminders.Droid.Services
 				return false;
 			}
 		}
+
+		public async Task<(User, string)> SingUp(string email, string password)
+		{
+			try
+			{
+				var user = await _auth.CreateUserWithEmailAndPasswordAsync(email, password);
+				var res = await LogIn(email, password);
+
+				return res;
+			}
+			catch (Exception ex)
+			{
+				throw new Exception(ex.Message);
+			}
+		}
+
+
+		public async Task<bool> SendEmailVerification()
+        {
+			var user = _auth.CurrentUser;
+			using(var actionCode = ActionCodeSettings.NewBuilder().SetAndroidPackageName("Test",true,"0").Build())
+            {
+				await user.SendEmailVerification(actionCode);
+            }
+
+			return user.IsEmailVerified;
+        }
 	}
 }

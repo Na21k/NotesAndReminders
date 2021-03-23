@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "289508089037",
+    "project_id": "notesandreminders-5c2a6",
+    "storage_bucket": "notesandreminders-5c2a6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:289508089037:android:01bcec6a66578b5e125d84",
+        "android_client_info": {
+          "package_name": "com.monkeyBusiness.notesandreminders"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "289508089037-4vju77r82d346cgfnk2spnildn3buthv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXueYS_t18Nxd_F-DsYtLdEdFnmypJFjY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "289508089037-4vju77r82d346cgfnk2spnildn3buthv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

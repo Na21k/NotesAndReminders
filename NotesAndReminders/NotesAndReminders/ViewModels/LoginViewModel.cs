@@ -1,10 +1,13 @@
-﻿using System.Windows.Input;
+﻿using NotesAndReminders.Services;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace NotesAndReminders.ViewModels
 {
 	public class LogInViewModel : BaseViewModel
 	{
+		private IAuthorizationService _authorizationService;
+
 		private string _email;
 		private string _password;
 
@@ -23,6 +26,7 @@ namespace NotesAndReminders.ViewModels
 
 		public LogInViewModel()
 		{
+			_authorizationService = DependencyService.Get<IAuthorizationService>();
 			LogInCommand = new Command(LogInAsync);
 		}
 

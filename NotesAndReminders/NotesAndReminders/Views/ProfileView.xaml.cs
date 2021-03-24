@@ -9,6 +9,8 @@ namespace NotesAndReminders.Views
 		{
 			InitializeComponent();
 
+			MessagingCenter.Subscribe<ProfileViewModel>(this, Constants.UnexpectedErrorEvent, (profileViewModel) => OnUnexpectedError());
+
 			BindingContext = new ProfileViewModel();
 		}
 
@@ -17,6 +19,11 @@ namespace NotesAndReminders.Views
 			base.OnAppearing();
 			var vm = BindingContext as BaseViewModel;
 			vm?.OnAppearing();
+		}
+
+		private async void OnUnexpectedError()
+		{
+			await DisplayAlert("Error", "Unexpected error has occurred", "OK");
 		}
 	}
 }

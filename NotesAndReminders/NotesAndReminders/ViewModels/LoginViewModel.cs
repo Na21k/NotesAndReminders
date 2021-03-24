@@ -1,4 +1,6 @@
-﻿using NotesAndReminders.Services;
+﻿using NotesAndReminders.Exceptions;
+using NotesAndReminders.Services;
+using System;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -32,7 +34,29 @@ namespace NotesAndReminders.ViewModels
 
 		private async void LogInAsync()
 		{
+			try
+			{
+				var res = await _authorizationService.LogIn(Email, Password);
 
+				Settings.User = res.Item1;
+				Settings.UserToken = res.Item2;
+
+				MessagingCenter.Send(this, Constants.LoggedInEvent);
+			}
+			catch (InvalidCredentialsException ex)
+			{
+				Console.WriteLine(ex.Message);
+				Console.WriteLine(ex.StackTrace);
+
+				MessagingCenter.Send(this, Constants.InvalidLoginOrPasswordEvent);
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine(ex.Message);
+				Console.WriteLine(ex.StackTrace);
+
+				MessagingCenter.Send(this, Constants.UnexpectedErrorEvent);
+			}
 		}
 	}
 }

@@ -18,7 +18,7 @@ namespace NotesAndReminders
 		{
 			if (_cache.TryGetValue(name, out object res))
 			{
-				if (res is T)
+				if (res is T || res == null)
 				{
 					return (T)res;
 				}

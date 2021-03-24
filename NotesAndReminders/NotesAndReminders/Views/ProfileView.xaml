@@ -12,11 +12,46 @@
 			<Label Text="{x:Static resource:AppResources.Profile_LogInOrSignUp}"
 				   FontSize="Medium"
 				   HorizontalTextAlignment="Center" />
-			<Button Command="{Binding LogIn}"
+			<Button Command="{Binding LogInCommand}"
 					Text="{x:Static resource:AppResources.Log_In}"
 					HorizontalOptions="FillAndExpand" />
-			<Button Command="{Binding SignUp}"
+			<Button Command="{Binding SignUpCommand}"
 					Text="{x:Static resource:AppResources.Sign_Up}"
+					HorizontalOptions="FillAndExpand" />
+		</StackLayout>
+		<StackLayout IsVisible="{Binding IsLoggedIn}"
+					 Spacing="10"
+					 Padding="20"
+					 VerticalOptions="CenterAndExpand">
+			<Label FontSize="Medium"
+				   HorizontalTextAlignment="Center">
+				<Label.FormattedText>
+					<FormattedString>
+						<Span Text="Hello, " />
+						<Span Text="{Binding User.UserName}" />
+					</FormattedString>
+				</Label.FormattedText>
+			</Label>
+			<Label FontSize="Medium"
+				   HorizontalTextAlignment="Center">
+				<Label.FormattedText>
+					<FormattedString>
+						<Span Text="Email: " />
+						<Span Text="{Binding User.Email}" />
+					</FormattedString>
+				</Label.FormattedText>
+			</Label>
+			<Label FontSize="Medium"
+				   HorizontalTextAlignment="Center">
+				<Label.FormattedText>
+					<FormattedString>
+						<Span Text="Uid: " />
+						<Span Text="{Binding User.UserId}" />
+					</FormattedString>
+				</Label.FormattedText>
+			</Label>
+			<Button Command="{Binding LogOutCommand}"
+					Text="Log uout"
 					HorizontalOptions="FillAndExpand" />
 		</StackLayout>
 	</Grid>

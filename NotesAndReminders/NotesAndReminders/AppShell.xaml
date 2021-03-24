@@ -13,6 +13,17 @@
 		https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/
 	-->
 
+	<Shell.FlyoutHeaderTemplate>
+		<DataTemplate>
+			<Grid Padding="15,30,15,20"
+				  BackgroundColor="{AppThemeBinding Light={StaticResource PageBackground},
+													Dark={StaticResource PageBackgroundDark}}">
+				<Label Text="Logo here"
+					   FontSize="30" />
+			</Grid>
+		</DataTemplate>
+	</Shell.FlyoutHeaderTemplate>
+
 	<Shell.Resources>
 		<ResourceDictionary>
 			<Style x:Key="BaseStyle" TargetType="Element">

@@ -40,6 +40,12 @@ namespace NotesAndReminders.ViewModels
 
 		private async void LogInAsync()
 		{
+			if (string.IsNullOrWhiteSpace(Email) || string.IsNullOrWhiteSpace(Password))
+			{
+				MessagingCenter.Send(this, Constants.EmptyLoginOrPasswordEvent);
+				return;
+			}
+
 			try
 			{
 				IsLoggingIn = true;

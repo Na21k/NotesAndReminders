@@ -123,14 +123,35 @@
   <data name="Email" xml:space="preserve">
     <value>Email</value>
   </data>
+  <data name="EmptyLoginOrPassword" xml:space="preserve">
+    <value>Neither login nor password can be empty</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Hi" xml:space="preserve">
+    <value>Hi</value>
+  </data>
+  <data name="InvalidLoginOrPassword" xml:space="preserve">
+    <value>Invalid login or password</value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>Login</value>
   </data>
   <data name="LogIn_LogInOrSignUp" xml:space="preserve">
     <value>Log in to benefit from notes synchronization across your devices</value>
   </data>
+  <data name="LogOut" xml:space="preserve">
+    <value>Log out</value>
+  </data>
   <data name="Log_In" xml:space="preserve">
     <value>Log in</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Oops" xml:space="preserve">
+    <value>Oops</value>
   </data>
   <data name="Password" xml:space="preserve">
     <value>Password</value>
@@ -146,5 +167,11 @@
   </data>
   <data name="Sign_Up" xml:space="preserve">
     <value>Sign up</value>
+  </data>
+  <data name="UnexpectedErrorHasOccurred" xml:space="preserve">
+    <value>Unexpected error has occurred</value>
+  </data>
+  <data name="UserId" xml:space="preserve">
+    <value>User id</value>
   </data>
 </root>

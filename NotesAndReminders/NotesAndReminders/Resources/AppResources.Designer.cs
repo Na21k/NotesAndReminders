@@ -79,6 +79,42 @@ namespace NotesAndReminders.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Neither login nor password can be empty.
+        /// </summary>
+        internal static string EmptyLoginOrPassword {
+            get {
+                return ResourceManager.GetString("EmptyLoginOrPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        internal static string Error {
+            get {
+                return ResourceManager.GetString("Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hi.
+        /// </summary>
+        internal static string Hi {
+            get {
+                return ResourceManager.GetString("Hi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid login or password.
+        /// </summary>
+        internal static string InvalidLoginOrPassword {
+            get {
+                return ResourceManager.GetString("InvalidLoginOrPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Log in.
         /// </summary>
         internal static string Log_In {
@@ -102,6 +138,33 @@ namespace NotesAndReminders.Resources {
         internal static string LogIn_LogInOrSignUp {
             get {
                 return ResourceManager.GetString("LogIn_LogInOrSignUp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Log out.
+        /// </summary>
+        internal static string LogOut {
+            get {
+                return ResourceManager.GetString("LogOut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OK.
+        /// </summary>
+        internal static string Ok {
+            get {
+                return ResourceManager.GetString("Ok", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Oops.
+        /// </summary>
+        internal static string Oops {
+            get {
+                return ResourceManager.GetString("Oops", resourceCulture);
             }
         }
         
@@ -147,6 +210,24 @@ namespace NotesAndReminders.Resources {
         internal static string SignUp_LogInOrSignUp {
             get {
                 return ResourceManager.GetString("SignUp_LogInOrSignUp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unexpected error has occurred.
+        /// </summary>
+        internal static string UnexpectedErrorHasOccurred {
+            get {
+                return ResourceManager.GetString("UnexpectedErrorHasOccurred", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User id.
+        /// </summary>
+        internal static string UserId {
+            get {
+                return ResourceManager.GetString("UserId", resourceCulture);
             }
         }
     }

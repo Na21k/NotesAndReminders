@@ -27,7 +27,8 @@
 				   HorizontalTextAlignment="Center">
 				<Label.FormattedText>
 					<FormattedString>
-						<Span Text="Hello, " />
+						<Span Text="{x:Static resource:AppResources.Hi}" />
+						<Span Text=", " />
 						<Span Text="{Binding User.UserName}" />
 					</FormattedString>
 				</Label.FormattedText>
@@ -36,7 +37,8 @@
 				   HorizontalTextAlignment="Center">
 				<Label.FormattedText>
 					<FormattedString>
-						<Span Text="Email: " />
+						<Span Text="{x:Static resource:AppResources.Email}" />
+						<Span Text=": " />
 						<Span Text="{Binding User.Email}" />
 					</FormattedString>
 				</Label.FormattedText>
@@ -45,13 +47,14 @@
 				   HorizontalTextAlignment="Center">
 				<Label.FormattedText>
 					<FormattedString>
-						<Span Text="Uid: " />
+						<Span Text="{x:Static resource:AppResources.UserId}" />
+						<Span Text=": " />
 						<Span Text="{Binding User.UserId}" />
 					</FormattedString>
 				</Label.FormattedText>
 			</Label>
 			<Button Command="{Binding LogOutCommand}"
-					Text="Log uout"
+					Text="{x:Static resource:AppResources.LogOut}"
 					HorizontalOptions="FillAndExpand" />
 		</StackLayout>
 	</Grid>

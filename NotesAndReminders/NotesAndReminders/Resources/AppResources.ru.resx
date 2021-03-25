@@ -123,14 +123,35 @@
   <data name="Email" xml:space="preserve">
     <value>Электронная почта</value>
   </data>
+  <data name="EmptyLoginOrPassword" xml:space="preserve">
+    <value>Ни логин ни пароль не может быть пустым</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="Hi" xml:space="preserve">
+    <value>Привет</value>
+  </data>
+  <data name="InvalidLoginOrPassword" xml:space="preserve">
+    <value>Неверный логин или пароль</value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>Логин</value>
   </data>
   <data name="LogIn_LogInOrSignUp" xml:space="preserve">
     <value>Войдите чтобы синхронизироваь заметки между вашими устройствами</value>
   </data>
+  <data name="LogOut" xml:space="preserve">
+    <value>Выйти</value>
+  </data>
   <data name="Log_In" xml:space="preserve">
     <value>Войти</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Oops" xml:space="preserve">
+    <value>Ой</value>
   </data>
   <data name="Password" xml:space="preserve">
     <value>Пароль</value>
@@ -146,5 +167,11 @@
   </data>
   <data name="Sign_Up" xml:space="preserve">
     <value>Зарегистрироваться</value>
+  </data>
+  <data name="UnexpectedErrorHasOccurred" xml:space="preserve">
+    <value>Произошла непредвиденная ошибка</value>
+  </data>
+  <data name="UserId" xml:space="preserve">
+    <value>Идентификатор пользователя</value>
   </data>
 </root>

@@ -1,4 +1,5 @@
-﻿using NotesAndReminders.ViewModels;
+﻿using NotesAndReminders.Resources;
+using NotesAndReminders.ViewModels;
 using Xamarin.Forms;
 
 namespace NotesAndReminders.Views
@@ -23,7 +24,7 @@ namespace NotesAndReminders.Views
 
 		private async void OnUnexpectedError()
 		{
-			await DisplayAlert("Error", "Unexpected error has occurred", "OK");
+			await DisplayAlert(AppResources.Oops, AppResources.UnexpectedErrorHasOccurred, AppResources.Ok);
 		}
 	}
 }

@@ -123,14 +123,35 @@
   <data name="Email" xml:space="preserve">
     <value>Електронна пошта</value>
   </data>
+  <data name="EmptyLoginOrPassword" xml:space="preserve">
+    <value>Ні логін ні пароль не може бути порожнім</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Помилка</value>
+  </data>
+  <data name="Hi" xml:space="preserve">
+    <value>Привіт</value>
+  </data>
+  <data name="InvalidLoginOrPassword" xml:space="preserve">
+    <value>Невірний логін або пароль</value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>Логін</value>
   </data>
   <data name="LogIn_LogInOrSignUp" xml:space="preserve">
     <value>Увійдіть щоб синхронізувати нотатки між вашими пистроями</value>
   </data>
+  <data name="LogOut" xml:space="preserve">
+    <value>Вийти</value>
+  </data>
   <data name="Log_In" xml:space="preserve">
     <value>Увійти</value>
+  </data>
+  <data name="Ok" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Oops" xml:space="preserve">
+    <value>Ой</value>
   </data>
   <data name="Password" xml:space="preserve">
     <value>Піроль</value>
@@ -146,5 +167,11 @@
   </data>
   <data name="Sign_Up" xml:space="preserve">
     <value>Зареєструватись</value>
+  </data>
+  <data name="UnexpectedErrorHasOccurred" xml:space="preserve">
+    <value>Виникла непередбачувана помилка</value>
+  </data>
+  <data name="UserId" xml:space="preserve">
+    <value>Ідентифікатор користувача</value>
   </data>
 </root>

@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 			 xmlns:resource="clr-namespace:NotesAndReminders.Resources"
-             x:Class="NotesAndReminders.Views.LogInView"
+			 x:Class="NotesAndReminders.Views.LogInView"
 			 Title="{x:Static resource:AppResources.Log_In}">
 	<StackLayout Spacing="10"
 				 Padding="20">
@@ -18,8 +18,11 @@
 			   IsPassword="True"
 			   Placeholder="{x:Static resource:AppResources.Password}"
 			   ReturnType="Done" />
-		<Button Command="{Binding LogInCommand}"
+		<Button IsVisible="{Binding IsLoggingIn, Converter={StaticResource InverseBoolConverter}}"
+				Command="{Binding LogInCommand}"
 				Text="{x:Static resource:AppResources.Log_In}"
 				HorizontalOptions="FillAndExpand" />
+		<ActivityIndicator IsVisible="{Binding IsLoggingIn}"
+						   IsRunning="{Binding IsLoggingIn}" />
 	</StackLayout>
 </ContentPage>

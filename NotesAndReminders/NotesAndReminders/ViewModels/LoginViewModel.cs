@@ -12,6 +12,7 @@ namespace NotesAndReminders.ViewModels
 
 		private string _email;
 		private string _password;
+		private bool _isLoggingIn;
 
 		public string Email
 		{
@@ -22,6 +23,11 @@ namespace NotesAndReminders.ViewModels
 		{
 			get => _password;
 			set => SetProperty(ref _password, value);
+		}
+		public bool IsLoggingIn
+		{
+			get => _isLoggingIn;
+			set => SetProperty(ref _isLoggingIn, value);
 		}
 
 		public ICommand LogInCommand { get; private set; }
@@ -36,6 +42,7 @@ namespace NotesAndReminders.ViewModels
 		{
 			try
 			{
+				IsLoggingIn = true;
 				var res = await _authorizationService.LogIn(Email, Password);
 
 				Settings.User = res.Item1;
@@ -56,6 +63,10 @@ namespace NotesAndReminders.ViewModels
 				Console.WriteLine(ex.StackTrace);
 
 				MessagingCenter.Send(this, Constants.UnexpectedErrorEvent);
+			}
+			finally
+			{
+				IsLoggingIn = false;
 			}
 		}
 	}

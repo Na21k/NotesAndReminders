@@ -8,6 +8,7 @@ namespace NotesAndReminders.Services
 		bool IsLoggedIn { get; }
 		Task<(User, string)> LogIn(string email, string password);
 		Task<(User, string)> SignUp(string email, string password);
+		Task<bool> ResetPassword(string email);
 		bool LogOut();
 	}
 }

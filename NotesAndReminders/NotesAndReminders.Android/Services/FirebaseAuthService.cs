@@ -90,16 +90,30 @@ namespace NotesAndReminders.Droid.Services
 			}
 		}
 
-
 		public async Task<bool> SendEmailVerification()
-        {
+		{
 			var user = _auth.CurrentUser;
-			using(var actionCode = ActionCodeSettings.NewBuilder().SetAndroidPackageName("Test",true,"0").Build())
-            {
+			using (var actionCode = ActionCodeSettings.NewBuilder().SetAndroidPackageName("Test", true, "0").Build())
+			{
 				await user.SendEmailVerification(actionCode);
-            }
+			}
 
 			return user.IsEmailVerified;
-        }
+		}
+
+		public async Task<bool> ResetPassword(string email)
+		{
+			try
+			{
+				await _auth.SendPasswordResetEmailAsync(email);
+
+				return true;
+			}
+			catch (Exception ex)
+			{
+				throw new Exception(ex.Message);
+			}
+
+		}
 	}
 }

@@ -7,5 +7,6 @@
 		public const string LoggedOutEvent = "LoggedOutEvent";
 		public const string InvalidLoginOrPasswordEvent = "InvalidLoginOrPasswordEvent";
 		public const string EmptyLoginOrPasswordEvent = "EmptyLoginOrPasswordEvent";
+		public const string PasswordFieldDoesNotMatchConfirmPasswordFieldEvent = "PasswordFieldDoesNotMatchConfirmPasswordFieldEvent";
 	}
 }

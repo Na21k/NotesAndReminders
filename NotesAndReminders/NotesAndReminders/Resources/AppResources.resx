@@ -156,6 +156,9 @@
   <data name="Password" xml:space="preserve">
     <value>Password</value>
   </data>
+  <data name="PasswordFieldDoesNotMatchConfirmPasswordField" xml:space="preserve">
+    <value>Password field does not match Confirm password field</value>
+  </data>
   <data name="Profile" xml:space="preserve">
     <value>Profile</value>
   </data>

@@ -75,7 +75,7 @@ namespace NotesAndReminders.Droid.Services
 			}
 		}
 
-		public async Task<(User, string)> SingUp(string email, string password)
+		public async Task<(User, string)> SignUp(string email, string password)
 		{
 			try
 			{
@@ -84,9 +84,9 @@ namespace NotesAndReminders.Droid.Services
 
 				return res;
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
-				throw new Exception(ex.Message);
+				throw;
 			}
 		}
 

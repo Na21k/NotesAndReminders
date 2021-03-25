@@ -178,6 +178,15 @@ namespace NotesAndReminders.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Password field does not match Confirm password field.
+        /// </summary>
+        internal static string PasswordFieldDoesNotMatchConfirmPasswordField {
+            get {
+                return ResourceManager.GetString("PasswordFieldDoesNotMatchConfirmPasswordField", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Profile.
         /// </summary>
         internal static string Profile {

@@ -26,6 +26,7 @@ namespace NotesAndReminders.ViewModels
 			LogOutCommand = new Command(LogOut);
 
 			MessagingCenter.Subscribe<LogInViewModel>(this, Constants.LoggedInEvent, (vm) => OnLoggedIn());
+			MessagingCenter.Subscribe<SignUpViewModel>(this, Constants.LoggedInEvent, (vm) => OnLoggedIn());
 		}
 
 		private async void LogInAsync()

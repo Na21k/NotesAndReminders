@@ -132,7 +132,7 @@
   <data name="Hi" xml:space="preserve">
     <value>Привіт</value>
   </data>
-  <data name="InvalidLoginOrPassword" xml:space="preserve">
+  <data name="IncorrectLoginOrPassword" xml:space="preserve">
     <value>Невірний логін або пароль</value>
   </data>
   <data name="Login" xml:space="preserve">

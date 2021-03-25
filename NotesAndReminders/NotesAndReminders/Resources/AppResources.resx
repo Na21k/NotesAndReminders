@@ -132,8 +132,8 @@
   <data name="Hi" xml:space="preserve">
     <value>Hi</value>
   </data>
-  <data name="InvalidLoginOrPassword" xml:space="preserve">
-    <value>Invalid login or password</value>
+  <data name="IncorrectLoginOrPassword" xml:space="preserve">
+    <value>Incorrect login or password</value>
   </data>
   <data name="Login" xml:space="preserve">
     <value>Login</value>

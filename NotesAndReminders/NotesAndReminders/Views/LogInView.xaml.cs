@@ -39,7 +39,7 @@ namespace NotesAndReminders.Views
 
 		private async void OnInvalidLoginOrPasswordAsync()
 		{
-			await DisplayAlert(AppResources.Oops, AppResources.InvalidLoginOrPassword, AppResources.Ok);
+			await DisplayAlert(AppResources.Oops, AppResources.IncorrectLoginOrPassword, AppResources.Ok);
 		}
 
 		private async void OnEmptyLoginOrPassword()

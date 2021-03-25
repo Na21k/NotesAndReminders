@@ -106,11 +106,11 @@ namespace NotesAndReminders.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Invalid login or password.
+        ///   Looks up a localized string similar to Incorrect login or password.
         /// </summary>
-        internal static string InvalidLoginOrPassword {
+        internal static string IncorrectLoginOrPassword {
             get {
-                return ResourceManager.GetString("InvalidLoginOrPassword", resourceCulture);
+                return ResourceManager.GetString("IncorrectLoginOrPassword", resourceCulture);
             }
         }
         

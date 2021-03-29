@@ -135,6 +135,9 @@
   <data name="IncorrectLoginOrPassword" xml:space="preserve">
     <value>Incorrect login or password</value>
   </data>
+  <data name="ItsEmptyHereYet" xml:space="preserve">
+    <value>Its empty here yet</value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>Login</value>
   </data>
@@ -146,6 +149,9 @@
   </data>
   <data name="Log_In" xml:space="preserve">
     <value>Log in</value>
+  </data>
+  <data name="MyNotes" xml:space="preserve">
+    <value>My notes</value>
   </data>
   <data name="Ok" xml:space="preserve">
     <value>OK</value>

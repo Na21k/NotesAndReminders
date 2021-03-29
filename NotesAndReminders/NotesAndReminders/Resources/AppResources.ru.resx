@@ -135,6 +135,9 @@
   <data name="IncorrectLoginOrPassword" xml:space="preserve">
     <value>Неверный логин или пароль</value>
   </data>
+  <data name="ItsEmptyHereYet" xml:space="preserve">
+    <value>Тут пока пусто</value>
+  </data>
   <data name="Login" xml:space="preserve">
     <value>Логин</value>
   </data>
@@ -146,6 +149,9 @@
   </data>
   <data name="Log_In" xml:space="preserve">
     <value>Войти</value>
+  </data>
+  <data name="MyNotes" xml:space="preserve">
+    <value>Мои заметки</value>
   </data>
   <data name="Ok" xml:space="preserve">
     <value>OK</value>

@@ -115,6 +115,15 @@ namespace NotesAndReminders.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Its empty here yet.
+        /// </summary>
+        internal static string ItsEmptyHereYet {
+            get {
+                return ResourceManager.GetString("ItsEmptyHereYet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Log in.
         /// </summary>
         internal static string Log_In {
@@ -147,6 +156,15 @@ namespace NotesAndReminders.Resources {
         internal static string LogOut {
             get {
                 return ResourceManager.GetString("LogOut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My notes.
+        /// </summary>
+        internal static string MyNotes {
+            get {
+                return ResourceManager.GetString("MyNotes", resourceCulture);
             }
         }
         

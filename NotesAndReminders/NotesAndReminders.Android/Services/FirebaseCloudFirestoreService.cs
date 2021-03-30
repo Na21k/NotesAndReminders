@@ -1,9 +1,13 @@
 ﻿using Android.App;
 using Android.Content;
+using Android.Gms.Extensions;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Firebase.Auth;
+using Firebase.Firestore;
+using Java.Util;
 using NotesAndReminders.Droid.Services;
 using NotesAndReminders.Models;
 using NotesAndReminders.Services;
@@ -14,33 +18,104 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
+
+
 [assembly: Dependency(typeof(FirebaseCloudFirestoreService))]
 namespace NotesAndReminders.Droid.Services
 {
 	public class FirebaseCloudFirestoreService : IDBService
 	{
-		public Task<bool> AddNoteAsync(Note note)
+		FirebaseFirestore db = FirebaseFirestore.Instance;
+		private FirebaseAuth _auth = FirebaseAuth.Instance;
+		public async Task<bool> AddNoteAsync(Note note)
 		{
-			throw new NotImplementedException();
+			try
+			{
+				DocumentReference docRef = db.Collection("Notes").Document();
+				Dictionary<string, Object> noteDoc = new Dictionary<string, object>
+				{
+					{ "id", note.Id},
+					{ "user_Id", _auth.CurrentUser.Uid},
+					{ "title", note.Title },
+					{ "text", note.Text},
+					{ "type", note.Type},
+					{ "addition content", note.Images },
+					{ "checklist", note.Checklists},
+					{ "last_time_modifired", note.LastEdited}
+				};
+
+				await docRef.Set(new HashMap(noteDoc));
+
+				return true;
+
+			}
+			catch(Exception ex)
+			{
+				throw new Exception(ex.Message);
+			}
+			
 		}
 
-		public Task<bool> AddNoteTypeAsync(NoteType noteType)
+		public async Task<bool> AddNoteTypeAsync(NoteType noteType)
 		{
-			throw new NotImplementedException();
+			try
+			{
+				DocumentReference docRef = db.Collection("Notes").Document();
+				Dictionary<string, Object> noteTypeDoc = new Dictionary<string, object>
+				{
+					{ "id", noteType.Id },
+					{ "user_Id", _auth.CurrentUser.Uid},
+					{ "name", noteType.Name},
+					{ "noteColor", noteType.Color}
+				};
+
+				await docRef.Set(new HashMap(noteTypeDoc));
+
+				return true;
+
+			}
+			catch (Exception ex)
+			{
+				throw new Exception(ex.Message);
+			}
 		}
 
-		public Task<bool> DeleteNoteAsync(Note note)
+		public async Task<bool> DeleteNoteAsync(Note note)
 		{
-			throw new NotImplementedException();
+			try
+			{
+				DocumentReference docRef = db.Collection("Notes").Document(note.Id.ToString());
+				await docRef.Delete();
+
+				return true;
+			}
+			catch (Exception ex)
+			{
+				throw new Exception(ex.Message);
+			}
 		}
 
-		public Task<bool> DeleteNoteTypeAsync(NoteType noteType)
+		public async Task<bool> DeleteNoteTypeAsync(NoteType noteType)
 		{
-			throw new NotImplementedException();
+			try
+			{
+				DocumentReference docRef = db.Collection("Notes").Document(noteType.Id.ToString());
+				await docRef.Delete();
+
+				return true;
+			}
+			catch (Exception ex)
+			{
+				throw new Exception(ex.Message);
+			}
 		}
 
-		public Task<List<Note>> GetAllNotesAsync()
+		public async Task<List<Note>> GetAllNotesAsync()
 		{
+			//Query allNotesQuery = db.Collection("Notes");
+
+			//QuerySnapshot allNotesQuerySnapshot = await allNotesQuery.Get(new HashMap());
+
 			throw new NotImplementedException();
 		}
 
@@ -49,8 +124,20 @@ namespace NotesAndReminders.Droid.Services
 			throw new NotImplementedException();
 		}
 
-		public Task<Note> GetNoteAsync(string noteId)
+
+		public async Task<Note> GetNoteAsync(string noteId)
 		{
+			//DocumentReference docRef = db.Collection("Notes").Document(noteId);
+			//try
+			//{
+			//	DocumentSnapshot doc = (DocumentSnapshot)await docRef.Get();
+
+			//}
+			//catch
+			//{
+
+			//}
+
 			throw new NotImplementedException();
 		}
 
@@ -59,14 +146,54 @@ namespace NotesAndReminders.Droid.Services
 			throw new NotImplementedException();
 		}
 
-		public Task<bool> UpdateNoteAsync(Note note)
+		public async Task<bool> UpdateNoteAsync(Note note)
 		{
-			throw new NotImplementedException();
+			DocumentReference docRef = db.Collection("Notes").Document(note.Id);
+			try
+			{
+				Dictionary<string, Object> updatedNote = new Dictionary<string, object>()
+				{
+					{ "id", note.Id},
+					{ "user_Id", _auth.CurrentUser.Uid},
+					{ "title", note.Title },
+					{ "text", note.Text},
+					{ "type", note.Type},
+					{ "addition content", note.Images },
+					{ "checklist", note.Checklists},
+					{ "last_time_modifired", note.LastEdited}
+				};
+
+				await docRef.Update((IDictionary<string, Java.Lang.Object>)updatedNote);
+
+				return true;
+			}
+			catch(Exception ex)
+			{
+				throw new Exception(ex.Message);
+			}
 		}
 
-		public Task<bool> UpdateNoteTypeAsync(NoteType noteType)
+		public async Task<bool> UpdateNoteTypeAsync(NoteType noteType)
 		{
-			throw new NotImplementedException();
+			DocumentReference docRef = db.Collection("Notes").Document(noteType.Id);
+			try
+			{
+				Dictionary<string, Object> updatedNoteType = new Dictionary<string, object>()
+				{
+					{ "id", noteType.Id },
+					{ "user_Id", _auth.CurrentUser.Uid},
+					{ "name", noteType.Name},
+					{ "noteColor", noteType.Color}
+				};
+
+				await docRef.Update((IDictionary<string, Java.Lang.Object>)updatedNoteType);
+
+				return true;
+			}
+			catch (Exception ex)
+			{
+				throw new Exception(ex.Message);
+			}
 		}
 	}
 }

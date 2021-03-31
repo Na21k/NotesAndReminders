@@ -18,21 +18,20 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-
-
 [assembly: Dependency(typeof(FirebaseCloudFirestoreService))]
 namespace NotesAndReminders.Droid.Services
 {
 	public class FirebaseCloudFirestoreService : IDBService
 	{
-		FirebaseFirestore db = FirebaseFirestore.Instance;
+		private FirebaseFirestore _db = FirebaseFirestore.Instance;
 		private FirebaseAuth _auth = FirebaseAuth.Instance;
+
 		public async Task<bool> AddNoteAsync(Note note)
 		{
 			try
 			{
-				DocumentReference docRef = db.Collection("Notes").Document();
-				Dictionary<string, Object> noteDoc = new Dictionary<string, object>
+				DocumentReference docRef = _db.Collection("Notes").Document();
+				Dictionary<string, object> noteDoc = new Dictionary<string, object>
 				{
 					{ "id", note.Id},
 					{ "user_Id", _auth.CurrentUser.Uid},
@@ -47,21 +46,23 @@ namespace NotesAndReminders.Droid.Services
 				await docRef.Set(new HashMap(noteDoc));
 
 				return true;
-
 			}
-			catch(Exception ex)
+			catch (Exception ex)
 			{
-				throw new Exception(ex.Message);
+				Console.WriteLine(ex.Message);
+				Console.WriteLine(ex.StackTrace);
+
+				throw;
 			}
-			
+
 		}
 
 		public async Task<bool> AddNoteTypeAsync(NoteType noteType)
 		{
 			try
 			{
-				DocumentReference docRef = db.Collection("Notes").Document();
-				Dictionary<string, Object> noteTypeDoc = new Dictionary<string, object>
+				DocumentReference docRef = _db.Collection("Notes").Document();
+				Dictionary<string, object> noteTypeDoc = new Dictionary<string, object>
 				{
 					{ "id", noteType.Id },
 					{ "user_Id", _auth.CurrentUser.Uid},
@@ -72,11 +73,13 @@ namespace NotesAndReminders.Droid.Services
 				await docRef.Set(new HashMap(noteTypeDoc));
 
 				return true;
-
 			}
 			catch (Exception ex)
 			{
-				throw new Exception(ex.Message);
+				Console.WriteLine(ex.Message);
+				Console.WriteLine(ex.StackTrace);
+
+				throw;
 			}
 		}
 
@@ -84,14 +87,17 @@ namespace NotesAndReminders.Droid.Services
 		{
 			try
 			{
-				DocumentReference docRef = db.Collection("Notes").Document(note.Id.ToString());
+				DocumentReference docRef = _db.Collection("Notes").Document(note.Id.ToString());
 				await docRef.Delete();
 
 				return true;
 			}
 			catch (Exception ex)
 			{
-				throw new Exception(ex.Message);
+				Console.WriteLine(ex.Message);
+				Console.WriteLine(ex.StackTrace);
+
+				throw;
 			}
 		}
 
@@ -99,14 +105,17 @@ namespace NotesAndReminders.Droid.Services
 		{
 			try
 			{
-				DocumentReference docRef = db.Collection("Notes").Document(noteType.Id.ToString());
+				DocumentReference docRef = _db.Collection("Notes").Document(noteType.Id.ToString());
 				await docRef.Delete();
 
 				return true;
 			}
 			catch (Exception ex)
 			{
-				throw new Exception(ex.Message);
+				Console.WriteLine(ex.Message);
+				Console.WriteLine(ex.StackTrace);
+
+				throw;
 			}
 		}
 
@@ -123,7 +132,6 @@ namespace NotesAndReminders.Droid.Services
 		{
 			throw new NotImplementedException();
 		}
-
 
 		public async Task<Note> GetNoteAsync(string noteId)
 		{
@@ -148,10 +156,10 @@ namespace NotesAndReminders.Droid.Services
 
 		public async Task<bool> UpdateNoteAsync(Note note)
 		{
-			DocumentReference docRef = db.Collection("Notes").Document(note.Id);
+			DocumentReference docRef = _db.Collection("Notes").Document(note.Id);
 			try
 			{
-				Dictionary<string, Object> updatedNote = new Dictionary<string, object>()
+				Dictionary<string, object> updatedNote = new Dictionary<string, object>()
 				{
 					{ "id", note.Id},
 					{ "user_Id", _auth.CurrentUser.Uid},
@@ -167,18 +175,21 @@ namespace NotesAndReminders.Droid.Services
 
 				return true;
 			}
-			catch(Exception ex)
+			catch (Exception ex)
 			{
-				throw new Exception(ex.Message);
+				Console.WriteLine(ex.Message);
+				Console.WriteLine(ex.StackTrace);
+
+				throw;
 			}
 		}
 
 		public async Task<bool> UpdateNoteTypeAsync(NoteType noteType)
 		{
-			DocumentReference docRef = db.Collection("Notes").Document(noteType.Id);
+			DocumentReference docRef = _db.Collection("Notes").Document(noteType.Id);
 			try
 			{
-				Dictionary<string, Object> updatedNoteType = new Dictionary<string, object>()
+				Dictionary<string, object> updatedNoteType = new Dictionary<string, object>()
 				{
 					{ "id", noteType.Id },
 					{ "user_Id", _auth.CurrentUser.Uid},
@@ -192,7 +203,10 @@ namespace NotesAndReminders.Droid.Services
 			}
 			catch (Exception ex)
 			{
-				throw new Exception(ex.Message);
+				Console.WriteLine(ex.Message);
+				Console.WriteLine(ex.StackTrace);
+
+				throw;
 			}
 		}
 	}

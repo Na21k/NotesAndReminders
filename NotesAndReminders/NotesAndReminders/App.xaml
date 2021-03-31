@@ -12,7 +12,7 @@
 
 			<Color x:Key="Accent">#ff9830</Color>
 			<Color x:Key="PageBackground">#ffffff</Color>
-			<Color x:Key="PageTitle">#ffffff</Color>
+			<Color x:Key="PageTitleText">#000000</Color>
 			<Color x:Key="LabelTextColorPrimary">#000000</Color>
 			<Color x:Key="LabelTextColorSecondary">#696969</Color>
 			<Color x:Key="ButtonTextColorPrimary">#ffffff</Color>
@@ -21,7 +21,7 @@
 
 			<Color x:Key="AccentDark">#eb8c2d</Color>
 			<Color x:Key="PageBackgroundDark">#2e2e2e</Color>
-			<Color x:Key="PageTitleDark">#ffffff</Color>
+			<Color x:Key="PageTitleTextDark">#ffffff</Color>
 			<Color x:Key="LabelTextColorPrimaryDark">#f2f2f2</Color>
 			<Color x:Key="LabelTextColorSecondaryDark">#a6a6a6</Color>
 			<Color x:Key="ButtonTextColorPrimaryDark">#ffffff</Color>

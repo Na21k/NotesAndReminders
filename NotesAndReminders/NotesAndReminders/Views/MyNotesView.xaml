@@ -54,9 +54,10 @@
 		<ImageButton AbsoluteLayout.LayoutBounds="0.98,0.98,56,56"
 					 AbsoluteLayout.LayoutFlags="PositionProportional"
 					 Command="{Binding NewNoteCommand}"
-					 BackgroundColor="{AppThemeBinding Light={StaticResource Accent},
-													   Dark={StaticResource AccentDark}}"
-					 Source="xamarin_logo"
+					 BackgroundColor="{AppThemeBinding Light={StaticResource PageBackgroundDark},
+													   Dark={StaticResource PageBackground}}"
+					 Source="icn_newNote"
+					 Padding="10"
 					 CornerRadius="28"
 					 HeightRequest="56"
 					 WidthRequest="56" />

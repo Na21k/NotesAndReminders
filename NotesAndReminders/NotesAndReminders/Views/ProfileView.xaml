@@ -49,7 +49,7 @@
 					<FormattedString>
 						<Span Text="{x:Static resource:AppResources.UserId}" />
 						<Span Text=": " />
-						<Span Text="{Binding User.UserId}" />
+						<Span Text="{Binding User.Id}" />
 					</FormattedString>
 				</Label.FormattedText>
 			</Label>

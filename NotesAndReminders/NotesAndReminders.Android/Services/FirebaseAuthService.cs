@@ -35,7 +35,7 @@ namespace NotesAndReminders.Droid.Services
 				{
 					Email = user.User.Email,
 					UserName = user.User.DisplayName,
-					UserId = _auth.CurrentUser.Uid
+					Id = _auth.CurrentUser.Uid
 				};
 
 				if (token == null)

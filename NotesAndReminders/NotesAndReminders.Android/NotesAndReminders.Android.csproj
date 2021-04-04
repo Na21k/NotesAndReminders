@@ -104,6 +104,10 @@
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidResource Include="Resources\drawable\icn_itsEmptyHere.png">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
     <AndroidResource Include="Resources\layout\Tabbar.xml" />
     <AndroidResource Include="Resources\layout\Toolbar.xml" />
     <AndroidResource Include="Resources\values\styles.xml" />
@@ -131,67 +135,67 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\icn_itsEmptyHere.png" />
+    <Folder Include="Resources\drawable-v24\" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-hdpi\Icn_newNote.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icn_newNote.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-hdpi\icn_note_dark.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icn_note_dark.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-hdpi\icn_note_light.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\icn_note_light.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-hdpi\logo.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-mdpi\Icn_newNote.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\icn_newNote.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-mdpi\icn_note_dark.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\icn_note_dark.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-mdpi\icn_note_light.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\icn_note_light.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-mdpi\logo.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xhdpi\Icn_newNote.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\icn_newNote.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xhdpi\icn_note_dark.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\icn_note_dark.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xhdpi\icn_note_light.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\icn_note_light.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xhdpi\logo.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxhdpi\Icn_newNote.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\icn_newNote.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxhdpi\icn_note_dark.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\icn_note_dark.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxhdpi\icn_note_light.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\icn_note_light.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxhdpi\logo.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\Icn_newNote.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\icn_newNote.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\icn_note_dark.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\icn_note_dark.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\icn_note_light.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\icn_note_light.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\logo.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>

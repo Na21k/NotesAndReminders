@@ -1,4 +1,5 @@
 ﻿using NotesAndReminders.Models;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -12,9 +13,9 @@ namespace NotesAndReminders.Services
 		Task<bool> AddNoteTypeAsync(NoteType noteType);
 		Task<bool> DeleteNoteTypeAsync(NoteType noteType);
 		Task<bool> UpdateNoteTypeAsync(NoteType noteType);
-		Task<Note> GetNoteAsync(string noteId);
-		Task<List<Note>> GetAllNotesAsync();
-		Task<NoteType> GetNoteTypeAsync(string noteTypeId);
-		Task<List<NoteType>> GetAllNoteTypesAsync();
+		Task GetNoteAsync(string noteId, Action<IDBItem> onNoteRecievedCallback);
+		Task GetAllNotesAsync(Action<List<IDBItem>> onNotesRecievedCallback);
+		Task GetNoteTypeAsync(string noteTypeId, Action<IDBItem> onNoteTypeRecievedCallback);
+		Task GetAllNoteTypesAsync(Action<List<IDBItem>> onNotesTypeRecievedCallback);
 	}
 }

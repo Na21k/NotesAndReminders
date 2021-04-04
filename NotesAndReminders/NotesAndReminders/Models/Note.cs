@@ -3,9 +3,8 @@ using System.Collections.Generic;
 
 namespace NotesAndReminders.Models
 {
-	public class Note
+	public class Note : Identifiable, IDBItem
 	{
-		public string Id { get; set; }
 		public string Title { get; set; }
 		public string Text { get; set; }
 		public NoteType Type { get; set; }
@@ -13,5 +12,6 @@ namespace NotesAndReminders.Models
 		public List<ChecklistItem> Checklists { get; set; }
 		public NoteState State { get; set; }
 		public DateTime LastEdited { get; set; }
+		
 	}
 }

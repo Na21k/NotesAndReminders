@@ -2,9 +2,8 @@
 
 namespace NotesAndReminders.Models
 {
-	public class NoteType
+	public class NoteType : Identifiable, IDBItem
 	{
-		public string Id { get; set; }
 		public string Name { get; set; }
 		public Color Color { get; set; }
 	}

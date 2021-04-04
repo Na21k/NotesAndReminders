@@ -9,6 +9,7 @@ using Firebase.Auth;
 using Firebase.Firestore;
 using Java.Util;
 using NotesAndReminders.Droid.Services;
+using NotesAndReminders.Exceptions;
 using NotesAndReminders.Models;
 using NotesAndReminders.Services;
 using System;
@@ -49,8 +50,8 @@ namespace NotesAndReminders.Droid.Services
 			}
 			catch (Exception ex)
 			{
-				Console.WriteLine(ex.Message);
-				Console.WriteLine(ex.StackTrace);
+				System.Diagnostics.Debug.WriteLine(ex.Message);
+				System.Diagnostics.Debug.WriteLine(ex.StackTrace);
 
 				throw;
 			}
@@ -76,8 +77,8 @@ namespace NotesAndReminders.Droid.Services
 			}
 			catch (Exception ex)
 			{
-				Console.WriteLine(ex.Message);
-				Console.WriteLine(ex.StackTrace);
+				System.Diagnostics.Debug.WriteLine(ex.Message);
+				System.Diagnostics.Debug.WriteLine(ex.StackTrace);
 
 				throw;
 			}
@@ -94,8 +95,8 @@ namespace NotesAndReminders.Droid.Services
 			}
 			catch (Exception ex)
 			{
-				Console.WriteLine(ex.Message);
-				Console.WriteLine(ex.StackTrace);
+				System.Diagnostics.Debug.WriteLine(ex.Message);
+				System.Diagnostics.Debug.WriteLine(ex.StackTrace);
 
 				throw;
 			}
@@ -112,46 +113,74 @@ namespace NotesAndReminders.Droid.Services
 			}
 			catch (Exception ex)
 			{
-				Console.WriteLine(ex.Message);
-				Console.WriteLine(ex.StackTrace);
+				System.Diagnostics.Debug.WriteLine(ex.Message);
+				System.Diagnostics.Debug.WriteLine(ex.StackTrace);
 
 				throw;
 			}
 		}
 
-		public async Task<List<Note>> GetAllNotesAsync()
+		public async Task GetAllNotesAsync(Action<List<IDBItem>> onNotesRecievedCallback)
 		{
-			//Query allNotesQuery = db.Collection("Notes");
+			try
+			{
+				await _db.Collection("Notes").Get().AddOnCompleteListener(new OnCompleteListListener<Note>(onNotesRecievedCallback));
+			}
+			catch (Exception ex)
+			{
+				System.Diagnostics.Debug.WriteLine(ex.Message);
+				System.Diagnostics.Debug.WriteLine(ex.StackTrace);
 
-			//QuerySnapshot allNotesQuerySnapshot = await allNotesQuery.Get(new HashMap());
-
-			throw new NotImplementedException();
+				throw;
+			}
 		}
 
-		public Task<List<NoteType>> GetAllNoteTypesAsync()
+		public async Task GetAllNoteTypesAsync(Action<List<IDBItem>> onNotesTypeRecievedCallback)
 		{
-			throw new NotImplementedException();
+			try
+			{
+				await _db.Collection("NotesTypes").Get().AddOnCompleteListener(new OnCompleteListListener<Note>(onNotesTypeRecievedCallback));
+			}
+			catch (Exception ex)
+			{
+				System.Diagnostics.Debug.WriteLine(ex.Message);
+				System.Diagnostics.Debug.WriteLine(ex.StackTrace);
+
+				throw;
+			}
 		}
 
-		public async Task<Note> GetNoteAsync(string noteId)
+		public async Task GetNoteAsync(string noteId, Action<IDBItem> onNoteRecievedCallback)
 		{
-			//DocumentReference docRef = db.Collection("Notes").Document(noteId);
-			//try
-			//{
-			//	DocumentSnapshot doc = (DocumentSnapshot)await docRef.Get();
+			DocumentReference docRef = _db.Collection("Notes").Document(noteId);
+			try
+			{
+				await docRef.Get().AddOnCompleteListener(new OnCompleteListener<Note>(onNoteRecievedCallback));
+			}
+			catch(Exception ex)
+			{
+				System.Diagnostics.Debug.WriteLine(ex.Message);
+				System.Diagnostics.Debug.WriteLine(ex.StackTrace);
 
-			//}
-			//catch
-			//{
+				throw;
+			}
 
-			//}
-
-			throw new NotImplementedException();
 		}
 
-		public Task<NoteType> GetNoteTypeAsync(string noteTypeId)
+		public async Task GetNoteTypeAsync(string noteTypeId, Action<IDBItem> onNoteTypeRecievedCallback)
 		{
-			throw new NotImplementedException();
+			DocumentReference docRef = _db.Collection("NotesTypes").Document(noteTypeId);
+			try
+			{
+				await docRef.Get().AddOnCompleteListener(new OnCompleteListener<NoteType>(onNoteTypeRecievedCallback));
+			}
+			catch(Exception ex)
+			{
+				System.Diagnostics.Debug.WriteLine(ex.Message);
+				System.Diagnostics.Debug.WriteLine(ex.StackTrace);
+
+				throw;
+			}
 		}
 
 		public async Task<bool> UpdateNoteAsync(Note note)
@@ -177,8 +206,8 @@ namespace NotesAndReminders.Droid.Services
 			}
 			catch (Exception ex)
 			{
-				Console.WriteLine(ex.Message);
-				Console.WriteLine(ex.StackTrace);
+				System.Diagnostics.Debug.WriteLine(ex.Message);
+				System.Diagnostics.Debug.WriteLine(ex.StackTrace);
 
 				throw;
 			}
@@ -203,8 +232,8 @@ namespace NotesAndReminders.Droid.Services
 			}
 			catch (Exception ex)
 			{
-				Console.WriteLine(ex.Message);
-				Console.WriteLine(ex.StackTrace);
+				System.Diagnostics.Debug.WriteLine(ex.Message);
+				System.Diagnostics.Debug.WriteLine(ex.StackTrace);
 
 				throw;
 			}

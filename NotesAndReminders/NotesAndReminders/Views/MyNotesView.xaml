@@ -6,51 +6,58 @@
 			 Title="{x:Static resource:AppResources.MyNotes}"
 			 Padding="10">
 	<AbsoluteLayout>
-		<CollectionView AbsoluteLayout.LayoutBounds="0,0,1,1"
-						AbsoluteLayout.LayoutFlags="SizeProportional"
-						ItemsSource="{Binding Notes}">
-			<CollectionView.ItemsLayout>
-				<GridItemsLayout Orientation="Vertical"
-								 Span="2"
-								 VerticalItemSpacing="10"
-								 HorizontalItemSpacing="10" />
-			</CollectionView.ItemsLayout>
-			<CollectionView.EmptyView>
-				<ContentView>
-					<StackLayout Spacing="10"
-								 VerticalOptions="CenterAndExpand">
-						<Label Text="{x:Static resource:AppResources.ItsEmptyHereYet}"
-							   HorizontalTextAlignment="Center" />
-					</StackLayout>
-				</ContentView>
-			</CollectionView.EmptyView>
-			<CollectionView.ItemTemplate>
-				<DataTemplate>
-					<Frame Padding="10"
-						   CornerRadius="6"
-						   BackgroundColor="{Binding Type.Color}">
+		<RefreshView AbsoluteLayout.LayoutBounds="0,0,1,1"
+					 AbsoluteLayout.LayoutFlags="SizeProportional"
+					 IsRefreshing="{Binding IsRefreshing}"
+					 Command="{Binding RefreshCommand}">
+			<CollectionView ItemsSource="{Binding Notes}">
+				<CollectionView.ItemsLayout>
+					<GridItemsLayout Orientation="Vertical"
+									 Span="2"
+									 VerticalItemSpacing="10"
+									 HorizontalItemSpacing="10" />
+				</CollectionView.ItemsLayout>
+				<CollectionView.EmptyView>
+					<ContentView>
 						<StackLayout Spacing="10"
-									 Padding="0">
-							<Label Text="{Binding Title}"
-								   MaxLines="1"
-								   LineBreakMode="TailTruncation" />
-							<Label Text="{Binding Text}"
-								   MaxLines="7"
-								   LineBreakMode="TailTruncation" />
-							<Frame Padding="5"
-								   CornerRadius="6"
-								   HorizontalOptions="Start"
-								   BackgroundColor="#40ffffff">
-								<Label Text="{Binding Type.Name}"
-									   MaxLines="1"
-									   LineBreakMode="TailTruncation"
-									   FontSize="12" />
-							</Frame>
+									 VerticalOptions="CenterAndExpand">
+							<Image Source="icn_itsEmptyHere"
+								   HorizontalOptions="CenterAndExpand"
+								   VerticalOptions="CenterAndExpand"
+								   HeightRequest="200" />
+							<Label Text="{x:Static resource:AppResources.ItsEmptyHereYet}"
+								   HorizontalTextAlignment="Center" />
 						</StackLayout>
-					</Frame>
-				</DataTemplate>
-			</CollectionView.ItemTemplate>
-		</CollectionView>
+					</ContentView>
+				</CollectionView.EmptyView>
+				<CollectionView.ItemTemplate>
+					<DataTemplate>
+						<Frame Padding="10"
+							   CornerRadius="6"
+							   BackgroundColor="{Binding Type.Color}">
+							<StackLayout Spacing="10"
+										 Padding="0">
+								<Label Text="{Binding Title}"
+									   MaxLines="1"
+									   LineBreakMode="TailTruncation" />
+								<Label Text="{Binding Text}"
+									   MaxLines="7"
+									   LineBreakMode="TailTruncation" />
+								<Frame Padding="5"
+									   CornerRadius="6"
+									   HorizontalOptions="Start"
+									   BackgroundColor="#40ffffff">
+									<Label Text="{Binding Type.Name}"
+										   MaxLines="1"
+										   LineBreakMode="TailTruncation"
+										   FontSize="12" />
+								</Frame>
+							</StackLayout>
+						</Frame>
+					</DataTemplate>
+				</CollectionView.ItemTemplate>
+			</CollectionView>
+		</RefreshView>
 		<ImageButton AbsoluteLayout.LayoutBounds="0.98,0.98,56,56"
 					 AbsoluteLayout.LayoutFlags="PositionProportional"
 					 Command="{Binding NewNoteCommand}"

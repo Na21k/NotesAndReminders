@@ -1,4 +1,5 @@
 ﻿using NotesAndReminders.Models;
+using NotesAndReminders.Services;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -8,13 +9,25 @@ namespace NotesAndReminders.ViewModels
 {
 	public class MyNotesViewModel : NotesBaseViewModel
 	{
+		private IDBService _dBService;
+		private bool _isRefreshing;
+
 		public ICommand NewNoteCommand { get; private set; }
 		public ICommand ArchiveNoteCommand { get; private set; }
+		public ICommand RefreshCommand { get; private set; }
+		public bool IsRefreshing
+		{
+			get => _isRefreshing;
+			set => SetProperty(ref _isRefreshing, value);
+		}
 
 		public MyNotesViewModel() : base()
 		{
+			_dBService = DependencyService.Get<IDBService>();
+
 			NewNoteCommand = new Command(NewNoteAsync);
 			ArchiveNoteCommand = new Command<Note>(ArchiveNoteAsync);
+			RefreshCommand = new Command(RefreshAsync);
 
 			var n1 = new Note()
 			{
@@ -55,9 +68,9 @@ namespace NotesAndReminders.ViewModels
 				LastEdited = DateTime.UtcNow
 			};
 
-			Notes.Add(n1);
+			/*Notes.Add(n1);
 			Notes.Add(n2);
-			Notes.Add(n3);
+			Notes.Add(n3);*/
 		}
 
 		public override async void OnAppearing()
@@ -71,7 +84,14 @@ namespace NotesAndReminders.ViewModels
 		{
 			await base.ReloadDataAsync();
 
+			IsRefreshing = true;
 
+			await _dBService.GetAllNotesAsync(notes =>
+			{
+				notes.ForEach(note => Notes.Add(note as Note));
+				OnPropertyChanged(nameof(Notes));
+				IsRefreshing = false;
+			});
 		}
 
 		private async void NewNoteAsync()
@@ -82,6 +102,11 @@ namespace NotesAndReminders.ViewModels
 		private async void ArchiveNoteAsync(Note note)
 		{
 
+		}
+
+		private async void RefreshAsync()
+		{
+			await ReloadDataAsync();
 		}
 	}
 }

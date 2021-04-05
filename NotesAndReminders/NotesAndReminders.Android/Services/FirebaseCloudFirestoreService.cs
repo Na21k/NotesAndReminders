@@ -139,7 +139,7 @@ namespace NotesAndReminders.Droid.Services
 		{
 			try
 			{
-				await _db.Collection("NotesTypes").Get().AddOnCompleteListener(new OnCompleteListListener<Note>(onNotesTypeRecievedCallback));
+				await _db.Collection("NotesTypes").Get().AddOnCompleteListener(new OnCompleteListListener<NoteType>(onNotesTypeRecievedCallback));
 			}
 			catch (Exception ex)
 			{

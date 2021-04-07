@@ -25,7 +25,253 @@ namespace NotesAndReminders.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::Plugin.CloudFirestore.Resource.Attribute.alpha = global::NotesAndReminders.Droid.Resource.Attribute.alpha;
+			global::Plugin.CloudFirestore.Resource.Attribute.buttonSize = global::NotesAndReminders.Droid.Resource.Attribute.buttonSize;
+			global::Plugin.CloudFirestore.Resource.Attribute.circleCrop = global::NotesAndReminders.Droid.Resource.Attribute.circleCrop;
+			global::Plugin.CloudFirestore.Resource.Attribute.colorScheme = global::NotesAndReminders.Droid.Resource.Attribute.colorScheme;
+			global::Plugin.CloudFirestore.Resource.Attribute.font = global::NotesAndReminders.Droid.Resource.Attribute.font;
+			global::Plugin.CloudFirestore.Resource.Attribute.fontProviderAuthority = global::NotesAndReminders.Droid.Resource.Attribute.fontProviderAuthority;
+			global::Plugin.CloudFirestore.Resource.Attribute.fontProviderCerts = global::NotesAndReminders.Droid.Resource.Attribute.fontProviderCerts;
+			global::Plugin.CloudFirestore.Resource.Attribute.fontProviderFetchStrategy = global::NotesAndReminders.Droid.Resource.Attribute.fontProviderFetchStrategy;
+			global::Plugin.CloudFirestore.Resource.Attribute.fontProviderFetchTimeout = global::NotesAndReminders.Droid.Resource.Attribute.fontProviderFetchTimeout;
+			global::Plugin.CloudFirestore.Resource.Attribute.fontProviderPackage = global::NotesAndReminders.Droid.Resource.Attribute.fontProviderPackage;
+			global::Plugin.CloudFirestore.Resource.Attribute.fontProviderQuery = global::NotesAndReminders.Droid.Resource.Attribute.fontProviderQuery;
+			global::Plugin.CloudFirestore.Resource.Attribute.fontStyle = global::NotesAndReminders.Droid.Resource.Attribute.fontStyle;
+			global::Plugin.CloudFirestore.Resource.Attribute.fontVariationSettings = global::NotesAndReminders.Droid.Resource.Attribute.fontVariationSettings;
+			global::Plugin.CloudFirestore.Resource.Attribute.fontWeight = global::NotesAndReminders.Droid.Resource.Attribute.fontWeight;
+			global::Plugin.CloudFirestore.Resource.Attribute.imageAspectRatio = global::NotesAndReminders.Droid.Resource.Attribute.imageAspectRatio;
+			global::Plugin.CloudFirestore.Resource.Attribute.imageAspectRatioAdjust = global::NotesAndReminders.Droid.Resource.Attribute.imageAspectRatioAdjust;
+			global::Plugin.CloudFirestore.Resource.Attribute.scopeUris = global::NotesAndReminders.Droid.Resource.Attribute.scopeUris;
+			global::Plugin.CloudFirestore.Resource.Attribute.ttcIndex = global::NotesAndReminders.Droid.Resource.Attribute.ttcIndex;
+			global::Plugin.CloudFirestore.Resource.Color.common_google_signin_btn_text_dark = global::NotesAndReminders.Droid.Resource.Color.common_google_signin_btn_text_dark;
+			global::Plugin.CloudFirestore.Resource.Color.common_google_signin_btn_text_dark_default = global::NotesAndReminders.Droid.Resource.Color.common_google_signin_btn_text_dark_default;
+			global::Plugin.CloudFirestore.Resource.Color.common_google_signin_btn_text_dark_disabled = global::NotesAndReminders.Droid.Resource.Color.common_google_signin_btn_text_dark_disabled;
+			global::Plugin.CloudFirestore.Resource.Color.common_google_signin_btn_text_dark_focused = global::NotesAndReminders.Droid.Resource.Color.common_google_signin_btn_text_dark_focused;
+			global::Plugin.CloudFirestore.Resource.Color.common_google_signin_btn_text_dark_pressed = global::NotesAndReminders.Droid.Resource.Color.common_google_signin_btn_text_dark_pressed;
+			global::Plugin.CloudFirestore.Resource.Color.common_google_signin_btn_text_light = global::NotesAndReminders.Droid.Resource.Color.common_google_signin_btn_text_light;
+			global::Plugin.CloudFirestore.Resource.Color.common_google_signin_btn_text_light_default = global::NotesAndReminders.Droid.Resource.Color.common_google_signin_btn_text_light_default;
+			global::Plugin.CloudFirestore.Resource.Color.common_google_signin_btn_text_light_disabled = global::NotesAndReminders.Droid.Resource.Color.common_google_signin_btn_text_light_disabled;
+			global::Plugin.CloudFirestore.Resource.Color.common_google_signin_btn_text_light_focused = global::NotesAndReminders.Droid.Resource.Color.common_google_signin_btn_text_light_focused;
+			global::Plugin.CloudFirestore.Resource.Color.common_google_signin_btn_text_light_pressed = global::NotesAndReminders.Droid.Resource.Color.common_google_signin_btn_text_light_pressed;
+			global::Plugin.CloudFirestore.Resource.Color.common_google_signin_btn_tint = global::NotesAndReminders.Droid.Resource.Color.common_google_signin_btn_tint;
+			global::Plugin.CloudFirestore.Resource.Color.notification_action_color_filter = global::NotesAndReminders.Droid.Resource.Color.notification_action_color_filter;
+			global::Plugin.CloudFirestore.Resource.Color.notification_icon_bg_color = global::NotesAndReminders.Droid.Resource.Color.notification_icon_bg_color;
+			global::Plugin.CloudFirestore.Resource.Color.ripple_material_light = global::NotesAndReminders.Droid.Resource.Color.ripple_material_light;
+			global::Plugin.CloudFirestore.Resource.Color.secondary_text_default_material_light = global::NotesAndReminders.Droid.Resource.Color.secondary_text_default_material_light;
+			global::Plugin.CloudFirestore.Resource.Dimension.compat_button_inset_horizontal_material = global::NotesAndReminders.Droid.Resource.Dimension.compat_button_inset_horizontal_material;
+			global::Plugin.CloudFirestore.Resource.Dimension.compat_button_inset_vertical_material = global::NotesAndReminders.Droid.Resource.Dimension.compat_button_inset_vertical_material;
+			global::Plugin.CloudFirestore.Resource.Dimension.compat_button_padding_horizontal_material = global::NotesAndReminders.Droid.Resource.Dimension.compat_button_padding_horizontal_material;
+			global::Plugin.CloudFirestore.Resource.Dimension.compat_button_padding_vertical_material = global::NotesAndReminders.Droid.Resource.Dimension.compat_button_padding_vertical_material;
+			global::Plugin.CloudFirestore.Resource.Dimension.compat_control_corner_material = global::NotesAndReminders.Droid.Resource.Dimension.compat_control_corner_material;
+			global::Plugin.CloudFirestore.Resource.Dimension.compat_notification_large_icon_max_height = global::NotesAndReminders.Droid.Resource.Dimension.compat_notification_large_icon_max_height;
+			global::Plugin.CloudFirestore.Resource.Dimension.compat_notification_large_icon_max_width = global::NotesAndReminders.Droid.Resource.Dimension.compat_notification_large_icon_max_width;
+			global::Plugin.CloudFirestore.Resource.Dimension.notification_action_icon_size = global::NotesAndReminders.Droid.Resource.Dimension.notification_action_icon_size;
+			global::Plugin.CloudFirestore.Resource.Dimension.notification_action_text_size = global::NotesAndReminders.Droid.Resource.Dimension.notification_action_text_size;
+			global::Plugin.CloudFirestore.Resource.Dimension.notification_big_circle_margin = global::NotesAndReminders.Droid.Resource.Dimension.notification_big_circle_margin;
+			global::Plugin.CloudFirestore.Resource.Dimension.notification_content_margin_start = global::NotesAndReminders.Droid.Resource.Dimension.notification_content_margin_start;
+			global::Plugin.CloudFirestore.Resource.Dimension.notification_large_icon_height = global::NotesAndReminders.Droid.Resource.Dimension.notification_large_icon_height;
+			global::Plugin.CloudFirestore.Resource.Dimension.notification_large_icon_width = global::NotesAndReminders.Droid.Resource.Dimension.notification_large_icon_width;
+			global::Plugin.CloudFirestore.Resource.Dimension.notification_main_column_padding_top = global::NotesAndReminders.Droid.Resource.Dimension.notification_main_column_padding_top;
+			global::Plugin.CloudFirestore.Resource.Dimension.notification_media_narrow_margin = global::NotesAndReminders.Droid.Resource.Dimension.notification_media_narrow_margin;
+			global::Plugin.CloudFirestore.Resource.Dimension.notification_right_icon_size = global::NotesAndReminders.Droid.Resource.Dimension.notification_right_icon_size;
+			global::Plugin.CloudFirestore.Resource.Dimension.notification_right_side_padding_top = global::NotesAndReminders.Droid.Resource.Dimension.notification_right_side_padding_top;
+			global::Plugin.CloudFirestore.Resource.Dimension.notification_small_icon_background_padding = global::NotesAndReminders.Droid.Resource.Dimension.notification_small_icon_background_padding;
+			global::Plugin.CloudFirestore.Resource.Dimension.notification_small_icon_size_as_large = global::NotesAndReminders.Droid.Resource.Dimension.notification_small_icon_size_as_large;
+			global::Plugin.CloudFirestore.Resource.Dimension.notification_subtext_size = global::NotesAndReminders.Droid.Resource.Dimension.notification_subtext_size;
+			global::Plugin.CloudFirestore.Resource.Dimension.notification_top_pad = global::NotesAndReminders.Droid.Resource.Dimension.notification_top_pad;
+			global::Plugin.CloudFirestore.Resource.Dimension.notification_top_pad_large_text = global::NotesAndReminders.Droid.Resource.Dimension.notification_top_pad_large_text;
+			global::Plugin.CloudFirestore.Resource.Drawable.common_full_open_on_phone = global::NotesAndReminders.Droid.Resource.Drawable.common_full_open_on_phone;
+			global::Plugin.CloudFirestore.Resource.Drawable.common_google_signin_btn_icon_dark = global::NotesAndReminders.Droid.Resource.Drawable.common_google_signin_btn_icon_dark;
+			global::Plugin.CloudFirestore.Resource.Drawable.common_google_signin_btn_icon_dark_focused = global::NotesAndReminders.Droid.Resource.Drawable.common_google_signin_btn_icon_dark_focused;
+			global::Plugin.CloudFirestore.Resource.Drawable.common_google_signin_btn_icon_dark_normal = global::NotesAndReminders.Droid.Resource.Drawable.common_google_signin_btn_icon_dark_normal;
+			global::Plugin.CloudFirestore.Resource.Drawable.common_google_signin_btn_icon_dark_normal_background = global::NotesAndReminders.Droid.Resource.Drawable.common_google_signin_btn_icon_dark_normal_background;
+			global::Plugin.CloudFirestore.Resource.Drawable.common_google_signin_btn_icon_disabled = global::NotesAndReminders.Droid.Resource.Drawable.common_google_signin_btn_icon_disabled;
+			global::Plugin.CloudFirestore.Resource.Drawable.common_google_signin_btn_icon_light = global::NotesAndReminders.Droid.Resource.Drawable.common_google_signin_btn_icon_light;
+			global::Plugin.CloudFirestore.Resource.Drawable.common_google_signin_btn_icon_light_focused = global::NotesAndReminders.Droid.Resource.Drawable.common_google_signin_btn_icon_light_focused;
+			global::Plugin.CloudFirestore.Resource.Drawable.common_google_signin_btn_icon_light_normal = global::NotesAndReminders.Droid.Resource.Drawable.common_google_signin_btn_icon_light_normal;
+			global::Plugin.CloudFirestore.Resource.Drawable.common_google_signin_btn_icon_light_normal_background = global::NotesAndReminders.Droid.Resource.Drawable.common_google_signin_btn_icon_light_normal_background;
+			global::Plugin.CloudFirestore.Resource.Drawable.common_google_signin_btn_text_dark = global::NotesAndReminders.Droid.Resource.Drawable.common_google_signin_btn_text_dark;
+			global::Plugin.CloudFirestore.Resource.Drawable.common_google_signin_btn_text_dark_focused = global::NotesAndReminders.Droid.Resource.Drawable.common_google_signin_btn_text_dark_focused;
+			global::Plugin.CloudFirestore.Resource.Drawable.common_google_signin_btn_text_dark_normal = global::NotesAndReminders.Droid.Resource.Drawable.common_google_signin_btn_text_dark_normal;
+			global::Plugin.CloudFirestore.Resource.Drawable.common_google_signin_btn_text_dark_normal_background = global::NotesAndReminders.Droid.Resource.Drawable.common_google_signin_btn_text_dark_normal_background;
+			global::Plugin.CloudFirestore.Resource.Drawable.common_google_signin_btn_text_disabled = global::NotesAndReminders.Droid.Resource.Drawable.common_google_signin_btn_text_disabled;
+			global::Plugin.CloudFirestore.Resource.Drawable.common_google_signin_btn_text_light = global::NotesAndReminders.Droid.Resource.Drawable.common_google_signin_btn_text_light;
+			global::Plugin.CloudFirestore.Resource.Drawable.common_google_signin_btn_text_light_focused = global::NotesAndReminders.Droid.Resource.Drawable.common_google_signin_btn_text_light_focused;
+			global::Plugin.CloudFirestore.Resource.Drawable.common_google_signin_btn_text_light_normal = global::NotesAndReminders.Droid.Resource.Drawable.common_google_signin_btn_text_light_normal;
+			global::Plugin.CloudFirestore.Resource.Drawable.common_google_signin_btn_text_light_normal_background = global::NotesAndReminders.Droid.Resource.Drawable.common_google_signin_btn_text_light_normal_background;
+			global::Plugin.CloudFirestore.Resource.Drawable.googleg_disabled_color_18 = global::NotesAndReminders.Droid.Resource.Drawable.googleg_disabled_color_18;
+			global::Plugin.CloudFirestore.Resource.Drawable.googleg_standard_color_18 = global::NotesAndReminders.Droid.Resource.Drawable.googleg_standard_color_18;
+			global::Plugin.CloudFirestore.Resource.Drawable.notification_action_background = global::NotesAndReminders.Droid.Resource.Drawable.notification_action_background;
+			global::Plugin.CloudFirestore.Resource.Drawable.notification_bg = global::NotesAndReminders.Droid.Resource.Drawable.notification_bg;
+			global::Plugin.CloudFirestore.Resource.Drawable.notification_bg_low = global::NotesAndReminders.Droid.Resource.Drawable.notification_bg_low;
+			global::Plugin.CloudFirestore.Resource.Drawable.notification_bg_low_normal = global::NotesAndReminders.Droid.Resource.Drawable.notification_bg_low_normal;
+			global::Plugin.CloudFirestore.Resource.Drawable.notification_bg_low_pressed = global::NotesAndReminders.Droid.Resource.Drawable.notification_bg_low_pressed;
+			global::Plugin.CloudFirestore.Resource.Drawable.notification_bg_normal = global::NotesAndReminders.Droid.Resource.Drawable.notification_bg_normal;
+			global::Plugin.CloudFirestore.Resource.Drawable.notification_bg_normal_pressed = global::NotesAndReminders.Droid.Resource.Drawable.notification_bg_normal_pressed;
+			global::Plugin.CloudFirestore.Resource.Drawable.notification_icon_background = global::NotesAndReminders.Droid.Resource.Drawable.notification_icon_background;
+			global::Plugin.CloudFirestore.Resource.Drawable.notification_template_icon_bg = global::NotesAndReminders.Droid.Resource.Drawable.notification_template_icon_bg;
+			global::Plugin.CloudFirestore.Resource.Drawable.notification_template_icon_low_bg = global::NotesAndReminders.Droid.Resource.Drawable.notification_template_icon_low_bg;
+			global::Plugin.CloudFirestore.Resource.Drawable.notification_tile_bg = global::NotesAndReminders.Droid.Resource.Drawable.notification_tile_bg;
+			global::Plugin.CloudFirestore.Resource.Drawable.notify_panel_notification_icon_bg = global::NotesAndReminders.Droid.Resource.Drawable.notify_panel_notification_icon_bg;
+			global::Plugin.CloudFirestore.Resource.Id.accessibility_action_clickable_span = global::NotesAndReminders.Droid.Resource.Id.accessibility_action_clickable_span;
+			global::Plugin.CloudFirestore.Resource.Id.accessibility_custom_action_0 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_0;
+			global::Plugin.CloudFirestore.Resource.Id.accessibility_custom_action_1 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_1;
+			global::Plugin.CloudFirestore.Resource.Id.accessibility_custom_action_10 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_10;
+			global::Plugin.CloudFirestore.Resource.Id.accessibility_custom_action_11 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_11;
+			global::Plugin.CloudFirestore.Resource.Id.accessibility_custom_action_12 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_12;
+			global::Plugin.CloudFirestore.Resource.Id.accessibility_custom_action_13 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_13;
+			global::Plugin.CloudFirestore.Resource.Id.accessibility_custom_action_14 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_14;
+			global::Plugin.CloudFirestore.Resource.Id.accessibility_custom_action_15 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_15;
+			global::Plugin.CloudFirestore.Resource.Id.accessibility_custom_action_16 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_16;
+			global::Plugin.CloudFirestore.Resource.Id.accessibility_custom_action_17 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_17;
+			global::Plugin.CloudFirestore.Resource.Id.accessibility_custom_action_18 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_18;
+			global::Plugin.CloudFirestore.Resource.Id.accessibility_custom_action_19 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_19;
+			global::Plugin.CloudFirestore.Resource.Id.accessibility_custom_action_2 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_2;
+			global::Plugin.CloudFirestore.Resource.Id.accessibility_custom_action_20 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_20;
+			global::Plugin.CloudFirestore.Resource.Id.accessibility_custom_action_21 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_21;
+			global::Plugin.CloudFirestore.Resource.Id.accessibility_custom_action_22 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_22;
+			global::Plugin.CloudFirestore.Resource.Id.accessibility_custom_action_23 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_23;
+			global::Plugin.CloudFirestore.Resource.Id.accessibility_custom_action_24 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_24;
+			global::Plugin.CloudFirestore.Resource.Id.accessibility_custom_action_25 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_25;
+			global::Plugin.CloudFirestore.Resource.Id.accessibility_custom_action_26 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_26;
+			global::Plugin.CloudFirestore.Resource.Id.accessibility_custom_action_27 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_27;
+			global::Plugin.CloudFirestore.Resource.Id.accessibility_custom_action_28 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_28;
+			global::Plugin.CloudFirestore.Resource.Id.accessibility_custom_action_29 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_29;
+			global::Plugin.CloudFirestore.Resource.Id.accessibility_custom_action_3 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_3;
+			global::Plugin.CloudFirestore.Resource.Id.accessibility_custom_action_30 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_30;
+			global::Plugin.CloudFirestore.Resource.Id.accessibility_custom_action_31 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_31;
+			global::Plugin.CloudFirestore.Resource.Id.accessibility_custom_action_4 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_4;
+			global::Plugin.CloudFirestore.Resource.Id.accessibility_custom_action_5 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_5;
+			global::Plugin.CloudFirestore.Resource.Id.accessibility_custom_action_6 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_6;
+			global::Plugin.CloudFirestore.Resource.Id.accessibility_custom_action_7 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_7;
+			global::Plugin.CloudFirestore.Resource.Id.accessibility_custom_action_8 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_8;
+			global::Plugin.CloudFirestore.Resource.Id.accessibility_custom_action_9 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_9;
+			global::Plugin.CloudFirestore.Resource.Id.actions = global::NotesAndReminders.Droid.Resource.Id.actions;
+			global::Plugin.CloudFirestore.Resource.Id.action_container = global::NotesAndReminders.Droid.Resource.Id.action_container;
+			global::Plugin.CloudFirestore.Resource.Id.action_divider = global::NotesAndReminders.Droid.Resource.Id.action_divider;
+			global::Plugin.CloudFirestore.Resource.Id.action_image = global::NotesAndReminders.Droid.Resource.Id.action_image;
+			global::Plugin.CloudFirestore.Resource.Id.action_text = global::NotesAndReminders.Droid.Resource.Id.action_text;
+			global::Plugin.CloudFirestore.Resource.Id.adjust_height = global::NotesAndReminders.Droid.Resource.Id.adjust_height;
+			global::Plugin.CloudFirestore.Resource.Id.adjust_width = global::NotesAndReminders.Droid.Resource.Id.adjust_width;
+			global::Plugin.CloudFirestore.Resource.Id.async = global::NotesAndReminders.Droid.Resource.Id.async;
+			global::Plugin.CloudFirestore.Resource.Id.auto = global::NotesAndReminders.Droid.Resource.Id.auto;
+			global::Plugin.CloudFirestore.Resource.Id.blocking = global::NotesAndReminders.Droid.Resource.Id.blocking;
+			global::Plugin.CloudFirestore.Resource.Id.chronometer = global::NotesAndReminders.Droid.Resource.Id.chronometer;
+			global::Plugin.CloudFirestore.Resource.Id.dark = global::NotesAndReminders.Droid.Resource.Id.dark;
+			global::Plugin.CloudFirestore.Resource.Id.dialog_button = global::NotesAndReminders.Droid.Resource.Id.dialog_button;
+			global::Plugin.CloudFirestore.Resource.Id.forever = global::NotesAndReminders.Droid.Resource.Id.forever;
+			global::Plugin.CloudFirestore.Resource.Id.icon = global::NotesAndReminders.Droid.Resource.Id.icon;
+			global::Plugin.CloudFirestore.Resource.Id.icon_group = global::NotesAndReminders.Droid.Resource.Id.icon_group;
+			global::Plugin.CloudFirestore.Resource.Id.icon_only = global::NotesAndReminders.Droid.Resource.Id.icon_only;
+			global::Plugin.CloudFirestore.Resource.Id.info = global::NotesAndReminders.Droid.Resource.Id.info;
+			global::Plugin.CloudFirestore.Resource.Id.italic = global::NotesAndReminders.Droid.Resource.Id.italic;
+			global::Plugin.CloudFirestore.Resource.Id.light = global::NotesAndReminders.Droid.Resource.Id.light;
+			global::Plugin.CloudFirestore.Resource.Id.line1 = global::NotesAndReminders.Droid.Resource.Id.line1;
+			global::Plugin.CloudFirestore.Resource.Id.line3 = global::NotesAndReminders.Droid.Resource.Id.line3;
+			global::Plugin.CloudFirestore.Resource.Id.none = global::NotesAndReminders.Droid.Resource.Id.none;
+			global::Plugin.CloudFirestore.Resource.Id.normal = global::NotesAndReminders.Droid.Resource.Id.normal;
+			global::Plugin.CloudFirestore.Resource.Id.notification_background = global::NotesAndReminders.Droid.Resource.Id.notification_background;
+			global::Plugin.CloudFirestore.Resource.Id.notification_main_column = global::NotesAndReminders.Droid.Resource.Id.notification_main_column;
+			global::Plugin.CloudFirestore.Resource.Id.notification_main_column_container = global::NotesAndReminders.Droid.Resource.Id.notification_main_column_container;
+			global::Plugin.CloudFirestore.Resource.Id.right_icon = global::NotesAndReminders.Droid.Resource.Id.right_icon;
+			global::Plugin.CloudFirestore.Resource.Id.right_side = global::NotesAndReminders.Droid.Resource.Id.right_side;
+			global::Plugin.CloudFirestore.Resource.Id.standard = global::NotesAndReminders.Droid.Resource.Id.standard;
+			global::Plugin.CloudFirestore.Resource.Id.tag_accessibility_actions = global::NotesAndReminders.Droid.Resource.Id.tag_accessibility_actions;
+			global::Plugin.CloudFirestore.Resource.Id.tag_accessibility_clickable_spans = global::NotesAndReminders.Droid.Resource.Id.tag_accessibility_clickable_spans;
+			global::Plugin.CloudFirestore.Resource.Id.tag_accessibility_heading = global::NotesAndReminders.Droid.Resource.Id.tag_accessibility_heading;
+			global::Plugin.CloudFirestore.Resource.Id.tag_accessibility_pane_title = global::NotesAndReminders.Droid.Resource.Id.tag_accessibility_pane_title;
+			global::Plugin.CloudFirestore.Resource.Id.tag_screen_reader_focusable = global::NotesAndReminders.Droid.Resource.Id.tag_screen_reader_focusable;
+			global::Plugin.CloudFirestore.Resource.Id.tag_transition_group = global::NotesAndReminders.Droid.Resource.Id.tag_transition_group;
+			global::Plugin.CloudFirestore.Resource.Id.tag_unhandled_key_event_manager = global::NotesAndReminders.Droid.Resource.Id.tag_unhandled_key_event_manager;
+			global::Plugin.CloudFirestore.Resource.Id.tag_unhandled_key_listeners = global::NotesAndReminders.Droid.Resource.Id.tag_unhandled_key_listeners;
+			global::Plugin.CloudFirestore.Resource.Id.text = global::NotesAndReminders.Droid.Resource.Id.text;
+			global::Plugin.CloudFirestore.Resource.Id.text2 = global::NotesAndReminders.Droid.Resource.Id.text2;
+			global::Plugin.CloudFirestore.Resource.Id.time = global::NotesAndReminders.Droid.Resource.Id.time;
+			global::Plugin.CloudFirestore.Resource.Id.title = global::NotesAndReminders.Droid.Resource.Id.title;
+			global::Plugin.CloudFirestore.Resource.Id.wide = global::NotesAndReminders.Droid.Resource.Id.wide;
+			global::Plugin.CloudFirestore.Resource.Integer.google_play_services_version = global::NotesAndReminders.Droid.Resource.Integer.google_play_services_version;
+			global::Plugin.CloudFirestore.Resource.Integer.status_bar_notification_info_maxnum = global::NotesAndReminders.Droid.Resource.Integer.status_bar_notification_info_maxnum;
+			global::Plugin.CloudFirestore.Resource.Layout.custom_dialog = global::NotesAndReminders.Droid.Resource.Layout.custom_dialog;
+			global::Plugin.CloudFirestore.Resource.Layout.notification_action = global::NotesAndReminders.Droid.Resource.Layout.notification_action;
+			global::Plugin.CloudFirestore.Resource.Layout.notification_action_tombstone = global::NotesAndReminders.Droid.Resource.Layout.notification_action_tombstone;
+			global::Plugin.CloudFirestore.Resource.Layout.notification_template_custom_big = global::NotesAndReminders.Droid.Resource.Layout.notification_template_custom_big;
+			global::Plugin.CloudFirestore.Resource.Layout.notification_template_icon_group = global::NotesAndReminders.Droid.Resource.Layout.notification_template_icon_group;
+			global::Plugin.CloudFirestore.Resource.Layout.notification_template_part_chronometer = global::NotesAndReminders.Droid.Resource.Layout.notification_template_part_chronometer;
+			global::Plugin.CloudFirestore.Resource.Layout.notification_template_part_time = global::NotesAndReminders.Droid.Resource.Layout.notification_template_part_time;
+			global::Plugin.CloudFirestore.Resource.String.common_google_play_services_enable_button = global::NotesAndReminders.Droid.Resource.String.common_google_play_services_enable_button;
+			global::Plugin.CloudFirestore.Resource.String.common_google_play_services_enable_text = global::NotesAndReminders.Droid.Resource.String.common_google_play_services_enable_text;
+			global::Plugin.CloudFirestore.Resource.String.common_google_play_services_enable_title = global::NotesAndReminders.Droid.Resource.String.common_google_play_services_enable_title;
+			global::Plugin.CloudFirestore.Resource.String.common_google_play_services_install_button = global::NotesAndReminders.Droid.Resource.String.common_google_play_services_install_button;
+			global::Plugin.CloudFirestore.Resource.String.common_google_play_services_install_text = global::NotesAndReminders.Droid.Resource.String.common_google_play_services_install_text;
+			global::Plugin.CloudFirestore.Resource.String.common_google_play_services_install_title = global::NotesAndReminders.Droid.Resource.String.common_google_play_services_install_title;
+			global::Plugin.CloudFirestore.Resource.String.common_google_play_services_notification_channel_name = global::NotesAndReminders.Droid.Resource.String.common_google_play_services_notification_channel_name;
+			global::Plugin.CloudFirestore.Resource.String.common_google_play_services_notification_ticker = global::NotesAndReminders.Droid.Resource.String.common_google_play_services_notification_ticker;
+			global::Plugin.CloudFirestore.Resource.String.common_google_play_services_unknown_issue = global::NotesAndReminders.Droid.Resource.String.common_google_play_services_unknown_issue;
+			global::Plugin.CloudFirestore.Resource.String.common_google_play_services_unsupported_text = global::NotesAndReminders.Droid.Resource.String.common_google_play_services_unsupported_text;
+			global::Plugin.CloudFirestore.Resource.String.common_google_play_services_update_button = global::NotesAndReminders.Droid.Resource.String.common_google_play_services_update_button;
+			global::Plugin.CloudFirestore.Resource.String.common_google_play_services_update_text = global::NotesAndReminders.Droid.Resource.String.common_google_play_services_update_text;
+			global::Plugin.CloudFirestore.Resource.String.common_google_play_services_update_title = global::NotesAndReminders.Droid.Resource.String.common_google_play_services_update_title;
+			global::Plugin.CloudFirestore.Resource.String.common_google_play_services_updating_text = global::NotesAndReminders.Droid.Resource.String.common_google_play_services_updating_text;
+			global::Plugin.CloudFirestore.Resource.String.common_google_play_services_wear_update_text = global::NotesAndReminders.Droid.Resource.String.common_google_play_services_wear_update_text;
+			global::Plugin.CloudFirestore.Resource.String.common_open_on_phone = global::NotesAndReminders.Droid.Resource.String.common_open_on_phone;
+			global::Plugin.CloudFirestore.Resource.String.common_signin_button_text = global::NotesAndReminders.Droid.Resource.String.common_signin_button_text;
+			global::Plugin.CloudFirestore.Resource.String.common_signin_button_text_long = global::NotesAndReminders.Droid.Resource.String.common_signin_button_text_long;
+			global::Plugin.CloudFirestore.Resource.String.status_bar_notification_info_overflow = global::NotesAndReminders.Droid.Resource.String.status_bar_notification_info_overflow;
+			global::Plugin.CloudFirestore.Resource.Style.TextAppearance_Compat_Notification = global::NotesAndReminders.Droid.Resource.Style.TextAppearance_Compat_Notification;
+			global::Plugin.CloudFirestore.Resource.Style.TextAppearance_Compat_Notification_Info = global::NotesAndReminders.Droid.Resource.Style.TextAppearance_Compat_Notification_Info;
+			global::Plugin.CloudFirestore.Resource.Style.TextAppearance_Compat_Notification_Line2 = global::NotesAndReminders.Droid.Resource.Style.TextAppearance_Compat_Notification_Line2;
+			global::Plugin.CloudFirestore.Resource.Style.TextAppearance_Compat_Notification_Time = global::NotesAndReminders.Droid.Resource.Style.TextAppearance_Compat_Notification_Time;
+			global::Plugin.CloudFirestore.Resource.Style.TextAppearance_Compat_Notification_Title = global::NotesAndReminders.Droid.Resource.Style.TextAppearance_Compat_Notification_Title;
+			global::Plugin.CloudFirestore.Resource.Style.Widget_Compat_NotificationActionContainer = global::NotesAndReminders.Droid.Resource.Style.Widget_Compat_NotificationActionContainer;
+			global::Plugin.CloudFirestore.Resource.Style.Widget_Compat_NotificationActionText = global::NotesAndReminders.Droid.Resource.Style.Widget_Compat_NotificationActionText;
+			global::Plugin.CloudFirestore.Resource.Styleable.ColorStateListItem = global::NotesAndReminders.Droid.Resource.Styleable.ColorStateListItem;
+			global::Plugin.CloudFirestore.Resource.Styleable.ColorStateListItem_alpha = global::NotesAndReminders.Droid.Resource.Styleable.ColorStateListItem_alpha;
+			global::Plugin.CloudFirestore.Resource.Styleable.ColorStateListItem_android_alpha = global::NotesAndReminders.Droid.Resource.Styleable.ColorStateListItem_android_alpha;
+			global::Plugin.CloudFirestore.Resource.Styleable.ColorStateListItem_android_color = global::NotesAndReminders.Droid.Resource.Styleable.ColorStateListItem_android_color;
+			global::Plugin.CloudFirestore.Resource.Styleable.FontFamily = global::NotesAndReminders.Droid.Resource.Styleable.FontFamily;
+			global::Plugin.CloudFirestore.Resource.Styleable.FontFamilyFont = global::NotesAndReminders.Droid.Resource.Styleable.FontFamilyFont;
+			global::Plugin.CloudFirestore.Resource.Styleable.FontFamilyFont_android_font = global::NotesAndReminders.Droid.Resource.Styleable.FontFamilyFont_android_font;
+			global::Plugin.CloudFirestore.Resource.Styleable.FontFamilyFont_android_fontStyle = global::NotesAndReminders.Droid.Resource.Styleable.FontFamilyFont_android_fontStyle;
+			global::Plugin.CloudFirestore.Resource.Styleable.FontFamilyFont_android_fontVariationSettings = global::NotesAndReminders.Droid.Resource.Styleable.FontFamilyFont_android_fontVariationSettings;
+			global::Plugin.CloudFirestore.Resource.Styleable.FontFamilyFont_android_fontWeight = global::NotesAndReminders.Droid.Resource.Styleable.FontFamilyFont_android_fontWeight;
+			global::Plugin.CloudFirestore.Resource.Styleable.FontFamilyFont_android_ttcIndex = global::NotesAndReminders.Droid.Resource.Styleable.FontFamilyFont_android_ttcIndex;
+			global::Plugin.CloudFirestore.Resource.Styleable.FontFamilyFont_font = global::NotesAndReminders.Droid.Resource.Styleable.FontFamilyFont_font;
+			global::Plugin.CloudFirestore.Resource.Styleable.FontFamilyFont_fontStyle = global::NotesAndReminders.Droid.Resource.Styleable.FontFamilyFont_fontStyle;
+			global::Plugin.CloudFirestore.Resource.Styleable.FontFamilyFont_fontVariationSettings = global::NotesAndReminders.Droid.Resource.Styleable.FontFamilyFont_fontVariationSettings;
+			global::Plugin.CloudFirestore.Resource.Styleable.FontFamilyFont_fontWeight = global::NotesAndReminders.Droid.Resource.Styleable.FontFamilyFont_fontWeight;
+			global::Plugin.CloudFirestore.Resource.Styleable.FontFamilyFont_ttcIndex = global::NotesAndReminders.Droid.Resource.Styleable.FontFamilyFont_ttcIndex;
+			global::Plugin.CloudFirestore.Resource.Styleable.FontFamily_fontProviderAuthority = global::NotesAndReminders.Droid.Resource.Styleable.FontFamily_fontProviderAuthority;
+			global::Plugin.CloudFirestore.Resource.Styleable.FontFamily_fontProviderCerts = global::NotesAndReminders.Droid.Resource.Styleable.FontFamily_fontProviderCerts;
+			global::Plugin.CloudFirestore.Resource.Styleable.FontFamily_fontProviderFetchStrategy = global::NotesAndReminders.Droid.Resource.Styleable.FontFamily_fontProviderFetchStrategy;
+			global::Plugin.CloudFirestore.Resource.Styleable.FontFamily_fontProviderFetchTimeout = global::NotesAndReminders.Droid.Resource.Styleable.FontFamily_fontProviderFetchTimeout;
+			global::Plugin.CloudFirestore.Resource.Styleable.FontFamily_fontProviderPackage = global::NotesAndReminders.Droid.Resource.Styleable.FontFamily_fontProviderPackage;
+			global::Plugin.CloudFirestore.Resource.Styleable.FontFamily_fontProviderQuery = global::NotesAndReminders.Droid.Resource.Styleable.FontFamily_fontProviderQuery;
+			global::Plugin.CloudFirestore.Resource.Styleable.GradientColor = global::NotesAndReminders.Droid.Resource.Styleable.GradientColor;
+			global::Plugin.CloudFirestore.Resource.Styleable.GradientColorItem = global::NotesAndReminders.Droid.Resource.Styleable.GradientColorItem;
+			global::Plugin.CloudFirestore.Resource.Styleable.GradientColorItem_android_color = global::NotesAndReminders.Droid.Resource.Styleable.GradientColorItem_android_color;
+			global::Plugin.CloudFirestore.Resource.Styleable.GradientColorItem_android_offset = global::NotesAndReminders.Droid.Resource.Styleable.GradientColorItem_android_offset;
+			global::Plugin.CloudFirestore.Resource.Styleable.GradientColor_android_centerColor = global::NotesAndReminders.Droid.Resource.Styleable.GradientColor_android_centerColor;
+			global::Plugin.CloudFirestore.Resource.Styleable.GradientColor_android_centerX = global::NotesAndReminders.Droid.Resource.Styleable.GradientColor_android_centerX;
+			global::Plugin.CloudFirestore.Resource.Styleable.GradientColor_android_centerY = global::NotesAndReminders.Droid.Resource.Styleable.GradientColor_android_centerY;
+			global::Plugin.CloudFirestore.Resource.Styleable.GradientColor_android_endColor = global::NotesAndReminders.Droid.Resource.Styleable.GradientColor_android_endColor;
+			global::Plugin.CloudFirestore.Resource.Styleable.GradientColor_android_endX = global::NotesAndReminders.Droid.Resource.Styleable.GradientColor_android_endX;
+			global::Plugin.CloudFirestore.Resource.Styleable.GradientColor_android_endY = global::NotesAndReminders.Droid.Resource.Styleable.GradientColor_android_endY;
+			global::Plugin.CloudFirestore.Resource.Styleable.GradientColor_android_gradientRadius = global::NotesAndReminders.Droid.Resource.Styleable.GradientColor_android_gradientRadius;
+			global::Plugin.CloudFirestore.Resource.Styleable.GradientColor_android_startColor = global::NotesAndReminders.Droid.Resource.Styleable.GradientColor_android_startColor;
+			global::Plugin.CloudFirestore.Resource.Styleable.GradientColor_android_startX = global::NotesAndReminders.Droid.Resource.Styleable.GradientColor_android_startX;
+			global::Plugin.CloudFirestore.Resource.Styleable.GradientColor_android_startY = global::NotesAndReminders.Droid.Resource.Styleable.GradientColor_android_startY;
+			global::Plugin.CloudFirestore.Resource.Styleable.GradientColor_android_tileMode = global::NotesAndReminders.Droid.Resource.Styleable.GradientColor_android_tileMode;
+			global::Plugin.CloudFirestore.Resource.Styleable.GradientColor_android_type = global::NotesAndReminders.Droid.Resource.Styleable.GradientColor_android_type;
+			global::Plugin.CloudFirestore.Resource.Styleable.LoadingImageView = global::NotesAndReminders.Droid.Resource.Styleable.LoadingImageView;
+			global::Plugin.CloudFirestore.Resource.Styleable.LoadingImageView_circleCrop = global::NotesAndReminders.Droid.Resource.Styleable.LoadingImageView_circleCrop;
+			global::Plugin.CloudFirestore.Resource.Styleable.LoadingImageView_imageAspectRatio = global::NotesAndReminders.Droid.Resource.Styleable.LoadingImageView_imageAspectRatio;
+			global::Plugin.CloudFirestore.Resource.Styleable.LoadingImageView_imageAspectRatioAdjust = global::NotesAndReminders.Droid.Resource.Styleable.LoadingImageView_imageAspectRatioAdjust;
+			global::Plugin.CloudFirestore.Resource.Styleable.SignInButton = global::NotesAndReminders.Droid.Resource.Styleable.SignInButton;
+			global::Plugin.CloudFirestore.Resource.Styleable.SignInButton_buttonSize = global::NotesAndReminders.Droid.Resource.Styleable.SignInButton_buttonSize;
+			global::Plugin.CloudFirestore.Resource.Styleable.SignInButton_colorScheme = global::NotesAndReminders.Droid.Resource.Styleable.SignInButton_colorScheme;
+			global::Plugin.CloudFirestore.Resource.Styleable.SignInButton_scopeUris = global::NotesAndReminders.Droid.Resource.Styleable.SignInButton_scopeUris;
 			global::Xamarin.Essentials.Resource.Attribute.alpha = global::NotesAndReminders.Droid.Resource.Attribute.alpha;
+			global::Xamarin.Essentials.Resource.Attribute.coordinatorLayoutStyle = global::NotesAndReminders.Droid.Resource.Attribute.coordinatorLayoutStyle;
 			global::Xamarin.Essentials.Resource.Attribute.font = global::NotesAndReminders.Droid.Resource.Attribute.font;
 			global::Xamarin.Essentials.Resource.Attribute.fontProviderAuthority = global::NotesAndReminders.Droid.Resource.Attribute.fontProviderAuthority;
 			global::Xamarin.Essentials.Resource.Attribute.fontProviderCerts = global::NotesAndReminders.Droid.Resource.Attribute.fontProviderCerts;
@@ -36,15 +282,23 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Essentials.Resource.Attribute.fontStyle = global::NotesAndReminders.Droid.Resource.Attribute.fontStyle;
 			global::Xamarin.Essentials.Resource.Attribute.fontVariationSettings = global::NotesAndReminders.Droid.Resource.Attribute.fontVariationSettings;
 			global::Xamarin.Essentials.Resource.Attribute.fontWeight = global::NotesAndReminders.Droid.Resource.Attribute.fontWeight;
+			global::Xamarin.Essentials.Resource.Attribute.keylines = global::NotesAndReminders.Droid.Resource.Attribute.keylines;
+			global::Xamarin.Essentials.Resource.Attribute.layout_anchor = global::NotesAndReminders.Droid.Resource.Attribute.layout_anchor;
+			global::Xamarin.Essentials.Resource.Attribute.layout_anchorGravity = global::NotesAndReminders.Droid.Resource.Attribute.layout_anchorGravity;
+			global::Xamarin.Essentials.Resource.Attribute.layout_behavior = global::NotesAndReminders.Droid.Resource.Attribute.layout_behavior;
+			global::Xamarin.Essentials.Resource.Attribute.layout_dodgeInsetEdges = global::NotesAndReminders.Droid.Resource.Attribute.layout_dodgeInsetEdges;
+			global::Xamarin.Essentials.Resource.Attribute.layout_insetEdge = global::NotesAndReminders.Droid.Resource.Attribute.layout_insetEdge;
+			global::Xamarin.Essentials.Resource.Attribute.layout_keyline = global::NotesAndReminders.Droid.Resource.Attribute.layout_keyline;
+			global::Xamarin.Essentials.Resource.Attribute.statusBarBackground = global::NotesAndReminders.Droid.Resource.Attribute.statusBarBackground;
 			global::Xamarin.Essentials.Resource.Attribute.ttcIndex = global::NotesAndReminders.Droid.Resource.Attribute.ttcIndex;
-			global::Xamarin.Essentials.Resource.Color.androidx_core_ripple_material_light = global::NotesAndReminders.Droid.Resource.Color.androidx_core_ripple_material_light;
-			global::Xamarin.Essentials.Resource.Color.androidx_core_secondary_text_default_material_light = global::NotesAndReminders.Droid.Resource.Color.androidx_core_secondary_text_default_material_light;
 			global::Xamarin.Essentials.Resource.Color.browser_actions_bg_grey = global::NotesAndReminders.Droid.Resource.Color.browser_actions_bg_grey;
 			global::Xamarin.Essentials.Resource.Color.browser_actions_divider_color = global::NotesAndReminders.Droid.Resource.Color.browser_actions_divider_color;
 			global::Xamarin.Essentials.Resource.Color.browser_actions_text_color = global::NotesAndReminders.Droid.Resource.Color.browser_actions_text_color;
 			global::Xamarin.Essentials.Resource.Color.browser_actions_title_color = global::NotesAndReminders.Droid.Resource.Color.browser_actions_title_color;
 			global::Xamarin.Essentials.Resource.Color.notification_action_color_filter = global::NotesAndReminders.Droid.Resource.Color.notification_action_color_filter;
 			global::Xamarin.Essentials.Resource.Color.notification_icon_bg_color = global::NotesAndReminders.Droid.Resource.Color.notification_icon_bg_color;
+			global::Xamarin.Essentials.Resource.Color.ripple_material_light = global::NotesAndReminders.Droid.Resource.Color.ripple_material_light;
+			global::Xamarin.Essentials.Resource.Color.secondary_text_default_material_light = global::NotesAndReminders.Droid.Resource.Color.secondary_text_default_material_light;
 			global::Xamarin.Essentials.Resource.Dimension.browser_actions_context_menu_max_width = global::NotesAndReminders.Droid.Resource.Dimension.browser_actions_context_menu_max_width;
 			global::Xamarin.Essentials.Resource.Dimension.browser_actions_context_menu_min_padding = global::NotesAndReminders.Droid.Resource.Dimension.browser_actions_context_menu_min_padding;
 			global::Xamarin.Essentials.Resource.Dimension.compat_button_inset_horizontal_material = global::NotesAndReminders.Droid.Resource.Dimension.compat_button_inset_horizontal_material;
@@ -81,71 +335,47 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Essentials.Resource.Drawable.notification_template_icon_low_bg = global::NotesAndReminders.Droid.Resource.Drawable.notification_template_icon_low_bg;
 			global::Xamarin.Essentials.Resource.Drawable.notification_tile_bg = global::NotesAndReminders.Droid.Resource.Drawable.notification_tile_bg;
 			global::Xamarin.Essentials.Resource.Drawable.notify_panel_notification_icon_bg = global::NotesAndReminders.Droid.Resource.Drawable.notify_panel_notification_icon_bg;
-			global::Xamarin.Essentials.Resource.Id.accessibility_action_clickable_span = global::NotesAndReminders.Droid.Resource.Id.accessibility_action_clickable_span;
-			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_0 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_0;
-			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_1 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_1;
-			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_10 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_10;
-			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_11 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_11;
-			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_12 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_12;
-			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_13 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_13;
-			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_14 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_14;
-			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_15 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_15;
-			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_16 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_16;
-			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_17 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_17;
-			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_18 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_18;
-			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_19 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_19;
-			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_2 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_2;
-			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_20 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_20;
-			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_21 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_21;
-			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_22 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_22;
-			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_23 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_23;
-			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_24 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_24;
-			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_25 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_25;
-			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_26 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_26;
-			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_27 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_27;
-			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_28 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_28;
-			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_29 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_29;
-			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_3 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_3;
-			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_30 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_30;
-			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_31 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_31;
-			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_4 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_4;
-			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_5 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_5;
-			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_6 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_6;
-			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_7 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_7;
-			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_8 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_8;
-			global::Xamarin.Essentials.Resource.Id.accessibility_custom_action_9 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_9;
 			global::Xamarin.Essentials.Resource.Id.actions = global::NotesAndReminders.Droid.Resource.Id.actions;
 			global::Xamarin.Essentials.Resource.Id.action_container = global::NotesAndReminders.Droid.Resource.Id.action_container;
 			global::Xamarin.Essentials.Resource.Id.action_divider = global::NotesAndReminders.Droid.Resource.Id.action_divider;
 			global::Xamarin.Essentials.Resource.Id.action_image = global::NotesAndReminders.Droid.Resource.Id.action_image;
 			global::Xamarin.Essentials.Resource.Id.action_text = global::NotesAndReminders.Droid.Resource.Id.action_text;
+			global::Xamarin.Essentials.Resource.Id.all = global::NotesAndReminders.Droid.Resource.Id.all;
 			global::Xamarin.Essentials.Resource.Id.async = global::NotesAndReminders.Droid.Resource.Id.async;
 			global::Xamarin.Essentials.Resource.Id.blocking = global::NotesAndReminders.Droid.Resource.Id.blocking;
+			global::Xamarin.Essentials.Resource.Id.bottom = global::NotesAndReminders.Droid.Resource.Id.bottom;
 			global::Xamarin.Essentials.Resource.Id.browser_actions_header_text = global::NotesAndReminders.Droid.Resource.Id.browser_actions_header_text;
 			global::Xamarin.Essentials.Resource.Id.browser_actions_menu_items = global::NotesAndReminders.Droid.Resource.Id.browser_actions_menu_items;
 			global::Xamarin.Essentials.Resource.Id.browser_actions_menu_item_icon = global::NotesAndReminders.Droid.Resource.Id.browser_actions_menu_item_icon;
 			global::Xamarin.Essentials.Resource.Id.browser_actions_menu_item_text = global::NotesAndReminders.Droid.Resource.Id.browser_actions_menu_item_text;
 			global::Xamarin.Essentials.Resource.Id.browser_actions_menu_view = global::NotesAndReminders.Droid.Resource.Id.browser_actions_menu_view;
+			global::Xamarin.Essentials.Resource.Id.center = global::NotesAndReminders.Droid.Resource.Id.center;
+			global::Xamarin.Essentials.Resource.Id.center_horizontal = global::NotesAndReminders.Droid.Resource.Id.center_horizontal;
+			global::Xamarin.Essentials.Resource.Id.center_vertical = global::NotesAndReminders.Droid.Resource.Id.center_vertical;
 			global::Xamarin.Essentials.Resource.Id.chronometer = global::NotesAndReminders.Droid.Resource.Id.chronometer;
-			global::Xamarin.Essentials.Resource.Id.dialog_button = global::NotesAndReminders.Droid.Resource.Id.dialog_button;
+			global::Xamarin.Essentials.Resource.Id.clip_horizontal = global::NotesAndReminders.Droid.Resource.Id.clip_horizontal;
+			global::Xamarin.Essentials.Resource.Id.clip_vertical = global::NotesAndReminders.Droid.Resource.Id.clip_vertical;
+			global::Xamarin.Essentials.Resource.Id.end = global::NotesAndReminders.Droid.Resource.Id.end;
+			global::Xamarin.Essentials.Resource.Id.fill = global::NotesAndReminders.Droid.Resource.Id.fill;
+			global::Xamarin.Essentials.Resource.Id.fill_horizontal = global::NotesAndReminders.Droid.Resource.Id.fill_horizontal;
+			global::Xamarin.Essentials.Resource.Id.fill_vertical = global::NotesAndReminders.Droid.Resource.Id.fill_vertical;
 			global::Xamarin.Essentials.Resource.Id.forever = global::NotesAndReminders.Droid.Resource.Id.forever;
 			global::Xamarin.Essentials.Resource.Id.icon = global::NotesAndReminders.Droid.Resource.Id.icon;
 			global::Xamarin.Essentials.Resource.Id.icon_group = global::NotesAndReminders.Droid.Resource.Id.icon_group;
 			global::Xamarin.Essentials.Resource.Id.info = global::NotesAndReminders.Droid.Resource.Id.info;
 			global::Xamarin.Essentials.Resource.Id.italic = global::NotesAndReminders.Droid.Resource.Id.italic;
+			global::Xamarin.Essentials.Resource.Id.left = global::NotesAndReminders.Droid.Resource.Id.left;
 			global::Xamarin.Essentials.Resource.Id.line1 = global::NotesAndReminders.Droid.Resource.Id.line1;
 			global::Xamarin.Essentials.Resource.Id.line3 = global::NotesAndReminders.Droid.Resource.Id.line3;
+			global::Xamarin.Essentials.Resource.Id.none = global::NotesAndReminders.Droid.Resource.Id.none;
 			global::Xamarin.Essentials.Resource.Id.normal = global::NotesAndReminders.Droid.Resource.Id.normal;
 			global::Xamarin.Essentials.Resource.Id.notification_background = global::NotesAndReminders.Droid.Resource.Id.notification_background;
 			global::Xamarin.Essentials.Resource.Id.notification_main_column = global::NotesAndReminders.Droid.Resource.Id.notification_main_column;
 			global::Xamarin.Essentials.Resource.Id.notification_main_column_container = global::NotesAndReminders.Droid.Resource.Id.notification_main_column_container;
+			global::Xamarin.Essentials.Resource.Id.right = global::NotesAndReminders.Droid.Resource.Id.right;
 			global::Xamarin.Essentials.Resource.Id.right_icon = global::NotesAndReminders.Droid.Resource.Id.right_icon;
 			global::Xamarin.Essentials.Resource.Id.right_side = global::NotesAndReminders.Droid.Resource.Id.right_side;
-			global::Xamarin.Essentials.Resource.Id.tag_accessibility_actions = global::NotesAndReminders.Droid.Resource.Id.tag_accessibility_actions;
-			global::Xamarin.Essentials.Resource.Id.tag_accessibility_clickable_spans = global::NotesAndReminders.Droid.Resource.Id.tag_accessibility_clickable_spans;
-			global::Xamarin.Essentials.Resource.Id.tag_accessibility_heading = global::NotesAndReminders.Droid.Resource.Id.tag_accessibility_heading;
-			global::Xamarin.Essentials.Resource.Id.tag_accessibility_pane_title = global::NotesAndReminders.Droid.Resource.Id.tag_accessibility_pane_title;
-			global::Xamarin.Essentials.Resource.Id.tag_screen_reader_focusable = global::NotesAndReminders.Droid.Resource.Id.tag_screen_reader_focusable;
+			global::Xamarin.Essentials.Resource.Id.start = global::NotesAndReminders.Droid.Resource.Id.start;
 			global::Xamarin.Essentials.Resource.Id.tag_transition_group = global::NotesAndReminders.Droid.Resource.Id.tag_transition_group;
 			global::Xamarin.Essentials.Resource.Id.tag_unhandled_key_event_manager = global::NotesAndReminders.Droid.Resource.Id.tag_unhandled_key_event_manager;
 			global::Xamarin.Essentials.Resource.Id.tag_unhandled_key_listeners = global::NotesAndReminders.Droid.Resource.Id.tag_unhandled_key_listeners;
@@ -153,20 +383,16 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Essentials.Resource.Id.text2 = global::NotesAndReminders.Droid.Resource.Id.text2;
 			global::Xamarin.Essentials.Resource.Id.time = global::NotesAndReminders.Droid.Resource.Id.time;
 			global::Xamarin.Essentials.Resource.Id.title = global::NotesAndReminders.Droid.Resource.Id.title;
+			global::Xamarin.Essentials.Resource.Id.top = global::NotesAndReminders.Droid.Resource.Id.top;
 			global::Xamarin.Essentials.Resource.Integer.status_bar_notification_info_maxnum = global::NotesAndReminders.Droid.Resource.Integer.status_bar_notification_info_maxnum;
 			global::Xamarin.Essentials.Resource.Layout.browser_actions_context_menu_page = global::NotesAndReminders.Droid.Resource.Layout.browser_actions_context_menu_page;
 			global::Xamarin.Essentials.Resource.Layout.browser_actions_context_menu_row = global::NotesAndReminders.Droid.Resource.Layout.browser_actions_context_menu_row;
-			global::Xamarin.Essentials.Resource.Layout.custom_dialog = global::NotesAndReminders.Droid.Resource.Layout.custom_dialog;
 			global::Xamarin.Essentials.Resource.Layout.notification_action = global::NotesAndReminders.Droid.Resource.Layout.notification_action;
 			global::Xamarin.Essentials.Resource.Layout.notification_action_tombstone = global::NotesAndReminders.Droid.Resource.Layout.notification_action_tombstone;
 			global::Xamarin.Essentials.Resource.Layout.notification_template_custom_big = global::NotesAndReminders.Droid.Resource.Layout.notification_template_custom_big;
 			global::Xamarin.Essentials.Resource.Layout.notification_template_icon_group = global::NotesAndReminders.Droid.Resource.Layout.notification_template_icon_group;
 			global::Xamarin.Essentials.Resource.Layout.notification_template_part_chronometer = global::NotesAndReminders.Droid.Resource.Layout.notification_template_part_chronometer;
 			global::Xamarin.Essentials.Resource.Layout.notification_template_part_time = global::NotesAndReminders.Droid.Resource.Layout.notification_template_part_time;
-			global::Xamarin.Essentials.Resource.String.copy_toast_msg = global::NotesAndReminders.Droid.Resource.String.copy_toast_msg;
-			global::Xamarin.Essentials.Resource.String.fallback_menu_item_copy_link = global::NotesAndReminders.Droid.Resource.String.fallback_menu_item_copy_link;
-			global::Xamarin.Essentials.Resource.String.fallback_menu_item_open_in_browser = global::NotesAndReminders.Droid.Resource.String.fallback_menu_item_open_in_browser;
-			global::Xamarin.Essentials.Resource.String.fallback_menu_item_share_link = global::NotesAndReminders.Droid.Resource.String.fallback_menu_item_share_link;
 			global::Xamarin.Essentials.Resource.String.status_bar_notification_info_overflow = global::NotesAndReminders.Droid.Resource.String.status_bar_notification_info_overflow;
 			global::Xamarin.Essentials.Resource.Style.TextAppearance_Compat_Notification = global::NotesAndReminders.Droid.Resource.Style.TextAppearance_Compat_Notification;
 			global::Xamarin.Essentials.Resource.Style.TextAppearance_Compat_Notification_Info = global::NotesAndReminders.Droid.Resource.Style.TextAppearance_Compat_Notification_Info;
@@ -175,10 +401,22 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Essentials.Resource.Style.TextAppearance_Compat_Notification_Title = global::NotesAndReminders.Droid.Resource.Style.TextAppearance_Compat_Notification_Title;
 			global::Xamarin.Essentials.Resource.Style.Widget_Compat_NotificationActionContainer = global::NotesAndReminders.Droid.Resource.Style.Widget_Compat_NotificationActionContainer;
 			global::Xamarin.Essentials.Resource.Style.Widget_Compat_NotificationActionText = global::NotesAndReminders.Droid.Resource.Style.Widget_Compat_NotificationActionText;
+			global::Xamarin.Essentials.Resource.Style.Widget_Support_CoordinatorLayout = global::NotesAndReminders.Droid.Resource.Style.Widget_Support_CoordinatorLayout;
 			global::Xamarin.Essentials.Resource.Styleable.ColorStateListItem = global::NotesAndReminders.Droid.Resource.Styleable.ColorStateListItem;
 			global::Xamarin.Essentials.Resource.Styleable.ColorStateListItem_alpha = global::NotesAndReminders.Droid.Resource.Styleable.ColorStateListItem_alpha;
 			global::Xamarin.Essentials.Resource.Styleable.ColorStateListItem_android_alpha = global::NotesAndReminders.Droid.Resource.Styleable.ColorStateListItem_android_alpha;
 			global::Xamarin.Essentials.Resource.Styleable.ColorStateListItem_android_color = global::NotesAndReminders.Droid.Resource.Styleable.ColorStateListItem_android_color;
+			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout = global::NotesAndReminders.Droid.Resource.Styleable.CoordinatorLayout;
+			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_keylines = global::NotesAndReminders.Droid.Resource.Styleable.CoordinatorLayout_keylines;
+			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout = global::NotesAndReminders.Droid.Resource.Styleable.CoordinatorLayout_Layout;
+			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity = global::NotesAndReminders.Droid.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity;
+			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor = global::NotesAndReminders.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor;
+			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity = global::NotesAndReminders.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchorGravity;
+			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior = global::NotesAndReminders.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_behavior;
+			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges = global::NotesAndReminders.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges;
+			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge = global::NotesAndReminders.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge;
+			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline = global::NotesAndReminders.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline;
+			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_statusBarBackground = global::NotesAndReminders.Droid.Resource.Styleable.CoordinatorLayout_statusBarBackground;
 			global::Xamarin.Essentials.Resource.Styleable.FontFamily = global::NotesAndReminders.Droid.Resource.Styleable.FontFamily;
 			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont = global::NotesAndReminders.Droid.Resource.Styleable.FontFamilyFont;
 			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_android_font = global::NotesAndReminders.Droid.Resource.Styleable.FontFamilyFont_android_font;
@@ -213,7 +451,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_startY = global::NotesAndReminders.Droid.Resource.Styleable.GradientColor_android_startY;
 			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_tileMode = global::NotesAndReminders.Droid.Resource.Styleable.GradientColor_android_tileMode;
 			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_type = global::NotesAndReminders.Droid.Resource.Styleable.GradientColor_android_type;
-			global::Xamarin.Essentials.Resource.Xml.image_share_filepaths = global::NotesAndReminders.Droid.Resource.Xml.image_share_filepaths;
 			global::Xamarin.Essentials.Resource.Xml.xamarin_essentials_fileprovider_file_paths = global::NotesAndReminders.Droid.Resource.Xml.xamarin_essentials_fileprovider_file_paths;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_fade_in = global::NotesAndReminders.Droid.Resource.Animation.abc_fade_in;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_fade_out = global::NotesAndReminders.Droid.Resource.Animation.abc_fade_out;
@@ -227,18 +464,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_slide_out_top = global::NotesAndReminders.Droid.Resource.Animation.abc_slide_out_top;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_tooltip_enter = global::NotesAndReminders.Droid.Resource.Animation.abc_tooltip_enter;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_tooltip_exit = global::NotesAndReminders.Droid.Resource.Animation.abc_tooltip_exit;
-			global::Xamarin.Forms.Platform.Android.Resource.Animation.btn_checkbox_to_checked_box_inner_merged_animation = global::NotesAndReminders.Droid.Resource.Animation.btn_checkbox_to_checked_box_inner_merged_animation;
-			global::Xamarin.Forms.Platform.Android.Resource.Animation.btn_checkbox_to_checked_box_outer_merged_animation = global::NotesAndReminders.Droid.Resource.Animation.btn_checkbox_to_checked_box_outer_merged_animation;
-			global::Xamarin.Forms.Platform.Android.Resource.Animation.btn_checkbox_to_checked_icon_null_animation = global::NotesAndReminders.Droid.Resource.Animation.btn_checkbox_to_checked_icon_null_animation;
-			global::Xamarin.Forms.Platform.Android.Resource.Animation.btn_checkbox_to_unchecked_box_inner_merged_animation = global::NotesAndReminders.Droid.Resource.Animation.btn_checkbox_to_unchecked_box_inner_merged_animation;
-			global::Xamarin.Forms.Platform.Android.Resource.Animation.btn_checkbox_to_unchecked_check_path_merged_animation = global::NotesAndReminders.Droid.Resource.Animation.btn_checkbox_to_unchecked_check_path_merged_animation;
-			global::Xamarin.Forms.Platform.Android.Resource.Animation.btn_checkbox_to_unchecked_icon_null_animation = global::NotesAndReminders.Droid.Resource.Animation.btn_checkbox_to_unchecked_icon_null_animation;
-			global::Xamarin.Forms.Platform.Android.Resource.Animation.btn_radio_to_off_mtrl_dot_group_animation = global::NotesAndReminders.Droid.Resource.Animation.btn_radio_to_off_mtrl_dot_group_animation;
-			global::Xamarin.Forms.Platform.Android.Resource.Animation.btn_radio_to_off_mtrl_ring_outer_animation = global::NotesAndReminders.Droid.Resource.Animation.btn_radio_to_off_mtrl_ring_outer_animation;
-			global::Xamarin.Forms.Platform.Android.Resource.Animation.btn_radio_to_off_mtrl_ring_outer_path_animation = global::NotesAndReminders.Droid.Resource.Animation.btn_radio_to_off_mtrl_ring_outer_path_animation;
-			global::Xamarin.Forms.Platform.Android.Resource.Animation.btn_radio_to_on_mtrl_dot_group_animation = global::NotesAndReminders.Droid.Resource.Animation.btn_radio_to_on_mtrl_dot_group_animation;
-			global::Xamarin.Forms.Platform.Android.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_animation = global::NotesAndReminders.Droid.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_animation;
-			global::Xamarin.Forms.Platform.Android.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_path_animation = global::NotesAndReminders.Droid.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_path_animation;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.design_bottom_sheet_slide_in = global::NotesAndReminders.Droid.Resource.Animation.design_bottom_sheet_slide_in;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.design_bottom_sheet_slide_out = global::NotesAndReminders.Droid.Resource.Animation.design_bottom_sheet_slide_out;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.design_snackbar_in = global::NotesAndReminders.Droid.Resource.Animation.design_snackbar_in;
@@ -338,7 +563,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonBarNeutralButtonStyle = global::NotesAndReminders.Droid.Resource.Attribute.buttonBarNeutralButtonStyle;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonBarPositiveButtonStyle = global::NotesAndReminders.Droid.Resource.Attribute.buttonBarPositiveButtonStyle;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonBarStyle = global::NotesAndReminders.Droid.Resource.Attribute.buttonBarStyle;
-			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonCompat = global::NotesAndReminders.Droid.Resource.Attribute.buttonCompat;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonGravity = global::NotesAndReminders.Droid.Resource.Attribute.buttonGravity;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonIconDimen = global::NotesAndReminders.Droid.Resource.Attribute.buttonIconDimen;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.buttonPanelSideLayout = global::NotesAndReminders.Droid.Resource.Attribute.buttonPanelSideLayout;
@@ -433,15 +657,7 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.dividerHorizontal = global::NotesAndReminders.Droid.Resource.Attribute.dividerHorizontal;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.dividerPadding = global::NotesAndReminders.Droid.Resource.Attribute.dividerPadding;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.dividerVertical = global::NotesAndReminders.Droid.Resource.Attribute.dividerVertical;
-			global::Xamarin.Forms.Platform.Android.Resource.Attribute.drawableBottomCompat = global::NotesAndReminders.Droid.Resource.Attribute.drawableBottomCompat;
-			global::Xamarin.Forms.Platform.Android.Resource.Attribute.drawableEndCompat = global::NotesAndReminders.Droid.Resource.Attribute.drawableEndCompat;
-			global::Xamarin.Forms.Platform.Android.Resource.Attribute.drawableLeftCompat = global::NotesAndReminders.Droid.Resource.Attribute.drawableLeftCompat;
-			global::Xamarin.Forms.Platform.Android.Resource.Attribute.drawableRightCompat = global::NotesAndReminders.Droid.Resource.Attribute.drawableRightCompat;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.drawableSize = global::NotesAndReminders.Droid.Resource.Attribute.drawableSize;
-			global::Xamarin.Forms.Platform.Android.Resource.Attribute.drawableStartCompat = global::NotesAndReminders.Droid.Resource.Attribute.drawableStartCompat;
-			global::Xamarin.Forms.Platform.Android.Resource.Attribute.drawableTint = global::NotesAndReminders.Droid.Resource.Attribute.drawableTint;
-			global::Xamarin.Forms.Platform.Android.Resource.Attribute.drawableTintMode = global::NotesAndReminders.Droid.Resource.Attribute.drawableTintMode;
-			global::Xamarin.Forms.Platform.Android.Resource.Attribute.drawableTopCompat = global::NotesAndReminders.Droid.Resource.Attribute.drawableTopCompat;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.drawerArrowStyle = global::NotesAndReminders.Droid.Resource.Attribute.drawerArrowStyle;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.dropdownListPreferredItemHeight = global::NotesAndReminders.Droid.Resource.Attribute.dropdownListPreferredItemHeight;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.dropDownListViewStyle = global::NotesAndReminders.Droid.Resource.Attribute.dropDownListViewStyle;
@@ -548,8 +764,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.lineHeight = global::NotesAndReminders.Droid.Resource.Attribute.lineHeight;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.lineSpacing = global::NotesAndReminders.Droid.Resource.Attribute.lineSpacing;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listChoiceBackgroundIndicator = global::NotesAndReminders.Droid.Resource.Attribute.listChoiceBackgroundIndicator;
-			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listChoiceIndicatorMultipleAnimated = global::NotesAndReminders.Droid.Resource.Attribute.listChoiceIndicatorMultipleAnimated;
-			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listChoiceIndicatorSingleAnimated = global::NotesAndReminders.Droid.Resource.Attribute.listChoiceIndicatorSingleAnimated;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listDividerAlertDialog = global::NotesAndReminders.Droid.Resource.Attribute.listDividerAlertDialog;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listItemLayout = global::NotesAndReminders.Droid.Resource.Attribute.listItemLayout;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listLayout = global::NotesAndReminders.Droid.Resource.Attribute.listLayout;
@@ -558,10 +772,8 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listPreferredItemHeight = global::NotesAndReminders.Droid.Resource.Attribute.listPreferredItemHeight;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listPreferredItemHeightLarge = global::NotesAndReminders.Droid.Resource.Attribute.listPreferredItemHeightLarge;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listPreferredItemHeightSmall = global::NotesAndReminders.Droid.Resource.Attribute.listPreferredItemHeightSmall;
-			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listPreferredItemPaddingEnd = global::NotesAndReminders.Droid.Resource.Attribute.listPreferredItemPaddingEnd;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listPreferredItemPaddingLeft = global::NotesAndReminders.Droid.Resource.Attribute.listPreferredItemPaddingLeft;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listPreferredItemPaddingRight = global::NotesAndReminders.Droid.Resource.Attribute.listPreferredItemPaddingRight;
-			global::Xamarin.Forms.Platform.Android.Resource.Attribute.listPreferredItemPaddingStart = global::NotesAndReminders.Droid.Resource.Attribute.listPreferredItemPaddingStart;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.logo = global::NotesAndReminders.Droid.Resource.Attribute.logo;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.logoDescription = global::NotesAndReminders.Droid.Resource.Attribute.logoDescription;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.materialButtonStyle = global::NotesAndReminders.Droid.Resource.Attribute.materialButtonStyle;
@@ -603,7 +815,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.ratingBarStyle = global::NotesAndReminders.Droid.Resource.Attribute.ratingBarStyle;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.ratingBarStyleIndicator = global::NotesAndReminders.Droid.Resource.Attribute.ratingBarStyleIndicator;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.ratingBarStyleSmall = global::NotesAndReminders.Droid.Resource.Attribute.ratingBarStyleSmall;
-			global::Xamarin.Forms.Platform.Android.Resource.Attribute.recyclerViewStyle = global::NotesAndReminders.Droid.Resource.Attribute.recyclerViewStyle;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.reverseLayout = global::NotesAndReminders.Droid.Resource.Attribute.reverseLayout;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.rippleColor = global::NotesAndReminders.Droid.Resource.Attribute.rippleColor;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.scrimAnimationDuration = global::NotesAndReminders.Droid.Resource.Attribute.scrimAnimationDuration;
@@ -705,7 +916,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textColorSearchUrl = global::NotesAndReminders.Droid.Resource.Attribute.textColorSearchUrl;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textEndPadding = global::NotesAndReminders.Droid.Resource.Attribute.textEndPadding;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textInputStyle = global::NotesAndReminders.Droid.Resource.Attribute.textInputStyle;
-			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textLocale = global::NotesAndReminders.Droid.Resource.Attribute.textLocale;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.textStartPadding = global::NotesAndReminders.Droid.Resource.Attribute.textStartPadding;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.theme = global::NotesAndReminders.Droid.Resource.Attribute.theme;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.thickness = global::NotesAndReminders.Droid.Resource.Attribute.thickness;
@@ -928,9 +1138,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_edit_text_inset_horizontal_material = global::NotesAndReminders.Droid.Resource.Dimension.abc_edit_text_inset_horizontal_material;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_edit_text_inset_top_material = global::NotesAndReminders.Droid.Resource.Dimension.abc_edit_text_inset_top_material;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_floating_window_z = global::NotesAndReminders.Droid.Resource.Dimension.abc_floating_window_z;
-			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_list_item_height_large_material = global::NotesAndReminders.Droid.Resource.Dimension.abc_list_item_height_large_material;
-			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_list_item_height_material = global::NotesAndReminders.Droid.Resource.Dimension.abc_list_item_height_material;
-			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_list_item_height_small_material = global::NotesAndReminders.Droid.Resource.Dimension.abc_list_item_height_small_material;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_list_item_padding_horizontal_material = global::NotesAndReminders.Droid.Resource.Dimension.abc_list_item_padding_horizontal_material;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_panel_menu_list_width = global::NotesAndReminders.Droid.Resource.Dimension.abc_panel_menu_list_width;
 			global::Xamarin.Forms.Platform.Android.Resource.Dimension.abc_progress_bar_height_material = global::NotesAndReminders.Droid.Resource.Dimension.abc_progress_bar_height_material;
@@ -1100,13 +1307,11 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_action_bar_item_background_material = global::NotesAndReminders.Droid.Resource.Drawable.abc_action_bar_item_background_material;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_borderless_material = global::NotesAndReminders.Droid.Resource.Drawable.abc_btn_borderless_material;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_check_material = global::NotesAndReminders.Droid.Resource.Drawable.abc_btn_check_material;
-			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_check_material_anim = global::NotesAndReminders.Droid.Resource.Drawable.abc_btn_check_material_anim;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_check_to_on_mtrl_000 = global::NotesAndReminders.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_000;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_check_to_on_mtrl_015 = global::NotesAndReminders.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_015;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_colored_material = global::NotesAndReminders.Droid.Resource.Drawable.abc_btn_colored_material;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_default_mtrl_shape = global::NotesAndReminders.Droid.Resource.Drawable.abc_btn_default_mtrl_shape;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_radio_material = global::NotesAndReminders.Droid.Resource.Drawable.abc_btn_radio_material;
-			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_radio_material_anim = global::NotesAndReminders.Droid.Resource.Drawable.abc_btn_radio_material_anim;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_radio_to_on_mtrl_000 = global::NotesAndReminders.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_000;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_radio_to_on_mtrl_015 = global::NotesAndReminders.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_015;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001 = global::NotesAndReminders.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001;
@@ -1184,14 +1389,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.abc_vector_test = global::NotesAndReminders.Droid.Resource.Drawable.abc_vector_test;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.avd_hide_password = global::NotesAndReminders.Droid.Resource.Drawable.avd_hide_password;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.avd_show_password = global::NotesAndReminders.Droid.Resource.Drawable.avd_show_password;
-			global::Xamarin.Forms.Platform.Android.Resource.Drawable.btn_checkbox_checked_mtrl = global::NotesAndReminders.Droid.Resource.Drawable.btn_checkbox_checked_mtrl;
-			global::Xamarin.Forms.Platform.Android.Resource.Drawable.btn_checkbox_checked_to_unchecked_mtrl_animation = global::NotesAndReminders.Droid.Resource.Drawable.btn_checkbox_checked_to_unchecked_mtrl_animation;
-			global::Xamarin.Forms.Platform.Android.Resource.Drawable.btn_checkbox_unchecked_mtrl = global::NotesAndReminders.Droid.Resource.Drawable.btn_checkbox_unchecked_mtrl;
-			global::Xamarin.Forms.Platform.Android.Resource.Drawable.btn_checkbox_unchecked_to_checked_mtrl_animation = global::NotesAndReminders.Droid.Resource.Drawable.btn_checkbox_unchecked_to_checked_mtrl_animation;
-			global::Xamarin.Forms.Platform.Android.Resource.Drawable.btn_radio_off_mtrl = global::NotesAndReminders.Droid.Resource.Drawable.btn_radio_off_mtrl;
-			global::Xamarin.Forms.Platform.Android.Resource.Drawable.btn_radio_off_to_on_mtrl_animation = global::NotesAndReminders.Droid.Resource.Drawable.btn_radio_off_to_on_mtrl_animation;
-			global::Xamarin.Forms.Platform.Android.Resource.Drawable.btn_radio_on_mtrl = global::NotesAndReminders.Droid.Resource.Drawable.btn_radio_on_mtrl;
-			global::Xamarin.Forms.Platform.Android.Resource.Drawable.btn_radio_on_to_off_mtrl_animation = global::NotesAndReminders.Droid.Resource.Drawable.btn_radio_on_to_off_mtrl_animation;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.design_bottom_navigation_item_background = global::NotesAndReminders.Droid.Resource.Drawable.design_bottom_navigation_item_background;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.design_fab_background = global::NotesAndReminders.Droid.Resource.Drawable.design_fab_background;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.design_ic_visibility = global::NotesAndReminders.Droid.Resource.Drawable.design_ic_visibility;
@@ -1217,39 +1414,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.notify_panel_notification_icon_bg = global::NotesAndReminders.Droid.Resource.Drawable.notify_panel_notification_icon_bg;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.tooltip_frame_dark = global::NotesAndReminders.Droid.Resource.Drawable.tooltip_frame_dark;
 			global::Xamarin.Forms.Platform.Android.Resource.Drawable.tooltip_frame_light = global::NotesAndReminders.Droid.Resource.Drawable.tooltip_frame_light;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_action_clickable_span = global::NotesAndReminders.Droid.Resource.Id.accessibility_action_clickable_span;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_0 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_0;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_1 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_1;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_10 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_10;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_11 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_11;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_12 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_12;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_13 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_13;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_14 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_14;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_15 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_15;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_16 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_16;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_17 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_17;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_18 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_18;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_19 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_19;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_2 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_2;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_20 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_20;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_21 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_21;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_22 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_22;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_23 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_23;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_24 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_24;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_25 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_25;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_26 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_26;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_27 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_27;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_28 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_28;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_29 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_29;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_3 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_3;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_30 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_30;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_31 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_31;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_4 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_4;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_5 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_5;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_6 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_6;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_7 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_7;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_8 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_8;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.accessibility_custom_action_9 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_9;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.action0 = global::NotesAndReminders.Droid.Resource.Id.action0;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.actions = global::NotesAndReminders.Droid.Resource.Id.actions;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.action_bar = global::NotesAndReminders.Droid.Resource.Id.action_bar;
@@ -1288,7 +1452,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Id.center_horizontal = global::NotesAndReminders.Droid.Resource.Id.center_horizontal;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.center_vertical = global::NotesAndReminders.Droid.Resource.Id.center_vertical;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.checkbox = global::NotesAndReminders.Droid.Resource.Id.checkbox;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.@checked = global::NotesAndReminders.Droid.Resource.Id.@checked;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.chronometer = global::NotesAndReminders.Droid.Resource.Id.chronometer;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.clip_horizontal = global::NotesAndReminders.Droid.Resource.Id.clip_horizontal;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.clip_vertical = global::NotesAndReminders.Droid.Resource.Id.clip_vertical;
@@ -1307,7 +1470,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Id.design_menu_item_action_area_stub = global::NotesAndReminders.Droid.Resource.Id.design_menu_item_action_area_stub;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.design_menu_item_text = global::NotesAndReminders.Droid.Resource.Id.design_menu_item_text;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.design_navigation_view = global::NotesAndReminders.Droid.Resource.Id.design_navigation_view;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.dialog_button = global::NotesAndReminders.Droid.Resource.Id.dialog_button;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.disableHome = global::NotesAndReminders.Droid.Resource.Id.disableHome;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.edit_query = global::NotesAndReminders.Droid.Resource.Id.edit_query;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.end = global::NotesAndReminders.Droid.Resource.Id.end;
@@ -1327,7 +1489,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Id.forever = global::NotesAndReminders.Droid.Resource.Id.forever;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.FUNCTION = global::NotesAndReminders.Droid.Resource.Id.FUNCTION;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.ghost_view = global::NotesAndReminders.Droid.Resource.Id.ghost_view;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.ghost_view_holder = global::NotesAndReminders.Droid.Resource.Id.ghost_view_holder;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.group_divider = global::NotesAndReminders.Droid.Resource.Id.group_divider;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.home = global::NotesAndReminders.Droid.Resource.Id.home;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.homeAsUp = global::NotesAndReminders.Droid.Resource.Id.homeAsUp;
@@ -1365,8 +1526,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Id.notification_background = global::NotesAndReminders.Droid.Resource.Id.notification_background;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.notification_main_column = global::NotesAndReminders.Droid.Resource.Id.notification_main_column;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.notification_main_column_container = global::NotesAndReminders.Droid.Resource.Id.notification_main_column_container;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.off = global::NotesAndReminders.Droid.Resource.Id.off;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.on = global::NotesAndReminders.Droid.Resource.Id.on;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.outline = global::NotesAndReminders.Droid.Resource.Id.outline;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.parallax = global::NotesAndReminders.Droid.Resource.Id.parallax;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.parentPanel = global::NotesAndReminders.Droid.Resource.Id.parentPanel;
@@ -1379,7 +1538,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Id.right_icon = global::NotesAndReminders.Droid.Resource.Id.right_icon;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.right_side = global::NotesAndReminders.Droid.Resource.Id.right_side;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.save_non_transition_alpha = global::NotesAndReminders.Droid.Resource.Id.save_non_transition_alpha;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.save_overlay_view = global::NotesAndReminders.Droid.Resource.Id.save_overlay_view;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.screen = global::NotesAndReminders.Droid.Resource.Id.screen;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.scroll = global::NotesAndReminders.Droid.Resource.Id.scroll;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.scrollable = global::NotesAndReminders.Droid.Resource.Id.scrollable;
@@ -1405,7 +1563,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Id.showCustom = global::NotesAndReminders.Droid.Resource.Id.showCustom;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.showHome = global::NotesAndReminders.Droid.Resource.Id.showHome;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.showTitle = global::NotesAndReminders.Droid.Resource.Id.showTitle;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.sliding_tabs = global::NotesAndReminders.Droid.Resource.Id.sliding_tabs;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.smallLabel = global::NotesAndReminders.Droid.Resource.Id.smallLabel;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.snackbar_action = global::NotesAndReminders.Droid.Resource.Id.snackbar_action;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.snackbar_text = global::NotesAndReminders.Droid.Resource.Id.snackbar_text;
@@ -1423,11 +1580,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Id.submit_area = global::NotesAndReminders.Droid.Resource.Id.submit_area;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.SYM = global::NotesAndReminders.Droid.Resource.Id.SYM;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.tabMode = global::NotesAndReminders.Droid.Resource.Id.tabMode;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.tag_accessibility_actions = global::NotesAndReminders.Droid.Resource.Id.tag_accessibility_actions;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.tag_accessibility_clickable_spans = global::NotesAndReminders.Droid.Resource.Id.tag_accessibility_clickable_spans;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.tag_accessibility_heading = global::NotesAndReminders.Droid.Resource.Id.tag_accessibility_heading;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.tag_accessibility_pane_title = global::NotesAndReminders.Droid.Resource.Id.tag_accessibility_pane_title;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.tag_screen_reader_focusable = global::NotesAndReminders.Droid.Resource.Id.tag_screen_reader_focusable;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.tag_transition_group = global::NotesAndReminders.Droid.Resource.Id.tag_transition_group;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.tag_unhandled_key_event_manager = global::NotesAndReminders.Droid.Resource.Id.tag_unhandled_key_event_manager;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.tag_unhandled_key_listeners = global::NotesAndReminders.Droid.Resource.Id.tag_unhandled_key_listeners;
@@ -1443,7 +1595,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Id.title = global::NotesAndReminders.Droid.Resource.Id.title;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.titleDividerNoCustom = global::NotesAndReminders.Droid.Resource.Id.titleDividerNoCustom;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.title_template = global::NotesAndReminders.Droid.Resource.Id.title_template;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.toolbar = global::NotesAndReminders.Droid.Resource.Id.toolbar;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.top = global::NotesAndReminders.Droid.Resource.Id.top;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.topPanel = global::NotesAndReminders.Droid.Resource.Id.topPanel;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.touch_outside = global::NotesAndReminders.Droid.Resource.Id.touch_outside;
@@ -1452,7 +1603,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Id.transition_position = global::NotesAndReminders.Droid.Resource.Id.transition_position;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.transition_scene_layoutid_cache = global::NotesAndReminders.Droid.Resource.Id.transition_scene_layoutid_cache;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.transition_transform = global::NotesAndReminders.Droid.Resource.Id.transition_transform;
-			global::Xamarin.Forms.Platform.Android.Resource.Id.@unchecked = global::NotesAndReminders.Droid.Resource.Id.@unchecked;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.uniform = global::NotesAndReminders.Droid.Resource.Id.uniform;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.unlabeled = global::NotesAndReminders.Droid.Resource.Id.unlabeled;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.up = global::NotesAndReminders.Droid.Resource.Id.up;
@@ -1476,13 +1626,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Integer.mtrl_tab_indicator_anim_duration_ms = global::NotesAndReminders.Droid.Resource.Integer.mtrl_tab_indicator_anim_duration_ms;
 			global::Xamarin.Forms.Platform.Android.Resource.Integer.show_password_duration = global::NotesAndReminders.Droid.Resource.Integer.show_password_duration;
 			global::Xamarin.Forms.Platform.Android.Resource.Integer.status_bar_notification_info_maxnum = global::NotesAndReminders.Droid.Resource.Integer.status_bar_notification_info_maxnum;
-			global::Xamarin.Forms.Platform.Android.Resource.Interpolator.btn_checkbox_checked_mtrl_animation_interpolator_0 = global::NotesAndReminders.Droid.Resource.Interpolator.btn_checkbox_checked_mtrl_animation_interpolator_0;
-			global::Xamarin.Forms.Platform.Android.Resource.Interpolator.btn_checkbox_checked_mtrl_animation_interpolator_1 = global::NotesAndReminders.Droid.Resource.Interpolator.btn_checkbox_checked_mtrl_animation_interpolator_1;
-			global::Xamarin.Forms.Platform.Android.Resource.Interpolator.btn_checkbox_unchecked_mtrl_animation_interpolator_0 = global::NotesAndReminders.Droid.Resource.Interpolator.btn_checkbox_unchecked_mtrl_animation_interpolator_0;
-			global::Xamarin.Forms.Platform.Android.Resource.Interpolator.btn_checkbox_unchecked_mtrl_animation_interpolator_1 = global::NotesAndReminders.Droid.Resource.Interpolator.btn_checkbox_unchecked_mtrl_animation_interpolator_1;
-			global::Xamarin.Forms.Platform.Android.Resource.Interpolator.btn_radio_to_off_mtrl_animation_interpolator_0 = global::NotesAndReminders.Droid.Resource.Interpolator.btn_radio_to_off_mtrl_animation_interpolator_0;
-			global::Xamarin.Forms.Platform.Android.Resource.Interpolator.btn_radio_to_on_mtrl_animation_interpolator_0 = global::NotesAndReminders.Droid.Resource.Interpolator.btn_radio_to_on_mtrl_animation_interpolator_0;
-			global::Xamarin.Forms.Platform.Android.Resource.Interpolator.fast_out_slow_in = global::NotesAndReminders.Droid.Resource.Interpolator.fast_out_slow_in;
 			global::Xamarin.Forms.Platform.Android.Resource.Interpolator.mtrl_fast_out_linear_in = global::NotesAndReminders.Droid.Resource.Interpolator.mtrl_fast_out_linear_in;
 			global::Xamarin.Forms.Platform.Android.Resource.Interpolator.mtrl_fast_out_slow_in = global::NotesAndReminders.Droid.Resource.Interpolator.mtrl_fast_out_slow_in;
 			global::Xamarin.Forms.Platform.Android.Resource.Interpolator.mtrl_linear = global::NotesAndReminders.Droid.Resource.Interpolator.mtrl_linear;
@@ -1516,7 +1659,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_select_dialog_material = global::NotesAndReminders.Droid.Resource.Layout.abc_select_dialog_material;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_tooltip = global::NotesAndReminders.Droid.Resource.Layout.abc_tooltip;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.BottomTabLayout = global::NotesAndReminders.Droid.Resource.Layout.BottomTabLayout;
-			global::Xamarin.Forms.Platform.Android.Resource.Layout.custom_dialog = global::NotesAndReminders.Droid.Resource.Layout.custom_dialog;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_bottom_navigation_item = global::NotesAndReminders.Droid.Resource.Layout.design_bottom_navigation_item;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_bottom_sheet_dialog = global::NotesAndReminders.Droid.Resource.Layout.design_bottom_sheet_dialog;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_layout_snackbar = global::NotesAndReminders.Droid.Resource.Layout.design_layout_snackbar;
@@ -1530,8 +1672,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_navigation_item_subheader = global::NotesAndReminders.Droid.Resource.Layout.design_navigation_item_subheader;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_navigation_menu = global::NotesAndReminders.Droid.Resource.Layout.design_navigation_menu;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_navigation_menu_item = global::NotesAndReminders.Droid.Resource.Layout.design_navigation_menu_item;
-			global::Xamarin.Forms.Platform.Android.Resource.Layout.FallbackTabbarDoNotUse = global::NotesAndReminders.Droid.Resource.Layout.FallbackTabbarDoNotUse;
-			global::Xamarin.Forms.Platform.Android.Resource.Layout.FallbackToolbarDoNotUse = global::NotesAndReminders.Droid.Resource.Layout.FallbackToolbarDoNotUse;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.FlyoutContent = global::NotesAndReminders.Droid.Resource.Layout.FlyoutContent;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.mtrl_layout_snackbar = global::NotesAndReminders.Droid.Resource.Layout.mtrl_layout_snackbar;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.mtrl_layout_snackbar_include = global::NotesAndReminders.Droid.Resource.Layout.mtrl_layout_snackbar_include;
@@ -1556,8 +1696,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.select_dialog_singlechoice_material = global::NotesAndReminders.Droid.Resource.Layout.select_dialog_singlechoice_material;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.ShellContent = global::NotesAndReminders.Droid.Resource.Layout.ShellContent;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.support_simple_spinner_dropdown_item = global::NotesAndReminders.Droid.Resource.Layout.support_simple_spinner_dropdown_item;
-			global::Xamarin.Forms.Platform.Android.Resource.Layout.Tabbar = global::NotesAndReminders.Droid.Resource.Layout.Tabbar;
-			global::Xamarin.Forms.Platform.Android.Resource.Layout.Toolbar = global::NotesAndReminders.Droid.Resource.Layout.Toolbar;
 			global::Xamarin.Forms.Platform.Android.Resource.String.abc_action_bar_home_description = global::NotesAndReminders.Droid.Resource.String.abc_action_bar_home_description;
 			global::Xamarin.Forms.Platform.Android.Resource.String.abc_action_bar_up_description = global::NotesAndReminders.Droid.Resource.String.abc_action_bar_up_description;
 			global::Xamarin.Forms.Platform.Android.Resource.String.abc_action_menu_overflow_description = global::NotesAndReminders.Droid.Resource.String.abc_action_menu_overflow_description;
@@ -1789,7 +1927,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete = global::NotesAndReminders.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Spinner = global::NotesAndReminders.Droid.Resource.Style.Base_Widget_AppCompat_Spinner;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined = global::NotesAndReminders.Droid.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined;
-			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_TextView = global::NotesAndReminders.Droid.Resource.Style.Base_Widget_AppCompat_TextView;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem = global::NotesAndReminders.Droid.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Toolbar = global::NotesAndReminders.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation = global::NotesAndReminders.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation;
@@ -1923,8 +2060,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_AppCompat_ActionBar = global::NotesAndReminders.Droid.Resource.Style.ThemeOverlay_AppCompat_ActionBar;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_AppCompat_Dark = global::NotesAndReminders.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar = global::NotesAndReminders.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar;
-			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_AppCompat_DayNight = global::NotesAndReminders.Droid.Resource.Style.ThemeOverlay_AppCompat_DayNight;
-			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_AppCompat_DayNight_ActionBar = global::NotesAndReminders.Droid.Resource.Style.ThemeOverlay_AppCompat_DayNight_ActionBar;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_AppCompat_Dialog = global::NotesAndReminders.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert = global::NotesAndReminders.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.ThemeOverlay_AppCompat_Light = global::NotesAndReminders.Droid.Resource.Style.ThemeOverlay_AppCompat_Light;
@@ -2057,7 +2192,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Spinner_DropDown = global::NotesAndReminders.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar = global::NotesAndReminders.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Spinner_Underlined = global::NotesAndReminders.Droid.Resource.Style.Widget_AppCompat_Spinner_Underlined;
-			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_TextView = global::NotesAndReminders.Droid.Resource.Style.Widget_AppCompat_TextView;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_TextView_SpinnerItem = global::NotesAndReminders.Droid.Resource.Style.Widget_AppCompat_TextView_SpinnerItem;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Toolbar = global::NotesAndReminders.Droid.Resource.Style.Widget_AppCompat_Toolbar;
 			global::Xamarin.Forms.Platform.Android.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation = global::NotesAndReminders.Droid.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation;
@@ -2219,21 +2353,11 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_autoSizePresetSizes = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTextView_autoSizePresetSizes;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_autoSizeStepGranularity = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTextView_autoSizeStepGranularity;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_autoSizeTextType = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTextView_autoSizeTextType;
-			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_drawableBottomCompat = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTextView_drawableBottomCompat;
-			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_drawableEndCompat = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTextView_drawableEndCompat;
-			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_drawableLeftCompat = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTextView_drawableLeftCompat;
-			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_drawableRightCompat = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTextView_drawableRightCompat;
-			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_drawableStartCompat = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTextView_drawableStartCompat;
-			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_drawableTint = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTextView_drawableTint;
-			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_drawableTintMode = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTextView_drawableTintMode;
-			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_drawableTopCompat = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTextView_drawableTopCompat;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_firstBaselineToTopHeight = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTextView_firstBaselineToTopHeight;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_fontFamily = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTextView_fontFamily;
-			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_fontVariationSettings = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTextView_fontVariationSettings;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_lastBaselineToBottomHeight = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTextView_lastBaselineToBottomHeight;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_lineHeight = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTextView_lineHeight;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_textAllCaps = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTextView_textAllCaps;
-			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTextView_textLocale = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTextView_textLocale;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTheme;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionBarDivider = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTheme_actionBarDivider;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_actionBarItemBackground = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTheme_actionBarItemBackground;
@@ -2307,18 +2431,14 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_homeAsUpIndicator = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTheme_homeAsUpIndicator;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_imageButtonStyle = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTheme_imageButtonStyle;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator;
-			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listChoiceIndicatorMultipleAnimated = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTheme_listChoiceIndicatorMultipleAnimated;
-			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listChoiceIndicatorSingleAnimated = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTheme_listChoiceIndicatorSingleAnimated;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listDividerAlertDialog = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTheme_listDividerAlertDialog;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listMenuViewStyle = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTheme_listMenuViewStyle;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listPopupWindowStyle = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTheme_listPopupWindowStyle;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listPreferredItemHeight = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeight;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall;
-			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingEnd = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingEnd;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight;
-			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingStart = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingStart;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_panelBackground = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTheme_panelBackground;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_panelMenuListTheme = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTheme_panelMenuListTheme;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.AppCompatTheme_panelMenuListWidth = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTheme_panelMenuListWidth;
@@ -2467,7 +2587,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.ColorStateListItem_android_color = global::NotesAndReminders.Droid.Resource.Styleable.ColorStateListItem_android_color;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CompoundButton = global::NotesAndReminders.Droid.Resource.Styleable.CompoundButton;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CompoundButton_android_button = global::NotesAndReminders.Droid.Resource.Styleable.CompoundButton_android_button;
-			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CompoundButton_buttonCompat = global::NotesAndReminders.Droid.Resource.Styleable.CompoundButton_buttonCompat;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CompoundButton_buttonTint = global::NotesAndReminders.Droid.Resource.Styleable.CompoundButton_buttonTint;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CompoundButton_buttonTintMode = global::NotesAndReminders.Droid.Resource.Styleable.CompoundButton_buttonTintMode;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.CoordinatorLayout = global::NotesAndReminders.Droid.Resource.Styleable.CoordinatorLayout;
@@ -2651,7 +2770,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecycleListView_paddingBottomNoButtons = global::NotesAndReminders.Droid.Resource.Styleable.RecycleListView_paddingBottomNoButtons;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecycleListView_paddingTopNoTitle = global::NotesAndReminders.Droid.Resource.Styleable.RecycleListView_paddingTopNoTitle;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView = global::NotesAndReminders.Droid.Resource.Styleable.RecyclerView;
-			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView_android_clipToPadding = global::NotesAndReminders.Droid.Resource.Styleable.RecyclerView_android_clipToPadding;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView_android_descendantFocusability = global::NotesAndReminders.Droid.Resource.Styleable.RecyclerView_android_descendantFocusability;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView_android_orientation = global::NotesAndReminders.Droid.Resource.Styleable.RecyclerView_android_orientation;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.RecyclerView_fastScrollEnabled = global::NotesAndReminders.Droid.Resource.Styleable.RecyclerView_fastScrollEnabled;
@@ -2763,14 +2881,11 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_textColor = global::NotesAndReminders.Droid.Resource.Styleable.TextAppearance_android_textColor;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_textColorHint = global::NotesAndReminders.Droid.Resource.Styleable.TextAppearance_android_textColorHint;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_textColorLink = global::NotesAndReminders.Droid.Resource.Styleable.TextAppearance_android_textColorLink;
-			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_textFontWeight = global::NotesAndReminders.Droid.Resource.Styleable.TextAppearance_android_textFontWeight;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_textSize = global::NotesAndReminders.Droid.Resource.Styleable.TextAppearance_android_textSize;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_textStyle = global::NotesAndReminders.Droid.Resource.Styleable.TextAppearance_android_textStyle;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_android_typeface = global::NotesAndReminders.Droid.Resource.Styleable.TextAppearance_android_typeface;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_fontFamily = global::NotesAndReminders.Droid.Resource.Styleable.TextAppearance_fontFamily;
-			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_fontVariationSettings = global::NotesAndReminders.Droid.Resource.Styleable.TextAppearance_fontVariationSettings;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_textAllCaps = global::NotesAndReminders.Droid.Resource.Styleable.TextAppearance_textAllCaps;
-			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextAppearance_textLocale = global::NotesAndReminders.Droid.Resource.Styleable.TextAppearance_textLocale;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout = global::NotesAndReminders.Droid.Resource.Styleable.TextInputLayout;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_android_hint = global::NotesAndReminders.Droid.Resource.Styleable.TextInputLayout_android_hint;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.TextInputLayout_android_textColorHint = global::NotesAndReminders.Droid.Resource.Styleable.TextInputLayout_android_textColorHint;
@@ -2819,7 +2934,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_logo = global::NotesAndReminders.Droid.Resource.Styleable.Toolbar_logo;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_logoDescription = global::NotesAndReminders.Droid.Resource.Styleable.Toolbar_logoDescription;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_maxButtonHeight = global::NotesAndReminders.Droid.Resource.Styleable.Toolbar_maxButtonHeight;
-			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_menu = global::NotesAndReminders.Droid.Resource.Styleable.Toolbar_menu;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_navigationContentDescription = global::NotesAndReminders.Droid.Resource.Styleable.Toolbar_navigationContentDescription;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_navigationIcon = global::NotesAndReminders.Droid.Resource.Styleable.Toolbar_navigationIcon;
 			global::Xamarin.Forms.Platform.Android.Resource.Styleable.Toolbar_popupTheme = global::NotesAndReminders.Droid.Resource.Styleable.Toolbar_popupTheme;
@@ -2861,18 +2975,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Resource.Animation.abc_slide_out_top = global::NotesAndReminders.Droid.Resource.Animation.abc_slide_out_top;
 			global::Xamarin.Forms.Platform.Resource.Animation.abc_tooltip_enter = global::NotesAndReminders.Droid.Resource.Animation.abc_tooltip_enter;
 			global::Xamarin.Forms.Platform.Resource.Animation.abc_tooltip_exit = global::NotesAndReminders.Droid.Resource.Animation.abc_tooltip_exit;
-			global::Xamarin.Forms.Platform.Resource.Animation.btn_checkbox_to_checked_box_inner_merged_animation = global::NotesAndReminders.Droid.Resource.Animation.btn_checkbox_to_checked_box_inner_merged_animation;
-			global::Xamarin.Forms.Platform.Resource.Animation.btn_checkbox_to_checked_box_outer_merged_animation = global::NotesAndReminders.Droid.Resource.Animation.btn_checkbox_to_checked_box_outer_merged_animation;
-			global::Xamarin.Forms.Platform.Resource.Animation.btn_checkbox_to_checked_icon_null_animation = global::NotesAndReminders.Droid.Resource.Animation.btn_checkbox_to_checked_icon_null_animation;
-			global::Xamarin.Forms.Platform.Resource.Animation.btn_checkbox_to_unchecked_box_inner_merged_animation = global::NotesAndReminders.Droid.Resource.Animation.btn_checkbox_to_unchecked_box_inner_merged_animation;
-			global::Xamarin.Forms.Platform.Resource.Animation.btn_checkbox_to_unchecked_check_path_merged_animation = global::NotesAndReminders.Droid.Resource.Animation.btn_checkbox_to_unchecked_check_path_merged_animation;
-			global::Xamarin.Forms.Platform.Resource.Animation.btn_checkbox_to_unchecked_icon_null_animation = global::NotesAndReminders.Droid.Resource.Animation.btn_checkbox_to_unchecked_icon_null_animation;
-			global::Xamarin.Forms.Platform.Resource.Animation.btn_radio_to_off_mtrl_dot_group_animation = global::NotesAndReminders.Droid.Resource.Animation.btn_radio_to_off_mtrl_dot_group_animation;
-			global::Xamarin.Forms.Platform.Resource.Animation.btn_radio_to_off_mtrl_ring_outer_animation = global::NotesAndReminders.Droid.Resource.Animation.btn_radio_to_off_mtrl_ring_outer_animation;
-			global::Xamarin.Forms.Platform.Resource.Animation.btn_radio_to_off_mtrl_ring_outer_path_animation = global::NotesAndReminders.Droid.Resource.Animation.btn_radio_to_off_mtrl_ring_outer_path_animation;
-			global::Xamarin.Forms.Platform.Resource.Animation.btn_radio_to_on_mtrl_dot_group_animation = global::NotesAndReminders.Droid.Resource.Animation.btn_radio_to_on_mtrl_dot_group_animation;
-			global::Xamarin.Forms.Platform.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_animation = global::NotesAndReminders.Droid.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_animation;
-			global::Xamarin.Forms.Platform.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_path_animation = global::NotesAndReminders.Droid.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_path_animation;
 			global::Xamarin.Forms.Platform.Resource.Animation.design_bottom_sheet_slide_in = global::NotesAndReminders.Droid.Resource.Animation.design_bottom_sheet_slide_in;
 			global::Xamarin.Forms.Platform.Resource.Animation.design_bottom_sheet_slide_out = global::NotesAndReminders.Droid.Resource.Animation.design_bottom_sheet_slide_out;
 			global::Xamarin.Forms.Platform.Resource.Animation.design_snackbar_in = global::NotesAndReminders.Droid.Resource.Animation.design_snackbar_in;
@@ -2972,7 +3074,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Resource.Attribute.buttonBarNeutralButtonStyle = global::NotesAndReminders.Droid.Resource.Attribute.buttonBarNeutralButtonStyle;
 			global::Xamarin.Forms.Platform.Resource.Attribute.buttonBarPositiveButtonStyle = global::NotesAndReminders.Droid.Resource.Attribute.buttonBarPositiveButtonStyle;
 			global::Xamarin.Forms.Platform.Resource.Attribute.buttonBarStyle = global::NotesAndReminders.Droid.Resource.Attribute.buttonBarStyle;
-			global::Xamarin.Forms.Platform.Resource.Attribute.buttonCompat = global::NotesAndReminders.Droid.Resource.Attribute.buttonCompat;
 			global::Xamarin.Forms.Platform.Resource.Attribute.buttonGravity = global::NotesAndReminders.Droid.Resource.Attribute.buttonGravity;
 			global::Xamarin.Forms.Platform.Resource.Attribute.buttonIconDimen = global::NotesAndReminders.Droid.Resource.Attribute.buttonIconDimen;
 			global::Xamarin.Forms.Platform.Resource.Attribute.buttonPanelSideLayout = global::NotesAndReminders.Droid.Resource.Attribute.buttonPanelSideLayout;
@@ -3067,15 +3168,7 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Resource.Attribute.dividerHorizontal = global::NotesAndReminders.Droid.Resource.Attribute.dividerHorizontal;
 			global::Xamarin.Forms.Platform.Resource.Attribute.dividerPadding = global::NotesAndReminders.Droid.Resource.Attribute.dividerPadding;
 			global::Xamarin.Forms.Platform.Resource.Attribute.dividerVertical = global::NotesAndReminders.Droid.Resource.Attribute.dividerVertical;
-			global::Xamarin.Forms.Platform.Resource.Attribute.drawableBottomCompat = global::NotesAndReminders.Droid.Resource.Attribute.drawableBottomCompat;
-			global::Xamarin.Forms.Platform.Resource.Attribute.drawableEndCompat = global::NotesAndReminders.Droid.Resource.Attribute.drawableEndCompat;
-			global::Xamarin.Forms.Platform.Resource.Attribute.drawableLeftCompat = global::NotesAndReminders.Droid.Resource.Attribute.drawableLeftCompat;
-			global::Xamarin.Forms.Platform.Resource.Attribute.drawableRightCompat = global::NotesAndReminders.Droid.Resource.Attribute.drawableRightCompat;
 			global::Xamarin.Forms.Platform.Resource.Attribute.drawableSize = global::NotesAndReminders.Droid.Resource.Attribute.drawableSize;
-			global::Xamarin.Forms.Platform.Resource.Attribute.drawableStartCompat = global::NotesAndReminders.Droid.Resource.Attribute.drawableStartCompat;
-			global::Xamarin.Forms.Platform.Resource.Attribute.drawableTint = global::NotesAndReminders.Droid.Resource.Attribute.drawableTint;
-			global::Xamarin.Forms.Platform.Resource.Attribute.drawableTintMode = global::NotesAndReminders.Droid.Resource.Attribute.drawableTintMode;
-			global::Xamarin.Forms.Platform.Resource.Attribute.drawableTopCompat = global::NotesAndReminders.Droid.Resource.Attribute.drawableTopCompat;
 			global::Xamarin.Forms.Platform.Resource.Attribute.drawerArrowStyle = global::NotesAndReminders.Droid.Resource.Attribute.drawerArrowStyle;
 			global::Xamarin.Forms.Platform.Resource.Attribute.dropdownListPreferredItemHeight = global::NotesAndReminders.Droid.Resource.Attribute.dropdownListPreferredItemHeight;
 			global::Xamarin.Forms.Platform.Resource.Attribute.dropDownListViewStyle = global::NotesAndReminders.Droid.Resource.Attribute.dropDownListViewStyle;
@@ -3182,8 +3275,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Resource.Attribute.lineHeight = global::NotesAndReminders.Droid.Resource.Attribute.lineHeight;
 			global::Xamarin.Forms.Platform.Resource.Attribute.lineSpacing = global::NotesAndReminders.Droid.Resource.Attribute.lineSpacing;
 			global::Xamarin.Forms.Platform.Resource.Attribute.listChoiceBackgroundIndicator = global::NotesAndReminders.Droid.Resource.Attribute.listChoiceBackgroundIndicator;
-			global::Xamarin.Forms.Platform.Resource.Attribute.listChoiceIndicatorMultipleAnimated = global::NotesAndReminders.Droid.Resource.Attribute.listChoiceIndicatorMultipleAnimated;
-			global::Xamarin.Forms.Platform.Resource.Attribute.listChoiceIndicatorSingleAnimated = global::NotesAndReminders.Droid.Resource.Attribute.listChoiceIndicatorSingleAnimated;
 			global::Xamarin.Forms.Platform.Resource.Attribute.listDividerAlertDialog = global::NotesAndReminders.Droid.Resource.Attribute.listDividerAlertDialog;
 			global::Xamarin.Forms.Platform.Resource.Attribute.listItemLayout = global::NotesAndReminders.Droid.Resource.Attribute.listItemLayout;
 			global::Xamarin.Forms.Platform.Resource.Attribute.listLayout = global::NotesAndReminders.Droid.Resource.Attribute.listLayout;
@@ -3192,10 +3283,8 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Resource.Attribute.listPreferredItemHeight = global::NotesAndReminders.Droid.Resource.Attribute.listPreferredItemHeight;
 			global::Xamarin.Forms.Platform.Resource.Attribute.listPreferredItemHeightLarge = global::NotesAndReminders.Droid.Resource.Attribute.listPreferredItemHeightLarge;
 			global::Xamarin.Forms.Platform.Resource.Attribute.listPreferredItemHeightSmall = global::NotesAndReminders.Droid.Resource.Attribute.listPreferredItemHeightSmall;
-			global::Xamarin.Forms.Platform.Resource.Attribute.listPreferredItemPaddingEnd = global::NotesAndReminders.Droid.Resource.Attribute.listPreferredItemPaddingEnd;
 			global::Xamarin.Forms.Platform.Resource.Attribute.listPreferredItemPaddingLeft = global::NotesAndReminders.Droid.Resource.Attribute.listPreferredItemPaddingLeft;
 			global::Xamarin.Forms.Platform.Resource.Attribute.listPreferredItemPaddingRight = global::NotesAndReminders.Droid.Resource.Attribute.listPreferredItemPaddingRight;
-			global::Xamarin.Forms.Platform.Resource.Attribute.listPreferredItemPaddingStart = global::NotesAndReminders.Droid.Resource.Attribute.listPreferredItemPaddingStart;
 			global::Xamarin.Forms.Platform.Resource.Attribute.logo = global::NotesAndReminders.Droid.Resource.Attribute.logo;
 			global::Xamarin.Forms.Platform.Resource.Attribute.logoDescription = global::NotesAndReminders.Droid.Resource.Attribute.logoDescription;
 			global::Xamarin.Forms.Platform.Resource.Attribute.materialButtonStyle = global::NotesAndReminders.Droid.Resource.Attribute.materialButtonStyle;
@@ -3237,7 +3326,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Resource.Attribute.ratingBarStyle = global::NotesAndReminders.Droid.Resource.Attribute.ratingBarStyle;
 			global::Xamarin.Forms.Platform.Resource.Attribute.ratingBarStyleIndicator = global::NotesAndReminders.Droid.Resource.Attribute.ratingBarStyleIndicator;
 			global::Xamarin.Forms.Platform.Resource.Attribute.ratingBarStyleSmall = global::NotesAndReminders.Droid.Resource.Attribute.ratingBarStyleSmall;
-			global::Xamarin.Forms.Platform.Resource.Attribute.recyclerViewStyle = global::NotesAndReminders.Droid.Resource.Attribute.recyclerViewStyle;
 			global::Xamarin.Forms.Platform.Resource.Attribute.reverseLayout = global::NotesAndReminders.Droid.Resource.Attribute.reverseLayout;
 			global::Xamarin.Forms.Platform.Resource.Attribute.rippleColor = global::NotesAndReminders.Droid.Resource.Attribute.rippleColor;
 			global::Xamarin.Forms.Platform.Resource.Attribute.scrimAnimationDuration = global::NotesAndReminders.Droid.Resource.Attribute.scrimAnimationDuration;
@@ -3339,7 +3427,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Resource.Attribute.textColorSearchUrl = global::NotesAndReminders.Droid.Resource.Attribute.textColorSearchUrl;
 			global::Xamarin.Forms.Platform.Resource.Attribute.textEndPadding = global::NotesAndReminders.Droid.Resource.Attribute.textEndPadding;
 			global::Xamarin.Forms.Platform.Resource.Attribute.textInputStyle = global::NotesAndReminders.Droid.Resource.Attribute.textInputStyle;
-			global::Xamarin.Forms.Platform.Resource.Attribute.textLocale = global::NotesAndReminders.Droid.Resource.Attribute.textLocale;
 			global::Xamarin.Forms.Platform.Resource.Attribute.textStartPadding = global::NotesAndReminders.Droid.Resource.Attribute.textStartPadding;
 			global::Xamarin.Forms.Platform.Resource.Attribute.theme = global::NotesAndReminders.Droid.Resource.Attribute.theme;
 			global::Xamarin.Forms.Platform.Resource.Attribute.thickness = global::NotesAndReminders.Droid.Resource.Attribute.thickness;
@@ -3562,9 +3649,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Resource.Dimension.abc_edit_text_inset_horizontal_material = global::NotesAndReminders.Droid.Resource.Dimension.abc_edit_text_inset_horizontal_material;
 			global::Xamarin.Forms.Platform.Resource.Dimension.abc_edit_text_inset_top_material = global::NotesAndReminders.Droid.Resource.Dimension.abc_edit_text_inset_top_material;
 			global::Xamarin.Forms.Platform.Resource.Dimension.abc_floating_window_z = global::NotesAndReminders.Droid.Resource.Dimension.abc_floating_window_z;
-			global::Xamarin.Forms.Platform.Resource.Dimension.abc_list_item_height_large_material = global::NotesAndReminders.Droid.Resource.Dimension.abc_list_item_height_large_material;
-			global::Xamarin.Forms.Platform.Resource.Dimension.abc_list_item_height_material = global::NotesAndReminders.Droid.Resource.Dimension.abc_list_item_height_material;
-			global::Xamarin.Forms.Platform.Resource.Dimension.abc_list_item_height_small_material = global::NotesAndReminders.Droid.Resource.Dimension.abc_list_item_height_small_material;
 			global::Xamarin.Forms.Platform.Resource.Dimension.abc_list_item_padding_horizontal_material = global::NotesAndReminders.Droid.Resource.Dimension.abc_list_item_padding_horizontal_material;
 			global::Xamarin.Forms.Platform.Resource.Dimension.abc_panel_menu_list_width = global::NotesAndReminders.Droid.Resource.Dimension.abc_panel_menu_list_width;
 			global::Xamarin.Forms.Platform.Resource.Dimension.abc_progress_bar_height_material = global::NotesAndReminders.Droid.Resource.Dimension.abc_progress_bar_height_material;
@@ -3734,13 +3818,11 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Resource.Drawable.abc_action_bar_item_background_material = global::NotesAndReminders.Droid.Resource.Drawable.abc_action_bar_item_background_material;
 			global::Xamarin.Forms.Platform.Resource.Drawable.abc_btn_borderless_material = global::NotesAndReminders.Droid.Resource.Drawable.abc_btn_borderless_material;
 			global::Xamarin.Forms.Platform.Resource.Drawable.abc_btn_check_material = global::NotesAndReminders.Droid.Resource.Drawable.abc_btn_check_material;
-			global::Xamarin.Forms.Platform.Resource.Drawable.abc_btn_check_material_anim = global::NotesAndReminders.Droid.Resource.Drawable.abc_btn_check_material_anim;
 			global::Xamarin.Forms.Platform.Resource.Drawable.abc_btn_check_to_on_mtrl_000 = global::NotesAndReminders.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_000;
 			global::Xamarin.Forms.Platform.Resource.Drawable.abc_btn_check_to_on_mtrl_015 = global::NotesAndReminders.Droid.Resource.Drawable.abc_btn_check_to_on_mtrl_015;
 			global::Xamarin.Forms.Platform.Resource.Drawable.abc_btn_colored_material = global::NotesAndReminders.Droid.Resource.Drawable.abc_btn_colored_material;
 			global::Xamarin.Forms.Platform.Resource.Drawable.abc_btn_default_mtrl_shape = global::NotesAndReminders.Droid.Resource.Drawable.abc_btn_default_mtrl_shape;
 			global::Xamarin.Forms.Platform.Resource.Drawable.abc_btn_radio_material = global::NotesAndReminders.Droid.Resource.Drawable.abc_btn_radio_material;
-			global::Xamarin.Forms.Platform.Resource.Drawable.abc_btn_radio_material_anim = global::NotesAndReminders.Droid.Resource.Drawable.abc_btn_radio_material_anim;
 			global::Xamarin.Forms.Platform.Resource.Drawable.abc_btn_radio_to_on_mtrl_000 = global::NotesAndReminders.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_000;
 			global::Xamarin.Forms.Platform.Resource.Drawable.abc_btn_radio_to_on_mtrl_015 = global::NotesAndReminders.Droid.Resource.Drawable.abc_btn_radio_to_on_mtrl_015;
 			global::Xamarin.Forms.Platform.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001 = global::NotesAndReminders.Droid.Resource.Drawable.abc_btn_switch_to_on_mtrl_00001;
@@ -3818,14 +3900,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Resource.Drawable.abc_vector_test = global::NotesAndReminders.Droid.Resource.Drawable.abc_vector_test;
 			global::Xamarin.Forms.Platform.Resource.Drawable.avd_hide_password = global::NotesAndReminders.Droid.Resource.Drawable.avd_hide_password;
 			global::Xamarin.Forms.Platform.Resource.Drawable.avd_show_password = global::NotesAndReminders.Droid.Resource.Drawable.avd_show_password;
-			global::Xamarin.Forms.Platform.Resource.Drawable.btn_checkbox_checked_mtrl = global::NotesAndReminders.Droid.Resource.Drawable.btn_checkbox_checked_mtrl;
-			global::Xamarin.Forms.Platform.Resource.Drawable.btn_checkbox_checked_to_unchecked_mtrl_animation = global::NotesAndReminders.Droid.Resource.Drawable.btn_checkbox_checked_to_unchecked_mtrl_animation;
-			global::Xamarin.Forms.Platform.Resource.Drawable.btn_checkbox_unchecked_mtrl = global::NotesAndReminders.Droid.Resource.Drawable.btn_checkbox_unchecked_mtrl;
-			global::Xamarin.Forms.Platform.Resource.Drawable.btn_checkbox_unchecked_to_checked_mtrl_animation = global::NotesAndReminders.Droid.Resource.Drawable.btn_checkbox_unchecked_to_checked_mtrl_animation;
-			global::Xamarin.Forms.Platform.Resource.Drawable.btn_radio_off_mtrl = global::NotesAndReminders.Droid.Resource.Drawable.btn_radio_off_mtrl;
-			global::Xamarin.Forms.Platform.Resource.Drawable.btn_radio_off_to_on_mtrl_animation = global::NotesAndReminders.Droid.Resource.Drawable.btn_radio_off_to_on_mtrl_animation;
-			global::Xamarin.Forms.Platform.Resource.Drawable.btn_radio_on_mtrl = global::NotesAndReminders.Droid.Resource.Drawable.btn_radio_on_mtrl;
-			global::Xamarin.Forms.Platform.Resource.Drawable.btn_radio_on_to_off_mtrl_animation = global::NotesAndReminders.Droid.Resource.Drawable.btn_radio_on_to_off_mtrl_animation;
 			global::Xamarin.Forms.Platform.Resource.Drawable.design_bottom_navigation_item_background = global::NotesAndReminders.Droid.Resource.Drawable.design_bottom_navigation_item_background;
 			global::Xamarin.Forms.Platform.Resource.Drawable.design_fab_background = global::NotesAndReminders.Droid.Resource.Drawable.design_fab_background;
 			global::Xamarin.Forms.Platform.Resource.Drawable.design_ic_visibility = global::NotesAndReminders.Droid.Resource.Drawable.design_ic_visibility;
@@ -3851,39 +3925,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Resource.Drawable.notify_panel_notification_icon_bg = global::NotesAndReminders.Droid.Resource.Drawable.notify_panel_notification_icon_bg;
 			global::Xamarin.Forms.Platform.Resource.Drawable.tooltip_frame_dark = global::NotesAndReminders.Droid.Resource.Drawable.tooltip_frame_dark;
 			global::Xamarin.Forms.Platform.Resource.Drawable.tooltip_frame_light = global::NotesAndReminders.Droid.Resource.Drawable.tooltip_frame_light;
-			global::Xamarin.Forms.Platform.Resource.Id.accessibility_action_clickable_span = global::NotesAndReminders.Droid.Resource.Id.accessibility_action_clickable_span;
-			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_0 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_0;
-			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_1 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_1;
-			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_10 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_10;
-			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_11 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_11;
-			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_12 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_12;
-			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_13 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_13;
-			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_14 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_14;
-			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_15 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_15;
-			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_16 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_16;
-			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_17 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_17;
-			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_18 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_18;
-			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_19 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_19;
-			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_2 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_2;
-			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_20 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_20;
-			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_21 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_21;
-			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_22 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_22;
-			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_23 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_23;
-			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_24 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_24;
-			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_25 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_25;
-			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_26 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_26;
-			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_27 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_27;
-			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_28 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_28;
-			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_29 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_29;
-			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_3 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_3;
-			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_30 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_30;
-			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_31 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_31;
-			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_4 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_4;
-			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_5 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_5;
-			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_6 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_6;
-			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_7 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_7;
-			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_8 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_8;
-			global::Xamarin.Forms.Platform.Resource.Id.accessibility_custom_action_9 = global::NotesAndReminders.Droid.Resource.Id.accessibility_custom_action_9;
 			global::Xamarin.Forms.Platform.Resource.Id.action0 = global::NotesAndReminders.Droid.Resource.Id.action0;
 			global::Xamarin.Forms.Platform.Resource.Id.actions = global::NotesAndReminders.Droid.Resource.Id.actions;
 			global::Xamarin.Forms.Platform.Resource.Id.action_bar = global::NotesAndReminders.Droid.Resource.Id.action_bar;
@@ -3922,7 +3963,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Resource.Id.center_horizontal = global::NotesAndReminders.Droid.Resource.Id.center_horizontal;
 			global::Xamarin.Forms.Platform.Resource.Id.center_vertical = global::NotesAndReminders.Droid.Resource.Id.center_vertical;
 			global::Xamarin.Forms.Platform.Resource.Id.checkbox = global::NotesAndReminders.Droid.Resource.Id.checkbox;
-			global::Xamarin.Forms.Platform.Resource.Id.@checked = global::NotesAndReminders.Droid.Resource.Id.@checked;
 			global::Xamarin.Forms.Platform.Resource.Id.chronometer = global::NotesAndReminders.Droid.Resource.Id.chronometer;
 			global::Xamarin.Forms.Platform.Resource.Id.clip_horizontal = global::NotesAndReminders.Droid.Resource.Id.clip_horizontal;
 			global::Xamarin.Forms.Platform.Resource.Id.clip_vertical = global::NotesAndReminders.Droid.Resource.Id.clip_vertical;
@@ -3941,7 +3981,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Resource.Id.design_menu_item_action_area_stub = global::NotesAndReminders.Droid.Resource.Id.design_menu_item_action_area_stub;
 			global::Xamarin.Forms.Platform.Resource.Id.design_menu_item_text = global::NotesAndReminders.Droid.Resource.Id.design_menu_item_text;
 			global::Xamarin.Forms.Platform.Resource.Id.design_navigation_view = global::NotesAndReminders.Droid.Resource.Id.design_navigation_view;
-			global::Xamarin.Forms.Platform.Resource.Id.dialog_button = global::NotesAndReminders.Droid.Resource.Id.dialog_button;
 			global::Xamarin.Forms.Platform.Resource.Id.disableHome = global::NotesAndReminders.Droid.Resource.Id.disableHome;
 			global::Xamarin.Forms.Platform.Resource.Id.edit_query = global::NotesAndReminders.Droid.Resource.Id.edit_query;
 			global::Xamarin.Forms.Platform.Resource.Id.end = global::NotesAndReminders.Droid.Resource.Id.end;
@@ -3961,7 +4000,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Resource.Id.forever = global::NotesAndReminders.Droid.Resource.Id.forever;
 			global::Xamarin.Forms.Platform.Resource.Id.FUNCTION = global::NotesAndReminders.Droid.Resource.Id.FUNCTION;
 			global::Xamarin.Forms.Platform.Resource.Id.ghost_view = global::NotesAndReminders.Droid.Resource.Id.ghost_view;
-			global::Xamarin.Forms.Platform.Resource.Id.ghost_view_holder = global::NotesAndReminders.Droid.Resource.Id.ghost_view_holder;
 			global::Xamarin.Forms.Platform.Resource.Id.group_divider = global::NotesAndReminders.Droid.Resource.Id.group_divider;
 			global::Xamarin.Forms.Platform.Resource.Id.home = global::NotesAndReminders.Droid.Resource.Id.home;
 			global::Xamarin.Forms.Platform.Resource.Id.homeAsUp = global::NotesAndReminders.Droid.Resource.Id.homeAsUp;
@@ -3999,8 +4037,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Resource.Id.notification_background = global::NotesAndReminders.Droid.Resource.Id.notification_background;
 			global::Xamarin.Forms.Platform.Resource.Id.notification_main_column = global::NotesAndReminders.Droid.Resource.Id.notification_main_column;
 			global::Xamarin.Forms.Platform.Resource.Id.notification_main_column_container = global::NotesAndReminders.Droid.Resource.Id.notification_main_column_container;
-			global::Xamarin.Forms.Platform.Resource.Id.off = global::NotesAndReminders.Droid.Resource.Id.off;
-			global::Xamarin.Forms.Platform.Resource.Id.on = global::NotesAndReminders.Droid.Resource.Id.on;
 			global::Xamarin.Forms.Platform.Resource.Id.outline = global::NotesAndReminders.Droid.Resource.Id.outline;
 			global::Xamarin.Forms.Platform.Resource.Id.parallax = global::NotesAndReminders.Droid.Resource.Id.parallax;
 			global::Xamarin.Forms.Platform.Resource.Id.parentPanel = global::NotesAndReminders.Droid.Resource.Id.parentPanel;
@@ -4013,7 +4049,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Resource.Id.right_icon = global::NotesAndReminders.Droid.Resource.Id.right_icon;
 			global::Xamarin.Forms.Platform.Resource.Id.right_side = global::NotesAndReminders.Droid.Resource.Id.right_side;
 			global::Xamarin.Forms.Platform.Resource.Id.save_non_transition_alpha = global::NotesAndReminders.Droid.Resource.Id.save_non_transition_alpha;
-			global::Xamarin.Forms.Platform.Resource.Id.save_overlay_view = global::NotesAndReminders.Droid.Resource.Id.save_overlay_view;
 			global::Xamarin.Forms.Platform.Resource.Id.screen = global::NotesAndReminders.Droid.Resource.Id.screen;
 			global::Xamarin.Forms.Platform.Resource.Id.scroll = global::NotesAndReminders.Droid.Resource.Id.scroll;
 			global::Xamarin.Forms.Platform.Resource.Id.scrollable = global::NotesAndReminders.Droid.Resource.Id.scrollable;
@@ -4039,7 +4074,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Resource.Id.showCustom = global::NotesAndReminders.Droid.Resource.Id.showCustom;
 			global::Xamarin.Forms.Platform.Resource.Id.showHome = global::NotesAndReminders.Droid.Resource.Id.showHome;
 			global::Xamarin.Forms.Platform.Resource.Id.showTitle = global::NotesAndReminders.Droid.Resource.Id.showTitle;
-			global::Xamarin.Forms.Platform.Resource.Id.sliding_tabs = global::NotesAndReminders.Droid.Resource.Id.sliding_tabs;
 			global::Xamarin.Forms.Platform.Resource.Id.smallLabel = global::NotesAndReminders.Droid.Resource.Id.smallLabel;
 			global::Xamarin.Forms.Platform.Resource.Id.snackbar_action = global::NotesAndReminders.Droid.Resource.Id.snackbar_action;
 			global::Xamarin.Forms.Platform.Resource.Id.snackbar_text = global::NotesAndReminders.Droid.Resource.Id.snackbar_text;
@@ -4057,11 +4091,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Resource.Id.submit_area = global::NotesAndReminders.Droid.Resource.Id.submit_area;
 			global::Xamarin.Forms.Platform.Resource.Id.SYM = global::NotesAndReminders.Droid.Resource.Id.SYM;
 			global::Xamarin.Forms.Platform.Resource.Id.tabMode = global::NotesAndReminders.Droid.Resource.Id.tabMode;
-			global::Xamarin.Forms.Platform.Resource.Id.tag_accessibility_actions = global::NotesAndReminders.Droid.Resource.Id.tag_accessibility_actions;
-			global::Xamarin.Forms.Platform.Resource.Id.tag_accessibility_clickable_spans = global::NotesAndReminders.Droid.Resource.Id.tag_accessibility_clickable_spans;
-			global::Xamarin.Forms.Platform.Resource.Id.tag_accessibility_heading = global::NotesAndReminders.Droid.Resource.Id.tag_accessibility_heading;
-			global::Xamarin.Forms.Platform.Resource.Id.tag_accessibility_pane_title = global::NotesAndReminders.Droid.Resource.Id.tag_accessibility_pane_title;
-			global::Xamarin.Forms.Platform.Resource.Id.tag_screen_reader_focusable = global::NotesAndReminders.Droid.Resource.Id.tag_screen_reader_focusable;
 			global::Xamarin.Forms.Platform.Resource.Id.tag_transition_group = global::NotesAndReminders.Droid.Resource.Id.tag_transition_group;
 			global::Xamarin.Forms.Platform.Resource.Id.tag_unhandled_key_event_manager = global::NotesAndReminders.Droid.Resource.Id.tag_unhandled_key_event_manager;
 			global::Xamarin.Forms.Platform.Resource.Id.tag_unhandled_key_listeners = global::NotesAndReminders.Droid.Resource.Id.tag_unhandled_key_listeners;
@@ -4077,7 +4106,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Resource.Id.title = global::NotesAndReminders.Droid.Resource.Id.title;
 			global::Xamarin.Forms.Platform.Resource.Id.titleDividerNoCustom = global::NotesAndReminders.Droid.Resource.Id.titleDividerNoCustom;
 			global::Xamarin.Forms.Platform.Resource.Id.title_template = global::NotesAndReminders.Droid.Resource.Id.title_template;
-			global::Xamarin.Forms.Platform.Resource.Id.toolbar = global::NotesAndReminders.Droid.Resource.Id.toolbar;
 			global::Xamarin.Forms.Platform.Resource.Id.top = global::NotesAndReminders.Droid.Resource.Id.top;
 			global::Xamarin.Forms.Platform.Resource.Id.topPanel = global::NotesAndReminders.Droid.Resource.Id.topPanel;
 			global::Xamarin.Forms.Platform.Resource.Id.touch_outside = global::NotesAndReminders.Droid.Resource.Id.touch_outside;
@@ -4086,7 +4114,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Resource.Id.transition_position = global::NotesAndReminders.Droid.Resource.Id.transition_position;
 			global::Xamarin.Forms.Platform.Resource.Id.transition_scene_layoutid_cache = global::NotesAndReminders.Droid.Resource.Id.transition_scene_layoutid_cache;
 			global::Xamarin.Forms.Platform.Resource.Id.transition_transform = global::NotesAndReminders.Droid.Resource.Id.transition_transform;
-			global::Xamarin.Forms.Platform.Resource.Id.@unchecked = global::NotesAndReminders.Droid.Resource.Id.@unchecked;
 			global::Xamarin.Forms.Platform.Resource.Id.uniform = global::NotesAndReminders.Droid.Resource.Id.uniform;
 			global::Xamarin.Forms.Platform.Resource.Id.unlabeled = global::NotesAndReminders.Droid.Resource.Id.unlabeled;
 			global::Xamarin.Forms.Platform.Resource.Id.up = global::NotesAndReminders.Droid.Resource.Id.up;
@@ -4110,13 +4137,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Resource.Integer.mtrl_tab_indicator_anim_duration_ms = global::NotesAndReminders.Droid.Resource.Integer.mtrl_tab_indicator_anim_duration_ms;
 			global::Xamarin.Forms.Platform.Resource.Integer.show_password_duration = global::NotesAndReminders.Droid.Resource.Integer.show_password_duration;
 			global::Xamarin.Forms.Platform.Resource.Integer.status_bar_notification_info_maxnum = global::NotesAndReminders.Droid.Resource.Integer.status_bar_notification_info_maxnum;
-			global::Xamarin.Forms.Platform.Resource.Interpolator.btn_checkbox_checked_mtrl_animation_interpolator_0 = global::NotesAndReminders.Droid.Resource.Interpolator.btn_checkbox_checked_mtrl_animation_interpolator_0;
-			global::Xamarin.Forms.Platform.Resource.Interpolator.btn_checkbox_checked_mtrl_animation_interpolator_1 = global::NotesAndReminders.Droid.Resource.Interpolator.btn_checkbox_checked_mtrl_animation_interpolator_1;
-			global::Xamarin.Forms.Platform.Resource.Interpolator.btn_checkbox_unchecked_mtrl_animation_interpolator_0 = global::NotesAndReminders.Droid.Resource.Interpolator.btn_checkbox_unchecked_mtrl_animation_interpolator_0;
-			global::Xamarin.Forms.Platform.Resource.Interpolator.btn_checkbox_unchecked_mtrl_animation_interpolator_1 = global::NotesAndReminders.Droid.Resource.Interpolator.btn_checkbox_unchecked_mtrl_animation_interpolator_1;
-			global::Xamarin.Forms.Platform.Resource.Interpolator.btn_radio_to_off_mtrl_animation_interpolator_0 = global::NotesAndReminders.Droid.Resource.Interpolator.btn_radio_to_off_mtrl_animation_interpolator_0;
-			global::Xamarin.Forms.Platform.Resource.Interpolator.btn_radio_to_on_mtrl_animation_interpolator_0 = global::NotesAndReminders.Droid.Resource.Interpolator.btn_radio_to_on_mtrl_animation_interpolator_0;
-			global::Xamarin.Forms.Platform.Resource.Interpolator.fast_out_slow_in = global::NotesAndReminders.Droid.Resource.Interpolator.fast_out_slow_in;
 			global::Xamarin.Forms.Platform.Resource.Interpolator.mtrl_fast_out_linear_in = global::NotesAndReminders.Droid.Resource.Interpolator.mtrl_fast_out_linear_in;
 			global::Xamarin.Forms.Platform.Resource.Interpolator.mtrl_fast_out_slow_in = global::NotesAndReminders.Droid.Resource.Interpolator.mtrl_fast_out_slow_in;
 			global::Xamarin.Forms.Platform.Resource.Interpolator.mtrl_linear = global::NotesAndReminders.Droid.Resource.Interpolator.mtrl_linear;
@@ -4150,7 +4170,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Resource.Layout.abc_select_dialog_material = global::NotesAndReminders.Droid.Resource.Layout.abc_select_dialog_material;
 			global::Xamarin.Forms.Platform.Resource.Layout.abc_tooltip = global::NotesAndReminders.Droid.Resource.Layout.abc_tooltip;
 			global::Xamarin.Forms.Platform.Resource.Layout.BottomTabLayout = global::NotesAndReminders.Droid.Resource.Layout.BottomTabLayout;
-			global::Xamarin.Forms.Platform.Resource.Layout.custom_dialog = global::NotesAndReminders.Droid.Resource.Layout.custom_dialog;
 			global::Xamarin.Forms.Platform.Resource.Layout.design_bottom_navigation_item = global::NotesAndReminders.Droid.Resource.Layout.design_bottom_navigation_item;
 			global::Xamarin.Forms.Platform.Resource.Layout.design_bottom_sheet_dialog = global::NotesAndReminders.Droid.Resource.Layout.design_bottom_sheet_dialog;
 			global::Xamarin.Forms.Platform.Resource.Layout.design_layout_snackbar = global::NotesAndReminders.Droid.Resource.Layout.design_layout_snackbar;
@@ -4164,8 +4183,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Resource.Layout.design_navigation_item_subheader = global::NotesAndReminders.Droid.Resource.Layout.design_navigation_item_subheader;
 			global::Xamarin.Forms.Platform.Resource.Layout.design_navigation_menu = global::NotesAndReminders.Droid.Resource.Layout.design_navigation_menu;
 			global::Xamarin.Forms.Platform.Resource.Layout.design_navigation_menu_item = global::NotesAndReminders.Droid.Resource.Layout.design_navigation_menu_item;
-			global::Xamarin.Forms.Platform.Resource.Layout.FallbackTabbarDoNotUse = global::NotesAndReminders.Droid.Resource.Layout.FallbackTabbarDoNotUse;
-			global::Xamarin.Forms.Platform.Resource.Layout.FallbackToolbarDoNotUse = global::NotesAndReminders.Droid.Resource.Layout.FallbackToolbarDoNotUse;
 			global::Xamarin.Forms.Platform.Resource.Layout.FlyoutContent = global::NotesAndReminders.Droid.Resource.Layout.FlyoutContent;
 			global::Xamarin.Forms.Platform.Resource.Layout.mtrl_layout_snackbar = global::NotesAndReminders.Droid.Resource.Layout.mtrl_layout_snackbar;
 			global::Xamarin.Forms.Platform.Resource.Layout.mtrl_layout_snackbar_include = global::NotesAndReminders.Droid.Resource.Layout.mtrl_layout_snackbar_include;
@@ -4190,8 +4207,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Resource.Layout.select_dialog_singlechoice_material = global::NotesAndReminders.Droid.Resource.Layout.select_dialog_singlechoice_material;
 			global::Xamarin.Forms.Platform.Resource.Layout.ShellContent = global::NotesAndReminders.Droid.Resource.Layout.ShellContent;
 			global::Xamarin.Forms.Platform.Resource.Layout.support_simple_spinner_dropdown_item = global::NotesAndReminders.Droid.Resource.Layout.support_simple_spinner_dropdown_item;
-			global::Xamarin.Forms.Platform.Resource.Layout.Tabbar = global::NotesAndReminders.Droid.Resource.Layout.Tabbar;
-			global::Xamarin.Forms.Platform.Resource.Layout.Toolbar = global::NotesAndReminders.Droid.Resource.Layout.Toolbar;
 			global::Xamarin.Forms.Platform.Resource.String.abc_action_bar_home_description = global::NotesAndReminders.Droid.Resource.String.abc_action_bar_home_description;
 			global::Xamarin.Forms.Platform.Resource.String.abc_action_bar_up_description = global::NotesAndReminders.Droid.Resource.String.abc_action_bar_up_description;
 			global::Xamarin.Forms.Platform.Resource.String.abc_action_menu_overflow_description = global::NotesAndReminders.Droid.Resource.String.abc_action_menu_overflow_description;
@@ -4423,7 +4438,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete = global::NotesAndReminders.Droid.Resource.Style.Base_Widget_AppCompat_SeekBar_Discrete;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_Widget_AppCompat_Spinner = global::NotesAndReminders.Droid.Resource.Style.Base_Widget_AppCompat_Spinner;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined = global::NotesAndReminders.Droid.Resource.Style.Base_Widget_AppCompat_Spinner_Underlined;
-			global::Xamarin.Forms.Platform.Resource.Style.Base_Widget_AppCompat_TextView = global::NotesAndReminders.Droid.Resource.Style.Base_Widget_AppCompat_TextView;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem = global::NotesAndReminders.Droid.Resource.Style.Base_Widget_AppCompat_TextView_SpinnerItem;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_Widget_AppCompat_Toolbar = global::NotesAndReminders.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar;
 			global::Xamarin.Forms.Platform.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation = global::NotesAndReminders.Droid.Resource.Style.Base_Widget_AppCompat_Toolbar_Button_Navigation;
@@ -4557,8 +4571,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_AppCompat_ActionBar = global::NotesAndReminders.Droid.Resource.Style.ThemeOverlay_AppCompat_ActionBar;
 			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_AppCompat_Dark = global::NotesAndReminders.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark;
 			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar = global::NotesAndReminders.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark_ActionBar;
-			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_AppCompat_DayNight = global::NotesAndReminders.Droid.Resource.Style.ThemeOverlay_AppCompat_DayNight;
-			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_AppCompat_DayNight_ActionBar = global::NotesAndReminders.Droid.Resource.Style.ThemeOverlay_AppCompat_DayNight_ActionBar;
 			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_AppCompat_Dialog = global::NotesAndReminders.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog;
 			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert = global::NotesAndReminders.Droid.Resource.Style.ThemeOverlay_AppCompat_Dialog_Alert;
 			global::Xamarin.Forms.Platform.Resource.Style.ThemeOverlay_AppCompat_Light = global::NotesAndReminders.Droid.Resource.Style.ThemeOverlay_AppCompat_Light;
@@ -4691,7 +4703,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_AppCompat_Spinner_DropDown = global::NotesAndReminders.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar = global::NotesAndReminders.Droid.Resource.Style.Widget_AppCompat_Spinner_DropDown_ActionBar;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_AppCompat_Spinner_Underlined = global::NotesAndReminders.Droid.Resource.Style.Widget_AppCompat_Spinner_Underlined;
-			global::Xamarin.Forms.Platform.Resource.Style.Widget_AppCompat_TextView = global::NotesAndReminders.Droid.Resource.Style.Widget_AppCompat_TextView;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_AppCompat_TextView_SpinnerItem = global::NotesAndReminders.Droid.Resource.Style.Widget_AppCompat_TextView_SpinnerItem;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_AppCompat_Toolbar = global::NotesAndReminders.Droid.Resource.Style.Widget_AppCompat_Toolbar;
 			global::Xamarin.Forms.Platform.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation = global::NotesAndReminders.Droid.Resource.Style.Widget_AppCompat_Toolbar_Button_Navigation;
@@ -4853,21 +4864,11 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_autoSizePresetSizes = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTextView_autoSizePresetSizes;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_autoSizeStepGranularity = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTextView_autoSizeStepGranularity;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_autoSizeTextType = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTextView_autoSizeTextType;
-			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_drawableBottomCompat = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTextView_drawableBottomCompat;
-			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_drawableEndCompat = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTextView_drawableEndCompat;
-			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_drawableLeftCompat = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTextView_drawableLeftCompat;
-			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_drawableRightCompat = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTextView_drawableRightCompat;
-			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_drawableStartCompat = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTextView_drawableStartCompat;
-			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_drawableTint = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTextView_drawableTint;
-			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_drawableTintMode = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTextView_drawableTintMode;
-			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_drawableTopCompat = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTextView_drawableTopCompat;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_firstBaselineToTopHeight = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTextView_firstBaselineToTopHeight;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_fontFamily = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTextView_fontFamily;
-			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_fontVariationSettings = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTextView_fontVariationSettings;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_lastBaselineToBottomHeight = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTextView_lastBaselineToBottomHeight;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_lineHeight = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTextView_lineHeight;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_textAllCaps = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTextView_textAllCaps;
-			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTextView_textLocale = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTextView_textLocale;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTheme;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_actionBarDivider = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTheme_actionBarDivider;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_actionBarItemBackground = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTheme_actionBarItemBackground;
@@ -4941,18 +4942,14 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_homeAsUpIndicator = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTheme_homeAsUpIndicator;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_imageButtonStyle = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTheme_imageButtonStyle;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTheme_listChoiceBackgroundIndicator;
-			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_listChoiceIndicatorMultipleAnimated = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTheme_listChoiceIndicatorMultipleAnimated;
-			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_listChoiceIndicatorSingleAnimated = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTheme_listChoiceIndicatorSingleAnimated;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_listDividerAlertDialog = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTheme_listDividerAlertDialog;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_listMenuViewStyle = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTheme_listMenuViewStyle;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_listPopupWindowStyle = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTheme_listPopupWindowStyle;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_listPreferredItemHeight = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeight;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightLarge;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemHeightSmall;
-			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingEnd = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingEnd;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingLeft;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingRight;
-			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingStart = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTheme_listPreferredItemPaddingStart;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_panelBackground = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTheme_panelBackground;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_panelMenuListTheme = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTheme_panelMenuListTheme;
 			global::Xamarin.Forms.Platform.Resource.Styleable.AppCompatTheme_panelMenuListWidth = global::NotesAndReminders.Droid.Resource.Styleable.AppCompatTheme_panelMenuListWidth;
@@ -5101,7 +5098,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Resource.Styleable.ColorStateListItem_android_color = global::NotesAndReminders.Droid.Resource.Styleable.ColorStateListItem_android_color;
 			global::Xamarin.Forms.Platform.Resource.Styleable.CompoundButton = global::NotesAndReminders.Droid.Resource.Styleable.CompoundButton;
 			global::Xamarin.Forms.Platform.Resource.Styleable.CompoundButton_android_button = global::NotesAndReminders.Droid.Resource.Styleable.CompoundButton_android_button;
-			global::Xamarin.Forms.Platform.Resource.Styleable.CompoundButton_buttonCompat = global::NotesAndReminders.Droid.Resource.Styleable.CompoundButton_buttonCompat;
 			global::Xamarin.Forms.Platform.Resource.Styleable.CompoundButton_buttonTint = global::NotesAndReminders.Droid.Resource.Styleable.CompoundButton_buttonTint;
 			global::Xamarin.Forms.Platform.Resource.Styleable.CompoundButton_buttonTintMode = global::NotesAndReminders.Droid.Resource.Styleable.CompoundButton_buttonTintMode;
 			global::Xamarin.Forms.Platform.Resource.Styleable.CoordinatorLayout = global::NotesAndReminders.Droid.Resource.Styleable.CoordinatorLayout;
@@ -5285,7 +5281,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Resource.Styleable.RecycleListView_paddingBottomNoButtons = global::NotesAndReminders.Droid.Resource.Styleable.RecycleListView_paddingBottomNoButtons;
 			global::Xamarin.Forms.Platform.Resource.Styleable.RecycleListView_paddingTopNoTitle = global::NotesAndReminders.Droid.Resource.Styleable.RecycleListView_paddingTopNoTitle;
 			global::Xamarin.Forms.Platform.Resource.Styleable.RecyclerView = global::NotesAndReminders.Droid.Resource.Styleable.RecyclerView;
-			global::Xamarin.Forms.Platform.Resource.Styleable.RecyclerView_android_clipToPadding = global::NotesAndReminders.Droid.Resource.Styleable.RecyclerView_android_clipToPadding;
 			global::Xamarin.Forms.Platform.Resource.Styleable.RecyclerView_android_descendantFocusability = global::NotesAndReminders.Droid.Resource.Styleable.RecyclerView_android_descendantFocusability;
 			global::Xamarin.Forms.Platform.Resource.Styleable.RecyclerView_android_orientation = global::NotesAndReminders.Droid.Resource.Styleable.RecyclerView_android_orientation;
 			global::Xamarin.Forms.Platform.Resource.Styleable.RecyclerView_fastScrollEnabled = global::NotesAndReminders.Droid.Resource.Styleable.RecyclerView_fastScrollEnabled;
@@ -5397,14 +5392,11 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Resource.Styleable.TextAppearance_android_textColor = global::NotesAndReminders.Droid.Resource.Styleable.TextAppearance_android_textColor;
 			global::Xamarin.Forms.Platform.Resource.Styleable.TextAppearance_android_textColorHint = global::NotesAndReminders.Droid.Resource.Styleable.TextAppearance_android_textColorHint;
 			global::Xamarin.Forms.Platform.Resource.Styleable.TextAppearance_android_textColorLink = global::NotesAndReminders.Droid.Resource.Styleable.TextAppearance_android_textColorLink;
-			global::Xamarin.Forms.Platform.Resource.Styleable.TextAppearance_android_textFontWeight = global::NotesAndReminders.Droid.Resource.Styleable.TextAppearance_android_textFontWeight;
 			global::Xamarin.Forms.Platform.Resource.Styleable.TextAppearance_android_textSize = global::NotesAndReminders.Droid.Resource.Styleable.TextAppearance_android_textSize;
 			global::Xamarin.Forms.Platform.Resource.Styleable.TextAppearance_android_textStyle = global::NotesAndReminders.Droid.Resource.Styleable.TextAppearance_android_textStyle;
 			global::Xamarin.Forms.Platform.Resource.Styleable.TextAppearance_android_typeface = global::NotesAndReminders.Droid.Resource.Styleable.TextAppearance_android_typeface;
 			global::Xamarin.Forms.Platform.Resource.Styleable.TextAppearance_fontFamily = global::NotesAndReminders.Droid.Resource.Styleable.TextAppearance_fontFamily;
-			global::Xamarin.Forms.Platform.Resource.Styleable.TextAppearance_fontVariationSettings = global::NotesAndReminders.Droid.Resource.Styleable.TextAppearance_fontVariationSettings;
 			global::Xamarin.Forms.Platform.Resource.Styleable.TextAppearance_textAllCaps = global::NotesAndReminders.Droid.Resource.Styleable.TextAppearance_textAllCaps;
-			global::Xamarin.Forms.Platform.Resource.Styleable.TextAppearance_textLocale = global::NotesAndReminders.Droid.Resource.Styleable.TextAppearance_textLocale;
 			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout = global::NotesAndReminders.Droid.Resource.Styleable.TextInputLayout;
 			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_android_hint = global::NotesAndReminders.Droid.Resource.Styleable.TextInputLayout_android_hint;
 			global::Xamarin.Forms.Platform.Resource.Styleable.TextInputLayout_android_textColorHint = global::NotesAndReminders.Droid.Resource.Styleable.TextInputLayout_android_textColorHint;
@@ -5453,7 +5445,6 @@ namespace NotesAndReminders.Droid
 			global::Xamarin.Forms.Platform.Resource.Styleable.Toolbar_logo = global::NotesAndReminders.Droid.Resource.Styleable.Toolbar_logo;
 			global::Xamarin.Forms.Platform.Resource.Styleable.Toolbar_logoDescription = global::NotesAndReminders.Droid.Resource.Styleable.Toolbar_logoDescription;
 			global::Xamarin.Forms.Platform.Resource.Styleable.Toolbar_maxButtonHeight = global::NotesAndReminders.Droid.Resource.Styleable.Toolbar_maxButtonHeight;
-			global::Xamarin.Forms.Platform.Resource.Styleable.Toolbar_menu = global::NotesAndReminders.Droid.Resource.Styleable.Toolbar_menu;
 			global::Xamarin.Forms.Platform.Resource.Styleable.Toolbar_navigationContentDescription = global::NotesAndReminders.Droid.Resource.Styleable.Toolbar_navigationContentDescription;
 			global::Xamarin.Forms.Platform.Resource.Styleable.Toolbar_navigationIcon = global::NotesAndReminders.Droid.Resource.Styleable.Toolbar_navigationIcon;
 			global::Xamarin.Forms.Platform.Resource.Styleable.Toolbar_popupTheme = global::NotesAndReminders.Droid.Resource.Styleable.Toolbar_popupTheme;
@@ -11214,208 +11205,202 @@ namespace NotesAndReminders.Droid
 			public const int design_text_input_start_icon = 2131427374;
 			
 			// aapt resource value: 0x7F0B002F
-			public const int FallbackTabbarDoNotUse = 2131427375;
+			public const int FlyoutContent = 2131427375;
 			
 			// aapt resource value: 0x7F0B0030
-			public const int FallbackToolbarDoNotUse = 2131427376;
+			public const int mtrl_alert_dialog = 2131427376;
 			
 			// aapt resource value: 0x7F0B0031
-			public const int FlyoutContent = 2131427377;
+			public const int mtrl_alert_dialog_actions = 2131427377;
 			
 			// aapt resource value: 0x7F0B0032
-			public const int mtrl_alert_dialog = 2131427378;
+			public const int mtrl_alert_dialog_title = 2131427378;
 			
 			// aapt resource value: 0x7F0B0033
-			public const int mtrl_alert_dialog_actions = 2131427379;
+			public const int mtrl_alert_select_dialog_item = 2131427379;
 			
 			// aapt resource value: 0x7F0B0034
-			public const int mtrl_alert_dialog_title = 2131427380;
+			public const int mtrl_alert_select_dialog_multichoice = 2131427380;
 			
 			// aapt resource value: 0x7F0B0035
-			public const int mtrl_alert_select_dialog_item = 2131427381;
+			public const int mtrl_alert_select_dialog_singlechoice = 2131427381;
 			
 			// aapt resource value: 0x7F0B0036
-			public const int mtrl_alert_select_dialog_multichoice = 2131427382;
-			
-			// aapt resource value: 0x7F0B0037
-			public const int mtrl_alert_select_dialog_singlechoice = 2131427383;
+			public const int mtrl_calendar_day = 2131427382;
 			
 			// aapt resource value: 0x7F0B0038
-			public const int mtrl_calendar_day = 2131427384;
+			public const int mtrl_calendar_days_of_week = 2131427384;
 			
-			// aapt resource value: 0x7F0B003A
-			public const int mtrl_calendar_days_of_week = 2131427386;
+			// aapt resource value: 0x7F0B0037
+			public const int mtrl_calendar_day_of_week = 2131427383;
 			
 			// aapt resource value: 0x7F0B0039
-			public const int mtrl_calendar_day_of_week = 2131427385;
+			public const int mtrl_calendar_horizontal = 2131427385;
 			
-			// aapt resource value: 0x7F0B003B
-			public const int mtrl_calendar_horizontal = 2131427387;
-			
-			// aapt resource value: 0x7F0B003C
-			public const int mtrl_calendar_month = 2131427388;
-			
-			// aapt resource value: 0x7F0B003F
-			public const int mtrl_calendar_months = 2131427391;
+			// aapt resource value: 0x7F0B003A
+			public const int mtrl_calendar_month = 2131427386;
 			
 			// aapt resource value: 0x7F0B003D
-			public const int mtrl_calendar_month_labeled = 2131427389;
+			public const int mtrl_calendar_months = 2131427389;
+			
+			// aapt resource value: 0x7F0B003B
+			public const int mtrl_calendar_month_labeled = 2131427387;
+			
+			// aapt resource value: 0x7F0B003C
+			public const int mtrl_calendar_month_navigation = 2131427388;
 			
 			// aapt resource value: 0x7F0B003E
-			public const int mtrl_calendar_month_navigation = 2131427390;
+			public const int mtrl_calendar_vertical = 2131427390;
+			
+			// aapt resource value: 0x7F0B003F
+			public const int mtrl_calendar_year = 2131427391;
 			
 			// aapt resource value: 0x7F0B0040
-			public const int mtrl_calendar_vertical = 2131427392;
+			public const int mtrl_layout_snackbar = 2131427392;
 			
 			// aapt resource value: 0x7F0B0041
-			public const int mtrl_calendar_year = 2131427393;
+			public const int mtrl_layout_snackbar_include = 2131427393;
 			
 			// aapt resource value: 0x7F0B0042
-			public const int mtrl_layout_snackbar = 2131427394;
+			public const int mtrl_picker_actions = 2131427394;
 			
 			// aapt resource value: 0x7F0B0043
-			public const int mtrl_layout_snackbar_include = 2131427395;
+			public const int mtrl_picker_dialog = 2131427395;
 			
 			// aapt resource value: 0x7F0B0044
-			public const int mtrl_picker_actions = 2131427396;
+			public const int mtrl_picker_fullscreen = 2131427396;
 			
 			// aapt resource value: 0x7F0B0045
-			public const int mtrl_picker_dialog = 2131427397;
+			public const int mtrl_picker_header_dialog = 2131427397;
 			
 			// aapt resource value: 0x7F0B0046
-			public const int mtrl_picker_fullscreen = 2131427398;
+			public const int mtrl_picker_header_fullscreen = 2131427398;
 			
 			// aapt resource value: 0x7F0B0047
-			public const int mtrl_picker_header_dialog = 2131427399;
+			public const int mtrl_picker_header_selection_text = 2131427399;
 			
 			// aapt resource value: 0x7F0B0048
-			public const int mtrl_picker_header_fullscreen = 2131427400;
+			public const int mtrl_picker_header_title_text = 2131427400;
 			
 			// aapt resource value: 0x7F0B0049
-			public const int mtrl_picker_header_selection_text = 2131427401;
+			public const int mtrl_picker_header_toggle = 2131427401;
 			
 			// aapt resource value: 0x7F0B004A
-			public const int mtrl_picker_header_title_text = 2131427402;
+			public const int mtrl_picker_text_input_date = 2131427402;
 			
 			// aapt resource value: 0x7F0B004B
-			public const int mtrl_picker_header_toggle = 2131427403;
+			public const int mtrl_picker_text_input_date_range = 2131427403;
 			
 			// aapt resource value: 0x7F0B004C
-			public const int mtrl_picker_text_input_date = 2131427404;
+			public const int notification_action = 2131427404;
 			
 			// aapt resource value: 0x7F0B004D
-			public const int mtrl_picker_text_input_date_range = 2131427405;
+			public const int notification_action_tombstone = 2131427405;
 			
 			// aapt resource value: 0x7F0B004E
-			public const int notification_action = 2131427406;
+			public const int notification_media_action = 2131427406;
 			
 			// aapt resource value: 0x7F0B004F
-			public const int notification_action_tombstone = 2131427407;
+			public const int notification_media_cancel_action = 2131427407;
 			
 			// aapt resource value: 0x7F0B0050
-			public const int notification_media_action = 2131427408;
+			public const int notification_template_big_media = 2131427408;
 			
 			// aapt resource value: 0x7F0B0051
-			public const int notification_media_cancel_action = 2131427409;
+			public const int notification_template_big_media_custom = 2131427409;
 			
 			// aapt resource value: 0x7F0B0052
-			public const int notification_template_big_media = 2131427410;
+			public const int notification_template_big_media_narrow = 2131427410;
 			
 			// aapt resource value: 0x7F0B0053
-			public const int notification_template_big_media_custom = 2131427411;
+			public const int notification_template_big_media_narrow_custom = 2131427411;
 			
 			// aapt resource value: 0x7F0B0054
-			public const int notification_template_big_media_narrow = 2131427412;
+			public const int notification_template_custom_big = 2131427412;
 			
 			// aapt resource value: 0x7F0B0055
-			public const int notification_template_big_media_narrow_custom = 2131427413;
+			public const int notification_template_icon_group = 2131427413;
 			
 			// aapt resource value: 0x7F0B0056
-			public const int notification_template_custom_big = 2131427414;
+			public const int notification_template_lines_media = 2131427414;
 			
 			// aapt resource value: 0x7F0B0057
-			public const int notification_template_icon_group = 2131427415;
+			public const int notification_template_media = 2131427415;
 			
 			// aapt resource value: 0x7F0B0058
-			public const int notification_template_lines_media = 2131427416;
+			public const int notification_template_media_custom = 2131427416;
 			
 			// aapt resource value: 0x7F0B0059
-			public const int notification_template_media = 2131427417;
+			public const int notification_template_part_chronometer = 2131427417;
 			
 			// aapt resource value: 0x7F0B005A
-			public const int notification_template_media_custom = 2131427418;
+			public const int notification_template_part_time = 2131427418;
 			
 			// aapt resource value: 0x7F0B005B
-			public const int notification_template_part_chronometer = 2131427419;
+			public const int RootLayout = 2131427419;
 			
 			// aapt resource value: 0x7F0B005C
-			public const int notification_template_part_time = 2131427420;
+			public const int select_dialog_item_material = 2131427420;
 			
 			// aapt resource value: 0x7F0B005D
-			public const int RootLayout = 2131427421;
+			public const int select_dialog_multichoice_material = 2131427421;
 			
 			// aapt resource value: 0x7F0B005E
-			public const int select_dialog_item_material = 2131427422;
+			public const int select_dialog_singlechoice_material = 2131427422;
 			
 			// aapt resource value: 0x7F0B005F
-			public const int select_dialog_multichoice_material = 2131427423;
+			public const int ShellContent = 2131427423;
 			
 			// aapt resource value: 0x7F0B0060
-			public const int select_dialog_singlechoice_material = 2131427424;
+			public const int support_simple_spinner_dropdown_item = 2131427424;
 			
 			// aapt resource value: 0x7F0B0061
-			public const int ShellContent = 2131427425;
+			public const int Tabbar = 2131427425;
 			
 			// aapt resource value: 0x7F0B0062
-			public const int support_simple_spinner_dropdown_item = 2131427426;
+			public const int test_action_chip = 2131427426;
 			
 			// aapt resource value: 0x7F0B0063
-			public const int Tabbar = 2131427427;
+			public const int test_chip_zero_corner_radius = 2131427427;
 			
 			// aapt resource value: 0x7F0B0064
-			public const int test_action_chip = 2131427428;
+			public const int test_design_checkbox = 2131427428;
 			
 			// aapt resource value: 0x7F0B0065
-			public const int test_chip_zero_corner_radius = 2131427429;
+			public const int test_design_radiobutton = 2131427429;
 			
 			// aapt resource value: 0x7F0B0066
-			public const int test_design_checkbox = 2131427430;
+			public const int test_reflow_chipgroup = 2131427430;
 			
 			// aapt resource value: 0x7F0B0067
-			public const int test_design_radiobutton = 2131427431;
+			public const int test_toolbar = 2131427431;
 			
 			// aapt resource value: 0x7F0B0068
-			public const int test_reflow_chipgroup = 2131427432;
+			public const int test_toolbar_custom_background = 2131427432;
 			
 			// aapt resource value: 0x7F0B0069
-			public const int test_toolbar = 2131427433;
+			public const int test_toolbar_elevation = 2131427433;
 			
 			// aapt resource value: 0x7F0B006A
-			public const int test_toolbar_custom_background = 2131427434;
-			
-			// aapt resource value: 0x7F0B006B
-			public const int test_toolbar_elevation = 2131427435;
-			
-			// aapt resource value: 0x7F0B006C
-			public const int test_toolbar_surface = 2131427436;
-			
-			// aapt resource value: 0x7F0B0071
-			public const int text_view_without_line_height = 2131427441;
-			
-			// aapt resource value: 0x7F0B006D
-			public const int text_view_with_line_height_from_appearance = 2131427437;
-			
-			// aapt resource value: 0x7F0B006E
-			public const int text_view_with_line_height_from_layout = 2131427438;
+			public const int test_toolbar_surface = 2131427434;
 			
 			// aapt resource value: 0x7F0B006F
-			public const int text_view_with_line_height_from_style = 2131427439;
+			public const int text_view_without_line_height = 2131427439;
+			
+			// aapt resource value: 0x7F0B006B
+			public const int text_view_with_line_height_from_appearance = 2131427435;
+			
+			// aapt resource value: 0x7F0B006C
+			public const int text_view_with_line_height_from_layout = 2131427436;
+			
+			// aapt resource value: 0x7F0B006D
+			public const int text_view_with_line_height_from_style = 2131427437;
+			
+			// aapt resource value: 0x7F0B006E
+			public const int text_view_with_theme_line_height = 2131427438;
 			
 			// aapt resource value: 0x7F0B0070
-			public const int text_view_with_theme_line_height = 2131427440;
-			
-			// aapt resource value: 0x7F0B0072
-			public const int Toolbar = 2131427442;
+			public const int Toolbar = 2131427440;
 			
 			static Layout()
 			{

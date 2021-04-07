@@ -1,4 +1,5 @@
 ﻿using NotesAndReminders.Models;
+using System;
 using System.Threading.Tasks;
 
 namespace NotesAndReminders.Services
@@ -10,5 +11,7 @@ namespace NotesAndReminders.Services
 		Task<(User, string)> SignUp(string email, string password);
 		Task<bool> ResetPassword(string email);
 		bool LogOut();
+
+		Task<User> GetUserAsync(Action<IDBItem> onUserRecievedCallback);
 	}
 }

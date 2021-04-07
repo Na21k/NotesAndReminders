@@ -1,5 +1,6 @@
 ﻿using Android.Gms.Extensions;
 using Firebase.Auth;
+using Firebase.Firestore;
 using NotesAndReminders.Droid.Services;
 using NotesAndReminders.Exceptions;
 using NotesAndReminders.Models;
@@ -13,7 +14,6 @@ namespace NotesAndReminders.Droid.Services
 	public class FirebaseAuthService : IAuthorizationService
 	{
 		private FirebaseAuth _auth = FirebaseAuth.Instance;
-
 
 		public bool IsLoggedIn
 		{
@@ -114,6 +114,19 @@ namespace NotesAndReminders.Droid.Services
 				throw new Exception(ex.Message);
 			}
 
+		}
+
+		public Task<User> GetUserAsync(Action<IDBItem> onUserRecievedCallback)
+		{
+			var tcs = new TaskCompletionSource<User>();
+
+			//FirebaseFirestore.Instance
+			//	.Collection("Users")
+			//	.Document(_auth.CurrentUser.Uid)
+			//	.Get()
+			//	.AddOnCompleteListener(new OnUserCompleteListener<User>(onUserRecievedCallback));
+			 
+			return tcs.Task;
 		}
 	}
 }

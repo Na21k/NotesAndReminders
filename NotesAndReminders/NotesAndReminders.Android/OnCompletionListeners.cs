@@ -1,4 +1,5 @@
-﻿using Firebase.Firestore;
+﻿using Android.Gms.Tasks;
+using Firebase.Firestore;
 using NotesAndReminders.Models;
 using System;
 using System.Collections.Generic;
@@ -107,6 +108,42 @@ namespace NotesAndReminders.Droid
 			else
 			{
 				throw new Exception("Failed to get collection");
+			}
+		}
+	}
+
+	public class OnUserCompleteListener<T> : Java.Lang.Object, Android.Gms.Tasks.IOnCompleteListener where T : Identifiable, IDBItem
+	{
+		private Action<IDBItem> _onUserCompleteCallback;
+		public OnUserCompleteListener(Action<IDBItem> onUserCompleteCallback)
+		{
+			_onUserCompleteCallback = onUserCompleteCallback;
+
+		}
+
+		public void OnComplete(Android.Gms.Tasks.Task task)
+		{
+			if (task.IsSuccessful)
+			{
+				var docObj = task.Result;
+				if (docObj is DocumentSnapshot docSnap && docSnap.Exists())
+				{
+					var user = new User();
+
+					user.Id = docSnap.Id;
+					user.UserName = docSnap.GetString("Name");
+					user.Email = docSnap.GetString("email");
+
+					_onUserCompleteCallback?.Invoke(user);
+				}
+				else
+				{
+					throw new Exception("No such documment exists");
+				}
+			}
+			else
+			{
+				throw new Exception("Failed to get documment");
 			}
 		}
 	}

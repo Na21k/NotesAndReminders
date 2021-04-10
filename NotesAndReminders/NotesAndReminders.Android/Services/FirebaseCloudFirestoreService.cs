@@ -25,6 +25,7 @@ namespace NotesAndReminders.Droid.Services
 	public class FirebaseCloudFirestoreService : IDBService
 	{
 		private FirebaseFirestore _db = FirebaseFirestore.Instance;
+
 		private FirebaseAuth _auth = FirebaseAuth.Instance;
 
 		public async Task<bool> AddNoteAsync(Note note)

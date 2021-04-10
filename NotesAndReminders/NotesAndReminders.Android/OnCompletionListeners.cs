@@ -1,5 +1,6 @@
 ﻿using Android.Gms.Tasks;
 using Firebase.Firestore;
+using NotesAndReminders.Droid.Extentions;
 using NotesAndReminders.Models;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,7 @@ namespace NotesAndReminders.Droid
 		{
 			try
 			{
-				var jsonStr = Newtonsoft.Json.JsonConvert.SerializeObject(doc.Data);
+				var jsonStr = Newtonsoft.Json.JsonConvert.SerializeObject(doc.Data.ToDictionary());
 				var item = Newtonsoft.Json.JsonConvert.DeserializeObject<T>(jsonStr);
 				item.Id = doc.Id;
 

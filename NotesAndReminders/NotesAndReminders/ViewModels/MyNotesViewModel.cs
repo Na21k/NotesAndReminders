@@ -24,10 +24,6 @@ namespace NotesAndReminders.ViewModels
 		public MyNotesViewModel() : base()
 		{
 			_dBService = DependencyService.Get<IDBService>();
-			if(_dBService == null)
-			{
-
-			}
 
 			NewNoteCommand = new Command(NewNoteAsync);
 			ArchiveNoteCommand = new Command<Note>(ArchiveNoteAsync);

@@ -1,5 +1,6 @@
 ﻿using NotesAndReminders.Models;
 using NotesAndReminders.Services;
+using NotesAndReminders.Views;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -77,7 +78,10 @@ namespace NotesAndReminders.ViewModels
 		{
 			base.OnAppearing();
 
-			await ReloadDataAsync();
+			if (Notes.Count == 0)
+			{
+				await ReloadDataAsync();
+			}
 		}
 
 		protected override async Task ReloadDataAsync()
@@ -88,15 +92,16 @@ namespace NotesAndReminders.ViewModels
 
 			await _dBService.GetAllNotesAsync(notes =>
 			{
+				Notes.Clear();
 				notes.ForEach(note => Notes.Add(note as Note));
-				OnPropertyChanged(nameof(Notes));
+
 				IsRefreshing = false;
 			});
 		}
 
 		private async void NewNoteAsync()
 		{
-
+			await Shell.Current.GoToAsync($"{nameof(NoteDetailsView)}");
 		}
 
 		private async void ArchiveNoteAsync(Note note)

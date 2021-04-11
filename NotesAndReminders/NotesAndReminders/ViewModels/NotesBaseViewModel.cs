@@ -1,5 +1,6 @@
 ﻿using NotesAndReminders.Models;
-using System.Collections.Generic;
+using NotesAndReminders.Views;
+using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -7,20 +8,22 @@ namespace NotesAndReminders.ViewModels
 {
 	public class NotesBaseViewModel : BaseViewModel
 	{
-		private List<Note> _notes;
+		private ObservableCollection<Note> _notes;
 
-		public List<Note> Notes
+		public ObservableCollection<Note> Notes
 		{
 			get => _notes;
 			set => SetProperty(ref _notes, value);
 		}
+
+		public Note SelectedNote { get; private set; }
 
 		public ICommand OpenNoteCommand { get; private set; }
 		public ICommand DeleteNoteCommand { get; private set; }
 
 		public NotesBaseViewModel()
 		{
-			Notes = new List<Note>();
+			Notes = new ObservableCollection<Note>();
 
 			OpenNoteCommand = new Command<Note>(OpenNoteAsync);
 			DeleteNoteCommand = new Command<Note>(DeleteNoteAsync);
@@ -28,7 +31,10 @@ namespace NotesAndReminders.ViewModels
 
 		private async void OpenNoteAsync(Note note)
 		{
+			SelectedNote = note;
 
+			await Shell.Current.GoToAsync($"{nameof(NoteDetailsView)}");
+			MessagingCenter.Send(this, Constants.NoteDetailsOpenedEvent);
 		}
 
 		private async void DeleteNoteAsync(Note note)

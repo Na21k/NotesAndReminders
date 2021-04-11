@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:resource="clr-namespace:NotesAndReminders.Resources"
+			 x:Class="NotesAndReminders.Views.NoteDetailsView"
+			 Padding="10">
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Text="Save" Command="{Binding SaveNoteCommand}" Order="Primary" />
+		<ToolbarItem Text="Delete" Command="{Binding DeleteNoteCommand}" Order="Secondary" />
+	</ContentPage.ToolbarItems>
+	<StackLayout Spacing="10">
+		<Entry Text="{Binding Note.Title}"
+			   Placeholder="Title"
+			   ReturnType="Next" />
+		<Entry Text="{Binding Note.Text}"
+			   VerticalTextAlignment="Start"
+			   Placeholder="Body"
+			   ReturnType="Done"
+			   VerticalOptions="FillAndExpand" />
+	</StackLayout>
+</ContentPage>

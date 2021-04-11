@@ -1,6 +1,6 @@
 ﻿using Android.Gms.Tasks;
 using Firebase.Firestore;
-using NotesAndReminders.Droid.Extentions;
+using NotesAndReminders.Droid.Extensions;
 using NotesAndReminders.Models;
 using System;
 using System.Collections.Generic;

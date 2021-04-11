@@ -12,9 +12,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace NotesAndReminders.Droid.Extentions
+namespace NotesAndReminders.Droid.Extensions
 {
-	public static class JavaLangExtemtions
+	public static class JavaLangExtensions
 	{
 		public static IDictionary<string, object> ToDictionary(this IDictionary<string,Java.Lang.Object> map)
 		{

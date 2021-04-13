@@ -120,6 +120,9 @@
   <data name="ConfirmPassword" xml:space="preserve">
     <value>Підтвердіть пароль</value>
   </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Видалити</value>
+  </data>
   <data name="Email" xml:space="preserve">
     <value>Електронна пошта</value>
   </data>
@@ -144,6 +147,21 @@
   <data name="LogIn_LogInOrSignUp" xml:space="preserve">
     <value>Увійдіть щоб синхронізувати нотатки між вашими пистроями</value>
   </data>
+  <data name="LogoTextGoodAfternoon" xml:space="preserve">
+    <value>Гарного дня</value>
+  </data>
+  <data name="LogoTextGoodDay" xml:space="preserve">
+    <value>Привіт</value>
+  </data>
+  <data name="LogoTextGoodEvening" xml:space="preserve">
+    <value>Гарного вечора</value>
+  </data>
+  <data name="LogoTextGoodMorning" xml:space="preserve">
+    <value>Доброго ранку</value>
+  </data>
+  <data name="LogoTextGoodNight" xml:space="preserve">
+    <value>Надобраніч</value>
+  </data>
   <data name="LogOut" xml:space="preserve">
     <value>Вийти</value>
   </data>
@@ -152,6 +170,9 @@
   </data>
   <data name="MyNotes" xml:space="preserve">
     <value>Мої нотатки</value>
+  </data>
+  <data name="NoteBody" xml:space="preserve">
+    <value>Текст нотатки</value>
   </data>
   <data name="Ok" xml:space="preserve">
     <value>OK</value>
@@ -171,11 +192,17 @@
   <data name="Profile_LogInOrSignUp" xml:space="preserve">
     <value>Увійдіть або зареєструйтесь щоб синхронізувати нотатки між вашими пистроями</value>
   </data>
+  <data name="Save" xml:space="preserve">
+    <value>Зберегти</value>
+  </data>
   <data name="SignUp_LogInOrSignUp" xml:space="preserve">
     <value>Зареєструйтесь щоб синхронізувати нотатки між вашими пистроями</value>
   </data>
   <data name="Sign_Up" xml:space="preserve">
     <value>Зареєструватись</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Заголовок</value>
   </data>
   <data name="UnexpectedErrorHasOccurred" xml:space="preserve">
     <value>Виникла непередбачувана помилка</value>

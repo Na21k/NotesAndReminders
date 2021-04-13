@@ -16,12 +16,19 @@
 
 	<Shell.FlyoutHeaderTemplate>
 		<DataTemplate>
-			<Grid Padding="15,30,15,20"
-				  BackgroundColor="{AppThemeBinding Light={StaticResource PageBackground},
-													Dark={StaticResource PageBackgroundDark}}">
-				<Label Text="Logo here"
-					   FontSize="30" />
-			</Grid>
+			<StackLayout Orientation="Horizontal"
+						 Spacing="20"
+						 Padding="15,35,15,20"
+						 BackgroundColor="{AppThemeBinding Light={StaticResource PageBackground},
+														   Dark={StaticResource PageBackgroundDark}}">
+				<Image Source="logo_large"
+					   HorizontalOptions="Start"
+					   HeightRequest="56" />
+				<Label Text="{Binding LogoText}"
+					   HorizontalOptions="StartAndExpand"
+					   VerticalOptions="CenterAndExpand"
+					   FontSize="24" />
+			</StackLayout>
 		</DataTemplate>
 	</Shell.FlyoutHeaderTemplate>
 
@@ -106,7 +113,7 @@
 	<FlyoutItem Title="Browse" Icon="icon_feed.png">
 		<ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:ItemsPage}" />
 	</FlyoutItem>
-	<FlyoutItem Title="{x:Static resource:AppResources.Profile}">
+	<FlyoutItem Title="{x:Static resource:AppResources.Profile}" Icon="{AppThemeBinding Light='icn_profile_dark', Dark='icn_profile_light'}">
 		<ShellContent Route="ProfileView" ContentTemplate="{DataTemplate local:ProfileView}" />
 	</FlyoutItem>
 

@@ -5,17 +5,25 @@
 			 x:Class="NotesAndReminders.Views.NoteDetailsView"
 			 Padding="10">
 	<ContentPage.ToolbarItems>
-		<ToolbarItem Text="Save" Command="{Binding SaveNoteCommand}" Order="Primary" />
-		<ToolbarItem Text="Delete" Command="{Binding DeleteNoteCommand}" Order="Secondary" />
+		<ToolbarItem Text="{x:Static resource:AppResources.Delete}"
+					 Command="{Binding DeleteNoteCommand}"
+					 Order="Primary" />
+		<ToolbarItem Text="{x:Static resource:AppResources.Save}"
+					 Command="{Binding SaveNoteCommand}"
+					 Order="Primary" />
 	</ContentPage.ToolbarItems>
 	<StackLayout Spacing="10">
 		<Entry Text="{Binding Note.Title}"
-			   Placeholder="Title"
-			   ReturnType="Next" />
+			   Placeholder="{x:Static resource:AppResources.Title}"
+			   ReturnType="Next"
+			   TextColor="{AppThemeBinding Light={StaticResource LabelTextColorPrimary},
+										   Dark={StaticResource LabelTextColorPrimaryDark}}" />
 		<Entry Text="{Binding Note.Text}"
 			   VerticalTextAlignment="Start"
-			   Placeholder="Body"
+			   Placeholder="{x:Static resource:AppResources.NoteBody}"
 			   ReturnType="Done"
-			   VerticalOptions="FillAndExpand" />
+			   VerticalOptions="FillAndExpand"
+			   TextColor="{AppThemeBinding Light={StaticResource LabelTextColorPrimary},
+										   Dark={StaticResource LabelTextColorPrimaryDark}}" />
 	</StackLayout>
 </ContentPage>

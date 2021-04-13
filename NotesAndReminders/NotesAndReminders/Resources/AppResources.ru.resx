@@ -120,6 +120,9 @@
   <data name="ConfirmPassword" xml:space="preserve">
     <value>Подтвердите пароль</value>
   </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
   <data name="Email" xml:space="preserve">
     <value>Электронная почта</value>
   </data>
@@ -144,6 +147,21 @@
   <data name="LogIn_LogInOrSignUp" xml:space="preserve">
     <value>Войдите чтобы синхронизироваь заметки между вашими устройствами</value>
   </data>
+  <data name="LogoTextGoodAfternoon" xml:space="preserve">
+    <value>Хорошего дня</value>
+  </data>
+  <data name="LogoTextGoodDay" xml:space="preserve">
+    <value>Привет</value>
+  </data>
+  <data name="LogoTextGoodEvening" xml:space="preserve">
+    <value>Добрый вечер</value>
+  </data>
+  <data name="LogoTextGoodMorning" xml:space="preserve">
+    <value>Доброе утро</value>
+  </data>
+  <data name="LogoTextGoodNight" xml:space="preserve">
+    <value>Спокойной ночи</value>
+  </data>
   <data name="LogOut" xml:space="preserve">
     <value>Выйти</value>
   </data>
@@ -152,6 +170,9 @@
   </data>
   <data name="MyNotes" xml:space="preserve">
     <value>Мои заметки</value>
+  </data>
+  <data name="NoteBody" xml:space="preserve">
+    <value>Текст заметки</value>
   </data>
   <data name="Ok" xml:space="preserve">
     <value>OK</value>
@@ -171,11 +192,17 @@
   <data name="Profile_LogInOrSignUp" xml:space="preserve">
     <value>Войдите или зарегистрируйтесь чтобы синхронизироваь заметки между вашими устройствами</value>
   </data>
+  <data name="Save" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
   <data name="SignUp_LogInOrSignUp" xml:space="preserve">
     <value>Зарегистрируйтесь чтобы синхронизироваь заметки между вашими устройствами</value>
   </data>
   <data name="Sign_Up" xml:space="preserve">
     <value>Зарегистрироваться</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Заголовок</value>
   </data>
   <data name="UnexpectedErrorHasOccurred" xml:space="preserve">
     <value>Произошла непредвиденная ошибка</value>

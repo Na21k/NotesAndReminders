@@ -120,6 +120,9 @@
   <data name="ConfirmPassword" xml:space="preserve">
     <value>Confirm password</value>
   </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
   <data name="Email" xml:space="preserve">
     <value>Email</value>
   </data>
@@ -144,6 +147,21 @@
   <data name="LogIn_LogInOrSignUp" xml:space="preserve">
     <value>Log in to benefit from notes synchronization across your devices</value>
   </data>
+  <data name="LogoTextGoodAfternoon" xml:space="preserve">
+    <value>Good afternoon</value>
+  </data>
+  <data name="LogoTextGoodDay" xml:space="preserve">
+    <value>Hi there</value>
+  </data>
+  <data name="LogoTextGoodEvening" xml:space="preserve">
+    <value>Good evening</value>
+  </data>
+  <data name="LogoTextGoodMorning" xml:space="preserve">
+    <value>Good morning</value>
+  </data>
+  <data name="LogoTextGoodNight" xml:space="preserve">
+    <value>Good night</value>
+  </data>
   <data name="LogOut" xml:space="preserve">
     <value>Log out</value>
   </data>
@@ -152,6 +170,9 @@
   </data>
   <data name="MyNotes" xml:space="preserve">
     <value>My notes</value>
+  </data>
+  <data name="NoteBody" xml:space="preserve">
+    <value>Note text</value>
   </data>
   <data name="Ok" xml:space="preserve">
     <value>OK</value>
@@ -171,11 +192,17 @@
   <data name="Profile_LogInOrSignUp" xml:space="preserve">
     <value>Log in or sign up to benefit from notes synchronization across your devices</value>
   </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
   <data name="SignUp_LogInOrSignUp" xml:space="preserve">
     <value>Sign up to benefit from notes synchronization across your devices</value>
   </data>
   <data name="Sign_Up" xml:space="preserve">
     <value>Sign up</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Title</value>
   </data>
   <data name="UnexpectedErrorHasOccurred" xml:space="preserve">
     <value>Unexpected error has occurred</value>

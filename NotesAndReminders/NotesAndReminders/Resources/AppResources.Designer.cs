@@ -70,6 +70,15 @@ namespace NotesAndReminders.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        internal static string Delete {
+            get {
+                return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Email.
         /// </summary>
         internal static string Email {
@@ -151,6 +160,51 @@ namespace NotesAndReminders.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Good afternoon.
+        /// </summary>
+        internal static string LogoTextGoodAfternoon {
+            get {
+                return ResourceManager.GetString("LogoTextGoodAfternoon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hi there.
+        /// </summary>
+        internal static string LogoTextGoodDay {
+            get {
+                return ResourceManager.GetString("LogoTextGoodDay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Good evening.
+        /// </summary>
+        internal static string LogoTextGoodEvening {
+            get {
+                return ResourceManager.GetString("LogoTextGoodEvening", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Good morning.
+        /// </summary>
+        internal static string LogoTextGoodMorning {
+            get {
+                return ResourceManager.GetString("LogoTextGoodMorning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Good night.
+        /// </summary>
+        internal static string LogoTextGoodNight {
+            get {
+                return ResourceManager.GetString("LogoTextGoodNight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Log out.
         /// </summary>
         internal static string LogOut {
@@ -165,6 +219,15 @@ namespace NotesAndReminders.Resources {
         internal static string MyNotes {
             get {
                 return ResourceManager.GetString("MyNotes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Note text.
+        /// </summary>
+        internal static string NoteBody {
+            get {
+                return ResourceManager.GetString("NoteBody", resourceCulture);
             }
         }
         
@@ -223,6 +286,15 @@ namespace NotesAndReminders.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        internal static string Save {
+            get {
+                return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sign up.
         /// </summary>
         internal static string Sign_Up {
@@ -237,6 +309,15 @@ namespace NotesAndReminders.Resources {
         internal static string SignUp_LogInOrSignUp {
             get {
                 return ResourceManager.GetString("SignUp_LogInOrSignUp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title.
+        /// </summary>
+        internal static string Title {
+            get {
+                return ResourceManager.GetString("Title", resourceCulture);
             }
         }
         

@@ -126,7 +126,9 @@ namespace NotesAndReminders.Droid.Services
 		{
 			try
 			{
-				await _db.Collection("Notes").Get().AddOnCompleteListener(new OnCompleteListListener<Note>(onNotesRecievedCallback));
+				var query = _db.Collection("Notes");
+				await query.WhereEqualTo("user_Id", _auth.CurrentUser.Uid).Get().AddOnCompleteListener(new OnCompleteListListener<Note>(onNotesRecievedCallback));
+
 			}
 			catch (Exception ex)
 			{
@@ -141,7 +143,8 @@ namespace NotesAndReminders.Droid.Services
 		{
 			try
 			{
-				await _db.Collection("NotesTypes").Get().AddOnCompleteListener(new OnCompleteListListener<NoteType>(onNotesTypeRecievedCallback));
+				var query = _db.Collection("NotesTypes");
+				await query.WhereEqualTo("user_Id", _auth.CurrentUser.Uid).Get().AddOnCompleteListener(new OnCompleteListListener<NoteType>(onNotesTypeRecievedCallback));
 			}
 			catch (Exception ex)
 			{

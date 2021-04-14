@@ -22,7 +22,7 @@ namespace NotesAndReminders.Droid.Extensions
 
 			foreach(var key in map.Keys)
 			{
-			
+
 				var val = map[key];
 
 				if(val is Java.Lang.String str)

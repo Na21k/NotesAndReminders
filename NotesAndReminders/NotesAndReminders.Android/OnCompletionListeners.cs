@@ -93,6 +93,7 @@ namespace NotesAndReminders.Droid
 				var collObj = task.Result;
 				if (collObj is QuerySnapshot collQuery)
 				{
+					
 					foreach (var item in collQuery.Documents)
 					{
 						var convertedItem = Convert(item);

@@ -39,7 +39,7 @@ namespace NotesAndReminders.Droid.Extensions
 				}
 				else if(val is Java.Util.Date dt)
 				{
-					var format = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+					var format = new SimpleDateFormat();
 					dict.Add(key, format.Format(dt));
 				}
 				else if(val is Java.Lang.Boolean boolVal)
@@ -65,7 +65,7 @@ namespace NotesAndReminders.Droid.Extensions
 			return dict;
 		}
 
-		public static Dictionary<string, Java.Lang.Object> Convert(this IDBItem item)
+		public static Dictionary<string, Java.Lang.Object> Convert(this Dictionary<string,object> item)
 		{
 			var dict = new Dictionary<string, Java.Lang.Object>();
 

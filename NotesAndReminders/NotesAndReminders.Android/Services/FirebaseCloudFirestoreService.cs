@@ -46,7 +46,7 @@ namespace NotesAndReminders.Droid.Services
 					{ "last_time_modifired", note.LastEdited}
 				};
 
-				await docRef.Set(note.Convert());
+				await docRef.Set(noteDoc.Convert());
 
 				return true;
 			}
@@ -73,7 +73,7 @@ namespace NotesAndReminders.Droid.Services
 					{ "noteColor", noteType.Color}
 				};
 
-				await docRef.Set(noteType.Convert());
+				await docRef.Set(noteTypeDoc.Convert());
 
 				return true;
 			}
@@ -202,7 +202,7 @@ namespace NotesAndReminders.Droid.Services
 					{ "last_time_modifired", note.LastEdited}
 				};
 
-				await docRef.Update(note.Convert());
+				await docRef.Update(updatedNote.Convert());
 
 				return true;
 			}
@@ -228,7 +228,7 @@ namespace NotesAndReminders.Droid.Services
 					{ "noteColor", noteType.Color}
 				};
 
-				await docRef.Update(noteType.Convert());
+				await docRef.Update(updatedNoteType.Convert());
 
 				return true;
 			}

@@ -56,6 +56,8 @@ namespace NotesAndReminders.ViewModels
 					break;
 			}
 
+			MessagingCenter.Send(this, Constants.NotesUpdatedEvent);
+
 			await Shell.Current.Navigation.PopToRootAsync();
 		}
 
@@ -65,6 +67,8 @@ namespace NotesAndReminders.ViewModels
 			{
 				await _dBService.DeleteNoteAsync(Note);
 			}
+
+			MessagingCenter.Send(this, Constants.NotesUpdatedEvent);
 
 			await Shell.Current.Navigation.PopToRootAsync();
 		}

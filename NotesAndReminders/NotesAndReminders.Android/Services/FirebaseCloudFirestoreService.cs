@@ -12,6 +12,7 @@ using NotesAndReminders.Droid.Services;
 using NotesAndReminders.Exceptions;
 using NotesAndReminders.Models;
 using NotesAndReminders.Services;
+using NotesAndReminders.Droid.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,17 +36,17 @@ namespace NotesAndReminders.Droid.Services
 				DocumentReference docRef = _db.Collection("Notes").Document();
 				Dictionary<string, object> noteDoc = new Dictionary<string, object>
 				{
-					{ "id", note.Id},
+					{ "id", docRef.Id},
 					{ "user_Id", _auth.CurrentUser.Uid},
 					{ "title", note.Title },
 					{ "text", note.Text},
-					{ "type", note.Type},
-					{ "addition content", note.Images },
-					{ "checklist", note.Checklists},
+					//{ "type", note.Type},
+					//{ "addition content", note.Images },
+					//{ "checklist", note.Checklists},
 					{ "last_time_modifired", note.LastEdited}
 				};
 
-				await docRef.Set(new HashMap(noteDoc));
+				await docRef.Set(note.Convert());
 
 				return true;
 			}
@@ -72,7 +73,7 @@ namespace NotesAndReminders.Droid.Services
 					{ "noteColor", noteType.Color}
 				};
 
-				await docRef.Set(new HashMap(noteTypeDoc));
+				await docRef.Set(noteType.Convert());
 
 				return true;
 			}
@@ -195,13 +196,13 @@ namespace NotesAndReminders.Droid.Services
 					{ "user_Id", _auth.CurrentUser.Uid},
 					{ "title", note.Title },
 					{ "text", note.Text},
-					{ "type", note.Type},
-					{ "addition content", note.Images },
-					{ "checklist", note.Checklists},
+					//{ "type", note.Type},
+					//{ "addition content", note.Images },
+					//{ "checklist", note.Checklists},
 					{ "last_time_modifired", note.LastEdited}
 				};
 
-				await docRef.Update((IDictionary<string, Java.Lang.Object>)updatedNote);
+				await docRef.Update(note.Convert());
 
 				return true;
 			}
@@ -227,7 +228,7 @@ namespace NotesAndReminders.Droid.Services
 					{ "noteColor", noteType.Color}
 				};
 
-				await docRef.Update((IDictionary<string, Java.Lang.Object>)updatedNoteType);
+				await docRef.Update(noteType.Convert());
 
 				return true;
 			}

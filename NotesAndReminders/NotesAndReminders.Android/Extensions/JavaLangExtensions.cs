@@ -64,5 +64,46 @@ namespace NotesAndReminders.Droid.Extensions
 
 			return dict;
 		}
+
+		public static Dictionary<string, Java.Lang.Object> Convert(this IDBItem item)
+		{
+			var dict = new Dictionary<string, Java.Lang.Object>();
+
+			var jsonStr = Newtonsoft.Json.JsonConvert.SerializeObject(item);
+			var propDict = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, object>>(jsonStr);
+
+			foreach(var key in propDict.Keys)
+			{
+				var val = propDict[key];
+				Java.Lang.Object javaVal = null;
+				if(val is string str)
+				{
+					javaVal = new Java.Lang.String(str);
+				}
+				else if(val is double dbl)
+				{
+					javaVal = new Java.Lang.Double(dbl);
+				}
+				else if(val is int intVal)
+				{
+					javaVal = new Java.Lang.Integer(intVal);
+				}
+				else if(val is DateTime dt)
+				{
+					javaVal = dt.ToString();
+				}
+				else if(val is bool boolVal)
+				{
+					javaVal = new Java.Lang.Boolean(boolVal);
+				}
+				
+				if(javaVal != null)
+				{
+					dict.Add(key, javaVal);
+				}
+			}
+
+			return dict;
+		}
 	}
 }

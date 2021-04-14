@@ -30,6 +30,8 @@ namespace NotesAndReminders.ViewModels
 			ArchiveNoteCommand = new Command<Note>(ArchiveNoteAsync);
 			RefreshCommand = new Command(RefreshAsync);
 
+			MessagingCenter.Subscribe<NoteDetailsViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdated);
+
 			var n1 = new Note()
 			{
 				Title = "test title one",
@@ -110,6 +112,11 @@ namespace NotesAndReminders.ViewModels
 		}
 
 		private async void RefreshAsync()
+		{
+			await ReloadDataAsync();
+		}
+
+		private async void OnNotesUpdated(NoteDetailsViewModel vm)
 		{
 			await ReloadDataAsync();
 		}

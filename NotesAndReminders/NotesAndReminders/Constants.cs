@@ -9,5 +9,6 @@
 		public const string EmptyLoginOrPasswordEvent = "EmptyLoginOrPasswordEvent";
 		public const string PasswordFieldDoesNotMatchConfirmPasswordFieldEvent = "PasswordFieldDoesNotMatchConfirmPasswordFieldEvent";
 		public const string NoteDetailsOpenedEvent = nameof(NoteDetailsOpenedEvent);
+		public const string NotesUpdatedEvent = nameof(NotesUpdatedEvent);
 	}
 }

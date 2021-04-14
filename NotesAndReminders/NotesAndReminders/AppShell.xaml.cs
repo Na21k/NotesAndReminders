@@ -52,23 +52,19 @@ namespace NotesAndReminders
 			Routing.RegisterRoute(nameof(NoteDetailsView), typeof(NoteDetailsView));
 		}
 
-		//workaround to avoid menu lags
 		protected async override void OnPropertyChanged([CallerMemberName] string propertyName = null)
 		{
-			if (propertyName.Equals("CurrentItem") && Device.RuntimePlatform == Device.Android)
+			if (propertyName.Equals("CurrentItem") && Device.RuntimePlatform == Device.Android) //workaround to avoid menu lags
 			{
 				FlyoutIsPresented = false;
 				await Task.Delay(500);
 			}
+			else if (propertyName.Equals("FlyoutIsPresented"))
+			{
+				OnPropertyChanged(nameof(LogoText));    //update LogoText if user does not restart app for a long period of time
+			}
 
 			base.OnPropertyChanged(propertyName);
-		}
-
-		protected override void OnAppearing()
-		{
-			base.OnAppearing();
-
-			OnPropertyChanged(nameof(LogoText));
 		}
 
 		/*private async void OnMenuItemClicked(object sender, EventArgs e)

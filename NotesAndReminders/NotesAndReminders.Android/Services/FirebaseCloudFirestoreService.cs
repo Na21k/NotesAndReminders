@@ -64,7 +64,7 @@ namespace NotesAndReminders.Droid.Services
 		{
 			try
 			{
-				DocumentReference docRef = _db.Collection("Notes").Document();
+				DocumentReference docRef = _db.Collection("NotesTypes").Document();
 				Dictionary<string, object> noteTypeDoc = new Dictionary<string, object>
 				{
 					{ "id", noteType.Id },
@@ -108,7 +108,7 @@ namespace NotesAndReminders.Droid.Services
 		{
 			try
 			{
-				DocumentReference docRef = _db.Collection("Notes").Document(noteType.Id.ToString());
+				DocumentReference docRef = _db.Collection("NotesTypes").Document(noteType.Id.ToString());
 				await docRef.Delete();
 
 				return true;
@@ -220,7 +220,7 @@ namespace NotesAndReminders.Droid.Services
 
 		public async Task<bool> UpdateNoteTypeAsync(NoteType noteType)
 		{
-			DocumentReference docRef = _db.Collection("Notes").Document(noteType.Id);
+			DocumentReference docRef = _db.Collection("NotesTypes").Document(noteType.Id);
 			try
 			{
 				Dictionary<string, object> updatedNoteType = new Dictionary<string, object>()

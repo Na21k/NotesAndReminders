@@ -18,12 +18,10 @@
 			   ReturnType="Next"
 			   TextColor="{AppThemeBinding Light={StaticResource LabelTextColorPrimary},
 										   Dark={StaticResource LabelTextColorPrimaryDark}}" />
-		<Entry Text="{Binding Note.Text}"
-			   VerticalTextAlignment="Start"
-			   Placeholder="{x:Static resource:AppResources.NoteBody}"
-			   ReturnType="Done"
-			   VerticalOptions="FillAndExpand"
-			   TextColor="{AppThemeBinding Light={StaticResource LabelTextColorPrimary},
-										   Dark={StaticResource LabelTextColorPrimaryDark}}" />
+		<Editor Text="{Binding Note.Text}"
+				Placeholder="{x:Static resource:AppResources.NoteBody}"
+				VerticalOptions="FillAndExpand"
+				TextColor="{AppThemeBinding Light={StaticResource LabelTextColorPrimary},
+											Dark={StaticResource LabelTextColorPrimaryDark}}" />
 	</StackLayout>
 </ContentPage>

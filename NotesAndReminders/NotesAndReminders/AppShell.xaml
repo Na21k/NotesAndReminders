@@ -17,8 +17,8 @@
 	<Shell.FlyoutHeaderTemplate>
 		<DataTemplate>
 			<StackLayout Orientation="Horizontal"
-						 Spacing="20"
-						 Padding="15,35,15,20"
+						 Spacing="15"
+						 Padding="15,45,15,20"
 						 BackgroundColor="{AppThemeBinding Light={StaticResource PageBackground},
 														   Dark={StaticResource PageBackgroundDark}}">
 				<Image Source="logo_large"
@@ -107,8 +107,11 @@
 		FlyoutDisplayOptions="AsMultipleItems" will create a separate flyout item for each child element    
 		https://docs.microsoft.com/dotnet/api/xamarin.forms.shellgroupitem.flyoutdisplayoptions?view=xamarin-forms
 	-->
-	<FlyoutItem Title="My notes" Icon="{AppThemeBinding Light='icn_note_dark', Dark='icn_note_light'}">
+	<FlyoutItem Title="{x:Static resource:AppResources.MyNotes}" Icon="{AppThemeBinding Light='icn_note_dark', Dark='icn_note_light'}">
 		<ShellContent Route="MyNotesView" ContentTemplate="{DataTemplate local:MyNotesView}" />
+	</FlyoutItem>
+	<FlyoutItem Title="{x:Static resource:AppResources.Categories}">
+		<ShellContent Route="NotesCategoriesView" ContentTemplate="{DataTemplate local:NotesCategoriesView}" />
 	</FlyoutItem>
 	<FlyoutItem Title="Browse" Icon="icon_feed.png">
 		<ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:ItemsPage}" />

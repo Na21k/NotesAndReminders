@@ -63,12 +63,6 @@ namespace NotesAndReminders.ViewModels
 		{
 			await base.ReloadDataAsync();
 
-			/*await _dBService.AddNoteTypeAsync(new NoteType() { Name = "test", Color = Color.Red });
-			await _dBService.AddNoteTypeAsync(new NoteType() { Name = "tests", Color = Color.Cyan });
-			await _dBService.AddNoteTypeAsync(new NoteType() { Name = "test7777777777", Color = Color.Purple });
-			await _dBService.AddNoteTypeAsync(new NoteType() { Name = "testrrr vrvs f", Color = Color.Black });
-			await _dBService.AddNoteTypeAsync(new NoteType() { Name = "testrrr vrvs", Color = Color.Blue });*/
-
 			IsRefreshing = true;
 
 			await _dBService.GetAllNoteTypesAsync(noteTypes =>
@@ -82,7 +76,12 @@ namespace NotesAndReminders.ViewModels
 
 		private async void ItemTappedAsync(NoteType item)
 		{
-
+			//for testing
+			await _dBService.AddNoteTypeAsync(new NoteType() { Name = "test", Color = Color.Red });
+			await _dBService.AddNoteTypeAsync(new NoteType() { Name = "tests", Color = Color.Cyan });
+			await _dBService.AddNoteTypeAsync(new NoteType() { Name = "test7777777777", Color = Color.Purple });
+			await _dBService.AddNoteTypeAsync(new NoteType() { Name = "testrrr vrvs f", Color = Color.Black });
+			await _dBService.AddNoteTypeAsync(new NoteType() { Name = "testrrr vrvs", Color = Color.Blue });
 		}
 
 		private async void DeleteCategoryAsync(NoteType item)

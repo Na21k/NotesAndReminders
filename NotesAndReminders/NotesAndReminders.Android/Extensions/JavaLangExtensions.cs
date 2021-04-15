@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Xamarin.Forms;
 
 namespace NotesAndReminders.Droid.Extensions
 {
@@ -25,7 +26,11 @@ namespace NotesAndReminders.Droid.Extensions
 
 				var val = map[key];
 
-				if(val is Java.Lang.String str)
+				if (key.Equals("noteColor"))
+				{
+					dict.Add(key, Color.FromHex(val.ToString()));
+				}
+				else if(val is Java.Lang.String str)
 				{
 					dict.Add(key, str.ToString());
 				}
@@ -74,8 +79,10 @@ namespace NotesAndReminders.Droid.Extensions
 
 			foreach(var key in propDict.Keys)
 			{
+
 				var val = propDict[key];
 				Java.Lang.Object javaVal = null;
+
 				if(val is string str)
 				{
 					javaVal = new Java.Lang.String(str);
@@ -105,5 +112,8 @@ namespace NotesAndReminders.Droid.Extensions
 
 			return dict;
 		}
+
+
+		
 	}
 }

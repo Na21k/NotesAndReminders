@@ -70,7 +70,7 @@ namespace NotesAndReminders.Droid.Services
 					{ "id", noteType.Id },
 					{ "user_Id", _auth.CurrentUser.Uid},
 					{ "name", noteType.Name},
-					{ "noteColor", noteType.Color}
+					{ "noteColor", noteType.Color.ToHex()}
 				};
 
 				await docRef.Set(noteTypeDoc.Convert());

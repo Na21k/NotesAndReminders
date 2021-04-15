@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:resource="clr-namespace:NotesAndReminders.Resources"
+			 x:Class="NotesAndReminders.Views.NotesCategoriesView"
+			 x:Name="page"
+			 Title="{x:Static resource:AppResources.Categories}">
+	<RefreshView IsRefreshing="{Binding IsRefreshing}"
+				 Command="{Binding RefreshCommand}">
+		<ScrollView Padding="10">
+			<StackLayout Spacing="10"
+						 BindableLayout.ItemsSource="{Binding Categories}">
+				<BindableLayout.ItemTemplate>
+					<DataTemplate>
+						<StackLayout Orientation="Horizontal"
+									 Spacing="10">
+							<Label Text="{Binding Name}"
+								   FontSize="Large"
+								   HorizontalOptions="StartAndExpand" />
+							<Frame BackgroundColor="{Binding Color}"
+								   Padding="0"
+								   WidthRequest="26"
+								   HeightRequest="26"
+								   CornerRadius="13"
+								   HorizontalOptions="End"
+								   VerticalOptions="CenterAndExpand" />
+							<ImageButton Source="{AppThemeBinding Light='icn_trash_dark', Dark='icn_trash_light'}"
+										 BackgroundColor="Transparent"
+										 Command="{Binding BindingContext.DeleteCategoryCommand, Source={x:Reference page}}"
+										 CommandParameter="{Binding .}"
+										 HorizontalOptions="End" />
+							<StackLayout.GestureRecognizers>
+								<TapGestureRecognizer Command="{Binding BindingContext.ItemTappedCommand, Source={x:Reference page}}"
+													  CommandParameter="{Binding .}" />
+							</StackLayout.GestureRecognizers>
+						</StackLayout>
+					</DataTemplate>
+				</BindableLayout.ItemTemplate>
+			</StackLayout>
+		</ScrollView>
+	</RefreshView>
+</ContentPage>

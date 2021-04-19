@@ -16,7 +16,8 @@
 									 Spacing="10">
 							<Label Text="{Binding Name}"
 								   FontSize="Large"
-								   HorizontalOptions="StartAndExpand" />
+								   HorizontalOptions="StartAndExpand"
+								   VerticalOptions="CenterAndExpand" />
 							<Frame BackgroundColor="{Binding Color}"
 								   Padding="0"
 								   WidthRequest="26"
@@ -28,7 +29,9 @@
 										 BackgroundColor="Transparent"
 										 Command="{Binding BindingContext.DeleteCategoryCommand, Source={x:Reference page}}"
 										 CommandParameter="{Binding .}"
-										 HorizontalOptions="End" />
+										 WidthRequest="36"
+										 HorizontalOptions="End"
+										 VerticalOptions="CenterAndExpand" />
 							<StackLayout.GestureRecognizers>
 								<TapGestureRecognizer Command="{Binding BindingContext.ItemTappedCommand, Source={x:Reference page}}"
 													  CommandParameter="{Binding .}" />

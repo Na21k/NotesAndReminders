@@ -11,6 +11,7 @@ namespace NotesAndReminders.ViewModels
 	public class MyNotesViewModel : NotesBaseViewModel
 	{
 		private IDBService _dBService;
+		private IAuthorizationService _authorizationService;
 		private bool _isRefreshing;
 
 		public ICommand NewNoteCommand { get; private set; }
@@ -25,6 +26,7 @@ namespace NotesAndReminders.ViewModels
 		public MyNotesViewModel() : base()
 		{
 			_dBService = DependencyService.Get<IDBService>();
+			_authorizationService = DependencyService.Get<IAuthorizationService>();
 
 			NewNoteCommand = new Command(NewNoteAsync);
 			ArchiveNoteCommand = new Command<Note>(ArchiveNoteAsync);
@@ -90,20 +92,34 @@ namespace NotesAndReminders.ViewModels
 		{
 			await base.ReloadDataAsync();
 
-			IsRefreshing = true;
-
-			await _dBService.GetAllNotesAsync(notes =>
+			if (_authorizationService.IsLoggedIn)
 			{
-				Notes.Clear();
-				notes.ForEach(note => Notes.Add(note as Note));
+				IsRefreshing = true;
 
+				await _dBService.GetAllNotesAsync(notes =>
+				{
+					Notes.Clear();
+					notes.ForEach(note => Notes.Add(note as Note));
+
+					IsRefreshing = false;
+				});
+			}
+			else
+			{
 				IsRefreshing = false;
-			});
+			}
 		}
 
 		private async void NewNoteAsync()
 		{
-			await Shell.Current.GoToAsync($"{nameof(NoteDetailsView)}");
+			if (_authorizationService.IsLoggedIn)
+			{
+				await Shell.Current.GoToAsync($"{nameof(NoteDetailsView)}");
+			}
+			else
+			{
+				await Shell.Current.GoToAsync($"{nameof(LogInView)}");
+			}
 		}
 
 		private async void ArchiveNoteAsync(Note note)

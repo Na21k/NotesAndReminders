@@ -13,6 +13,7 @@ namespace NotesAndReminders.ViewModels
 	public class NotesCategoriesViewModel : BaseViewModel
 	{
 		private IDBService _dBService;
+		private IAuthorizationService _authorizationService;
 		private bool _isRefreshing;
 
 		private ObservableCollection<NoteType> _categories;
@@ -35,6 +36,7 @@ namespace NotesAndReminders.ViewModels
 		public NotesCategoriesViewModel() : base()
 		{
 			_dBService = DependencyService.Get<IDBService>();
+			_authorizationService = DependencyService.Get<IAuthorizationService>();
 
 			Categories = new ObservableCollection<NoteType>();
 
@@ -63,15 +65,22 @@ namespace NotesAndReminders.ViewModels
 		{
 			await base.ReloadDataAsync();
 
-			IsRefreshing = true;
-
-			await _dBService.GetAllNoteTypesAsync(noteTypes =>
+			if (_authorizationService.IsLoggedIn)
 			{
-				Categories.Clear();
-				noteTypes.ForEach(noteType => Categories.Add(noteType as NoteType));
+				IsRefreshing = true;
 
+				await _dBService.GetAllNoteTypesAsync(noteTypes =>
+				{
+					Categories.Clear();
+					noteTypes.ForEach(noteType => Categories.Add(noteType as NoteType));
+
+					IsRefreshing = false;
+				});
+			}
+			else
+			{
 				IsRefreshing = false;
-			});
+			}
 		}
 
 		private async void ItemTappedAsync(NoteType item)

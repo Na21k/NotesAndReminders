@@ -1,5 +1,6 @@
 ﻿using NotesAndReminders.Exceptions;
 using NotesAndReminders.Services;
+using NotesAndReminders.Views;
 using System;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -31,11 +32,14 @@ namespace NotesAndReminders.ViewModels
 		}
 
 		public ICommand LogInCommand { get; private set; }
+		public ICommand SignUpCommand { get; private set; }
 
 		public LogInViewModel()
 		{
 			_authorizationService = DependencyService.Get<IAuthorizationService>();
+
 			LogInCommand = new Command(LogInAsync);
+			SignUpCommand = new Command(SignUpAsync);
 		}
 
 		private async void LogInAsync()
@@ -74,6 +78,11 @@ namespace NotesAndReminders.ViewModels
 			{
 				IsLoggingIn = false;
 			}
+		}
+
+		private async void SignUpAsync()
+		{
+			await Shell.Current.GoToAsync(nameof(SignUpView));
 		}
 	}
 }

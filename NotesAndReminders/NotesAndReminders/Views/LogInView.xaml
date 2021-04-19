@@ -22,6 +22,16 @@
 				Command="{Binding LogInCommand}"
 				Text="{x:Static resource:AppResources.Log_In}"
 				HorizontalOptions="FillAndExpand" />
+		<Label IsVisible="{Binding IsLoggingIn, Converter={StaticResource InverseBoolConverter}}"
+			   Text="{x:Static resource:AppResources.Sign_Up}"
+			   HorizontalOptions="CenterAndExpand"
+			   FontSize="20"
+			   TextColor="{AppThemeBinding Light={StaticResource ButtonBackgroundColorPrimary},
+										   Dark={StaticResource ButtonBackgroundColorPrimaryDark}}">
+			<Label.GestureRecognizers>
+				<TapGestureRecognizer Command="{Binding SignUpCommand}" />
+			</Label.GestureRecognizers>
+		</Label>
 		<ActivityIndicator IsVisible="{Binding IsLoggingIn}"
 						   IsRunning="{Binding IsLoggingIn}" />
 	</StackLayout>

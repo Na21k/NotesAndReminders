@@ -385,6 +385,15 @@ namespace NotesAndReminders.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Uncategorized.
+        /// </summary>
+        internal static string Uncategorized {
+            get {
+                return ResourceManager.GetString("Uncategorized", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unexpected error has occurred.
         /// </summary>
         internal static string UnexpectedErrorHasOccurred {

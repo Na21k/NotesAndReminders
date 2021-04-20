@@ -1,7 +1,9 @@
 ﻿using NotesAndReminders.Models;
+using NotesAndReminders.Resources;
 using NotesAndReminders.Services;
 using NotesAndReminders.Views;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -112,7 +114,21 @@ namespace NotesAndReminders.ViewModels
 				await _dBService.GetAllNotesAsync(notes =>
 				{
 					Notes.Clear();
-					notes.ForEach(note => Notes.Add(note as Note));
+					notes.ForEach(note =>
+					{
+						var nt = note as Note;
+
+						if (nt.Type == null)
+						{
+							nt.Type = new NoteType()
+							{
+								Name = AppResources.Uncategorized,
+								Color = Constants.NotesColorsOptions.FirstOrDefault()
+							};
+						}
+
+						Notes.Add(nt);
+					});
 
 					IsRefreshing = false;
 				});

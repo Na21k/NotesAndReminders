@@ -117,8 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="AddCategory" xml:space="preserve">
+    <value>Add category</value>
+  </data>
   <data name="Categories" xml:space="preserve">
     <value>Categories</value>
+  </data>
+  <data name="CategoriesHelpYouOrganizeYourNotes" xml:space="preserve">
+    <value>Categories help you organize your notes</value>
   </data>
   <data name="ConfirmPassword" xml:space="preserve">
     <value>Confirm password</value>
@@ -174,8 +183,17 @@
   <data name="MyNotes" xml:space="preserve">
     <value>My notes</value>
   </data>
+  <data name="NameYourCategory" xml:space="preserve">
+    <value>Name your category</value>
+  </data>
+  <data name="NewCategory" xml:space="preserve">
+    <value>New category</value>
+  </data>
   <data name="NoteBody" xml:space="preserve">
     <value>Note text</value>
+  </data>
+  <data name="NotesUseBackgroundOfCategory" xml:space="preserve">
+    <value>Notes use the background color of their category</value>
   </data>
   <data name="Ok" xml:space="preserve">
     <value>OK</value>

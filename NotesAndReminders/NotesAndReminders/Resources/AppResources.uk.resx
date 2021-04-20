@@ -117,8 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Add" xml:space="preserve">
+    <value>Додати</value>
+  </data>
+  <data name="AddCategory" xml:space="preserve">
+    <value>Додати категорію</value>
+  </data>
   <data name="Categories" xml:space="preserve">
     <value>Категорії</value>
+  </data>
+  <data name="CategoriesHelpYouOrganizeYourNotes" xml:space="preserve">
+    <value>Категорії допомагають тримати ваші нотатки впорядкованими</value>
   </data>
   <data name="ConfirmPassword" xml:space="preserve">
     <value>Підтвердіть пароль</value>
@@ -174,8 +183,17 @@
   <data name="MyNotes" xml:space="preserve">
     <value>Мої нотатки</value>
   </data>
+  <data name="NameYourCategory" xml:space="preserve">
+    <value>Назвіть вашу категорію</value>
+  </data>
+  <data name="NewCategory" xml:space="preserve">
+    <value>Нова категорія</value>
+  </data>
   <data name="NoteBody" xml:space="preserve">
     <value>Текст нотатки</value>
+  </data>
+  <data name="NotesUseBackgroundOfCategory" xml:space="preserve">
+    <value>Нотатки використовують колір фону їх категорії</value>
   </data>
   <data name="Ok" xml:space="preserve">
     <value>OK</value>

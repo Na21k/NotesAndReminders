@@ -1,9 +1,7 @@
 ﻿using NotesAndReminders.Models;
 using NotesAndReminders.Services;
-using System;
-using System.Collections.Generic;
+using NotesAndReminders.Views;
 using System.Collections.ObjectModel;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -30,6 +28,7 @@ namespace NotesAndReminders.ViewModels
 		}
 
 		public ICommand ItemTappedCommand { get; private set; }
+		public ICommand NewCategoryCommand { get; private set; }
 		public ICommand DeleteCategoryCommand { get; private set; }
 		public ICommand RefreshCommand { get; private set; }
 
@@ -41,14 +40,12 @@ namespace NotesAndReminders.ViewModels
 			Categories = new ObservableCollection<NoteType>();
 
 			ItemTappedCommand = new Command<NoteType>(ItemTappedAsync);
+			NewCategoryCommand = new Command(NewCategoryAsync);
 			DeleteCategoryCommand = new Command<NoteType>(DeleteCategoryAsync);
 			RefreshCommand = new Command(RefreshAsync);
 
-			/*Categories.Add(new NoteType() { Name = "test", Color = Color.Red });
-			Categories.Add(new NoteType() { Name = "tests", Color = Color.Cyan });
-			Categories.Add(new NoteType() { Name = "test7777777777", Color = Color.Purple });
-			Categories.Add(new NoteType() { Name = "testrrr vrvs f", Color = Color.Black });
-			Categories.Add(new NoteType() { Name = "testrrr vrvs", Color = Color.Blue });*/
+			MessagingCenter.Subscribe<NewCategoryViewModel>(this, Constants.NotesCategoriesUpdatedEvent, OnNotesCategoriesUpdatedAsync);
+			MessagingCenter.Subscribe<ProfileViewModel>(this, Constants.LoggedOutEvent, OnLoggedOut);
 		}
 
 		public override async void OnAppearing()
@@ -85,12 +82,19 @@ namespace NotesAndReminders.ViewModels
 
 		private async void ItemTappedAsync(NoteType item)
 		{
-			//for testing
-			await _dBService.AddNoteTypeAsync(new NoteType() { Name = "test", Color = Color.Red });
-			await _dBService.AddNoteTypeAsync(new NoteType() { Name = "tests", Color = Color.Cyan });
-			await _dBService.AddNoteTypeAsync(new NoteType() { Name = "test7777777777", Color = Color.Purple });
-			await _dBService.AddNoteTypeAsync(new NoteType() { Name = "testrrr vrvs f", Color = Color.Black });
-			await _dBService.AddNoteTypeAsync(new NoteType() { Name = "testrrr vrvs", Color = Color.Blue });
+			//TODO add editing functionality
+		}
+
+		private async void NewCategoryAsync()
+		{
+			if (_authorizationService.IsLoggedIn)
+			{
+				await Shell.Current.GoToAsync(nameof(NewCategoryView));
+			}
+			else
+			{
+				await Shell.Current.GoToAsync(nameof(LogInView));
+			}
 		}
 
 		private async void DeleteCategoryAsync(NoteType item)
@@ -108,6 +112,16 @@ namespace NotesAndReminders.ViewModels
 		private async void RefreshAsync()
 		{
 			await ReloadDataAsync();
+		}
+
+		private async void OnNotesCategoriesUpdatedAsync(NewCategoryViewModel vm)
+		{
+			await ReloadDataAsync();
+		}
+
+		private void OnLoggedOut(ProfileViewModel vm)
+		{
+			Categories.Clear();
 		}
 	}
 }

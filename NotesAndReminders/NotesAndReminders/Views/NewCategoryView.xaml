@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:resource="clr-namespace:NotesAndReminders.Resources"
+			 x:Class="NotesAndReminders.Views.NewCategoryView"
+			 Padding="10">
+	<StackLayout Spacing="18"
+				 VerticalOptions="EndAndExpand">
+		<Label Text="{x:Static resource:AppResources.NewCategory}"
+			   FontSize="30" />
+		<Label Text="{x:Static resource:AppResources.CategoriesHelpYouOrganizeYourNotes}"
+			   FontSize="17" />
+		<Entry Text="{Binding CategoryName}"
+			   Placeholder="{x:Static resource:AppResources.NameYourCategory}" />
+		<Label Text="{x:Static resource:AppResources.NotesUseBackgroundOfCategory}"
+			   FontSize="17" />
+		<CollectionView ItemsSource="{Binding ColorsOptions}"
+						SelectionMode="Single"
+						SelectedItem="{Binding SelectedColorsOption}"
+						HeightRequest="26">
+			<CollectionView.ItemsLayout>
+				<GridItemsLayout Orientation="Horizontal"
+								 HorizontalItemSpacing="10" />
+			</CollectionView.ItemsLayout>
+			<CollectionView.ItemTemplate>
+				<DataTemplate>
+					<Frame BackgroundColor="{Binding CurrentThemeColor}"
+						   Padding="0"
+						   WidthRequest="26"
+						   HeightRequest="26"
+						   CornerRadius="13"
+						   HorizontalOptions="CenterAndExpand"
+						   VerticalOptions="CenterAndExpand" />
+				</DataTemplate>
+			</CollectionView.ItemTemplate>
+		</CollectionView>
+		<Button Text="{x:Static resource:AppResources.AddCategory}"
+				Command="{Binding AddCategoryCommand}"
+				IsEnabled="{Binding CanSave}"
+				IsVisible="{Binding IsAdding, Converter={StaticResource InverseBoolConverter}}"
+				HorizontalOptions="FillAndExpand" />
+		<ActivityIndicator IsVisible="{Binding IsAdding}"
+						   IsRunning="{Binding IsAdding}" />
+	</StackLayout>
+</ContentPage>

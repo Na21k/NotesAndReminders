@@ -5,6 +5,9 @@
 			 x:Class="NotesAndReminders.Views.NotesCategoriesView"
 			 x:Name="page"
 			 Title="{x:Static resource:AppResources.Categories}">
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Text="{x:Static resource:AppResources.Add}" Command="{Binding NewCategoryCommand}" />
+	</ContentPage.ToolbarItems>
 	<RefreshView IsRefreshing="{Binding IsRefreshing}"
 				 Command="{Binding RefreshCommand}">
 		<ScrollView Padding="10">
@@ -18,7 +21,7 @@
 								   FontSize="Large"
 								   HorizontalOptions="StartAndExpand"
 								   VerticalOptions="CenterAndExpand" />
-							<Frame BackgroundColor="{Binding Color}"
+							<Frame BackgroundColor="{Binding Color.CurrentThemeColor}"
 								   Padding="0"
 								   WidthRequest="26"
 								   HeightRequest="26"

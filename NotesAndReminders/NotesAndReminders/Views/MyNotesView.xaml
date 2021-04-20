@@ -35,7 +35,7 @@
 					<DataTemplate>
 						<Frame Padding="10"
 							   CornerRadius="6"
-							   BackgroundColor="{Binding Type.Color}">
+							   BackgroundColor="{Binding Type.Color.CurrentThemeColor}">
 							<StackLayout Spacing="10"
 										 Padding="0">
 								<Label Text="{Binding Title}"

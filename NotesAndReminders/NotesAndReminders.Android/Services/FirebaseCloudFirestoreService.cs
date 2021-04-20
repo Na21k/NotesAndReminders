@@ -70,7 +70,8 @@ namespace NotesAndReminders.Droid.Services
 					{ "id", noteType.Id },
 					{ "user_Id", _auth.CurrentUser.Uid},
 					{ "name", noteType.Name},
-					{ "noteColor", noteType.Color.ToHex()}
+					{ "noteColorLight", noteType.Color.Light.ToHex()},
+					{ "noteColorDark", noteType.Color.Dark.ToHex()}
 				};
 
 				await docRef.Set(noteTypeDoc.Convert());
@@ -162,7 +163,7 @@ namespace NotesAndReminders.Droid.Services
 			{
 				await docRef.Get().AddOnCompleteListener(new OnCompleteListener<Note>(onNoteRecievedCallback));
 			}
-			catch(Exception ex)
+			catch (Exception ex)
 			{
 				System.Diagnostics.Debug.WriteLine(ex.Message);
 				System.Diagnostics.Debug.WriteLine(ex.StackTrace);
@@ -179,7 +180,7 @@ namespace NotesAndReminders.Droid.Services
 			{
 				await docRef.Get().AddOnCompleteListener(new OnCompleteListener<NoteType>(onNoteTypeRecievedCallback));
 			}
-			catch(Exception ex)
+			catch (Exception ex)
 			{
 				System.Diagnostics.Debug.WriteLine(ex.Message);
 				System.Diagnostics.Debug.WriteLine(ex.StackTrace);

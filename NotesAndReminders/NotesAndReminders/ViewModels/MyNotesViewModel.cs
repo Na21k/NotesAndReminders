@@ -32,7 +32,8 @@ namespace NotesAndReminders.ViewModels
 			ArchiveNoteCommand = new Command<Note>(ArchiveNoteAsync);
 			RefreshCommand = new Command(RefreshAsync);
 
-			MessagingCenter.Subscribe<NoteDetailsViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdated);
+			MessagingCenter.Subscribe<NoteDetailsViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdatedAsync);
+			MessagingCenter.Subscribe<ProfileViewModel>(this, Constants.LoggedOutEvent, OnLoggedOut);
 
 			var n1 = new Note()
 			{
@@ -41,7 +42,11 @@ namespace NotesAndReminders.ViewModels
 				Type = new NoteType()
 				{
 					Name = "Note type test one",
-					Color = Color.FromHex("#70ff9b"),
+					Color = new NoteColorModel()
+					{
+						Light = Color.FromHex("#70ff9b"),
+						Dark = Color.DarkGray
+					}
 				},
 				State = NoteState.Regular,
 				LastEdited = DateTime.UtcNow
@@ -54,7 +59,11 @@ namespace NotesAndReminders.ViewModels
 				Type = new NoteType()
 				{
 					Name = "note type test one",
-					Color = Color.FromHex("#ff7070"),
+					Color = new NoteColorModel()
+					{
+						Light = Color.FromHex("#ff7070"),
+						Dark = Color.DarkGray
+					}
 				},
 				State = NoteState.Regular,
 				LastEdited = DateTime.UtcNow
@@ -67,7 +76,11 @@ namespace NotesAndReminders.ViewModels
 				Type = new NoteType()
 				{
 					Name = "note type test 2",
-					Color = Color.FromHex("#ff709b"),
+					Color = new NoteColorModel()
+					{
+						Light = Color.FromHex("#ff709b"),
+						Dark = Color.DarkGray
+					}
 				},
 				State = NoteState.Regular,
 				LastEdited = DateTime.UtcNow
@@ -132,9 +145,14 @@ namespace NotesAndReminders.ViewModels
 			await ReloadDataAsync();
 		}
 
-		private async void OnNotesUpdated(NoteDetailsViewModel vm)
+		private async void OnNotesUpdatedAsync(NoteDetailsViewModel vm)
 		{
 			await ReloadDataAsync();
+		}
+
+		private void OnLoggedOut(ProfileViewModel vm)
+		{
+			Notes.Clear();
 		}
 	}
 }

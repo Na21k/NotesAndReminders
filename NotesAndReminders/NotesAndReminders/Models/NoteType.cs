@@ -1,5 +1,4 @@
-﻿using Xamarin.Forms;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using NotesAndReminders.Converters;
 
 namespace NotesAndReminders.Models
@@ -8,6 +7,6 @@ namespace NotesAndReminders.Models
 	{
 		public string Name { get; set; }
 		[JsonConverter(typeof(ColorJsonConverter))]
-		public Color Color { get; set; }
+		public NoteColorModel Color { get; set; }
 	}
 }

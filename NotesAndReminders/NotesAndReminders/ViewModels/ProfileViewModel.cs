@@ -48,6 +48,8 @@ namespace NotesAndReminders.ViewModels
 
 				OnPropertyChanged(nameof(IsLoggedIn));
 				OnPropertyChanged(nameof(User));
+
+				MessagingCenter.Send(this, Constants.LoggedOutEvent);
 			}
 			else
 			{

@@ -61,11 +61,38 @@ namespace NotesAndReminders.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add.
+        /// </summary>
+        internal static string Add {
+            get {
+                return ResourceManager.GetString("Add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add category.
+        /// </summary>
+        internal static string AddCategory {
+            get {
+                return ResourceManager.GetString("AddCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Categories.
         /// </summary>
         internal static string Categories {
             get {
                 return ResourceManager.GetString("Categories", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Categories help you organize your notes.
+        /// </summary>
+        internal static string CategoriesHelpYouOrganizeYourNotes {
+            get {
+                return ResourceManager.GetString("CategoriesHelpYouOrganizeYourNotes", resourceCulture);
             }
         }
         
@@ -232,11 +259,38 @@ namespace NotesAndReminders.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Name your category.
+        /// </summary>
+        internal static string NameYourCategory {
+            get {
+                return ResourceManager.GetString("NameYourCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New category.
+        /// </summary>
+        internal static string NewCategory {
+            get {
+                return ResourceManager.GetString("NewCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Note text.
         /// </summary>
         internal static string NoteBody {
             get {
                 return ResourceManager.GetString("NoteBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Notes use the background color of their category.
+        /// </summary>
+        internal static string NotesUseBackgroundOfCategory {
+            get {
+                return ResourceManager.GetString("NotesUseBackgroundOfCategory", resourceCulture);
             }
         }
         

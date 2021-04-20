@@ -12,6 +12,5 @@ namespace NotesAndReminders.Models
 		public List<ChecklistItem> Checklists { get; set; }
 		public NoteState State { get; set; }
 		public DateTime LastEdited { get; set; }
-		
 	}
 }

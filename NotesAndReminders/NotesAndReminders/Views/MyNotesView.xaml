@@ -47,6 +47,7 @@
 								<Frame Padding="5"
 									   CornerRadius="6"
 									   HorizontalOptions="Start"
+									   VerticalOptions="EndAndExpand"
 									   BackgroundColor="#40ffffff">
 									<Label Text="{Binding Type.Name}"
 										   MaxLines="1"

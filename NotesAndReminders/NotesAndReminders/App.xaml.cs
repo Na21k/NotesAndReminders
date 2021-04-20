@@ -10,8 +10,6 @@ namespace NotesAndReminders
 		{
 			InitializeComponent();
 
-			DependencyService.Register<MockDataStore>();
-
 			var platformService = DependencyService.Get<IPlatformService>();
 			platformService.SetTranslucentStatusbar();
 			platformService.SetTranslucentNavbar();

@@ -113,9 +113,6 @@
 	<FlyoutItem Title="{x:Static resource:AppResources.Categories}">
 		<ShellContent Route="NotesCategoriesView" ContentTemplate="{DataTemplate local:NotesCategoriesView}" />
 	</FlyoutItem>
-	<FlyoutItem Title="Browse" Icon="icon_feed.png">
-		<ShellContent Route="ItemsPage" ContentTemplate="{DataTemplate local:ItemsPage}" />
-	</FlyoutItem>
 	<FlyoutItem Title="{x:Static resource:AppResources.Profile}" Icon="{AppThemeBinding Light='icn_profile_dark', Dark='icn_profile_light'}">
 		<ShellContent Route="ProfileView" ContentTemplate="{DataTemplate local:ProfileView}" />
 	</FlyoutItem>

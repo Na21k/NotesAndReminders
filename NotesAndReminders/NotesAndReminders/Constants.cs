@@ -19,7 +19,7 @@ namespace NotesAndReminders
 		public static readonly List<NoteColorModel> NotesColorsOptions = new List<NoteColorModel>()
 		{
 			new NoteColorModel() { Light = Color.FromHex("#f2f2f2"), Dark = Color.FromHex("#6e6e6e") },	//default gray color
-			new NoteColorModel() { Light = Color.FromHex("#ff4040"), Dark = Color.FromHex("#d13030") },	//red1
+			new NoteColorModel() { Light = Color.FromHex("#ff4040"), Dark = Color.FromHex("#d13030") },	//red
 			new NoteColorModel() { Light = Color.FromHex("#ffd54a"), Dark = Color.FromHex("#dbb842") },	//yellow
 			new NoteColorModel() { Light = Color.FromHex("#98ff4a"), Dark = Color.FromHex("#7dd13d") },	//green
 			new NoteColorModel() { Light = Color.FromHex("#4dffd8"), Dark = Color.FromHex("#38c9aa") },	//cyan1
@@ -28,7 +28,7 @@ namespace NotesAndReminders
 			new NoteColorModel() { Light = Color.FromHex("#4a62ff"), Dark = Color.FromHex("#4a62ff") },	//blue2
 			new NoteColorModel() { Light = Color.FromHex("#e83bff"), Dark = Color.FromHex("#8d219c") },	//purple
 			new NoteColorModel() { Light = Color.FromHex("#ff2ba0"), Dark = Color.FromHex("#bf247a") },	//pink
-			new NoteColorModel() { Light = Color.FromHex("#ff365e"), Dark = Color.FromHex("#c22544") }	//red2
+			new NoteColorModel() { Light = Color.FromHex("#ff365e"), Dark = Color.FromHex("#c22544") }	//cherryRed
 		};
 	}
 }

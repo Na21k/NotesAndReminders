@@ -17,20 +17,22 @@
 		<CollectionView ItemsSource="{Binding ColorsOptions}"
 						SelectionMode="Single"
 						SelectedItem="{Binding SelectedColorsOption}"
-						HeightRequest="26">
+						HeightRequest="36">
 			<CollectionView.ItemsLayout>
 				<GridItemsLayout Orientation="Horizontal"
 								 HorizontalItemSpacing="10" />
 			</CollectionView.ItemsLayout>
 			<CollectionView.ItemTemplate>
 				<DataTemplate>
-					<Frame BackgroundColor="{Binding CurrentThemeColor}"
-						   Padding="0"
-						   WidthRequest="26"
-						   HeightRequest="26"
-						   CornerRadius="13"
-						   HorizontalOptions="CenterAndExpand"
-						   VerticalOptions="CenterAndExpand" />
+					<Grid HeightRequest="36">
+						<Frame BackgroundColor="{Binding CurrentThemeColor}"
+							   Padding="0"
+							   WidthRequest="26"
+							   HeightRequest="26"
+							   CornerRadius="13"
+							   HorizontalOptions="CenterAndExpand"
+							   VerticalOptions="StartAndExpand" />
+					</Grid>
 				</DataTemplate>
 			</CollectionView.ItemTemplate>
 		</CollectionView>

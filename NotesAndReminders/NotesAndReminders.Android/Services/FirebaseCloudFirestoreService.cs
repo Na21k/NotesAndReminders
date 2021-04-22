@@ -244,5 +244,56 @@ namespace NotesAndReminders.Droid.Services
 				throw;
 			}
 		}
+
+		public async Task<bool> ArchiveNote(Note note)
+		{
+			try
+			{
+				DocumentReference docRef = _db.Collection("Archive").Document();
+				Dictionary<string, object> noteDoc = new Dictionary<string, object>
+				{
+					{ "id", docRef.Id},
+					{ "user_Id", _auth.CurrentUser.Uid},
+					{ "title", note.Title },
+					{ "text", note.Text},
+					//{ "type", note.Type},
+					//{ "addition content", note.Images },
+					//{ "checklist", note.Checklists},
+					{ "last_time_modifired", note.LastEdited}
+				};
+
+				await docRef.Set(noteDoc.Convert());
+
+				await DeleteNoteAsync(note);
+				return true;
+			}
+			catch (Exception ex)
+			{
+				System.Diagnostics.Debug.WriteLine(ex.Message);
+				System.Diagnostics.Debug.WriteLine(ex.StackTrace);
+
+				throw;
+			}
+		}
+
+		public async Task<bool> UnarchiveNote(Note note)
+		{
+			try
+			{
+				await AddNoteAsync(note);
+
+				DocumentReference docRef = _db.Collection("Archive").Document(note.Id.ToString());
+				await docRef.Delete();
+
+				return true;
+			}
+			catch (Exception ex)
+			{
+				System.Diagnostics.Debug.WriteLine(ex.Message);
+				System.Diagnostics.Debug.WriteLine(ex.StackTrace);
+
+				throw;
+			}
+		}
 	}
 }

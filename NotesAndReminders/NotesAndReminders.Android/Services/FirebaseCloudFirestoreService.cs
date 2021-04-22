@@ -156,6 +156,22 @@ namespace NotesAndReminders.Droid.Services
 			}
 		}
 
+		public async Task GetAllArchiveNoteAsync(Action<List<IDBItem>> onNotesRecievedCallback)
+		{
+			try
+			{
+				var query = _db.Collection("Archive");
+				await query.WhereEqualTo("user_Id", _auth.CurrentUser.Uid).Get().AddOnCompleteListener(new OnCompleteListListener<Note>(onNotesRecievedCallback));
+
+			}
+			catch (Exception ex)
+			{
+				System.Diagnostics.Debug.WriteLine(ex.Message);
+				System.Diagnostics.Debug.WriteLine(ex.StackTrace);
+
+				throw;
+			}
+		}
 		public async Task GetNoteAsync(string noteId, Action<IDBItem> onNoteRecievedCallback)
 		{
 			DocumentReference docRef = _db.Collection("Notes").Document(noteId);
@@ -245,7 +261,7 @@ namespace NotesAndReminders.Droid.Services
 			}
 		}
 
-		public async Task<bool> ArchiveNote(Note note)
+		public async Task<bool> ArchiveNoteAsync(Note note)
 		{
 			try
 			{
@@ -276,7 +292,7 @@ namespace NotesAndReminders.Droid.Services
 			}
 		}
 
-		public async Task<bool> UnarchiveNote(Note note)
+		public async Task<bool> UnarchiveNoteAsync(Note note)
 		{
 			try
 			{

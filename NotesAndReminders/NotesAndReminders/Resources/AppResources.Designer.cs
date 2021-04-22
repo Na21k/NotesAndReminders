@@ -79,6 +79,24 @@ namespace NotesAndReminders.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Archive.
+        /// </summary>
+        internal static string Archive {
+            get {
+                return ResourceManager.GetString("Archive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Archive is useful to keep notes you don&apos;t need right now, but you think you might later.
+        /// </summary>
+        internal static string ArchiveDescription {
+            get {
+                return ResourceManager.GetString("ArchiveDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Categories.
         /// </summary>
         internal static string Categories {
@@ -250,6 +268,15 @@ namespace NotesAndReminders.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Archive.
+        /// </summary>
+        internal static string MoveToArchive {
+            get {
+                return ResourceManager.GetString("MoveToArchive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to My notes.
         /// </summary>
         internal static string MyNotes {
@@ -381,6 +408,15 @@ namespace NotesAndReminders.Resources {
         internal static string Title {
             get {
                 return ResourceManager.GetString("Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unarchive.
+        /// </summary>
+        internal static string Unarchive {
+            get {
+                return ResourceManager.GetString("Unarchive", resourceCulture);
             }
         }
         

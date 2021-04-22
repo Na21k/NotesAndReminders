@@ -44,16 +44,30 @@
 								<Label Text="{Binding Text}"
 									   MaxLines="7"
 									   LineBreakMode="TailTruncation" />
-								<Frame Padding="5"
-									   CornerRadius="6"
-									   HorizontalOptions="Start"
-									   VerticalOptions="EndAndExpand"
-									   BackgroundColor="#40ffffff">
-									<Label Text="{Binding Type.Name}"
-										   MaxLines="1"
-										   LineBreakMode="TailTruncation"
-										   FontSize="12" />
-								</Frame>
+								<Grid ColumnDefinitions="*,30"
+									  ColumnSpacing="10"
+									  HorizontalOptions="StartAndExpand"
+									  VerticalOptions="EndAndExpand">
+									<Frame Grid.Column="0"
+										   Padding="5"
+										   CornerRadius="6"
+										   HorizontalOptions="StartAndExpand"
+										   BackgroundColor="#40ffffff">
+										<Label Text="{Binding Type.Name}"
+											   MaxLines="1"
+											   LineBreakMode="TailTruncation"
+											   FontSize="12" />
+									</Frame>
+									<Label Grid.Column="1"
+										   Text="..."
+										   FontAttributes="Bold"
+										   HorizontalOptions="EndAndExpand">
+										<Label.GestureRecognizers>
+											<TapGestureRecognizer Command="{Binding BindingContext.DisplayNoteActionsCommand, Source={x:Reference page}}"
+																  CommandParameter="{Binding .}" />
+										</Label.GestureRecognizers>
+									</Label>
+								</Grid>
 							</StackLayout>
 							<Frame.GestureRecognizers>
 								<TapGestureRecognizer Command="{Binding BindingContext.OpenNoteCommand, Source={x:Reference page}}"

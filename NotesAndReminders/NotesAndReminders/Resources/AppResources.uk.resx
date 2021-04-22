@@ -123,6 +123,12 @@
   <data name="AddCategory" xml:space="preserve">
     <value>Додати категорію</value>
   </data>
+  <data name="Archive" xml:space="preserve">
+    <value>Архів</value>
+  </data>
+  <data name="ArchiveDescription" xml:space="preserve">
+    <value>Архів корисний для зберігання нотаток, які не потрібні вам прямо зараз, але можуть стати в пригоді пізніше</value>
+  </data>
   <data name="Categories" xml:space="preserve">
     <value>Категорії</value>
   </data>
@@ -180,6 +186,9 @@
   <data name="Log_In" xml:space="preserve">
     <value>Увійти</value>
   </data>
+  <data name="MoveToArchive" xml:space="preserve">
+    <value>Архівувати</value>
+  </data>
   <data name="MyNotes" xml:space="preserve">
     <value>Мої нотатки</value>
   </data>
@@ -224,6 +233,9 @@
   </data>
   <data name="Title" xml:space="preserve">
     <value>Заголовок</value>
+  </data>
+  <data name="Unarchive" xml:space="preserve">
+    <value>Розархівувати</value>
   </data>
   <data name="Uncategorized" xml:space="preserve">
     <value>Без категорії</value>

@@ -156,7 +156,7 @@ namespace NotesAndReminders.Droid.Services
 			}
 		}
 
-		public async Task GetAllArchiveNoteAsync(Action<List<IDBItem>> onNotesRecievedCallback)
+		public async Task GetAllArchivedNotesAsync(Action<List<IDBItem>> onNotesRecievedCallback)
 		{
 			try
 			{

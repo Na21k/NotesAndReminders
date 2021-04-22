@@ -91,7 +91,20 @@ namespace NotesAndReminders.Droid.Services
 		{
 			try
 			{
-				DocumentReference docRef = _db.Collection("Notes").Document(note.Id.ToString());
+				DocumentReference docRef;
+				string colName = null;
+				switch (note.State)
+				{
+					case NoteState.Regular:
+						colName = "Notes";
+						break;
+
+					case NoteState.Archived:
+						colName = "Archive";
+						break;
+				}
+
+				docRef = _db.Collection(colName).Document(note.Id.ToString());
 				await docRef.Delete();
 
 				return true;
@@ -207,9 +220,24 @@ namespace NotesAndReminders.Droid.Services
 
 		public async Task<bool> UpdateNoteAsync(Note note)
 		{
-			DocumentReference docRef = _db.Collection("Notes").Document(note.Id);
 			try
 			{
+				DocumentReference docRef;
+				string colName = null;
+
+				switch (note.State)
+				{
+					case NoteState.Regular:
+						colName = "Notes";
+						break;
+
+					case NoteState.Archived:
+						colName = "Archive";
+						break;
+				}
+
+				docRef = _db.Collection(colName).Document(note.Id);
+
 				Dictionary<string, object> updatedNote = new Dictionary<string, object>()
 				{
 					{ "id", note.Id},
@@ -297,55 +325,7 @@ namespace NotesAndReminders.Droid.Services
 			try
 			{
 				await AddNoteAsync(note);
-				await DeleteArchivedNote(note);
-
-				return true;
-			}
-			catch (Exception ex)
-			{
-				System.Diagnostics.Debug.WriteLine(ex.Message);
-				System.Diagnostics.Debug.WriteLine(ex.StackTrace);
-
-				throw;
-			}
-		}
-
-		public async Task<bool> UpdateArchivedNote(Note note)
-		{
-			DocumentReference docRef = _db.Collection("Archive").Document(note.Id);
-			try
-			{
-				Dictionary<string, object> updatedArchivedNote = new Dictionary<string, object>()
-				{
-					{ "id", note.Id},
-					{ "user_Id", _auth.CurrentUser.Uid},
-					{ "title", note.Title },
-					{ "text", note.Text},
-					//{ "type", note.Type},
-					//{ "addition content", note.Images },
-					//{ "checklist", note.Checklists},
-					{ "last_time_modifired", note.LastEdited}
-				};
-
-				await docRef.Update(updatedArchivedNote.Convert());
-
-				return true;
-			}
-			catch (Exception ex)
-			{
-				System.Diagnostics.Debug.WriteLine(ex.Message);
-				System.Diagnostics.Debug.WriteLine(ex.StackTrace);
-
-				throw;
-			}
-		}
-
-		public async Task<bool> DeleteArchivedNote(Note note)
-		{
-			try
-			{
-				DocumentReference docRef = _db.Collection("Archive").Document(note.Id.ToString());
-				await docRef.Delete();
+				await DeleteNoteAsync(note);
 
 				return true;
 			}

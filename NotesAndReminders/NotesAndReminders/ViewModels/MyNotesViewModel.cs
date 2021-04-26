@@ -156,8 +156,20 @@ namespace NotesAndReminders.ViewModels
 		{
 			if (await _dBService.ArchiveNoteAsync(note))
 			{
-				Notes.Remove(note);
+				await ReloadDataAsync();
 				MessagingCenter.Send(this, Constants.NotesUpdatedEvent);
+			}
+			else
+			{
+				await Shell.Current.DisplayAlert(AppResources.Oops, AppResources.UnexpectedErrorHasOccurred, AppResources.Ok);
+			}
+		}
+
+		private async Task DeleteNoteAsync(Note note)
+		{
+			if (await _dBService.DeleteNoteAsync(note))
+			{
+				await ReloadDataAsync();
 			}
 			else
 			{
@@ -174,7 +186,8 @@ namespace NotesAndReminders.ViewModels
 		{
 			var options = new string[]
 			{
-				AppResources.MoveToArchive
+				AppResources.MoveToArchive,
+				AppResources.Delete
 			};
 
 			var res = await Shell.Current.DisplayActionSheet(null, null, null, options);
@@ -182,6 +195,10 @@ namespace NotesAndReminders.ViewModels
 			if (res == AppResources.MoveToArchive)
 			{
 				await ArchiveNoteAsync(note);
+			}
+			else if (res == AppResources.Delete)
+			{
+				await DeleteNoteAsync(note);
 			}
 		}
 

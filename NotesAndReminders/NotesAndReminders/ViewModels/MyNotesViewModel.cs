@@ -156,7 +156,7 @@ namespace NotesAndReminders.ViewModels
 		{
 			if (await _dBService.ArchiveNoteAsync(note))
 			{
-				await ReloadDataAsync();
+				Notes.Remove(note);
 				MessagingCenter.Send(this, Constants.NotesUpdatedEvent);
 			}
 			else
@@ -169,7 +169,7 @@ namespace NotesAndReminders.ViewModels
 		{
 			if (await _dBService.DeleteNoteAsync(note))
 			{
-				await ReloadDataAsync();
+				Notes.Remove(note);
 			}
 			else
 			{

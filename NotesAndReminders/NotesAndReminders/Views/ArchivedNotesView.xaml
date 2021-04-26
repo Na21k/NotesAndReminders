@@ -10,10 +10,8 @@
 				 Command="{Binding RefreshCommand}">
 		<CollectionView ItemsSource="{Binding Notes}">
 			<CollectionView.ItemsLayout>
-				<GridItemsLayout Orientation="Vertical"
-								 Span="2"
-								 VerticalItemSpacing="10"
-								 HorizontalItemSpacing="10" />
+				<LinearItemsLayout Orientation="Vertical"
+								   ItemSpacing="10" />
 			</CollectionView.ItemsLayout>
 			<CollectionView.EmptyView>
 				<ContentView>

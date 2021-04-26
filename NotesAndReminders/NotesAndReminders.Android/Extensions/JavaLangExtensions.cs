@@ -29,6 +29,9 @@ namespace NotesAndReminders.Droid.Extensions
 				if (key.Equals("noteColor"))
 				{
 					dict.Add(key, Color.FromHex(val.ToString()));
+				}else if (key.Equals("state"))
+				{
+					dict.Add(key, Enum.Parse(typeof(NoteState), val.ToString()));
 				}
 				else if(val is Java.Lang.String str)
 				{

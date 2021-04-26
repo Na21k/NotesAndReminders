@@ -33,6 +33,7 @@ namespace NotesAndReminders.Droid.Services
 		{
 			try
 			{
+				
 				DocumentReference docRef = _db.Collection("Notes").Document();
 				Dictionary<string, object> noteDoc = new Dictionary<string, object>
 				{
@@ -40,6 +41,7 @@ namespace NotesAndReminders.Droid.Services
 					{ "user_Id", _auth.CurrentUser.Uid},
 					{ "title", note.Title },
 					{ "text", note.Text},
+					{ "state", NoteState.Regular.ToString()  },
 					//{ "type", note.Type},
 					//{ "addition content", note.Images },
 					//{ "checklist", note.Checklists},
@@ -224,7 +226,6 @@ namespace NotesAndReminders.Droid.Services
 			{
 				DocumentReference docRef;
 				string colName = null;
-
 				switch (note.State)
 				{
 					case NoteState.Regular:
@@ -300,6 +301,7 @@ namespace NotesAndReminders.Droid.Services
 					{ "user_Id", _auth.CurrentUser.Uid},
 					{ "title", note.Title },
 					{ "text", note.Text},
+					{ "state", NoteState.Archived.ToString()  },
 					//{ "type", note.Type},
 					//{ "addition content", note.Images },
 					//{ "checklist", note.Checklists},

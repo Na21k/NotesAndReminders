@@ -5,10 +5,12 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Firebase;
 using Java.Util;
 using NotesAndReminders.Models;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using Xamarin.Forms;
@@ -33,6 +35,11 @@ namespace NotesAndReminders.Droid.Extensions
 				{
 					dict.Add(key, Enum.Parse(typeof(NoteState), val.ToString()));
 				}
+				else if (key.Equals("last_time_modifired"))
+				{
+					DateTime dt = DateTime.ParseExact((string)val, "MM/dd/yyyy HH:mm:ss tt", CultureInfo.InvariantCulture);
+					dict.Add(key, dt);
+				}
 				else if(val is Java.Lang.String str)
 				{
 					dict.Add(key, str.ToString());
@@ -44,11 +51,6 @@ namespace NotesAndReminders.Droid.Extensions
 				else if(val is Java.Lang.Integer intVal)
 				{
 					dict.Add(key,intVal.IntValue());
-				}
-				else if(val is Java.Util.Date dt)
-				{
-					var format = new SimpleDateFormat();
-					dict.Add(key, format.Format(dt));
 				}
 				else if(val is Java.Lang.Boolean boolVal)
 				{
@@ -100,7 +102,7 @@ namespace NotesAndReminders.Droid.Extensions
 				}
 				else if(val is DateTime dt)
 				{
-					javaVal = dt.ToString();
+					javaVal = dt.ToString("MM/dd/yyyy HH:mm:ss tt");
 				}
 				else if(val is bool boolVal)
 				{

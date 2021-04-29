@@ -1,4 +1,5 @@
 ﻿using NotesAndReminders.Models;
+using NotesAndReminders.Resources;
 using NotesAndReminders.Services;
 using System;
 using System.Windows.Input;
@@ -12,6 +13,7 @@ namespace NotesAndReminders.ViewModels
 
 		private NoteDetailsViewType _viewType;
 		private IDBService _dBService;
+		private TrashService _trashService;
 		private Note _note;
 
 		public Note Note
@@ -27,6 +29,7 @@ namespace NotesAndReminders.ViewModels
 		{
 			_viewType = NoteDetailsViewType.NewNote;
 			_dBService = DependencyService.Get<IDBService>();
+			_trashService = new TrashService();
 
 			Note = new Note();
 
@@ -65,10 +68,16 @@ namespace NotesAndReminders.ViewModels
 		{
 			if (_viewType == NoteDetailsViewType.EditNote)
 			{
-				await _dBService.DeleteNoteAsync(Note);
+				try
+				{
+					await _trashService.MoveNoteToTrashAsync(Note);
+					MessagingCenter.Send(this, Constants.NotesUpdatedEvent);
+				}
+				catch (Exception ex)
+				{
+					await Shell.Current.DisplayAlert(AppResources.Oops, $"{AppResources.UnexpectedErrorHasOccurred}: {ex.Message}", AppResources.Ok);
+				}
 			}
-
-			MessagingCenter.Send(this, Constants.NotesUpdatedEvent);
 
 			await Shell.Current.Navigation.PopToRootAsync();
 		}

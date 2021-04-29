@@ -1,4 +1,6 @@
-﻿using System.ComponentModel;
+﻿using Newtonsoft.Json;
+using NotesAndReminders.Converters;
+using System.ComponentModel;
 using Xamarin.Forms;
 
 namespace NotesAndReminders.Models
@@ -19,7 +21,9 @@ namespace NotesAndReminders.Models
 				}
 			}
 		}
+		[JsonConverter(typeof(ColorJsonConverter))]
 		public Color Light { get; set; }
+		[JsonConverter(typeof(ColorJsonConverter))]
 		public Color Dark { get; set; }
 
 		public event PropertyChangedEventHandler PropertyChanged;

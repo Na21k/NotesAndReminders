@@ -222,6 +222,9 @@
   <data name="Profile_LogInOrSignUp" xml:space="preserve">
     <value>Увійдіть або зареєструйтесь щоб синхронізувати нотатки між вашими пистроями</value>
   </data>
+  <data name="Restore" xml:space="preserve">
+    <value>Відновити</value>
+  </data>
   <data name="Save" xml:space="preserve">
     <value>Зберегти</value>
   </data>

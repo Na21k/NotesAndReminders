@@ -2,17 +2,14 @@
 using NotesAndReminders.Resources;
 using NotesAndReminders.Services;
 using System;
-using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace NotesAndReminders.ViewModels
 {
-	public class ArchivedNotesViewModel : NotesBaseViewModel
+	public class TrashViewModel : NotesBaseViewModel
 	{
-		private IDBService _dBService;
-		private IAuthorizationService _authorizationService;
 		private TrashService _trashService;
 		private bool _isRefreshing;
 
@@ -25,10 +22,8 @@ namespace NotesAndReminders.ViewModels
 			set => SetProperty(ref _isRefreshing, value);
 		}
 
-		public ArchivedNotesViewModel()
+		public TrashViewModel()
 		{
-			_dBService = DependencyService.Get<IDBService>();
-			_authorizationService = DependencyService.Get<IAuthorizationService>();
 			_trashService = new TrashService();
 
 			RefreshCommand = new Command(RefreshAsync);
@@ -36,7 +31,7 @@ namespace NotesAndReminders.ViewModels
 
 			MessagingCenter.Subscribe<NoteDetailsViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdatedAsync);
 			MessagingCenter.Subscribe<MyNotesViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdatedAsync);
-			MessagingCenter.Subscribe<TrashViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdatedAsync);
+			MessagingCenter.Subscribe<ArchivedNotesViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdatedAsync);
 			MessagingCenter.Subscribe<ProfileViewModel>(this, Constants.LoggedOutEvent, OnLoggedOut);
 		}
 
@@ -54,36 +49,11 @@ namespace NotesAndReminders.ViewModels
 		{
 			await base.ReloadDataAsync();
 
-			if (_authorizationService.IsLoggedIn)
-			{
-				IsRefreshing = true;
+			var notes = await _trashService.GetTrashedNotesAsync();
+			Notes.Clear();
+			notes.ForEach((note) => Notes.Add(note));
 
-				await _dBService.GetAllArchivedNotesAsync(notes =>
-				{
-					Notes.Clear();
-					notes.ForEach(note =>
-					{
-						var nt = note as Note;
-
-						if (nt.Type == null)
-						{
-							nt.Type = new NoteType()
-							{
-								Name = AppResources.Uncategorized,
-								Color = Constants.NotesColorsOptions.FirstOrDefault()
-							};
-						}
-
-						Notes.Add(nt);
-					});
-
-					IsRefreshing = false;
-				});
-			}
-			else
-			{
-				IsRefreshing = false;
-			}
+			IsRefreshing = false;
 		}
 
 		private async void RefreshAsync()
@@ -95,15 +65,15 @@ namespace NotesAndReminders.ViewModels
 		{
 			var options = new string[]
 			{
-				AppResources.Unarchive,
+				AppResources.Restore,
 				AppResources.Delete
 			};
 
 			var res = await Shell.Current.DisplayActionSheet(null, null, null, options);
 
-			if (res == AppResources.Unarchive)
+			if (res == AppResources.Restore)
 			{
-				await UnarchiveNoteAsync(note);
+				await RestoreNoteAsync(note);
 			}
 			else if (res == AppResources.Delete)
 			{
@@ -111,16 +81,17 @@ namespace NotesAndReminders.ViewModels
 			}
 		}
 
-		private async Task UnarchiveNoteAsync(Note note)
+		private async Task RestoreNoteAsync(Note note)
 		{
-			if (await _dBService.UnarchiveNoteAsync(note))
+			try
 			{
+				await _trashService.RestoreNoteFromTrashAsync(note);
 				Notes.Remove(note);
 				MessagingCenter.Send(this, Constants.NotesUpdatedEvent);
 			}
-			else
+			catch (Exception ex)
 			{
-				await Shell.Current.DisplayAlert(AppResources.Oops, AppResources.UnexpectedErrorHasOccurred, AppResources.Ok);
+				await Shell.Current.DisplayAlert(AppResources.Oops, $"{AppResources.UnexpectedErrorHasOccurred}: {ex.Message}", AppResources.Ok);
 			}
 		}
 
@@ -128,9 +99,8 @@ namespace NotesAndReminders.ViewModels
 		{
 			try
 			{
-				await _trashService.MoveNoteToTrashAsync(note);
+				await _trashService.DeleteNoteFromTrash(note);
 				Notes.Remove(note);
-				MessagingCenter.Send(this, Constants.NotesUpdatedEvent);
 			}
 			catch (Exception ex)
 			{
@@ -148,7 +118,7 @@ namespace NotesAndReminders.ViewModels
 			await ReloadDataAsync();
 		}
 
-		private async void OnNotesUpdatedAsync(TrashViewModel vm)
+		private async void OnNotesUpdatedAsync(ArchivedNotesViewModel vm)
 		{
 			await ReloadDataAsync();
 		}
@@ -156,6 +126,7 @@ namespace NotesAndReminders.ViewModels
 		private void OnLoggedOut(ProfileViewModel vm)
 		{
 			Notes.Clear();
+			_trashService.EmptyTrash();
 		}
 	}
 }

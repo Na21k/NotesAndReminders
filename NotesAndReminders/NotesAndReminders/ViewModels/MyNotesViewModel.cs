@@ -14,6 +14,7 @@ namespace NotesAndReminders.ViewModels
 	{
 		private IDBService _dBService;
 		private IAuthorizationService _authorizationService;
+		private TrashService _trashService;
 		private bool _isRefreshing;
 
 		public ICommand NewNoteCommand { get; private set; }
@@ -29,6 +30,7 @@ namespace NotesAndReminders.ViewModels
 		{
 			_dBService = DependencyService.Get<IDBService>();
 			_authorizationService = DependencyService.Get<IAuthorizationService>();
+			_trashService = new TrashService();
 
 			NewNoteCommand = new Command(NewNoteAsync);
 			RefreshCommand = new Command(RefreshAsync);
@@ -167,13 +169,15 @@ namespace NotesAndReminders.ViewModels
 
 		private async Task DeleteNoteAsync(Note note)
 		{
-			if (await _dBService.DeleteNoteAsync(note))
+			try
 			{
+				await _trashService.MoveNoteToTrashAsync(note);
 				Notes.Remove(note);
+				MessagingCenter.Send(this, Constants.NotesUpdatedEvent);
 			}
-			else
+			catch (Exception ex)
 			{
-				await Shell.Current.DisplayAlert(AppResources.Oops, AppResources.UnexpectedErrorHasOccurred, AppResources.Ok);
+				await Shell.Current.DisplayAlert(AppResources.Oops, $"{AppResources.UnexpectedErrorHasOccurred}: {ex.Message}", AppResources.Ok);
 			}
 		}
 

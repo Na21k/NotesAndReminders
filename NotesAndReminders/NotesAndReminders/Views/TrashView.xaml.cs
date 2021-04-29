@@ -1,20 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using NotesAndReminders.ViewModels;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace NotesAndReminders.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class TrashView : ContentPage
 	{
 		public TrashView()
 		{
 			InitializeComponent();
+
+			BindingContext = new TrashViewModel();
+		}
+
+		protected override void OnAppearing()
+		{
+			base.OnAppearing();
+
+			var vm = BindingContext as TrashViewModel;
+			vm?.OnAppearing();
 		}
 	}
 }

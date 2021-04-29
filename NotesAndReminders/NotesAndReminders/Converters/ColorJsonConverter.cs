@@ -13,7 +13,8 @@ namespace NotesAndReminders.Converters
 
 		public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
 		{
-			var color = Color.FromHex(existingValue as string);
+			var colorString = (string)reader.Value;
+			var color = Color.FromHex(colorString);
 
 			return color;
 		}

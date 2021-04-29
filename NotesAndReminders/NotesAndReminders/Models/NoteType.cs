@@ -1,13 +1,12 @@
-﻿
-using NotesAndReminders.Converters;
+﻿using Newtonsoft.Json;
 
 namespace NotesAndReminders.Models
 {
 	public class NoteType : Identifiable, IDBItem
 	{
-		[Newtonsoft.Json.JsonProperty("name")]
+		[JsonProperty("name")]
 		public string Name { get; set; }
-		[Newtonsoft.Json.JsonProperty("noteColor")]
+		[JsonProperty("noteColor")]
 		public NoteColorModel Color { get; set; }
 	}
 }

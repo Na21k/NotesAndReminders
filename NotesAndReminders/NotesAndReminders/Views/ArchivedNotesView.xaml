@@ -17,10 +17,10 @@
 				<ContentView>
 					<StackLayout Spacing="10"
 								 VerticalOptions="CenterAndExpand">
-						<Image Source="icn_itsEmptyHere"
+						<Image Source="icn_emptyArchive"
 							   HorizontalOptions="CenterAndExpand"
 							   VerticalOptions="CenterAndExpand"
-							   HeightRequest="200" />
+							   HeightRequest="270" />
 						<Label Text="{x:Static resource:AppResources.ArchiveDescription}"
 							   HorizontalTextAlignment="Center" />
 					</StackLayout>

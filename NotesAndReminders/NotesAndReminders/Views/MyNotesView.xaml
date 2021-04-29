@@ -23,7 +23,7 @@
 							<Image Source="icn_itsEmptyHere"
 								   HorizontalOptions="CenterAndExpand"
 								   VerticalOptions="CenterAndExpand"
-								   HeightRequest="200" />
+								   HeightRequest="270" />
 							<Label Text="{x:Static resource:AppResources.ItsEmptyHereYet}"
 								   HorizontalTextAlignment="Center" />
 						</StackLayout>
@@ -81,7 +81,7 @@
 					 Command="{Binding NewNoteCommand}"
 					 BackgroundColor="{AppThemeBinding Light={StaticResource PageBackgroundDark},
 													   Dark={StaticResource PageBackground}}"
-					 Source="icn_newNote"
+					 Source="{AppThemeBinding Light='icn_newNote_dark', Dark='icn_newNote_light'}"
 					 Padding="10"
 					 CornerRadius="28"
 					 HeightRequest="56"

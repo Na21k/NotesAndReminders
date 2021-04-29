@@ -5,7 +5,16 @@
 			 x:Class="NotesAndReminders.Views.NoteDetailsView"
 			 Padding="10">
 	<ContentPage.ToolbarItems>
+		<!--<ToolbarItem Text="{x:Static resource:AppResources.MoveToArchive}"
+					 IconImageSource="{AppThemeBinding Light='icn_archive_dark', Dark='icn_archive_light'}"
+					 Command="{Binding ArchiveCommand}"
+					 Order="Primary" />
+		<ToolbarItem Text="{x:Static resource:AppResources.Unarchive}"
+					 IconImageSource="{AppThemeBinding Light='icn_unarchive_dark', Dark='icn_unarchive_light'}"
+					 Command="{Binding UnarchiveCommand}"
+					 Order="Primary" />-->
 		<ToolbarItem Text="{x:Static resource:AppResources.Delete}"
+					 IconImageSource="{AppThemeBinding Light='icn_trash_dark', Dark='icn_trash_light'}"
 					 Command="{Binding DeleteNoteCommand}"
 					 Order="Primary" />
 		<ToolbarItem Text="{x:Static resource:AppResources.Save}"

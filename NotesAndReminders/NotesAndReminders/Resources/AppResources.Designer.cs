@@ -412,6 +412,15 @@ namespace NotesAndReminders.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Trash.
+        /// </summary>
+        internal static string Trash {
+            get {
+                return ResourceManager.GetString("Trash", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unarchive.
         /// </summary>
         internal static string Unarchive {

@@ -234,6 +234,9 @@
   <data name="Title" xml:space="preserve">
     <value>Заголовок</value>
   </data>
+  <data name="Trash" xml:space="preserve">
+    <value>Кошик</value>
+  </data>
   <data name="Unarchive" xml:space="preserve">
     <value>Розархівувати</value>
   </data>

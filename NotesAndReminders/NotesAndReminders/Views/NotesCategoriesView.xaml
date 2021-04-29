@@ -23,7 +23,7 @@
 						<Image Source="icn_itsEmptyHere"
 							   HorizontalOptions="CenterAndExpand"
 							   VerticalOptions="CenterAndExpand"
-							   HeightRequest="200" />
+							   HeightRequest="270" />
 						<Label Text="{x:Static resource:AppResources.CategoriesHelpYouOrganizeYourNotes}"
 							   HorizontalTextAlignment="Center" />
 					</StackLayout>

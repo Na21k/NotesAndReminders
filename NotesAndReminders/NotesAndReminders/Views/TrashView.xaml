@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:resource="clr-namespace:NotesAndReminders.Resources"
+             x:Class="NotesAndReminders.Views.TrashView"
+			 x:Name="page"
+			 Title="{x:Static resource:AppResources.Trash}"
+			 Padding="10">
+
+</ContentPage>

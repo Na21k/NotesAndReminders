@@ -67,10 +67,14 @@ namespace NotesAndReminders.Droid
 		}
 		private static T Convert(DocumentSnapshot doc)
 		{
+			Newtonsoft.Json.JsonSerializerSettings settings = new Newtonsoft.Json.JsonSerializerSettings
+			{
+				TypeNameHandling = Newtonsoft.Json.TypeNameHandling.Auto
+			};
 			try
 			{
-				var jsonStr = Newtonsoft.Json.JsonConvert.SerializeObject(doc.Data.ToDictionary());
-				var item = Newtonsoft.Json.JsonConvert.DeserializeObject<T>(jsonStr);
+				var jsonStr = Newtonsoft.Json.JsonConvert.SerializeObject(doc.Data.ToDictionary(),settings);
+				var item = Newtonsoft.Json.JsonConvert.DeserializeObject<T>(jsonStr,settings);
 				item.Id = doc.Id;
 
 				return item;

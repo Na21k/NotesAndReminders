@@ -44,7 +44,7 @@ namespace NotesAndReminders.Droid.Services
 					{ "state", NoteState.Regular.ToString()  },
 					//{ "type", note.Type},
 					//{ "addition content", note.Images },
-					//{ "checklist", note.Checklists},
+					{ "checklist", note.Checklists},
 					{ "last_time_modifired", note.LastEdited}
 				};
 
@@ -247,7 +247,7 @@ namespace NotesAndReminders.Droid.Services
 					{ "text", note.Text},
 					//{ "type", note.Type},
 					//{ "addition content", note.Images },
-					//{ "checklist", note.Checklists},
+					{ "checklist", note.Checklists},
 					{ "last_time_modifired", note.LastEdited}
 				};
 
@@ -274,7 +274,8 @@ namespace NotesAndReminders.Droid.Services
 					{ "id", noteType.Id },
 					{ "user_Id", _auth.CurrentUser.Uid},
 					{ "name", noteType.Name},
-					{ "noteColor", noteType.Color}
+					{ "noteColorLight", noteType.Color.Light.ToHex()},
+					{ "noteColorDark", noteType.Color.Dark.ToHex()}
 				};
 
 				await docRef.Update(updatedNoteType.Convert());
@@ -304,7 +305,7 @@ namespace NotesAndReminders.Droid.Services
 					{ "state", NoteState.Archived.ToString()  },
 					//{ "type", note.Type},
 					//{ "addition content", note.Images },
-					//{ "checklist", note.Checklists},
+					{ "checklist", note.Checklists},
 					{ "last_time_modifired", note.LastEdited}
 				};
 

@@ -28,10 +28,11 @@ namespace NotesAndReminders.Droid.Extensions
 
 				var val = map[key];
 
-				if (key.Equals("noteColor"))
+				if (key.Equals("noteColorLight") || key.Equals("noteColorDark"))
 				{
 					dict.Add(key, Color.FromHex(val.ToString()));
-				}else if (key.Equals("state"))
+				}
+				else if (key.Equals("state"))
 				{
 					dict.Add(key, Enum.Parse(typeof(NoteState), val.ToString()));
 				}
@@ -39,6 +40,18 @@ namespace NotesAndReminders.Droid.Extensions
 				{
 					DateTime dt = DateTime.ParseExact((string)val, "MM/dd/yyyy HH:mm:ss tt", CultureInfo.InvariantCulture);
 					dict.Add(key, dt);
+				}
+				else if (key.Equals("checklist"))
+				{
+					var list = new List<ChecklistItem>();
+					var dicChecklist = new JavaDictionary<string, bool>((IDictionary<string, bool>)val);
+
+					foreach(KeyValuePair<string,bool> pair in dicChecklist)
+					{
+						list.Add(new ChecklistItem() { Text = pair.Key, IsChecked = pair.Value });
+					}
+
+					dict.Add(key, list);
 				}
 				else if(val is Java.Lang.String str)
 				{
@@ -107,6 +120,17 @@ namespace NotesAndReminders.Droid.Extensions
 				else if(val is bool boolVal)
 				{
 					javaVal = new Java.Lang.Boolean(boolVal);
+				}
+				else if(val is List<ChecklistItem> list)
+				{
+					HashMap map = new HashMap();
+
+					foreach(var listitem in list)
+					{
+						map.Put(new Java.Lang.String(listitem.Text), new Java.Lang.Boolean(listitem.IsChecked));
+					}
+
+					javaVal = map;
 				}
 				
 				if(javaVal != null)

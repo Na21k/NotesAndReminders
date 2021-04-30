@@ -157,7 +157,7 @@
     <value>Невірний логін або пароль</value>
   </data>
   <data name="ItsEmptyHereYet" xml:space="preserve">
-    <value>Покищо тут порожньо</value>
+    <value>Поки що тут порожньо</value>
   </data>
   <data name="Login" xml:space="preserve">
     <value>Логін</value>

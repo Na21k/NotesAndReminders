@@ -123,6 +123,9 @@
   <data name="AddCategory" xml:space="preserve">
     <value>Додати категорію</value>
   </data>
+  <data name="AddChecklistItem" xml:space="preserve">
+    <value>Додати елемент списку</value>
+  </data>
   <data name="Archive" xml:space="preserve">
     <value>Архів</value>
   </data>
@@ -146,6 +149,9 @@
   </data>
   <data name="EmptyLoginOrPassword" xml:space="preserve">
     <value>Ні логін ні пароль не може бути порожнім</value>
+  </data>
+  <data name="EnterChecklistItemText" xml:space="preserve">
+    <value>Введіть текст елемента списку</value>
   </data>
   <data name="Error" xml:space="preserve">
     <value>Помилка</value>

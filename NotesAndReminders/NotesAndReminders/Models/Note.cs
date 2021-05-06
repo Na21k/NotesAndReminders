@@ -15,7 +15,7 @@ namespace NotesAndReminders.Models
 		[JsonProperty("image")]
 		public List<byte[]> Images { get; set; }
 		[JsonProperty("checklist")]
-		public List<ChecklistItem> Checklists { get; set; }
+		public List<ChecklistItem> Checklist { get; set; }
 		[JsonProperty("state")]
 		public NoteState State { get; set; }
 		[JsonProperty("last_time_modifired")]

@@ -79,6 +79,15 @@ namespace NotesAndReminders.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add checklist item.
+        /// </summary>
+        internal static string AddChecklistItem {
+            get {
+                return ResourceManager.GetString("AddChecklistItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Archive.
         /// </summary>
         internal static string Archive {
@@ -147,6 +156,15 @@ namespace NotesAndReminders.Resources {
         internal static string EmptyLoginOrPassword {
             get {
                 return ResourceManager.GetString("EmptyLoginOrPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter item text.
+        /// </summary>
+        internal static string EnterChecklistItemText {
+            get {
+                return ResourceManager.GetString("EnterChecklistItemText", resourceCulture);
             }
         }
         

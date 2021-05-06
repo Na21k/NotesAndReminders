@@ -44,7 +44,7 @@ namespace NotesAndReminders.Droid.Services
 					{ "state", NoteState.Regular.ToString()  },
 					//{ "type", note.Type},
 					//{ "addition content", note.Images },
-					{ "checklist", note.Checklists},
+					{ "checklist", note.Checklist},
 					{ "last_time_modifired", note.LastEdited}
 				};
 
@@ -247,7 +247,7 @@ namespace NotesAndReminders.Droid.Services
 					{ "text", note.Text},
 					//{ "type", note.Type},
 					//{ "addition content", note.Images },
-					{ "checklist", note.Checklists},
+					{ "checklist", note.Checklist},
 					{ "last_time_modifired", note.LastEdited}
 				};
 
@@ -305,7 +305,7 @@ namespace NotesAndReminders.Droid.Services
 					{ "state", NoteState.Archived.ToString()  },
 					//{ "type", note.Type},
 					//{ "addition content", note.Images },
-					{ "checklist", note.Checklists},
+					{ "checklist", note.Checklist},
 					{ "last_time_modifired", note.LastEdited}
 				};
 

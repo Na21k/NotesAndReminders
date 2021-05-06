@@ -3,6 +3,7 @@
 			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 			 xmlns:resource="clr-namespace:NotesAndReminders.Resources"
 			 x:Class="NotesAndReminders.Views.NoteDetailsView"
+			 x:Name="page"
 			 Padding="10">
 	<ContentPage.ToolbarItems>
 		<!--<ToolbarItem Text="{x:Static resource:AppResources.MoveToArchive}"
@@ -32,5 +33,41 @@
 				VerticalOptions="FillAndExpand"
 				TextColor="{AppThemeBinding Light={StaticResource LabelTextColorPrimary},
 											Dark={StaticResource LabelTextColorPrimaryDark}}" />
+		<StackLayout Spacing="10"
+					 BindableLayout.ItemsSource="{Binding NoteChecklistMirror}"
+					 VerticalOptions="Fill">
+			<BindableLayout.ItemTemplate>
+				<DataTemplate>
+					<Grid ColumnDefinitions="Auto,*,Auto"
+						  ColumnSpacing="10">
+						<CheckBox IsChecked="{Binding IsChecked}"
+								  HorizontalOptions="CenterAndExpand"
+								  VerticalOptions="CenterAndExpand" />
+						<Entry Grid.Column="1"
+							   Text="{Binding Text}"
+							   Placeholder="{x:Static resource:AppResources.EnterChecklistItemText}"
+							   ReturnType="Done"
+							   TextColor="{AppThemeBinding Light={StaticResource LabelTextColorPrimary},
+														   Dark={StaticResource LabelTextColorPrimaryDark}}"
+							   HorizontalOptions="FillAndExpand"
+							   VerticalOptions="CenterAndExpand" />
+						<ImageButton Grid.Column="2"
+									 Command="{Binding BindingContext.DeleteChecklistItemCommand, Source={x:Reference page}}"
+									 CommandParameter="{Binding .}"
+									 Source="{AppThemeBinding Light='icn_trash_dark', Dark='icn_trash_light'}"
+									 WidthRequest="36"
+									 BackgroundColor="Transparent"
+									 HorizontalOptions="CenterAndExpand"
+									 VerticalOptions="CenterAndExpand" />
+					</Grid>
+				</DataTemplate>
+			</BindableLayout.ItemTemplate>
+		</StackLayout>
+		<Entry Text="{Binding NewChecklistItemText}"
+			   Placeholder="{x:Static resource:AppResources.AddChecklistItem}"
+			   ReturnType="Done"
+			   ReturnCommand="{Binding AddChecklistItemCommand}"
+			   TextColor="{AppThemeBinding Light={StaticResource LabelTextColorPrimary},
+										   Dark={StaticResource LabelTextColorPrimaryDark}}" />
 	</StackLayout>
 </ContentPage>

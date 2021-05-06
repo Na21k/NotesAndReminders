@@ -33,10 +33,14 @@
 				VerticalOptions="FillAndExpand"
 				TextColor="{AppThemeBinding Light={StaticResource LabelTextColorPrimary},
 											Dark={StaticResource LabelTextColorPrimaryDark}}" />
-		<StackLayout Spacing="10"
-					 BindableLayout.ItemsSource="{Binding NoteChecklistMirror}"
-					 VerticalOptions="Fill">
-			<BindableLayout.ItemTemplate>
+		<CollectionView ItemsSource="{Binding NoteChecklistMirror}"
+						IsVisible="{Binding IsChecklistAdded}"
+						HeightRequest="230">
+			<CollectionView.ItemsLayout>
+				<LinearItemsLayout Orientation="Vertical"
+								   ItemSpacing="10" />
+			</CollectionView.ItemsLayout>
+			<CollectionView.ItemTemplate>
 				<DataTemplate>
 					<Grid ColumnDefinitions="Auto,*,Auto"
 						  ColumnSpacing="10">
@@ -61,8 +65,8 @@
 									 VerticalOptions="CenterAndExpand" />
 					</Grid>
 				</DataTemplate>
-			</BindableLayout.ItemTemplate>
-		</StackLayout>
+			</CollectionView.ItemTemplate>
+		</CollectionView>
 		<Entry Text="{Binding NewChecklistItemText}"
 			   Placeholder="{x:Static resource:AppResources.AddChecklistItem}"
 			   ReturnType="Done"

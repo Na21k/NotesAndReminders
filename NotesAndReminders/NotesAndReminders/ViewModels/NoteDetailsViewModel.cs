@@ -36,6 +36,7 @@ namespace NotesAndReminders.ViewModels
 			get => _newChecklistItemText;
 			set => SetProperty(ref _newChecklistItemText, value);
 		}
+		public bool IsChecklistAdded => NoteChecklistMirror.Count > 0;
 
 		public ICommand SaveNoteCommand { get; private set; }
 		public ICommand DeleteNoteCommand { get; private set; }
@@ -64,6 +65,8 @@ namespace NotesAndReminders.ViewModels
 			_viewType = NoteDetailsViewType.EditNote;
 			Note = vm.SelectedNote;
 			Note.Checklist?.ForEach(item => NoteChecklistMirror.Add(item));
+
+			OnPropertyChanged(nameof(IsChecklistAdded));
 		}
 
 		private async void SaveNoteAsync()
@@ -119,11 +122,15 @@ namespace NotesAndReminders.ViewModels
 
 			NoteChecklistMirror.Add(newItem);
 			NewChecklistItemText = string.Empty;
+
+			OnPropertyChanged(nameof(IsChecklistAdded));
 		}
 
 		private void DeleteChecklistItem(ChecklistItem item)
 		{
 			NoteChecklistMirror.Remove(item);
+
+			OnPropertyChanged(nameof(IsChecklistAdded));
 		}
 	}
 }

@@ -132,6 +132,9 @@
   <data name="ArchiveDescription" xml:space="preserve">
     <value>Архив полезен для хранения заметок, которые не нужны вам прямо сейчас, но могут пригодиться позже</value>
   </data>
+  <data name="AreYouSureToEmptyTrash" xml:space="preserve">
+    <value>Очистить корзину?</value>
+  </data>
   <data name="Categories" xml:space="preserve">
     <value>Категории</value>
   </data>
@@ -149,6 +152,9 @@
   </data>
   <data name="EmptyLoginOrPassword" xml:space="preserve">
     <value>Ни логин ни пароль не может быть пустым</value>
+  </data>
+  <data name="EmptyTrashUp" xml:space="preserve">
+    <value>Очистить корзину</value>
   </data>
   <data name="EnterChecklistItemText" xml:space="preserve">
     <value>Введите текст элемента списка</value>
@@ -204,6 +210,9 @@
   <data name="NewCategory" xml:space="preserve">
     <value>Новая категория</value>
   </data>
+  <data name="No" xml:space="preserve">
+    <value>Нет</value>
+  </data>
   <data name="NoteBody" xml:space="preserve">
     <value>Текст заметки</value>
   </data>
@@ -257,5 +266,8 @@
   </data>
   <data name="UserId" xml:space="preserve">
     <value>Идентификатор пользователя</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Да</value>
   </data>
 </root>

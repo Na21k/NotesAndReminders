@@ -15,6 +15,7 @@ namespace NotesAndReminders.ViewModels
 
 		public ICommand RefreshCommand { get; private set; }
 		public ICommand DisplayNoteActionsCommand { get; private set; }
+		public ICommand EmptyTrashCommand { get; private set; }
 
 		public bool IsRefreshing
 		{
@@ -28,6 +29,7 @@ namespace NotesAndReminders.ViewModels
 
 			RefreshCommand = new Command(RefreshAsync);
 			DisplayNoteActionsCommand = new Command<Note>(DisplayNoteActionsAsync);
+			EmptyTrashCommand = new Command(EmptyTrashAsync);
 
 			MessagingCenter.Subscribe<NoteDetailsViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdatedAsync);
 			MessagingCenter.Subscribe<MyNotesViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdatedAsync);
@@ -78,6 +80,15 @@ namespace NotesAndReminders.ViewModels
 			else if (res == AppResources.Delete)
 			{
 				await DeleteNoteAsync(note);
+			}
+		}
+
+		private async void EmptyTrashAsync()
+		{
+			if (await Shell.Current.DisplayAlert(null, AppResources.AreYouSureToEmptyTrash, AppResources.Yes, AppResources.No))
+			{
+				_trashService.EmptyTrash();
+				Notes.Clear();
 			}
 		}
 

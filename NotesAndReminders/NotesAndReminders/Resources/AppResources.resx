@@ -132,6 +132,9 @@
   <data name="ArchiveDescription" xml:space="preserve">
     <value>Archive is useful to keep notes you don't need right now, but you think you might later</value>
   </data>
+  <data name="AreYouSureToEmptyTrash" xml:space="preserve">
+    <value>Empty trash?</value>
+  </data>
   <data name="Categories" xml:space="preserve">
     <value>Categories</value>
   </data>
@@ -149,6 +152,9 @@
   </data>
   <data name="EmptyLoginOrPassword" xml:space="preserve">
     <value>Neither login nor password can be empty</value>
+  </data>
+  <data name="EmptyTrashUp" xml:space="preserve">
+    <value>Empty trash</value>
   </data>
   <data name="EnterChecklistItemText" xml:space="preserve">
     <value>Enter item text</value>
@@ -204,6 +210,9 @@
   <data name="NewCategory" xml:space="preserve">
     <value>New category</value>
   </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
   <data name="NoteBody" xml:space="preserve">
     <value>Note text</value>
   </data>
@@ -257,5 +266,8 @@
   </data>
   <data name="UserId" xml:space="preserve">
     <value>User id</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
   </data>
 </root>

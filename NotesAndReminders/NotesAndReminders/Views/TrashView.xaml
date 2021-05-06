@@ -6,6 +6,10 @@
 			 x:Name="page"
 			 Title="{x:Static resource:AppResources.Trash}"
 			 Padding="10">
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Text="{x:Static resource:AppResources.EmptyTrashUp}"
+					 Command="{Binding EmptyTrashCommand}" />
+	</ContentPage.ToolbarItems>
 	<RefreshView IsRefreshing="{Binding IsRefreshing}"
 				 Command="{Binding RefreshCommand}">
 		<CollectionView ItemsSource="{Binding Notes}">

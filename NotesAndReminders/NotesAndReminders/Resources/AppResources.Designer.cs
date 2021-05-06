@@ -106,6 +106,15 @@ namespace NotesAndReminders.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Empty trash?.
+        /// </summary>
+        internal static string AreYouSureToEmptyTrash {
+            get {
+                return ResourceManager.GetString("AreYouSureToEmptyTrash", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Categories.
         /// </summary>
         internal static string Categories {
@@ -156,6 +165,15 @@ namespace NotesAndReminders.Resources {
         internal static string EmptyLoginOrPassword {
             get {
                 return ResourceManager.GetString("EmptyLoginOrPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Empty trash.
+        /// </summary>
+        internal static string EmptyTrashUp {
+            get {
+                return ResourceManager.GetString("EmptyTrashUp", resourceCulture);
             }
         }
         
@@ -322,6 +340,15 @@ namespace NotesAndReminders.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No.
+        /// </summary>
+        internal static string No {
+            get {
+                return ResourceManager.GetString("No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Note text.
         /// </summary>
         internal static string NoteBody {
@@ -480,6 +507,15 @@ namespace NotesAndReminders.Resources {
         internal static string UserId {
             get {
                 return ResourceManager.GetString("UserId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yes.
+        /// </summary>
+        internal static string Yes {
+            get {
+                return ResourceManager.GetString("Yes", resourceCulture);
             }
         }
     }

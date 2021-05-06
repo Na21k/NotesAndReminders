@@ -132,6 +132,9 @@
   <data name="ArchiveDescription" xml:space="preserve">
     <value>Архів корисний для зберігання нотаток, які не потрібні вам прямо зараз, але можуть стати в пригоді пізніше</value>
   </data>
+  <data name="AreYouSureToEmptyTrash" xml:space="preserve">
+    <value>Очистити кошик?</value>
+  </data>
   <data name="Categories" xml:space="preserve">
     <value>Категорії</value>
   </data>
@@ -149,6 +152,9 @@
   </data>
   <data name="EmptyLoginOrPassword" xml:space="preserve">
     <value>Ні логін ні пароль не може бути порожнім</value>
+  </data>
+  <data name="EmptyTrashUp" xml:space="preserve">
+    <value>Очистити кошик</value>
   </data>
   <data name="EnterChecklistItemText" xml:space="preserve">
     <value>Введіть текст елемента списку</value>
@@ -204,6 +210,9 @@
   <data name="NewCategory" xml:space="preserve">
     <value>Нова категорія</value>
   </data>
+  <data name="No" xml:space="preserve">
+    <value>Ні</value>
+  </data>
   <data name="NoteBody" xml:space="preserve">
     <value>Текст нотатки</value>
   </data>
@@ -257,5 +266,8 @@
   </data>
   <data name="UserId" xml:space="preserve">
     <value>Ідентифікатор користувача</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Так</value>
   </data>
 </root>

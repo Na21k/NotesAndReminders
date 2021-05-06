@@ -38,17 +38,19 @@ namespace NotesAndReminders.Droid.Extensions
 				}
 				else if (key.Equals("last_time_modifired"))
 				{
-					DateTime dt = DateTime.ParseExact((string)val, "MM/dd/yyyy HH:mm:ss tt", CultureInfo.InvariantCulture);
+					DateTime dt = DateTime.ParseExact((string)val, "MM/dd/yyyy HH:mm:ss", CultureInfo.InvariantCulture);
 					dict.Add(key, dt);
 				}
 				else if (key.Equals("checklist"))
 				{
 					var list = new List<ChecklistItem>();
-					var dicChecklist = new JavaDictionary<string, bool>((IDictionary<string, bool>)val);
+					var dicChecklist = new JavaDictionary<string, bool>(val.Handle,JniHandleOwnership.DoNotRegister);
 
-					foreach(KeyValuePair<string,bool> pair in dicChecklist)
+					foreach (var pair in dicChecklist)
 					{
-						list.Add(new ChecklistItem() { Text = pair.Key, IsChecked = pair.Value });
+						var text = pair.Key;
+						var check = pair.Value;
+						list.Add(new ChecklistItem() { Text = text, IsChecked = check });
 					}
 
 					dict.Add(key, list);
@@ -115,14 +117,15 @@ namespace NotesAndReminders.Droid.Extensions
 				}
 				else if(val is DateTime dt)
 				{
-					javaVal = dt.ToString("MM/dd/yyyy HH:mm:ss tt");
+					javaVal = dt.ToString("MM/dd/yyyy HH:mm:ss");
 				}
 				else if(val is bool boolVal)
 				{
 					javaVal = new Java.Lang.Boolean(boolVal);
 				}
-				else if(val is List<ChecklistItem> list)
+				else if(val is Newtonsoft.Json.Linq.JArray jArray)
 				{
+					List<ChecklistItem> list = jArray.ToObject<List<ChecklistItem>>();
 					HashMap map = new HashMap();
 
 					foreach(var listitem in list)

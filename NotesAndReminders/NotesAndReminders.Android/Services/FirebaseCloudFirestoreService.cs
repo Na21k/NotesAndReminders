@@ -33,7 +33,6 @@ namespace NotesAndReminders.Droid.Services
 		{
 			try
 			{
-				
 				DocumentReference docRef = _db.Collection("Notes").Document();
 				Dictionary<string, object> noteDoc = new Dictionary<string, object>
 				{

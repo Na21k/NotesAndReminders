@@ -25,6 +25,7 @@ namespace NotesAndReminders.ViewModels
 			get => _noteImagesMirror;
 			set => SetProperty(ref _noteImagesMirror, value);
 		}
+		public bool IsEmpty => NoteImagesMirror.Count == 0;
 
 		public ICommand AddImageCommand { get; private set; }
 		public ICommand DeleteImageCommand { get; private set; }
@@ -55,6 +56,8 @@ namespace NotesAndReminders.ViewModels
 				var image = new ImageModel(item);
 				NoteImagesMirror.Add(image);
 			});
+
+			OnPropertyChanged(nameof(IsEmpty));
 		}
 
 		private async void AddImageAsync()
@@ -77,6 +80,8 @@ namespace NotesAndReminders.ViewModels
 
 					NoteImagesMirror.Add(image);
 					AddImageToNote(image);
+
+					OnPropertyChanged(nameof(IsEmpty));
 				}
 			}
 			catch (Exception ex)
@@ -93,6 +98,8 @@ namespace NotesAndReminders.ViewModels
 			{
 				Note.Images.RemoveAt(index);
 				NoteImagesMirror.Remove(image);
+
+				OnPropertyChanged(nameof(IsEmpty));
 			}
 		}
 

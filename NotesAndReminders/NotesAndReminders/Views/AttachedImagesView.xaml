@@ -4,45 +4,43 @@
 			 xmlns:resource="clr-namespace:NotesAndReminders.Resources"
              x:Class="NotesAndReminders.Views.AttachedImagesView"
 			 x:Name="page"
-			 Title="{x:Static resource:AppResources.Images}"
-			 Padding="10">
+			 Title="{x:Static resource:AppResources.Images}">
 	<ContentPage.ToolbarItems>
 		<ToolbarItem Text="{x:Static resource:AppResources.Add}"
 					 Command="{Binding AddImageCommand}" />
 	</ContentPage.ToolbarItems>
-	<CollectionView ItemsSource="{Binding NoteImagesMirror}">
-		<CollectionView.ItemsLayout>
-			<LinearItemsLayout Orientation="Vertical"
-							   ItemSpacing="10" />
-		</CollectionView.ItemsLayout>
-		<CollectionView.EmptyView>
-			<ContentView>
-				<StackLayout Spacing="10"
-							 VerticalOptions="CenterAndExpand">
-					<Image Source="icn_itsEmptyHere"
-						   HorizontalOptions="CenterAndExpand"
-						   VerticalOptions="CenterAndExpand"
-						   HeightRequest="270" />
-					<Label Text="{x:Static resource:AppResources.ItsEmptyHereYet}"
-						   HorizontalTextAlignment="Center" />
-				</StackLayout>
-			</ContentView>
-		</CollectionView.EmptyView>
-		<CollectionView.ItemTemplate>
-			<DataTemplate>
-				<Grid>
-					<Image Source="{Binding ImageSource}"
-						   Aspect="AspectFit"
-						   HorizontalOptions="CenterAndExpand" />
-					<ImageButton Source="{AppThemeBinding Light='icn_trash_dark', Dark='icn_trash_light'}"
-								 BackgroundColor="#40c2c2c2"
-								 Command="{Binding BindingContext.DeleteImageCommand, Source={x:Reference page}}"
-								 CommandParameter="{Binding .}"
-								 WidthRequest="36"
-								 HorizontalOptions="End"
-								 VerticalOptions="Start" />
-				</Grid>
-			</DataTemplate>
-		</CollectionView.ItemTemplate>
-	</CollectionView>
+	<Grid>
+		<StackLayout IsVisible="{Binding IsEmpty}"
+					 Spacing="10"
+					 VerticalOptions="CenterAndExpand">
+			<Image Source="icn_itsEmptyHere"
+				   HorizontalOptions="CenterAndExpand"
+				   VerticalOptions="CenterAndExpand"
+				   HeightRequest="270" />
+			<Label Text="{x:Static resource:AppResources.ItsEmptyHereYet}"
+				   HorizontalTextAlignment="Center" />
+		</StackLayout>
+		<ScrollView IsVisible="{Binding IsEmpty, Converter={StaticResource InverseBoolConverter}}">
+			<StackLayout BindableLayout.ItemsSource="{Binding NoteImagesMirror}"
+						 Spacing="10"
+						 Padding="10">
+				<BindableLayout.ItemTemplate>
+					<DataTemplate>
+						<Grid>
+							<Image Source="{Binding ImageSource}"
+								   Aspect="AspectFit"
+								   HorizontalOptions="CenterAndExpand" />
+							<ImageButton Source="{AppThemeBinding Light='icn_trash_dark', Dark='icn_trash_light'}"
+										 BackgroundColor="#40c2c2c2"
+										 Command="{Binding BindingContext.DeleteImageCommand, Source={x:Reference page}}"
+										 CommandParameter="{Binding .}"
+										 WidthRequest="36"
+										 HorizontalOptions="End"
+										 VerticalOptions="Start" />
+						</Grid>
+					</DataTemplate>
+				</BindableLayout.ItemTemplate>
+			</StackLayout>
+		</ScrollView>
+	</Grid>
 </ContentPage>

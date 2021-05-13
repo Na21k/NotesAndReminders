@@ -14,6 +14,43 @@
 		https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/
 	-->
 
+	<!--<Shell.ItemTemplate>
+		<DataTemplate>
+			<ContentView>
+				<Frame CornerRadius="7"
+					   Margin="8,5"
+					   Padding="18">
+					<VisualStateManager.VisualStateGroups>
+						<VisualStateGroup x:Name="CommonStates">
+							<VisualState x:Name="Selected">
+								<VisualState.Setters>
+									<Setter Property="BackgroundColor" Value="Orange" />
+								</VisualState.Setters>
+							</VisualState>
+							<VisualState x:Name="Normal">
+								<VisualState.Setters>
+									<Setter Property="BackgroundColor" Value="#40c2c2c2" />
+								</VisualState.Setters>
+							</VisualState>
+						</VisualStateGroup>
+					</VisualStateManager.VisualStateGroups>
+
+					<StackLayout Orientation="Horizontal"
+								 Spacing="10">
+						<Image Source="{Binding Icon}"
+							   WidthRequest="30"
+							   VerticalOptions="CenterAndExpand" />
+						<Label Text="{Binding Title}"
+							   FontSize="18"
+							   VerticalOptions="CenterAndExpand"
+							   VerticalTextAlignment="Center">
+						</Label>
+					</StackLayout>
+				</Frame>
+			</ContentView>
+		</DataTemplate>
+	</Shell.ItemTemplate>-->
+
 	<Shell.FlyoutHeaderTemplate>
 		<DataTemplate>
 			<StackLayout Orientation="Horizontal"

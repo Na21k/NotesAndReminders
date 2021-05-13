@@ -466,6 +466,15 @@ namespace NotesAndReminders.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This file has already been added.
+        /// </summary>
+        internal static string ThisFileHasAlreadyBeenAdded {
+            get {
+                return ResourceManager.GetString("ThisFileHasAlreadyBeenAdded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Title.
         /// </summary>
         internal static string Title {

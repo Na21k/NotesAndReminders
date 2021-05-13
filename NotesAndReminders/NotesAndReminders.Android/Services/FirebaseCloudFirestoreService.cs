@@ -38,7 +38,7 @@ namespace NotesAndReminders.Droid.Services
 			{
 				DocumentReference docRef = _db.Collection("Notes").Document();
 
-				var imgUrls = await StoreImages(note.Images, _auth.CurrentUser.Uid);
+				var imgUrls = await StoreImages(note.Images.Values.ToList(), _auth.CurrentUser.Uid);
 
 				Dictionary<string, object> noteDoc = new Dictionary<string, object>
 				{

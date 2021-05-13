@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
+using System.Linq;
 using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -51,11 +52,14 @@ namespace NotesAndReminders.ViewModels
 		{
 			NoteImagesMirror.Clear();
 
-			Note.Images?.ForEach(item =>
+			if (Note.Images != null)
 			{
-				var image = new ImageModel(item);
-				NoteImagesMirror.Add(image);
-			});
+				foreach (var item in Note.Images)
+				{
+					var image = new ImageModel(item.Key, item.Value);
+					NoteImagesMirror.Add(image);
+				}
+			}
 
 			OnPropertyChanged(nameof(IsEmpty));
 		}
@@ -71,11 +75,15 @@ namespace NotesAndReminders.ViewModels
 
 				if (file != null)
 				{
-					var stream = await file.OpenReadAsync();
-					var image = new ImageModel()
+					if (Note.Images != null && Note.Images.ContainsKey(file.FileName))
 					{
-						ImageBytes = new byte[stream.Length]
-					};
+						await Shell.Current.DisplayAlert(AppResources.Oops, AppResources.ThisFileHasAlreadyBeenAdded, AppResources.Ok);
+
+						return;
+					}
+
+					var stream = await file.OpenReadAsync();
+					var image = new ImageModel(file.FileName, new byte[stream.Length]);
 					await stream.ReadAsync(image.ImageBytes, 0, (int)stream.Length);
 
 					NoteImagesMirror.Add(image);
@@ -92,11 +100,11 @@ namespace NotesAndReminders.ViewModels
 
 		private void DeleteImage(ImageModel image)
 		{
-			var index = Note.Images.FindIndex(el => el.Equals(image.ImageBytes));
+			var found = Note.Images.FirstOrDefault(kv => kv.Value.Equals(image.ImageBytes));
 
-			if (index > -1)
+			if (!found.Equals(default))
 			{
-				Note.Images.RemoveAt(index);
+				Note.Images.Remove(found.Key);
 				NoteImagesMirror.Remove(image);
 
 				OnPropertyChanged(nameof(IsEmpty));
@@ -107,14 +115,15 @@ namespace NotesAndReminders.ViewModels
 		{
 			if (Note.Images == null)
 			{
-				Note.Images = new List<byte[]>();
+				Note.Images = new Dictionary<string, byte[]>();
 			}
 
-			Note.Images.Add(image.ImageBytes);
+			Note.Images.Add(image.FileName, image.ImageBytes);
 		}
 
 		public struct ImageModel
 		{
+			public string FileName { get; set; }
 			public byte[] ImageBytes { get; set; }
 			public ImageSource ImageSource
 			{
@@ -127,8 +136,9 @@ namespace NotesAndReminders.ViewModels
 				}
 			}
 
-			public ImageModel(byte[] imageBytes)
+			public ImageModel(string fileName, byte[] imageBytes)
 			{
+				FileName = fileName;
 				ImageBytes = imageBytes;
 			}
 		}

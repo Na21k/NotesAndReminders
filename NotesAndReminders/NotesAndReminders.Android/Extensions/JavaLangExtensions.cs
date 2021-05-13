@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Net;
 using System.Text;
 using Xamarin.Forms;
 
@@ -30,7 +31,8 @@ namespace NotesAndReminders.Droid.Extensions
 
 				if (key.Equals("noteColorLight") || key.Equals("noteColorDark"))
 				{
-					dict.Add(key, Color.FromHex(val.ToString()));
+					var color = val.ToString();
+					dict.Add(key, color);
 				}
 				else if (key.Equals("state"))
 				{
@@ -54,6 +56,30 @@ namespace NotesAndReminders.Droid.Extensions
 					}
 
 					dict.Add(key, list);
+				}
+				else if(key.Equals("addition content"))
+				{
+					var list = new List<Models.Image>();
+
+					var dicImage = new JavaDictionary<int, string>(val.Handle, JniHandleOwnership.DoNotRegister);
+
+					foreach (var pair in dicImage)
+					{
+						var number = pair.Key;
+						var url = pair.Value;
+						list.Add(new Models.Image() { ImageNumber = number, ImageUrl = url });
+					}
+
+					var listUrls = new List<byte[]>();
+
+					WebClient webClient = new WebClient();
+
+					foreach(var image in dicImage)
+					{
+						listUrls.Add(webClient.DownloadData(image.Value));
+					}
+
+					dict.Add(key, listUrls);
 				}
 				else if(val is Java.Lang.String str)
 				{
@@ -122,6 +148,19 @@ namespace NotesAndReminders.Droid.Extensions
 				else if(val is bool boolVal)
 				{
 					javaVal = new Java.Lang.Boolean(boolVal);
+				}
+				else if(key.Equals("addition content") && val is Newtonsoft.Json.Linq.JArray jarray)
+				{
+					var list = jarray.ToObject<List<Models.Image>>();
+
+					HashMap map = new HashMap();
+
+					foreach(var listitem in list)
+					{
+						map.Put(new Java.Lang.Integer(listitem.ImageNumber), new Java.Lang.String(listitem.ImageUrl));
+					}
+
+					javaVal = map;
 				}
 				else if(val is Newtonsoft.Json.Linq.JArray jArray)
 				{

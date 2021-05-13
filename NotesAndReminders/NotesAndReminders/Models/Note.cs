@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace NotesAndReminders.Models
 {
@@ -12,8 +13,11 @@ namespace NotesAndReminders.Models
 		public string Text { get; set; }
 		[JsonProperty("type")]
 		public NoteType Type { get; set; }
-		[JsonProperty("image")]
-		public List<byte[]> Images { get; set; }
+
+		public List<Image> ImageUrls { get; set; }
+
+		[JsonProperty("addition content")]
+		public List<byte []> Images { get; set; }
 		[JsonProperty("checklist")]
 		public List<ChecklistItem> Checklist { get; set; }
 		[JsonProperty("state")]

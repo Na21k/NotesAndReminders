@@ -69,7 +69,8 @@ namespace NotesAndReminders.Droid
 		{
 			Newtonsoft.Json.JsonSerializerSettings settings = new Newtonsoft.Json.JsonSerializerSettings
 			{
-				TypeNameHandling = Newtonsoft.Json.TypeNameHandling.Auto
+				TypeNameHandling = Newtonsoft.Json.TypeNameHandling.Auto,
+				Formatting = Newtonsoft.Json.Formatting.Indented
 			};
 			try
 			{

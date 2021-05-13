@@ -19,6 +19,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using System.IO;
+using Firebase.Storage;
 
 [assembly: Dependency(typeof(FirebaseCloudFirestoreService))]
 namespace NotesAndReminders.Droid.Services
@@ -29,11 +31,15 @@ namespace NotesAndReminders.Droid.Services
 
 		private FirebaseAuth _auth = FirebaseAuth.Instance;
 
+
 		public async Task<bool> AddNoteAsync(Note note)
 		{
 			try
 			{
 				DocumentReference docRef = _db.Collection("Notes").Document();
+
+				var imgUrls = await StoreImages(note.Images, _auth.CurrentUser.Uid);
+
 				Dictionary<string, object> noteDoc = new Dictionary<string, object>
 				{
 					{ "id", docRef.Id},
@@ -42,10 +48,12 @@ namespace NotesAndReminders.Droid.Services
 					{ "text", note.Text},
 					{ "state", NoteState.Regular.ToString()  },
 					//{ "type", note.Type},
-					//{ "addition content", note.Images },
+					{ "addition content", imgUrls},
 					{ "checklist", note.Checklist},
 					{ "last_time_modifired", note.LastEdited}
 				};
+
+
 
 				await docRef.Set(noteDoc.Convert());
 
@@ -59,6 +67,33 @@ namespace NotesAndReminders.Droid.Services
 				throw;
 			}
 
+		}
+
+		public async Task<Dictionary<int,string>> StoreImages(List<byte []> imageStream, string userId)
+		{
+			try
+			{
+				var result = new Dictionary<int,string>();
+				var imageNumber = 1;
+				foreach (var image in imageStream)
+				{
+					Stream stream = new MemoryStream(image);
+					var imageUrl = await new FirebaseStorage("gs://notesandreminders-5c2a6.appspot.com/")
+						.Child(userId)
+						.PutAsync(stream);
+					result.Add(imageNumber, imageUrl);
+					imageNumber++;
+				}
+
+				return result;
+			}
+			catch(Exception ex)
+			{
+				System.Diagnostics.Debug.WriteLine(ex.Message);
+				System.Diagnostics.Debug.WriteLine(ex.StackTrace);
+
+				throw;
+			}
 		}
 
 		public async Task<bool> AddNoteTypeAsync(NoteType noteType)

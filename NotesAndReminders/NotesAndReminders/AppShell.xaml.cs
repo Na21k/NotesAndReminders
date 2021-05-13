@@ -48,6 +48,7 @@ namespace NotesAndReminders
 			Routing.RegisterRoute(nameof(SignUpView), typeof(SignUpView));
 			Routing.RegisterRoute(nameof(NoteDetailsView), typeof(NoteDetailsView));
 			Routing.RegisterRoute(nameof(NewCategoryView), typeof(NewCategoryView));
+			Routing.RegisterRoute(nameof(AttachedImagesView), typeof(AttachedImagesView));
 		}
 
 		protected async override void OnPropertyChanged([CallerMemberName] string propertyName = null)

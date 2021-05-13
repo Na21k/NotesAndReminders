@@ -14,6 +14,9 @@
 					 IconImageSource="{AppThemeBinding Light='icn_unarchive_dark', Dark='icn_unarchive_light'}"
 					 Command="{Binding UnarchiveCommand}"
 					 Order="Primary" />-->
+		<ToolbarItem Text="{x:Static resource:AppResources.Images}"
+					 Command="{Binding ManageAttachedImagesCommand}"
+					 Order="Primary" />
 		<ToolbarItem Text="{x:Static resource:AppResources.Delete}"
 					 IconImageSource="{AppThemeBinding Light='icn_trash_dark', Dark='icn_trash_light'}"
 					 Command="{Binding DeleteNoteCommand}"

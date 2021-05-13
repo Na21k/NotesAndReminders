@@ -165,6 +165,9 @@
   <data name="Hi" xml:space="preserve">
     <value>Привіт</value>
   </data>
+  <data name="Images" xml:space="preserve">
+    <value>Зображення</value>
+  </data>
   <data name="IncorrectLoginOrPassword" xml:space="preserve">
     <value>Невірний логін або пароль</value>
   </data>

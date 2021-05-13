@@ -15,6 +15,7 @@ namespace NotesAndReminders
 		public const string NoteDetailsOpenedEvent = nameof(NoteDetailsOpenedEvent);
 		public const string NotesUpdatedEvent = nameof(NotesUpdatedEvent);
 		public const string NotesCategoriesUpdatedEvent = nameof(NotesCategoriesUpdatedEvent);
+		public const string NoteImagesOpenedEvent = nameof(NoteImagesOpenedEvent);
 
 		public static readonly List<NoteColorModel> NotesColorsOptions = new List<NoteColorModel>()
 		{

@@ -78,7 +78,7 @@ namespace NotesAndReminders.Droid.Services
 				foreach (var image in imageStream)
 				{
 					Stream stream = new MemoryStream(image);
-					var imageUrl = await new FirebaseStorage("gs://notesandreminders-5c2a6.appspot.com/")
+					var imageUrl = await new FirebaseStorage("notesandreminders-5c2a6.appspot.com")
 						.Child(userId)
 						.PutAsync(stream);
 					result.Add(imageNumber, imageUrl);

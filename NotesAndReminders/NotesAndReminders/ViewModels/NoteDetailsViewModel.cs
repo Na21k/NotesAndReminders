@@ -1,6 +1,7 @@
 ﻿using NotesAndReminders.Models;
 using NotesAndReminders.Resources;
 using NotesAndReminders.Services;
+using NotesAndReminders.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -42,6 +43,7 @@ namespace NotesAndReminders.ViewModels
 		public ICommand DeleteNoteCommand { get; private set; }
 		public ICommand AddChecklistItemCommand { get; private set; }
 		public ICommand DeleteChecklistItemCommand { get; private set; }
+		public ICommand ManageAttachedImagesCommand { get; private set; }
 
 		public NoteDetailsViewModel() : base()
 		{
@@ -56,6 +58,7 @@ namespace NotesAndReminders.ViewModels
 			DeleteNoteCommand = new Command(DeleteNoteAsync);
 			AddChecklistItemCommand = new Command(AddChecklistItem);
 			DeleteChecklistItemCommand = new Command<ChecklistItem>(DeleteChecklistItem);
+			ManageAttachedImagesCommand = new Command(ManageAttachedImagesAsync);
 
 			MessagingCenter.Subscribe<NotesBaseViewModel>(this, Constants.NoteDetailsOpenedEvent, InitForExistingNote);
 		}
@@ -131,6 +134,12 @@ namespace NotesAndReminders.ViewModels
 			NoteChecklistMirror.Remove(item);
 
 			OnPropertyChanged(nameof(IsChecklistAdded));
+		}
+
+		private async void ManageAttachedImagesAsync()
+		{
+			await Shell.Current.GoToAsync(nameof(AttachedImagesView));
+			MessagingCenter.Send(this, Constants.NoteImagesOpenedEvent);
 		}
 	}
 }

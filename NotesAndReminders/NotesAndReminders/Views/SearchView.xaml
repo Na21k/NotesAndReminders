@@ -56,15 +56,12 @@
 									   LineBreakMode="TailTruncation"
 									   FontSize="12" />
 							</Frame>
-							<Label Grid.Column="1"
-								   Text="..."
-								   FontAttributes="Bold"
-								   HorizontalOptions="EndAndExpand">
-								<Label.GestureRecognizers>
-									<TapGestureRecognizer Command="{Binding BindingContext.DisplayNoteActionsCommand, Source={x:Reference page}}"
-														  CommandParameter="{Binding .}" />
-								</Label.GestureRecognizers>
-							</Label>
+							<ImageButton Grid.Column="1"
+										 BackgroundColor="Transparent"
+										 Source="{AppThemeBinding Light='icn_additionalActions_dark', Dark='icn_additionalActions_light'}"
+										 Command="{Binding BindingContext.DisplayNoteActionsCommand, Source={x:Reference page}}"
+										 CommandParameter="{Binding .}"
+										 HorizontalOptions="EndAndExpand" />
 						</Grid>
 					</StackLayout>
 					<Frame.GestureRecognizers>

@@ -150,7 +150,7 @@
 	<FlyoutItem Title="{x:Static resource:AppResources.Categories}" Icon="{AppThemeBinding Light='icn_categories_dark', Dark='icn_categories_light'}">
 		<ShellContent Route="NotesCategoriesView" ContentTemplate="{DataTemplate local:NotesCategoriesView}" />
 	</FlyoutItem>
-	<FlyoutItem Title="{x:Static resource:AppResources.Archive}">
+	<FlyoutItem Title="{x:Static resource:AppResources.Archive}" Icon="{AppThemeBinding Light='icn_archive_menu_dark', Dark='icn_archive_menu_light'}">
 		<ShellContent Route="ArchivedNotesView" ContentTemplate="{DataTemplate local:ArchivedNotesView}" />
 	</FlyoutItem>
 	<FlyoutItem Title="{x:Static resource:AppResources.Trash}" Icon="{AppThemeBinding Light='icn_trash_dark', Dark='icn_trash_light'}">

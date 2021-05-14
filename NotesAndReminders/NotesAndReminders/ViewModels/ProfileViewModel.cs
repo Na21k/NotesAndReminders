@@ -1,4 +1,5 @@
 ﻿using NotesAndReminders.Models;
+using NotesAndReminders.Resources;
 using NotesAndReminders.Services;
 using NotesAndReminders.Views;
 using System.Windows.Input;
@@ -9,6 +10,7 @@ namespace NotesAndReminders.ViewModels
 	public class ProfileViewModel : BaseViewModel
 	{
 		private IAuthorizationService _authorizationService;
+		private TrashService _trashService;
 
 		public bool IsLoggedIn => _authorizationService.IsLoggedIn;
 		public User User => Settings.User;
@@ -20,10 +22,11 @@ namespace NotesAndReminders.ViewModels
 		public ProfileViewModel()
 		{
 			_authorizationService = DependencyService.Get<IAuthorizationService>();
+			_trashService = new TrashService();
 
 			LogInCommand = new Command(LogInAsync);
 			SignUpCommand = new Command(SignUpAsync);
-			LogOutCommand = new Command(LogOut);
+			LogOutCommand = new Command(LogOutAsync);
 
 			MessagingCenter.Subscribe<LogInViewModel>(this, Constants.LoggedInEvent, (vm) => OnLoggedIn());
 			MessagingCenter.Subscribe<SignUpViewModel>(this, Constants.LoggedInEvent, (vm) => OnLoggedIn());
@@ -39,21 +42,25 @@ namespace NotesAndReminders.ViewModels
 			await Shell.Current.GoToAsync(nameof(SignUpView));
 		}
 
-		private void LogOut()
+		private async void LogOutAsync()
 		{
-			if (_authorizationService.LogOut())
+			if (await Shell.Current.DisplayAlert($"{AppResources.Continue}?", AppResources.YouWillLoseYourTrashContents, AppResources.Ok, AppResources.Cancel))
 			{
-				Settings.User = null;
-				Settings.UserToken = null;
+				if (_authorizationService.LogOut())
+				{
+					Settings.User = null;
+					Settings.UserToken = null;
 
-				OnPropertyChanged(nameof(IsLoggedIn));
-				OnPropertyChanged(nameof(User));
+					OnPropertyChanged(nameof(IsLoggedIn));
+					OnPropertyChanged(nameof(User));
 
-				MessagingCenter.Send(this, Constants.LoggedOutEvent);
-			}
-			else
-			{
-				MessagingCenter.Send(this, Constants.UnexpectedErrorEvent);
+					_trashService.EmptyTrash();
+					MessagingCenter.Send(this, Constants.LoggedOutEvent);
+				}
+				else
+				{
+					MessagingCenter.Send(this, Constants.UnexpectedErrorEvent);
+				}
 			}
 		}
 

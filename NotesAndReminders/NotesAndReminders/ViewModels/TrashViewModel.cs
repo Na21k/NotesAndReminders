@@ -92,7 +92,6 @@ namespace NotesAndReminders.ViewModels
 		private void OnLoggedOut(ProfileViewModel vm)
 		{
 			Notes.Clear();
-			_trashService.EmptyTrash();
 		}
 	}
 }

@@ -132,6 +132,9 @@
   <data name="AreYouSureToEmptyTrash" xml:space="preserve">
     <value>Очистить корзину?</value>
   </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Отменить</value>
+  </data>
   <data name="Categories" xml:space="preserve">
     <value>Категории</value>
   </data>
@@ -140,6 +143,9 @@
   </data>
   <data name="ConfirmPassword" xml:space="preserve">
     <value>Подтвердите пароль</value>
+  </data>
+  <data name="Continue" xml:space="preserve">
+    <value>Продолжить</value>
   </data>
   <data name="Delete" xml:space="preserve">
     <value>Удалить</value>
@@ -287,5 +293,8 @@
   </data>
   <data name="Yes" xml:space="preserve">
     <value>Да</value>
+  </data>
+  <data name="YouWillLoseYourTrashContents" xml:space="preserve">
+    <value>Вы потеряете содержимое корзины</value>
   </data>
 </root>

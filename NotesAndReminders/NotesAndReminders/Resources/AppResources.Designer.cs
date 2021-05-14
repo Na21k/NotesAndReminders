@@ -466,6 +466,15 @@ namespace NotesAndReminders.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Set category.
+        /// </summary>
+        internal static string SetCategory {
+            get {
+                return ResourceManager.GetString("SetCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sign up.
         /// </summary>
         internal static string Sign_Up {

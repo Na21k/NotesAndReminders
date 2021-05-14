@@ -5,6 +5,7 @@ using NotesAndReminders.Views;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -62,16 +63,18 @@ namespace NotesAndReminders.ViewModels
 			{
 				case NoteState.Regular:
 					options.Add(AppResources.MoveToArchive);
+					options.Add(AppResources.SetCategory);
 					break;
 				case NoteState.Archived:
 					options.Add(AppResources.Unarchive);
+					options.Add(AppResources.SetCategory);
 					break;
 				default:
 					options.Add(AppResources.Restore);
 					break;
 			}
 
-			options.Add(AppResources.Delete);
+			options.Insert(1, AppResources.Delete);
 
 			var res = await Shell.Current.DisplayActionSheet(null, null, null, options.ToArray());
 
@@ -86,6 +89,10 @@ namespace NotesAndReminders.ViewModels
 			else if (res == AppResources.Restore)
 			{
 				await RestoreNoteAsync(note);
+			}
+			else if (res == AppResources.SetCategory)
+			{
+				await SetCategory(note);
 			}
 			else if (res == AppResources.Delete)
 			{
@@ -153,6 +160,37 @@ namespace NotesAndReminders.ViewModels
 			{
 				await Shell.Current.DisplayAlert(AppResources.Oops, $"{AppResources.UnexpectedErrorHasOccurred}: {ex.Message}", AppResources.Ok);
 			}
+		}
+
+		private async Task SetCategory(Note note)
+		{
+			var categories = new List<NoteType>();
+
+			await _dBService.GetAllNoteTypesAsync(async noteTypes =>
+			{
+				noteTypes.ForEach(noteType => categories.Add(noteType as NoteType));
+
+				var res = await Shell.Current.DisplayActionSheet(null, null, AppResources.Uncategorized, noteTypes.Select(nt => (nt as NoteType).Name).ToArray());
+
+				if (res == AppResources.Uncategorized)
+				{
+					note.Type = null;
+					await _dBService.UpdateNoteAsync(note);
+
+					note.Type = new NoteType()
+					{
+						Name = AppResources.Uncategorized,
+						Color = Constants.NotesColorsOptions.FirstOrDefault()
+					};
+				}
+				else
+				{
+					var typeDbItem = noteTypes.Where(nt => (nt as NoteType).Name == res).FirstOrDefault();
+					var type = typeDbItem as NoteType;
+					note.Type = type;
+					await _dBService.UpdateNoteAsync(note);
+				}
+			});
 		}
 	}
 }

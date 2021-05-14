@@ -40,7 +40,7 @@ namespace NotesAndReminders.Droid.Extensions
 				}
 				else if (key.Equals("last_time_modifired"))
 				{
-					DateTime dt = DateTime.ParseExact((string)val, "MM/dd/yyyy HH:mm:ss", CultureInfo.InvariantCulture);
+					DateTime dt = DateTime.ParseExact((string)val, "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture);
 					dict.Add(key, dt);
 				}
 				else if (key.Equals("checklist"))
@@ -56,7 +56,7 @@ namespace NotesAndReminders.Droid.Extensions
 					}
 
 					dict.Add(key, list);
-				}
+				}	
 				else if(key.Equals("addition_content"))
 				{
 					var list = new Dictionary<string,string>();
@@ -143,7 +143,7 @@ namespace NotesAndReminders.Droid.Extensions
 				}
 				else if(val is DateTime dt)
 				{
-					javaVal = dt.ToString("MM/dd/yyyy HH:mm:ss");
+					javaVal = dt.ToString("yyyy-MM-dd HH:mm");
 				}
 				else if(val is bool boolVal)
 				{

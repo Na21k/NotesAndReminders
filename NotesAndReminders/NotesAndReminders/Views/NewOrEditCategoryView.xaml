@@ -2,12 +2,16 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
 			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 			 xmlns:resource="clr-namespace:NotesAndReminders.Resources"
-			 x:Class="NotesAndReminders.Views.NewCategoryView"
+			 x:Class="NotesAndReminders.Views.NewOrEditCategoryView"
 			 Padding="10">
 	<StackLayout Spacing="18"
 				 VerticalOptions="EndAndExpand">
 		<Label Text="{x:Static resource:AppResources.NewCategory}"
-			   FontSize="30" />
+			   FontSize="30"
+			   IsVisible="{Binding IsEditing, Converter={StaticResource InverseBoolConverter}}" />
+		<Label Text="{x:Static resource:AppResources.EditCategory}"
+			   FontSize="30"
+			   IsVisible="{Binding IsEditing}" />
 		<Label Text="{x:Static resource:AppResources.CategoriesHelpYouOrganizeYourNotes}"
 			   FontSize="17" />
 		<Entry Text="{Binding CategoryName}"
@@ -36,12 +40,12 @@
 				</DataTemplate>
 			</CollectionView.ItemTemplate>
 		</CollectionView>
-		<Button Text="{x:Static resource:AppResources.AddCategory}"
-				Command="{Binding AddCategoryCommand}"
+		<Button Text="{x:Static resource:AppResources.SaveCategory}"
+				Command="{Binding SaveCategoryCommand}"
 				IsEnabled="{Binding CanSave}"
-				IsVisible="{Binding IsAdding, Converter={StaticResource InverseBoolConverter}}"
+				IsVisible="{Binding IsSaving, Converter={StaticResource InverseBoolConverter}}"
 				HorizontalOptions="FillAndExpand" />
-		<ActivityIndicator IsVisible="{Binding IsAdding}"
-						   IsRunning="{Binding IsAdding}" />
+		<ActivityIndicator IsVisible="{Binding IsSaving}"
+						   IsRunning="{Binding IsSaving}" />
 	</StackLayout>
 </ContentPage>

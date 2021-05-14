@@ -70,15 +70,6 @@ namespace NotesAndReminders.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add category.
-        /// </summary>
-        internal static string AddCategory {
-            get {
-                return ResourceManager.GetString("AddCategory", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Add checklist item.
         /// </summary>
         internal static string AddChecklistItem {
@@ -147,6 +138,15 @@ namespace NotesAndReminders.Resources {
         internal static string Delete {
             get {
                 return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit category.
+        /// </summary>
+        internal static string EditCategory {
+            get {
+                return ResourceManager.GetString("EditCategory", resourceCulture);
             }
         }
         
@@ -453,6 +453,15 @@ namespace NotesAndReminders.Resources {
         internal static string Save {
             get {
                 return ResourceManager.GetString("Save", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save category.
+        /// </summary>
+        internal static string SaveCategory {
+            get {
+                return ResourceManager.GetString("SaveCategory", resourceCulture);
             }
         }
         

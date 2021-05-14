@@ -120,9 +120,6 @@
   <data name="Add" xml:space="preserve">
     <value>Добавить</value>
   </data>
-  <data name="AddCategory" xml:space="preserve">
-    <value>Добавить категорию</value>
-  </data>
   <data name="AddChecklistItem" xml:space="preserve">
     <value>Добавить элемент списка</value>
   </data>
@@ -146,6 +143,9 @@
   </data>
   <data name="Delete" xml:space="preserve">
     <value>Удалить</value>
+  </data>
+  <data name="EditCategory" xml:space="preserve">
+    <value>Редактировать категорию</value>
   </data>
   <data name="Email" xml:space="preserve">
     <value>Электронная почта</value>
@@ -248,6 +248,9 @@
   </data>
   <data name="Save" xml:space="preserve">
     <value>Сохранить</value>
+  </data>
+  <data name="SaveCategory" xml:space="preserve">
+    <value>Сохранить категорию</value>
   </data>
   <data name="Search" xml:space="preserve">
     <value>Поиск</value>

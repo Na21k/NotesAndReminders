@@ -47,7 +47,7 @@ namespace NotesAndReminders
 			Routing.RegisterRoute(nameof(LogInView), typeof(LogInView));
 			Routing.RegisterRoute(nameof(SignUpView), typeof(SignUpView));
 			Routing.RegisterRoute(nameof(NoteDetailsView), typeof(NoteDetailsView));
-			Routing.RegisterRoute(nameof(NewCategoryView), typeof(NewCategoryView));
+			Routing.RegisterRoute(nameof(NewOrEditCategoryView), typeof(NewOrEditCategoryView));
 			Routing.RegisterRoute(nameof(AttachedImagesView), typeof(AttachedImagesView));
 			Routing.RegisterRoute(nameof(SearchView), typeof(SearchView));
 		}

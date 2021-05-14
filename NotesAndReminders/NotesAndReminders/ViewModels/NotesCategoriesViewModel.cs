@@ -21,6 +21,7 @@ namespace NotesAndReminders.ViewModels
 			get => _categories;
 			set => SetProperty(ref _categories, value);
 		}
+		public NoteType NoteTypeForEditing { get; private set; }
 		public bool IsRefreshing
 		{
 			get => _isRefreshing;
@@ -44,7 +45,7 @@ namespace NotesAndReminders.ViewModels
 			DeleteCategoryCommand = new Command<NoteType>(DeleteCategoryAsync);
 			RefreshCommand = new Command(RefreshAsync);
 
-			MessagingCenter.Subscribe<NewCategoryViewModel>(this, Constants.NotesCategoriesUpdatedEvent, OnNotesCategoriesUpdatedAsync);
+			MessagingCenter.Subscribe<NewOrEditCategoryViewModel>(this, Constants.NotesCategoriesUpdatedEvent, OnNotesCategoriesUpdatedAsync);
 			MessagingCenter.Subscribe<ProfileViewModel>(this, Constants.LoggedOutEvent, OnLoggedOut);
 		}
 
@@ -82,14 +83,16 @@ namespace NotesAndReminders.ViewModels
 
 		private async void ItemTappedAsync(NoteType item)
 		{
-			//TODO add editing functionality
+			NoteTypeForEditing = item;
+			await Shell.Current.GoToAsync(nameof(NewOrEditCategoryView));
+			MessagingCenter.Send(this, Constants.EditCategoryEvent);
 		}
 
 		private async void NewCategoryAsync()
 		{
 			if (_authorizationService.IsLoggedIn)
 			{
-				await Shell.Current.GoToAsync(nameof(NewCategoryView));
+				await Shell.Current.GoToAsync(nameof(NewOrEditCategoryView));
 			}
 			else
 			{
@@ -114,7 +117,7 @@ namespace NotesAndReminders.ViewModels
 			await ReloadDataAsync();
 		}
 
-		private async void OnNotesCategoriesUpdatedAsync(NewCategoryViewModel vm)
+		private async void OnNotesCategoriesUpdatedAsync(NewOrEditCategoryViewModel vm)
 		{
 			await ReloadDataAsync();
 		}

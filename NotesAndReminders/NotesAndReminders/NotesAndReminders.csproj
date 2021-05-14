@@ -20,6 +20,9 @@
     <Compile Update="Views\LoginView.xaml.cs">
       <DependentUpon>LogInView.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\NewOrEditCategoryView.xaml.cs">
+      <DependentUpon>NewOrEditCategoryView.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\NotesCategoriesView.xaml.cs">
       <DependentUpon>NotesCategoriesView.xaml</DependentUpon>
     </Compile>
@@ -45,7 +48,7 @@
     <EmbeddedResource Update="Views\MyNotesView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Views\NewCategoryView.xaml">
+    <EmbeddedResource Update="Views\NewOrEditCategoryView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\NoteDetailsView.xaml">

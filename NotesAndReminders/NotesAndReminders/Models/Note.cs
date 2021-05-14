@@ -12,7 +12,7 @@ namespace NotesAndReminders.Models
 		public string Text { get; set; }
 		[JsonProperty("type")]
 		public NoteType Type { get; set; }
-		[JsonProperty("addition content")]
+		[JsonProperty("addition_content")]
 		public Dictionary<string, byte[]> Images { get; set; }
 		[JsonProperty("checklist")]
 		public List<ChecklistItem> Checklist { get; set; }

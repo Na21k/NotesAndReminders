@@ -57,26 +57,26 @@ namespace NotesAndReminders.Droid.Extensions
 
 					dict.Add(key, list);
 				}
-				else if(key.Equals("addition content"))
+				else if(key.Equals("addition_content"))
 				{
-					var list = new List<Models.Image>();
+					var list = new Dictionary<string,string>();
 
-					var dicImage = new JavaDictionary<int, string>(val.Handle, JniHandleOwnership.DoNotRegister);
+					var dicImage = new JavaDictionary<string, string>(val.Handle, JniHandleOwnership.DoNotRegister);
 
 					foreach (var pair in dicImage)
 					{
-						var number = pair.Key;
+						var name = pair.Key;
 						var url = pair.Value;
-						list.Add(new Models.Image() { ImageNumber = number, ImageUrl = url });
+						list.Add(name,url);
 					}
 
-					var listUrls = new List<byte[]>();
+					var listUrls = new Dictionary<string,byte[]>();
 
 					WebClient webClient = new WebClient();
 
-					foreach(var image in dicImage)
+					foreach(var image in list)
 					{
-						listUrls.Add(webClient.DownloadData(image.Value));
+						listUrls.Add(image.Key,webClient.DownloadData(image.Value));
 					}
 
 					dict.Add(key, listUrls);
@@ -149,15 +149,15 @@ namespace NotesAndReminders.Droid.Extensions
 				{
 					javaVal = new Java.Lang.Boolean(boolVal);
 				}
-				else if(key.Equals("addition content") && val is Newtonsoft.Json.Linq.JArray jarray)
+				else if(key.Equals("addition_content") && val is Newtonsoft.Json.Linq.JObject jarray)
 				{
-					var list = jarray.ToObject<List<Models.Image>>();
+					var list = jarray.ToObject<Dictionary<string,string>>();
 
 					HashMap map = new HashMap();
 
 					foreach(var listitem in list)
 					{
-						map.Put(new Java.Lang.Integer(listitem.ImageNumber), new Java.Lang.String(listitem.ImageUrl));
+						map.Put(new Java.Lang.String(listitem.Key), new Java.Lang.String(listitem.Value));
 					}
 
 					javaVal = map;

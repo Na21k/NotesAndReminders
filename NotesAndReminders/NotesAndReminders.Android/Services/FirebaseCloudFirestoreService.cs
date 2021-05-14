@@ -38,7 +38,12 @@ namespace NotesAndReminders.Droid.Services
 			{
 				DocumentReference docRef = _db.Collection("Notes").Document();
 
-				var imgUrls = await StoreImages(note.Images.Values.ToList(), _auth.CurrentUser.Uid);
+
+				var imgUrls = new Dictionary<string, string>();
+				if(note.Images != null)
+				{
+					imgUrls = await StoreImages(note.Images, docRef.Id);
+				}
 
 				Dictionary<string, object> noteDoc = new Dictionary<string, object>
 				{
@@ -48,7 +53,7 @@ namespace NotesAndReminders.Droid.Services
 					{ "text", note.Text},
 					{ "state", NoteState.Regular.ToString()  },
 					//{ "type", note.Type},
-					{ "addition content", imgUrls},
+					{ "addition_content", imgUrls},
 					{ "checklist", note.Checklist},
 					{ "last_time_modifired", note.LastEdited}
 				};
@@ -69,23 +74,50 @@ namespace NotesAndReminders.Droid.Services
 
 		}
 
-		public async Task<Dictionary<int,string>> StoreImages(List<byte []> imageStream, string userId)
+		public async Task<Dictionary<string, string>> StoreImages(Dictionary<string,byte []> imageStream, string noteId)
 		{
 			try
 			{
-				var result = new Dictionary<int,string>();
-				var imageNumber = 1;
+				var result = new Dictionary<string, string>();
 				foreach (var image in imageStream)
 				{
-					Stream stream = new MemoryStream(image);
+					Stream stream = new MemoryStream(image.Value);
 					var imageUrl = await new FirebaseStorage("notesandreminders-5c2a6.appspot.com")
-						.Child(userId)
+						.Child(noteId)
+						.Child(image.Key)
 						.PutAsync(stream);
-					result.Add(imageNumber, imageUrl);
-					imageNumber++;
+
+					result.Add(image.Key, imageUrl);
 				}
 
 				return result;
+			}
+			catch(Exception ex)
+			{
+				System.Diagnostics.Debug.WriteLine(ex.Message);
+				System.Diagnostics.Debug.WriteLine(ex.StackTrace);
+
+				throw;
+			}
+		}
+
+		public async Task DeleteImage(string imageName, string noteId)
+		{
+			try
+			{
+				if (imageName == "DeleteFolder")
+				{
+					await new FirebaseStorage("notesandreminders-5c2a6.appspot.com")
+						.Child(noteId)
+						.DeleteAsync();
+				}
+				else
+				{
+					await new FirebaseStorage("notesandreminders-5c2a6.appspot.com")
+						.Child(noteId)
+						.Child(imageName)
+						.DeleteAsync();
+				}
 			}
 			catch(Exception ex)
 			{
@@ -141,6 +173,7 @@ namespace NotesAndReminders.Droid.Services
 				}
 
 				docRef = _db.Collection(colName).Document(note.Id.ToString());
+				await DeleteImage("DeleteFolder", docRef.Id);
 				await docRef.Delete();
 
 				return true;
@@ -273,6 +306,12 @@ namespace NotesAndReminders.Droid.Services
 
 				docRef = _db.Collection(colName).Document(note.Id);
 
+				var imgUrls = new Dictionary<string, string>();
+				if (note.Images != null)
+				{
+					imgUrls = await StoreImages(note.Images, docRef.Id);
+				}
+
 				Dictionary<string, object> updatedNote = new Dictionary<string, object>()
 				{
 					{ "id", note.Id},
@@ -280,7 +319,7 @@ namespace NotesAndReminders.Droid.Services
 					{ "title", note.Title },
 					{ "text", note.Text},
 					//{ "type", note.Type},
-					//{ "addition content", note.Images },
+					{ "addition_content", imgUrls },
 					{ "checklist", note.Checklist},
 					{ "last_time_modifired", note.LastEdited}
 				};
@@ -330,6 +369,13 @@ namespace NotesAndReminders.Droid.Services
 			try
 			{
 				DocumentReference docRef = _db.Collection("Archive").Document();
+
+				var imgUrls = new Dictionary<string, string>();
+				if (note.Images != null)
+				{
+					imgUrls = await StoreImages(note.Images, docRef.Id);
+				}
+
 				Dictionary<string, object> noteDoc = new Dictionary<string, object>
 				{
 					{ "id", docRef.Id},
@@ -338,7 +384,7 @@ namespace NotesAndReminders.Droid.Services
 					{ "text", note.Text},
 					{ "state", NoteState.Archived.ToString()  },
 					//{ "type", note.Type},
-					//{ "addition content", note.Images },
+					{ "addition_content", imgUrls },
 					{ "checklist", note.Checklist},
 					{ "last_time_modifired", note.LastEdited}
 				};

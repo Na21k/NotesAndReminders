@@ -8,7 +8,7 @@ namespace NotesAndReminders.Services
 	public interface IDBService
 	{
 		Task<bool> AddNoteAsync(Note note);
-		Task<bool> DeleteNoteAsync(Note note);
+		Task<bool> DeleteNoteAsync(Note note, bool isArchiving);
 		Task<bool> UpdateNoteAsync(Note note);
 		Task<bool> AddNoteTypeAsync(NoteType noteType);
 		Task<bool> DeleteNoteTypeAsync(NoteType noteType);

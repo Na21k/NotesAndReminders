@@ -160,7 +160,7 @@ namespace NotesAndReminders.Droid.Services
 			}
 		}
 
-		public async Task<bool> DeleteNoteAsync(Note note)
+		public async Task<bool> DeleteNoteAsync(Note note, bool isArchiving)
 		{
 			try
 			{
@@ -178,7 +178,11 @@ namespace NotesAndReminders.Droid.Services
 				}
 
 				docRef = _db.Collection(colName).Document(note.Id.ToString());
-				await DeleteImage("DeleteFolder", note.Id, note.Images);
+				if (isArchiving != true)
+				{
+					await DeleteImage("DeleteFolder", note.Id, note.Images);
+				}
+
 				await docRef.Delete();
 
 				return true;
@@ -396,7 +400,8 @@ namespace NotesAndReminders.Droid.Services
 
 				await docRef.Set(noteDoc.Convert());
 
-				await DeleteNoteAsync(note);
+
+				await DeleteNoteAsync(note, true);
 				return true;
 			}
 			catch (Exception ex)
@@ -413,7 +418,7 @@ namespace NotesAndReminders.Droid.Services
 			try
 			{
 				await AddNoteAsync(note);
-				await DeleteNoteAsync(note);
+				await DeleteNoteAsync(note, true);
 
 				return true;
 			}

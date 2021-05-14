@@ -57,7 +57,7 @@ namespace NotesAndReminders.Services
 				throw new Exception($"Invalid note state ({note.State})");
 			}
 
-			if (!await _dBService.DeleteNoteAsync(note))
+			if (!await _dBService.DeleteNoteAsync(note,false))
 			{
 				throw new Exception("Failed to delete the note ftom db");
 			}

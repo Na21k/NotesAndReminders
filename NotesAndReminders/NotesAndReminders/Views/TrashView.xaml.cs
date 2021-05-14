@@ -10,8 +10,6 @@ namespace NotesAndReminders.Views
 			InitializeComponent();
 
 			BindingContext = new TrashViewModel();
-
-			MessagingCenter.Subscribe<TrashViewModel>(this, Constants.HideEmptyTrashButton, RemoveEmptyTrashButton);
 		}
 
 		protected override void OnAppearing()
@@ -20,11 +18,6 @@ namespace NotesAndReminders.Views
 
 			var vm = BindingContext as TrashViewModel;
 			vm?.OnAppearing();
-		}
-
-		private void RemoveEmptyTrashButton(TrashViewModel vm)
-		{
-			ToolbarItems.Remove(emptyTrashToolbarItem);
 		}
 	}
 }

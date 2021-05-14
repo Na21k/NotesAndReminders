@@ -51,11 +51,6 @@ namespace NotesAndReminders.ViewModels
 			Notes.Clear();
 			notes.ForEach((note) => Notes.Add(note));
 
-			if (Notes.Count == 0)
-			{
-				MessagingCenter.Send(this, Constants.HideEmptyTrashButton);
-			}
-
 			IsRefreshing = false;
 		}
 
@@ -70,7 +65,6 @@ namespace NotesAndReminders.ViewModels
 			{
 				_trashService.EmptyTrash();
 				Notes.Clear();
-				MessagingCenter.Send(this, Constants.HideEmptyTrashButton);
 			}
 		}
 

@@ -35,6 +35,7 @@ namespace NotesAndReminders.ViewModels
 		{
 			_dBService = DependencyService.Get<IDBService>();
 			_trashService = new TrashService();
+			_searchText = string.Empty;
 			FoundNotes = new ObservableCollection<Note>();
 
 			MessagingCenter.Subscribe<NotesBaseViewModel>(this, Constants.SearchOpenedEvent, Init);

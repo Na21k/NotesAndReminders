@@ -61,13 +61,13 @@ namespace NotesAndReminders.ViewModels
 			switch (note.State)
 			{
 				case NoteState.Regular:
-					options[0] = AppResources.MoveToArchive;
+					options.Add(AppResources.MoveToArchive);
 					break;
 				case NoteState.Archived:
-					options[0] = AppResources.Unarchive;
+					options.Add(AppResources.Unarchive);
 					break;
 				default:
-					options[0] = AppResources.Restore;
+					options.Add(AppResources.Restore);
 					break;
 			}
 

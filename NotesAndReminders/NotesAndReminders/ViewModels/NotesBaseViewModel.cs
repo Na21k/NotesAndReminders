@@ -18,6 +18,7 @@ namespace NotesAndReminders.ViewModels
 
 		public Note SelectedNote { get; private set; }
 
+		public ICommand SearchCommand { get; private set; }
 		public ICommand OpenNoteCommand { get; private set; }
 		public ICommand DeleteNoteCommand { get; private set; }
 
@@ -25,8 +26,15 @@ namespace NotesAndReminders.ViewModels
 		{
 			Notes = new ObservableCollection<Note>();
 
+			SearchCommand = new Command(SearchAsync);
 			OpenNoteCommand = new Command<Note>(OpenNoteAsync);
 			DeleteNoteCommand = new Command<Note>(DeleteNoteAsync);
+		}
+
+		private async void SearchAsync()
+		{
+			await Shell.Current.GoToAsync(nameof(SearchView));
+			MessagingCenter.Send(this, Constants.SearchOpenedEvent);
 		}
 
 		private async void OpenNoteAsync(Note note)

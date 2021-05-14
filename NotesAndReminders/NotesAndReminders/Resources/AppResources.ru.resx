@@ -222,6 +222,9 @@
   <data name="NotesUseBackgroundOfCategory" xml:space="preserve">
     <value>Заметки используют цвет фона их категории</value>
   </data>
+  <data name="NothingFound" xml:space="preserve">
+    <value>Ничего не найдено</value>
+  </data>
   <data name="Ok" xml:space="preserve">
     <value>OK</value>
   </data>
@@ -245,6 +248,9 @@
   </data>
   <data name="Save" xml:space="preserve">
     <value>Сохранить</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Поиск</value>
   </data>
   <data name="SignUp_LogInOrSignUp" xml:space="preserve">
     <value>Зарегистрируйтесь чтобы синхронизироваь заметки между вашими устройствами</value>

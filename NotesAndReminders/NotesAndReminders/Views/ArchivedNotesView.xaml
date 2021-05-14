@@ -6,6 +6,10 @@
 			 x:Name="page"
 			 Title="{x:Static resource:AppResources.Archive}"
 			 Padding="10">
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Text="{x:Static resource:AppResources.Search}"
+					 Command="{Binding SearchCommand}" />
+	</ContentPage.ToolbarItems>
 	<RefreshView IsRefreshing="{Binding IsRefreshing}"
 				 Command="{Binding RefreshCommand}">
 		<CollectionView ItemsSource="{Binding Notes}">

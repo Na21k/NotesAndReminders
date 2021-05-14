@@ -222,6 +222,9 @@
   <data name="NotesUseBackgroundOfCategory" xml:space="preserve">
     <value>Нотатки використовують колір фону їх категорії</value>
   </data>
+  <data name="NothingFound" xml:space="preserve">
+    <value>Нічого не знайдено</value>
+  </data>
   <data name="Ok" xml:space="preserve">
     <value>OK</value>
   </data>
@@ -245,6 +248,9 @@
   </data>
   <data name="Save" xml:space="preserve">
     <value>Зберегти</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Пошук</value>
   </data>
   <data name="SignUp_LogInOrSignUp" xml:space="preserve">
     <value>Зареєструйтесь щоб синхронізувати нотатки між вашими пистроями</value>

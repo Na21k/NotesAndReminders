@@ -222,6 +222,9 @@
   <data name="NotesUseBackgroundOfCategory" xml:space="preserve">
     <value>Notes use the background color of their category</value>
   </data>
+  <data name="NothingFound" xml:space="preserve">
+    <value>Nothing found</value>
+  </data>
   <data name="Ok" xml:space="preserve">
     <value>OK</value>
   </data>
@@ -245,6 +248,9 @@
   </data>
   <data name="Save" xml:space="preserve">
     <value>Save</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
   </data>
   <data name="SignUp_LogInOrSignUp" xml:space="preserve">
     <value>Sign up to benefit from notes synchronization across your devices</value>

@@ -32,6 +32,7 @@ namespace NotesAndReminders.ViewModels
 			MessagingCenter.Subscribe<NoteDetailsViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdatedAsync);
 			MessagingCenter.Subscribe<MyNotesViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdatedAsync);
 			MessagingCenter.Subscribe<TrashViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdatedAsync);
+			MessagingCenter.Subscribe<SearchViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdatedAsync);
 			MessagingCenter.Subscribe<ProfileViewModel>(this, Constants.LoggedOutEvent, OnLoggedOut);
 		}
 
@@ -97,6 +98,11 @@ namespace NotesAndReminders.ViewModels
 		}
 
 		private async void OnNotesUpdatedAsync(TrashViewModel vm)
+		{
+			await ReloadDataAsync();
+		}
+
+		private async void OnNotesUpdatedAsync(SearchViewModel vm)
 		{
 			await ReloadDataAsync();
 		}

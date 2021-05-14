@@ -79,9 +79,11 @@
 				   ReturnType="Done"
 				   ReturnCommand="{Binding AddChecklistItemCommand}"
 				   TextColor="{AppThemeBinding Light={StaticResource LabelTextColorPrimary},
-											   Dark={StaticResource LabelTextColorPrimaryDark}}" />
-			<Image Source="{AppThemeBinding Light='icn_addList_dark', Dark='icn_addList_light'}" />
+											   Dark={StaticResource LabelTextColorPrimaryDark}}"
+				   HorizontalOptions="FillAndExpand"
+				   VerticalOptions="CenterAndExpand" />
+			<Image Source="{AppThemeBinding Light='icn_addList_dark', Dark='icn_addList_light'}"
+				   VerticalOptions="CenterAndExpand" />
 		</StackLayout>
-
 	</StackLayout>
 </ContentPage>

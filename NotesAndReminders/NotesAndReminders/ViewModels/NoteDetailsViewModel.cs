@@ -69,6 +69,11 @@ namespace NotesAndReminders.ViewModels
 			Note = vm.SelectedNote;
 			Note.Checklist?.ForEach(item => NoteChecklistMirror.Add(item));
 
+			if (Note.State == NoteState.Trashed || Note.State == NoteState.ArchivedTrashed)
+			{
+				MessagingCenter.Send(this, Constants.HideSaveAndDeleteButtonsEvent);
+			}
+
 			OnPropertyChanged(nameof(IsChecklistAdded));
 		}
 

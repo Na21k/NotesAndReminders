@@ -10,6 +10,16 @@ namespace NotesAndReminders.Views
 			InitializeComponent();
 
 			BindingContext = new NoteDetailsViewModel();
+
+			MessagingCenter.Subscribe<NoteDetailsViewModel>(this, Constants.HideSaveAndDeleteButtonsEvent, HideSaveAndDeleteButtons);
+		}
+
+		public void HideSaveAndDeleteButtons(NoteDetailsViewModel vm)
+		{
+			ToolbarItems.Remove(deleteBtn);
+			ToolbarItems.Remove(saveBtn);
+			mainStack.IsEnabled = false;
+			newChecklistItemStack.IsVisible = false;
 		}
 	}
 }

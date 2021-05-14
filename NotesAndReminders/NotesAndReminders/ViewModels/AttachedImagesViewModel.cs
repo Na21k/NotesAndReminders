@@ -46,6 +46,11 @@ namespace NotesAndReminders.ViewModels
 		{
 			Note = vm.Note;
 			RemirrorImagesFromCurrentNote();
+
+			if (Note.State == NoteState.Trashed || Note.State == NoteState.ArchivedTrashed)
+			{
+				MessagingCenter.Send(this, Constants.HideSaveAndDeleteButtonsEvent);
+			}
 		}
 
 		private void RemirrorImagesFromCurrentNote()

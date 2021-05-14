@@ -18,16 +18,19 @@
 					 IconImageSource="{AppThemeBinding Light='icn_image_dark', Dark='icn_image_light'}"
 					 Command="{Binding ManageAttachedImagesCommand}"
 					 Order="Primary" />
-		<ToolbarItem Text="{x:Static resource:AppResources.Delete}"
+		<ToolbarItem x:Name="deleteBtn"
+					 Text="{x:Static resource:AppResources.Delete}"
 					 IconImageSource="{AppThemeBinding Light='icn_trash_dark', Dark='icn_trash_light'}"
 					 Command="{Binding DeleteNoteCommand}"
 					 Order="Primary" />
-		<ToolbarItem Text="{x:Static resource:AppResources.Save}"
+		<ToolbarItem x:Name="saveBtn"
+					 Text="{x:Static resource:AppResources.Save}"
 					 IconImageSource="{AppThemeBinding Light='icn_save_dark', Dark='icn_save_light'}"
 					 Command="{Binding SaveNoteCommand}"
 					 Order="Primary" />
 	</ContentPage.ToolbarItems>
-	<StackLayout Spacing="10">
+	<StackLayout x:Name="mainStack"
+				 Spacing="10">
 		<Entry Text="{Binding Note.Title}"
 			   Placeholder="{x:Static resource:AppResources.Title}"
 			   ReturnType="Next"
@@ -72,7 +75,8 @@
 				</DataTemplate>
 			</CollectionView.ItemTemplate>
 		</CollectionView>
-		<StackLayout Orientation="Horizontal"
+		<StackLayout x:Name="newChecklistItemStack"
+					 Orientation="Horizontal"
 					 Spacing="10">
 			<Entry Text="{Binding NewChecklistItemText}"
 				   Placeholder="{x:Static resource:AppResources.AddChecklistItem}"

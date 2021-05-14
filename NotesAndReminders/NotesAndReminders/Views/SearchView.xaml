@@ -44,7 +44,7 @@
 							   LineBreakMode="TailTruncation" />
 						<Grid ColumnDefinitions="*,30"
 							  ColumnSpacing="10"
-							  HorizontalOptions="StartAndExpand"
+							  HorizontalOptions="FillAndExpand"
 							  VerticalOptions="EndAndExpand">
 							<Frame Grid.Column="0"
 								   Padding="5"
@@ -61,7 +61,8 @@
 										 Source="{AppThemeBinding Light='icn_additionalActions_dark', Dark='icn_additionalActions_light'}"
 										 Command="{Binding BindingContext.DisplayNoteActionsCommand, Source={x:Reference page}}"
 										 CommandParameter="{Binding .}"
-										 HorizontalOptions="EndAndExpand" />
+										 HorizontalOptions="EndAndExpand"
+										 VerticalOptions="CenterAndExpand" />
 						</Grid>
 					</StackLayout>
 					<Frame.GestureRecognizers>

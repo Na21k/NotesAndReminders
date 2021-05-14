@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:resource="clr-namespace:NotesAndReminders.Resources"
+             x:Class="NotesAndReminders.Views.SettingsView"
+			 x:Name="page"
+			 Title="{x:Static resource:AppResources.Settings}"
+			 Padding="10">
+	<StackLayout Spacing="10"
+				 VerticalOptions="StartAndExpand">
+		<Frame CornerRadius="7"
+			   Padding="18"
+			   BackgroundColor="#40c2c2c2">
+			<StackLayout Orientation="Horizontal"
+						 Spacing="10">
+				<Image Source="logo"
+					   WidthRequest="30"
+					   VerticalOptions="CenterAndExpand" />
+				<Label Text="{x:Static resource:AppResources.AboutApp}"
+					   FontSize="18"
+					   VerticalOptions="CenterAndExpand"
+					   VerticalTextAlignment="Center">
+				</Label>
+			</StackLayout>
+			<Frame.GestureRecognizers>
+				<TapGestureRecognizer Command="{Binding AboutAppCommand}" />
+			</Frame.GestureRecognizers>
+		</Frame>
+	</StackLayout>
+</ContentPage>

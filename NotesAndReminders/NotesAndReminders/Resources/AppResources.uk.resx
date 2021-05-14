@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AboutApp" xml:space="preserve">
+    <value>Про програму</value>
+  </data>
   <data name="Add" xml:space="preserve">
     <value>Додати</value>
   </data>
@@ -263,6 +266,9 @@
   </data>
   <data name="SetCategory" xml:space="preserve">
     <value>Встановити категорію</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Налаштування</value>
   </data>
   <data name="SignUp_LogInOrSignUp" xml:space="preserve">
     <value>Зареєструйтесь щоб синхронізувати нотатки між вашими пистроями</value>

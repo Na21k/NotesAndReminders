@@ -1,4 +1,5 @@
 ﻿using NotesAndReminders.Services;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace NotesAndReminders
@@ -9,6 +10,8 @@ namespace NotesAndReminders
 		public App()
 		{
 			InitializeComponent();
+
+			VersionTracking.Track();
 
 			var platformService = DependencyService.Get<IPlatformService>();
 			platformService.SetTranslucentStatusbar();

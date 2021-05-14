@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:resource="clr-namespace:NotesAndReminders.Resources"
+             x:Class="NotesAndReminders.Views.AboutAppView"
+			 x:Name="page"
+			 Title="{x:Static resource:AppResources.AboutApp}"
+			 Padding="10">
+	<StackLayout Spacing="10"
+				 Padding="20"
+				 VerticalOptions="CenterAndExpand">
+		<Image Source="logo_large"
+			   WidthRequest="100"
+			   VerticalOptions="CenterAndExpand" />
+		<Label Text="Notes And Reminders"
+			   FontSize="Large"
+			   HorizontalTextAlignment="Center" />
+		<Label FontSize="Medium"
+			   HorizontalTextAlignment="Center">
+			<Label.FormattedText>
+				<FormattedString>
+					<Span Text="version " />
+					<Span Text="{Binding Version}" />
+				</FormattedString>
+			</Label.FormattedText>
+		</Label>
+		<Label FontSize="Medium"
+			   HorizontalTextAlignment="Center">
+			<Label.FormattedText>
+				<FormattedString>
+					<Span Text="build " />
+					<Span Text="{Binding Build}" />
+				</FormattedString>
+			</Label.FormattedText>
+		</Label>
+	</StackLayout>
+</ContentPage>

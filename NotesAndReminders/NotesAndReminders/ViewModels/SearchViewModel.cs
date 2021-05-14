@@ -4,7 +4,6 @@ using NotesAndReminders.Services;
 using System;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
-using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 
@@ -32,15 +31,11 @@ namespace NotesAndReminders.ViewModels
 			set => SetProperty(ref _foundNotes, value);
 		}
 
-		public ICommand DisplayNoteActionsCommand { get; private set; }
-
 		public SearchViewModel() : base()
 		{
 			_dBService = DependencyService.Get<IDBService>();
 			_trashService = new TrashService();
 			FoundNotes = new ObservableCollection<Note>();
-
-			DisplayNoteActionsCommand = new Command<Note>(DisplayNoteActionsAsync);
 
 			MessagingCenter.Subscribe<NotesBaseViewModel>(this, Constants.SearchOpenedEvent, Init);
 		}
@@ -63,31 +58,7 @@ namespace NotesAndReminders.ViewModels
 			});
 		}
 
-		private async void DisplayNoteActionsAsync(Note note)
-		{
-			var options = new string[]
-			{
-				note.State == NoteState.Regular ? AppResources.MoveToArchive : AppResources.Unarchive,
-				AppResources.Delete
-			};
-
-			var res = await Shell.Current.DisplayActionSheet(null, null, null, options);
-
-			if (res == AppResources.MoveToArchive)
-			{
-				await ArchiveNoteAsync(note);
-			}
-			else if (res == AppResources.Unarchive)
-			{
-				await UnarchiveNoteAsync(note);
-			}
-			else if (res == AppResources.Delete)
-			{
-				await DeleteNoteAsync(note);
-			}
-		}
-
-		private async Task ArchiveNoteAsync(Note note)
+		protected override async Task ArchiveNoteAsync(Note note)
 		{
 			if (await _dBService.ArchiveNoteAsync(note))
 			{
@@ -101,7 +72,7 @@ namespace NotesAndReminders.ViewModels
 			}
 		}
 
-		private async Task UnarchiveNoteAsync(Note note)
+		protected override async Task UnarchiveNoteAsync(Note note)
 		{
 			if (await _dBService.UnarchiveNoteAsync(note))
 			{
@@ -115,7 +86,7 @@ namespace NotesAndReminders.ViewModels
 			}
 		}
 
-		private async Task DeleteNoteAsync(Note note)
+		protected override async Task DeleteNoteAsync(Note note)
 		{
 			try
 			{

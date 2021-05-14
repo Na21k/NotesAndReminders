@@ -101,15 +101,20 @@ namespace NotesAndReminders.Droid.Services
 			}
 		}
 
-		public async Task DeleteImage(string imageName, string noteId)
+		public async Task DeleteImage(string imageName, string noteId, Dictionary<string,byte[]> images)
 		{
 			try
 			{
 				if (imageName == "DeleteFolder")
 				{
-					await new FirebaseStorage("notesandreminders-5c2a6.appspot.com")
+					foreach (var image in images)
+					{
+						await new FirebaseStorage("notesandreminders-5c2a6.appspot.com")
 						.Child(noteId)
+						.Child(image.Key)
 						.DeleteAsync();
+					}
+
 				}
 				else
 				{
@@ -173,7 +178,7 @@ namespace NotesAndReminders.Droid.Services
 				}
 
 				docRef = _db.Collection(colName).Document(note.Id.ToString());
-				await DeleteImage("DeleteFolder", docRef.Id);
+				await DeleteImage("DeleteFolder", note.Id, note.Images);
 				await docRef.Delete();
 
 				return true;
@@ -309,7 +314,7 @@ namespace NotesAndReminders.Droid.Services
 				var imgUrls = new Dictionary<string, string>();
 				if (note.Images != null)
 				{
-					imgUrls = await StoreImages(note.Images, docRef.Id);
+					imgUrls = await StoreImages(note.Images, note.Id);
 				}
 
 				Dictionary<string, object> updatedNote = new Dictionary<string, object>()
@@ -373,7 +378,7 @@ namespace NotesAndReminders.Droid.Services
 				var imgUrls = new Dictionary<string, string>();
 				if (note.Images != null)
 				{
-					imgUrls = await StoreImages(note.Images, docRef.Id);
+					imgUrls = await StoreImages(note.Images, note.Id);
 				}
 
 				Dictionary<string, object> noteDoc = new Dictionary<string, object>

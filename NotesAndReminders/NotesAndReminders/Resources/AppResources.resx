@@ -252,6 +252,12 @@
   <data name="Profile_LogInOrSignUp" xml:space="preserve">
     <value>Log in or sign up to benefit from notes synchronization across your devices</value>
   </data>
+  <data name="Reminder" xml:space="preserve">
+    <value>Reminder</value>
+  </data>
+  <data name="ReminderTimeCanNotBeLessThanCurrent" xml:space="preserve">
+    <value>Reminder time can not be less than current</value>
+  </data>
   <data name="Restore" xml:space="preserve">
     <value>Restore</value>
   </data>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:resource="clr-namespace:NotesAndReminders.Resources"
+             x:Class="NotesAndReminders.Views.ReminderView"
+			 x:Name="page"
+			 Title="{x:Static resource:AppResources.Reminder}"
+			 Padding="10">
+	<StackLayout Spacing="18"
+				 VerticalOptions="EndAndExpand">
+		<TimePicker Time="{Binding Time}"
+					Format="t" />
+		<DatePicker Date="{Binding Date}"
+					MinimumDate="{Binding MinimumDate}"
+					Format="D" />
+		<Button Text="{x:Static resource:AppResources.Save}"
+				Command="{Binding SaveCommand}"
+				IsVisible="{Binding IsSaving, Converter={StaticResource InverseBoolConverter}}"
+				HorizontalOptions="FillAndExpand" />
+		<ActivityIndicator IsVisible="{Binding IsSaving}"
+						   IsRunning="{Binding IsSaving}" />
+	</StackLayout>
+</ContentPage>

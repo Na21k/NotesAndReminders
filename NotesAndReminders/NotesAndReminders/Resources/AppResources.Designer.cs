@@ -475,7 +475,7 @@ namespace NotesAndReminders.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Reminder time can not be less than current.
+        ///   Looks up a localized string similar to The reminder time cannot be less than the current time.
         /// </summary>
         internal static string ReminderTimeCanNotBeLessThanCurrent {
             get {

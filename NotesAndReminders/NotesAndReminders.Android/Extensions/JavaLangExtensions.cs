@@ -7,7 +7,10 @@ using Android.Views;
 using Android.Widget;
 using Firebase;
 using Java.Util;
+using NotesAndReminders.Droid.Services;
 using NotesAndReminders.Models;
+using NotesAndReminders.Services;
+using NotesAndReminders.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -20,11 +23,11 @@ namespace NotesAndReminders.Droid.Extensions
 {
 	public static class JavaLangExtensions
 	{
-		public static IDictionary<string, object> ToDictionary(this IDictionary<string,Java.Lang.Object> map)
+		public static IDictionary<string, object> ToDictionary(this IDictionary<string, Java.Lang.Object> map)
 		{
 			var dict = new Dictionary<string, object>();
 
-			foreach(var key in map.Keys)
+			foreach (var key in map.Keys)
 			{
 
 				var val = map[key];
@@ -46,7 +49,7 @@ namespace NotesAndReminders.Droid.Extensions
 				else if (key.Equals("checklist"))
 				{
 					var list = new List<ChecklistItem>();
-					var dicChecklist = new JavaDictionary<string, bool>(val.Handle,JniHandleOwnership.DoNotRegister);
+					var dicChecklist = new JavaDictionary<string, bool>(val.Handle, JniHandleOwnership.DoNotRegister);
 
 					foreach (var pair in dicChecklist)
 					{
@@ -56,10 +59,10 @@ namespace NotesAndReminders.Droid.Extensions
 					}
 
 					dict.Add(key, list);
-				}	
-				else if(key.Equals("addition_content"))
+				}
+				else if (key.Equals("addition_content"))
 				{
-					var list = new Dictionary<string,string>();
+					var list = new Dictionary<string, string>();
 
 					var dicImage = new JavaDictionary<string, string>(val.Handle, JniHandleOwnership.DoNotRegister);
 
@@ -67,37 +70,37 @@ namespace NotesAndReminders.Droid.Extensions
 					{
 						var name = pair.Key;
 						var url = pair.Value;
-						list.Add(name,url);
+						list.Add(name, url);
 					}
 
-					var listUrls = new Dictionary<string,byte[]>();
+					var listUrls = new Dictionary<string, byte[]>();
 
 					WebClient webClient = new WebClient();
 
-					foreach(var image in list)
+					foreach (var image in list)
 					{
-						listUrls.Add(image.Key,webClient.DownloadData(image.Value));
+						listUrls.Add(image.Key, webClient.DownloadData(image.Value));
 					}
 
 					dict.Add(key, listUrls);
 				}
-				else if(val is Java.Lang.String str)
+				else if (val is Java.Lang.String str)
 				{
 					dict.Add(key, str.ToString());
 				}
-				else if(val is Java.Lang.Double dbl)
+				else if (val is Java.Lang.Double dbl)
 				{
 					dict.Add(key, dbl.DoubleValue());
 				}
-				else if(val is Java.Lang.Integer intVal)
+				else if (val is Java.Lang.Integer intVal)
 				{
-					dict.Add(key,intVal.IntValue());
+					dict.Add(key, intVal.IntValue());
 				}
-				else if(val is Java.Lang.Boolean boolVal)
+				else if (val is Java.Lang.Boolean boolVal)
 				{
 					dict.Add(key, boolVal.BooleanValue());
 				}
-				else if(val is System.Collections.ICollection coll)
+				else if (val is System.Collections.ICollection coll)
 				{
 					var arrList = new ArrayList(coll);
 					var list = new List<string>();

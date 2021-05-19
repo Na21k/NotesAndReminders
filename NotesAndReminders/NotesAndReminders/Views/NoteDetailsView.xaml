@@ -14,6 +14,9 @@
 					 IconImageSource="{AppThemeBinding Light='icn_unarchive_dark', Dark='icn_unarchive_light'}"
 					 Command="{Binding UnarchiveCommand}"
 					 Order="Primary" />-->
+		<ToolbarItem Text="{x:Static resource:AppResources.Reminder}"
+					 Command="{Binding ManageReminderCommand}"
+					 Order="Primary" />
 		<ToolbarItem Text="{x:Static resource:AppResources.Images}"
 					 IconImageSource="{AppThemeBinding Light='icn_image_dark', Dark='icn_image_light'}"
 					 Command="{Binding ManageAttachedImagesCommand}"

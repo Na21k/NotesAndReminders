@@ -466,6 +466,24 @@ namespace NotesAndReminders.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Reminder.
+        /// </summary>
+        internal static string Reminder {
+            get {
+                return ResourceManager.GetString("Reminder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The reminder time cannot be less than the current time.
+        /// </summary>
+        internal static string ReminderTimeCanNotBeLessThanCurrent {
+            get {
+                return ResourceManager.GetString("ReminderTimeCanNotBeLessThanCurrent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Restore.
         /// </summary>
         internal static string Restore {

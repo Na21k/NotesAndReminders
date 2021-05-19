@@ -252,6 +252,12 @@
   <data name="Profile_LogInOrSignUp" xml:space="preserve">
     <value>Войдите или зарегистрируйтесь чтобы синхронизироваь заметки между вашими устройствами</value>
   </data>
+  <data name="Reminder" xml:space="preserve">
+    <value>Напоминание</value>
+  </data>
+  <data name="ReminderTimeCanNotBeLessThanCurrent" xml:space="preserve">
+    <value>Время напоминания не может быть меньше текущего</value>
+  </data>
   <data name="Restore" xml:space="preserve">
     <value>Восстановить</value>
   </data>

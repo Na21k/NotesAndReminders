@@ -159,7 +159,7 @@
 	<FlyoutItem Title="{x:Static resource:AppResources.Profile}" Icon="{AppThemeBinding Light='icn_profile_dark', Dark='icn_profile_light'}">
 		<ShellContent Route="ProfileView" ContentTemplate="{DataTemplate local:ProfileView}" />
 	</FlyoutItem>
-	<FlyoutItem Title="{x:Static resource:AppResources.Settings}">
+	<FlyoutItem Title="{x:Static resource:AppResources.Settings}" Icon="{AppThemeBinding Light='icn_settings_dark', Dark='icn_settings_light'}">
 		<ShellContent Route="SettingsView" ContentTemplate="{DataTemplate local:SettingsView}" />
 	</FlyoutItem>
 

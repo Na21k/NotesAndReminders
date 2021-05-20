@@ -164,24 +164,21 @@ namespace NotesAndReminders.ViewModels
 
 		private async Task SetCategory(Note note)
 		{
-			var categories = new List<NoteType>();
-
 			await _dBService.GetAllNoteTypesAsync(async noteTypes =>
 			{
-				noteTypes.ForEach(noteType => categories.Add(noteType as NoteType));
+				var options = noteTypes.Select(nt => (nt as NoteType).Name).ToList();
+				options.Insert(0, AppResources.Uncategorized);
 
-				var res = await Shell.Current.DisplayActionSheet(null, null, AppResources.Uncategorized, noteTypes.Select(nt => (nt as NoteType).Name).ToArray());
+				var res = await Shell.Current.DisplayActionSheet(null, null, null, options.ToArray());
 
-				if (res == AppResources.Uncategorized)
+				if (res == null)
+				{
+					return;
+				}
+				else if (res == AppResources.Uncategorized)
 				{
 					note.Type = null;
 					await _dBService.UpdateNoteAsync(note);
-
-					note.Type = new NoteType()
-					{
-						Name = AppResources.Uncategorized,
-						Color = Constants.NotesColorsOptions.FirstOrDefault()
-					};
 				}
 				else
 				{
@@ -190,6 +187,8 @@ namespace NotesAndReminders.ViewModels
 					note.Type = type;
 					await _dBService.UpdateNoteAsync(note);
 				}
+
+				MessagingCenter.Send(this, Constants.NotesUpdatedEvent);
 			});
 		}
 	}

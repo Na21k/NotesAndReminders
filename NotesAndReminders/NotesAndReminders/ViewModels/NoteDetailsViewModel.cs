@@ -81,6 +81,13 @@ namespace NotesAndReminders.ViewModels
 
 		private async void SaveNoteAsync()
 		{
+			if (string.IsNullOrWhiteSpace(Note.Text))
+			{
+				await Shell.Current.DisplayAlert(AppResources.Oops, AppResources.NoteWithoutBodyCanNotBeSaved, AppResources.Ok);
+
+				return;
+			}
+
 			if (Note.Checklist == null)
 			{
 				Note.Checklist = new List<ChecklistItem>();

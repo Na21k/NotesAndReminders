@@ -231,6 +231,9 @@
   <data name="NotesUseBackgroundOfCategory" xml:space="preserve">
     <value>Нотатки використовують колір фону їх категорії</value>
   </data>
+  <data name="NoteWithoutBodyCanNotBeSaved" xml:space="preserve">
+    <value>Не можна зберегти нотатку без тексту</value>
+  </data>
   <data name="NothingFound" xml:space="preserve">
     <value>Нічого не знайдено</value>
   </data>

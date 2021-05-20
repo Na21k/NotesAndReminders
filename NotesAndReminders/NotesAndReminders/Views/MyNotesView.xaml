@@ -51,16 +51,26 @@
 									  ColumnSpacing="10"
 									  HorizontalOptions="FillAndExpand"
 									  VerticalOptions="EndAndExpand">
-									<Frame Grid.Column="0"
-										   Padding="5"
-										   CornerRadius="6"
-										   HorizontalOptions="StartAndExpand"
-										   BackgroundColor="#40ffffff">
-										<Label Text="{Binding Type.Name}"
+									<StackLayout Grid.Column="0"
+												 Orientation="Horizontal"
+												 Spacing="10">
+										<Frame Padding="5"
+											   CornerRadius="6"
+											   HorizontalOptions="Start"
+											   BackgroundColor="#40ffffff">
+											<Label Text="{Binding Type.Name}"
+												   MaxLines="1"
+												   LineBreakMode="TailTruncation"
+												   FontSize="12" />
+										</Frame>
+										<Label Text="{Binding LastEdited, StringFormat='{0:f}'}"
 											   MaxLines="1"
-											   LineBreakMode="TailTruncation"
-											   FontSize="12" />
-									</Frame>
+											   LineBreakMode="MiddleTruncation"
+											   FontSize="11"
+											   HorizontalOptions="StartAndExpand"
+											   VerticalOptions="CenterAndExpand"
+											   VerticalTextAlignment="Center" />
+									</StackLayout>
 									<ImageButton Grid.Column="1"
 												 BackgroundColor="Transparent"
 												 Source="{AppThemeBinding Light='icn_additionalActions_dark', Dark='icn_additionalActions_light'}"

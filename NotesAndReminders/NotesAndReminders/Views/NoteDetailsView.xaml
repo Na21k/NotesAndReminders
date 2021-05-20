@@ -17,10 +17,10 @@
 		<ToolbarItem Text="{x:Static resource:AppResources.Reminder}"
 					 Command="{Binding ManageReminderCommand}"
 					 Order="Primary" />
-		<ToolbarItem Text="{x:Static resource:AppResources.Images}"
+		<!--<ToolbarItem Text="{x:Static resource:AppResources.Images}"
 					 IconImageSource="{AppThemeBinding Light='icn_image_dark', Dark='icn_image_light'}"
 					 Command="{Binding ManageAttachedImagesCommand}"
-					 Order="Primary" />
+					 Order="Primary" />-->
 		<ToolbarItem x:Name="deleteBtn"
 					 Text="{x:Static resource:AppResources.Delete}"
 					 IconImageSource="{AppThemeBinding Light='icn_trash_dark', Dark='icn_trash_light'}"

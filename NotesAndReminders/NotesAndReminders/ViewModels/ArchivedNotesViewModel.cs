@@ -58,6 +58,15 @@ namespace NotesAndReminders.ViewModels
 				await _dBService.GetAllArchivedNotesAsync(notes =>
 				{
 					Notes.Clear();
+
+					notes.Sort((el1, el2) =>
+					{
+						var n1 = el1 as Note;
+						var n2 = el2 as Note;
+
+						return n2.LastEdited.CompareTo(n1.LastEdited);
+					});
+
 					notes.ForEach(note =>
 					{
 						var nt = note as Note;

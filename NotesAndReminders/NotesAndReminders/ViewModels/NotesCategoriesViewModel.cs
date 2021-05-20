@@ -70,6 +70,15 @@ namespace NotesAndReminders.ViewModels
 				await _dBService.GetAllNoteTypesAsync(noteTypes =>
 				{
 					Categories.Clear();
+
+					noteTypes.Sort((el1, el2) =>
+					{
+						var nt1 = el1 as NoteType;
+						var nt2 = el2 as NoteType;
+
+						return nt1.Name.CompareTo(nt2.Name);
+					});
+
 					noteTypes.ForEach(noteType => Categories.Add(noteType as NoteType));
 
 					IsRefreshing = false;

@@ -49,6 +49,12 @@ namespace NotesAndReminders.ViewModels
 			await base.ReloadDataAsync();
 
 			var notes = await _trashService.GetTrashedNotesAsync();
+
+			notes.Sort((n1, n2) =>
+			{
+				return n2.LastEdited.CompareTo(n1.LastEdited);
+			});
+
 			Notes.Clear();
 			notes.ForEach((note) => Notes.Add(note));
 

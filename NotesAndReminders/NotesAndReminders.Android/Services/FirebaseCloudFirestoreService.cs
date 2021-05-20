@@ -12,6 +12,7 @@ using NotesAndReminders.Droid.Services;
 using NotesAndReminders.Exceptions;
 using NotesAndReminders.Models;
 using NotesAndReminders.Services;
+using NotesAndReminders.Resources;
 using NotesAndReminders.Droid.Extensions;
 using System;
 using System.Collections.Generic;
@@ -44,6 +45,14 @@ namespace NotesAndReminders.Droid.Services
 				{
 					imgUrls = await StoreImages(note.Images, docRef.Id);
 				}
+				if (note.Type == null)
+				{
+					note.Type = new NoteType()
+					{
+						Name = "Uncategorized",
+						Color = Constants.NotesColorsOptions.FirstOrDefault()
+					};
+				}
 
 				Dictionary<string, object> noteDoc = new Dictionary<string, object>
 				{
@@ -52,7 +61,7 @@ namespace NotesAndReminders.Droid.Services
 					{ "title", note.Title },
 					{ "text", note.Text},
 					{ "state", NoteState.Regular.ToString()  },
-					//{ "type", note.Type},
+					{ "typeId", note.Type.Id},
 					{ "addition_content", imgUrls},
 					{ "checklist", note.Checklist},
 					{ "last_time_modifired", note.LastEdited}
@@ -178,7 +187,7 @@ namespace NotesAndReminders.Droid.Services
 				}
 
 				docRef = _db.Collection(colName).Document(note.Id.ToString());
-				if (isArchiving != true)
+				if (isArchiving != true && note.Images != null)
 				{
 					await DeleteImage("DeleteFolder", note.Id, note.Images);
 				}
@@ -265,10 +274,11 @@ namespace NotesAndReminders.Droid.Services
 		}
 		public async Task GetNoteAsync(string noteId, Action<IDBItem> onNoteRecievedCallback)
 		{
-			DocumentReference docRef = _db.Collection("Notes").Document(noteId);
 			try
 			{
+				DocumentReference docRef = _db.Collection("Notes").Document(noteId);
 				await docRef.Get().AddOnCompleteListener(new OnCompleteListener<Note>(onNoteRecievedCallback));
+				
 			}
 			catch (Exception ex)
 			{
@@ -282,10 +292,11 @@ namespace NotesAndReminders.Droid.Services
 
 		public async Task GetNoteTypeAsync(string noteTypeId, Action<IDBItem> onNoteTypeRecievedCallback)
 		{
-			DocumentReference docRef = _db.Collection("NotesTypes").Document(noteTypeId);
 			try
 			{
+				DocumentReference docRef = _db.Collection("NotesTypes").Document(noteTypeId);
 				await docRef.Get().AddOnCompleteListener(new OnCompleteListener<NoteType>(onNoteTypeRecievedCallback));
+
 			}
 			catch (Exception ex)
 			{
@@ -327,7 +338,7 @@ namespace NotesAndReminders.Droid.Services
 					{ "user_Id", _auth.CurrentUser.Uid},
 					{ "title", note.Title },
 					{ "text", note.Text},
-					//{ "type", note.Type},
+					{ "typeId", note.Type.Id},
 					{ "addition_content", imgUrls },
 					{ "checklist", note.Checklist},
 					{ "last_time_modifired", note.LastEdited}
@@ -392,7 +403,7 @@ namespace NotesAndReminders.Droid.Services
 					{ "title", note.Title },
 					{ "text", note.Text},
 					{ "state", NoteState.Archived.ToString()  },
-					//{ "type", note.Type},
+					{ "typeId", note.Type.Id},
 					{ "addition_content", imgUrls },
 					{ "checklist", note.Checklist},
 					{ "last_time_modifired", note.LastEdited}
@@ -430,5 +441,6 @@ namespace NotesAndReminders.Droid.Services
 				throw;
 			}
 		}
+
 	}
 }

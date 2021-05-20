@@ -10,7 +10,8 @@ namespace NotesAndReminders.Models
 		public string Title { get; set; }
 		[JsonProperty("text")]
 		public string Text { get; set; }
-		[JsonProperty("type")]
+		[JsonProperty("typeId")]
+		public string NoteTypeId { get; set; }
 		public NoteType Type { get; set; }
 		[JsonProperty("addition_content")]
 		public Dictionary<string, byte[]> Images { get; set; }

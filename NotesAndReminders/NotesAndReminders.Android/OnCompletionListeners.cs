@@ -1,6 +1,7 @@
 ﻿using Android.Gms.Tasks;
 using Firebase.Firestore;
 using NotesAndReminders.Droid.Extensions;
+using NotesAndReminders.Droid.Services;
 using NotesAndReminders.Models;
 using System;
 using System.Collections.Generic;
@@ -18,10 +19,15 @@ namespace NotesAndReminders.Droid
 		}
 		private static T Convert(DocumentSnapshot doc)
 		{
+			Newtonsoft.Json.JsonSerializerSettings settings = new Newtonsoft.Json.JsonSerializerSettings
+			{
+				TypeNameHandling = Newtonsoft.Json.TypeNameHandling.Auto,
+				Formatting = Newtonsoft.Json.Formatting.Indented
+			};
 			try
 			{
-				var jsonStr = Newtonsoft.Json.JsonConvert.SerializeObject(doc.Data.ToDictionary());
-				var item = Newtonsoft.Json.JsonConvert.DeserializeObject<T>(jsonStr);
+				var jsonStr = Newtonsoft.Json.JsonConvert.SerializeObject(doc.Data.ToDictionary(), settings);
+				var item = Newtonsoft.Json.JsonConvert.DeserializeObject<T>(jsonStr, settings);
 				item.Id = doc.Id;
 
 				return item;
@@ -89,7 +95,7 @@ namespace NotesAndReminders.Droid
 			}
 		}
 
-		public void OnComplete(Android.Gms.Tasks.Task task)
+		public async void OnComplete(Android.Gms.Tasks.Task task)
 		{
 			if (task.IsSuccessful)
 			{
@@ -102,7 +108,27 @@ namespace NotesAndReminders.Droid
 					foreach (var item in collQuery.Documents)
 					{
 						var convertedItem = Convert(item);
-						models.Add(convertedItem);
+						if(convertedItem is Note note)
+						{
+							FirebaseCloudFirestoreService service = new FirebaseCloudFirestoreService();
+							var nt = new NoteType();
+							if(note.NoteTypeId != null)
+							{
+								await service.GetNoteTypeAsync(note.NoteTypeId, notetype =>
+								{
+									nt = notetype as NoteType;
+								});
+
+								note.Type = nt;
+							}
+
+							models.Add(note);
+						}
+						else
+						{
+							models.Add(convertedItem);
+						}
+
 					}
 
 					_onCompleteCallback?.Invoke(models);
@@ -135,11 +161,12 @@ namespace NotesAndReminders.Droid
 				var docObj = task.Result;
 				if (docObj is DocumentSnapshot docSnap && docSnap.Exists())
 				{
-					var user = new User();
-
-					user.Id = docSnap.Id;
-					user.UserName = docSnap.GetString("Name");
-					user.Email = docSnap.GetString("email");
+					var user = new User
+					{
+						Id = docSnap.Id,
+						UserName = docSnap.GetString("Name"),
+						Email = docSnap.GetString("email")
+					};
 
 					_onUserCompleteCallback?.Invoke(user);
 				}

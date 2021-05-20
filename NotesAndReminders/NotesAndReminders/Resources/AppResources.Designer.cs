@@ -403,6 +403,15 @@ namespace NotesAndReminders.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to A note without a body can&apos;t be saved.
+        /// </summary>
+        internal static string NoteWithoutBodyCanNotBeSaved {
+            get {
+                return ResourceManager.GetString("NoteWithoutBodyCanNotBeSaved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nothing found.
         /// </summary>
         internal static string NothingFound {

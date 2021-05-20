@@ -231,6 +231,9 @@
   <data name="NotesUseBackgroundOfCategory" xml:space="preserve">
     <value>Notes use the background color of their category</value>
   </data>
+  <data name="NoteWithoutBodyCanNotBeSaved" xml:space="preserve">
+    <value>A note without a body can't be saved</value>
+  </data>
   <data name="NothingFound" xml:space="preserve">
     <value>Nothing found</value>
   </data>

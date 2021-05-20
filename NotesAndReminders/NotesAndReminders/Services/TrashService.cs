@@ -59,7 +59,7 @@ namespace NotesAndReminders.Services
 
 			if (!await _dBService.DeleteNoteAsync(note,false))
 			{
-				throw new Exception("Failed to delete the note ftom db");
+				throw new Exception("Failed to delete the note from db");
 			}
 
 			switch (note.State)

@@ -306,7 +306,9 @@ namespace NotesAndReminders.Droid.Services
 			try
 			{
 				DocumentReference docRef = _db.Collection("NotesTypes").Document(noteTypeId);
-				await docRef.Get().AddOnCompleteListener(new OnCompleteListener<NoteType>(onNoteTypeRecievedCallback));
+				var task = docRef.Get();
+				var listener = new OnCompleteListener<NoteType>(onNoteTypeRecievedCallback);
+				await task.AddOnCompleteListener(listener);
 
 			}
 			catch (Exception ex)

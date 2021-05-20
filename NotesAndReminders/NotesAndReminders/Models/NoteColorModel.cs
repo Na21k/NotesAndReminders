@@ -21,9 +21,10 @@ namespace NotesAndReminders.Models
 				}
 			}
 		}
-		[JsonConverter(typeof(ColorJsonConverter))]
+
+
 		public Color Light { get; set; }
-		[JsonConverter(typeof(ColorJsonConverter))]
+
 		public Color Dark { get; set; }
 
 		public event PropertyChangedEventHandler PropertyChanged;

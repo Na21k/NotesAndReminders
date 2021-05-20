@@ -45,31 +45,42 @@ namespace NotesAndReminders.Droid.Services
 				{
 					imgUrls = await StoreImages(note.Images, docRef.Id);
 				}
+
 				if (note.Type == null)
 				{
-					note.Type = new NoteType()
+
+					Dictionary<string, object> noteDoc = new Dictionary<string, object>
 					{
-						Name = "Uncategorized",
-						Color = Constants.NotesColorsOptions.FirstOrDefault()
+						{ "id", docRef.Id},
+						{ "user_Id", _auth.CurrentUser.Uid},
+						{ "title", note.Title },
+						{ "text", note.Text},
+						{ "state", NoteState.Regular.ToString()  },
+						{ "addition_content", imgUrls},
+						{ "checklist", note.Checklist},
+						{ "last_time_modifired", note.LastEdited}
 					};
+
+					await docRef.Set(noteDoc.Convert());
+				}
+				else
+				{
+					Dictionary<string, object> noteDoc = new Dictionary<string, object>
+					{
+						{ "id", docRef.Id},
+						{ "user_Id", _auth.CurrentUser.Uid},
+						{ "title", note.Title },
+						{ "text", note.Text},
+						{ "state", NoteState.Regular.ToString()  },
+						{ "typeId", note.Type.Id},
+						{ "addition_content", imgUrls},
+						{ "checklist", note.Checklist},
+						{ "last_time_modifired", note.LastEdited}
+					};
+
+					await docRef.Set(noteDoc.Convert());
 				}
 
-				Dictionary<string, object> noteDoc = new Dictionary<string, object>
-				{
-					{ "id", docRef.Id},
-					{ "user_Id", _auth.CurrentUser.Uid},
-					{ "title", note.Title },
-					{ "text", note.Text},
-					{ "state", NoteState.Regular.ToString()  },
-					{ "typeId", note.Type.Id},
-					{ "addition_content", imgUrls},
-					{ "checklist", note.Checklist},
-					{ "last_time_modifired", note.LastEdited}
-				};
-
-
-
-				await docRef.Set(noteDoc.Convert());
 
 				return true;
 			}
@@ -331,20 +342,39 @@ namespace NotesAndReminders.Droid.Services
 				{
 					imgUrls = await StoreImages(note.Images, note.Id);
 				}
-
-				Dictionary<string, object> updatedNote = new Dictionary<string, object>()
+				if (note.Type == null || note.Type.Name == "Uncategorized")
 				{
-					{ "id", note.Id},
-					{ "user_Id", _auth.CurrentUser.Uid},
-					{ "title", note.Title },
-					{ "text", note.Text},
-					{ "typeId", note.Type.Id},
-					{ "addition_content", imgUrls },
-					{ "checklist", note.Checklist},
-					{ "last_time_modifired", note.LastEdited}
-				};
+					Dictionary<string, object> updatedNote = new Dictionary<string, object>
+					{
+						{ "id", docRef.Id},
+						{ "user_Id", _auth.CurrentUser.Uid},
+						{ "title", note.Title },
+						{ "text", note.Text},
+						{ "addition_content", imgUrls},
+						{ "checklist", note.Checklist},
+						{ "last_time_modifired", note.LastEdited}
+					};
 
-				await docRef.Update(updatedNote.Convert());
+					await DeleteNoteAsync(note, false);
+					await docRef.Set(updatedNote.Convert());
+				}
+				else
+				{
+					Dictionary<string, object> updatedNote = new Dictionary<string, object>()
+					{
+						{ "id", note.Id},
+						{ "user_Id", _auth.CurrentUser.Uid},
+						{ "title", note.Title },
+						{ "text", note.Text},
+						{ "typeId", note.Type.Id},
+						{ "addition_content", imgUrls },
+						{ "checklist", note.Checklist},
+						{ "last_time_modifired", note.LastEdited}
+					};
+
+					await docRef.Update(updatedNote.Convert());
+				}
+
 
 				return true;
 			}
@@ -395,22 +425,39 @@ namespace NotesAndReminders.Droid.Services
 				{
 					imgUrls = await StoreImages(note.Images, note.Id);
 				}
-
-				Dictionary<string, object> noteDoc = new Dictionary<string, object>
+				if (note.Type == null && note.Type.Name == "Uncategorized")
 				{
-					{ "id", docRef.Id},
-					{ "user_Id", _auth.CurrentUser.Uid},
-					{ "title", note.Title },
-					{ "text", note.Text},
-					{ "state", NoteState.Archived.ToString()  },
-					{ "typeId", note.Type.Id},
-					{ "addition_content", imgUrls },
-					{ "checklist", note.Checklist},
-					{ "last_time_modifired", note.LastEdited}
-				};
+					Dictionary<string, object> noteDoc = new Dictionary<string, object>
+					{
+						{ "id", docRef.Id},
+						{ "user_Id", _auth.CurrentUser.Uid},
+						{ "title", note.Title },
+						{ "text", note.Text},
+						{ "state", NoteState.Archived.ToString()  },
+						{ "addition_content", imgUrls},
+						{ "checklist", note.Checklist},
+						{ "last_time_modifired", note.LastEdited}
+					};
 
-				await docRef.Set(noteDoc.Convert());
+					await docRef.Set(noteDoc.Convert());
+				}
+				else
+				{
+					Dictionary<string, object> noteDoc = new Dictionary<string, object>()
+					{
+						{ "id", note.Id},
+						{ "user_Id", _auth.CurrentUser.Uid},
+						{ "title", note.Title },
+						{ "text", note.Text},
+						{ "state", NoteState.Archived.ToString()  },
+						{ "typeId", note.Type.Id},
+						{ "addition_content", imgUrls },
+						{ "checklist", note.Checklist},
+						{ "last_time_modifired", note.LastEdited}
+					};
 
+					await docRef.Set(noteDoc.Convert());
+				}
 
 				await DeleteNoteAsync(note, true);
 				return true;

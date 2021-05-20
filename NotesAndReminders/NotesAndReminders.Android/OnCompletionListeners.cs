@@ -1,10 +1,12 @@
-﻿using Android.Gms.Tasks;
-using Firebase.Firestore;
+﻿using Firebase.Firestore;
 using NotesAndReminders.Droid.Extensions;
 using NotesAndReminders.Droid.Services;
 using NotesAndReminders.Models;
 using System;
 using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
+using Xamarin.Forms;
 
 namespace NotesAndReminders.Droid
 {
@@ -29,8 +31,26 @@ namespace NotesAndReminders.Droid
 				var jsonStr = Newtonsoft.Json.JsonConvert.SerializeObject(doc.Data.ToDictionary(), settings);
 				var item = Newtonsoft.Json.JsonConvert.DeserializeObject<T>(jsonStr, settings);
 				item.Id = doc.Id;
+				if (item is NoteType nt)
+				{
+					var data = (JObject)JsonConvert.DeserializeObject(jsonStr, settings);
+					var lcolor = data["noteColorLight"].Value<string>();
+					var dcolor = data["noteColorDark"].Value<string>();
+					var color = Color.FromHex(lcolor);
 
-				return item;
+					nt.Color = new NoteColorModel();
+					nt.Color.Light = color;
+
+					color = Color.FromHex(dcolor);
+					nt.Color.Dark = color;
+
+					return (T)System.Convert.ChangeType(nt, typeof(T));
+				}
+				else
+				{
+					return item;
+				}
+
 			}
 			catch (Exception ex)
 			{
@@ -80,11 +100,28 @@ namespace NotesAndReminders.Droid
 			};
 			try
 			{
-				var jsonStr = Newtonsoft.Json.JsonConvert.SerializeObject(doc.Data.ToDictionary(),settings);
-				var item = Newtonsoft.Json.JsonConvert.DeserializeObject<T>(jsonStr,settings);
+				var jsonStr = Newtonsoft.Json.JsonConvert.SerializeObject(doc.Data.ToDictionary(), settings);
+				var item = Newtonsoft.Json.JsonConvert.DeserializeObject<T>(jsonStr, settings);
 				item.Id = doc.Id;
+				if (item is NoteType nt)
+				{
+					var data = (JObject)JsonConvert.DeserializeObject(jsonStr,settings);
+					var lcolor = data["noteColorLight"].Value<string>();
+					var dcolor = data["noteColorDark"].Value<string>();
+					var color = Color.FromHex(lcolor);
 
-				return item;
+					nt.Color = new NoteColorModel();
+					nt.Color.Light = color;
+
+					color = Color.FromHex(dcolor);
+					nt.Color.Dark = color;
+
+					return (T)System.Convert.ChangeType(nt, typeof(T));
+				}
+				else
+				{
+					return item;
+				}
 			}
 			catch (Exception ex)
 			{
@@ -104,16 +141,16 @@ namespace NotesAndReminders.Droid
 				var collObj = task.Result;
 				if (collObj is QuerySnapshot collQuery)
 				{
-					
+
 					foreach (var item in collQuery.Documents)
 					{
 						var convertedItem = Convert(item);
-						if(convertedItem is Note note)
+						if (convertedItem is Note note)
 						{
-							FirebaseCloudFirestoreService service = new FirebaseCloudFirestoreService();
-							var nt = new NoteType();
-							if(note.NoteTypeId != null)
+							if (note.NoteTypeId != null)
 							{
+								FirebaseCloudFirestoreService service = new FirebaseCloudFirestoreService();
+								var nt = new NoteType();
 								await service.GetNoteTypeAsync(note.NoteTypeId, notetype =>
 								{
 									nt = notetype as NoteType;

@@ -250,7 +250,10 @@ namespace NotesAndReminders.Droid.Services
 				item.ForEach(note =>
 				{
 					var nt = note as Note;
-					notesList.Add(nt);
+					if (nt.Type.Id == noteType.Id)
+					{
+						notesList.Add(nt);
+					}
 				});
 
 				return notesList;
@@ -303,22 +306,22 @@ namespace NotesAndReminders.Droid.Services
 			}
 		}
 
-		public async Task GetAllNotesAsync(Action<List<IDBItem>> onNotesRecievedCallback)
-		{
-			try
-			{
-				var query = _db.Collection("Notes");
-				await query.WhereEqualTo("user_Id", _auth.CurrentUser.Uid).Get().AddOnCompleteListener(new OnCompleteListListener<Note>(onNotesRecievedCallback));
+		//public async Task GetAllNotesAsync(Action<List<IDBItem>> onNotesRecievedCallback)
+		//{
+		//	try
+		//	{
+		//		var query = _db.Collection("Notes");
+		//		await query.WhereEqualTo("user_Id", _auth.CurrentUser.Uid).Get().AddOnCompleteListener(new OnCompleteListListener<Note>(onNotesRecievedCallback));
 
-			}
-			catch (Exception ex)
-			{
-				System.Diagnostics.Debug.WriteLine(ex.Message);
-				System.Diagnostics.Debug.WriteLine(ex.StackTrace);
+		//	}
+		//	catch (Exception ex)
+		//	{
+		//		System.Diagnostics.Debug.WriteLine(ex.Message);
+		//		System.Diagnostics.Debug.WriteLine(ex.StackTrace);
 
-				throw;
-			}
-		}
+		//		throw;
+		//	}
+		//}
 
 
 		public async Task GetAllNoteTypesAsync(Action<List<IDBItem>> onNotesTypeRecievedCallback)

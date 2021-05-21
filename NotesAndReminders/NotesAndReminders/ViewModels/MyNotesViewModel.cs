@@ -56,37 +56,36 @@ namespace NotesAndReminders.ViewModels
 
 			if (_authorizationService.IsLoggedIn)
 			{
-				await _dBService.GetAllNotesAsync(notes =>
+				var notes = await _dBService.GetAllNotes();
+
+				Notes.Clear();
+
+				notes.Sort((el1, el2) =>
 				{
-					Notes.Clear();
+					var n1 = el1 as Note;
+					var n2 = el2 as Note;
 
-					notes.Sort((el1, el2) =>
-					{
-						var n1 = el1 as Note;
-						var n2 = el2 as Note;
-
-						return n2.LastEdited.CompareTo(n1.LastEdited);
-					});
-
-					notes.ForEach(note =>
-					{
-						var nt = note as Note;
-
-						if (nt.Type == null)
-						{
-							nt.Type = new NoteType()
-							{
-								Name = AppResources.Uncategorized,
-								Color = Constants.NotesColorsOptions.FirstOrDefault()
-							};
-						}
-
-						Notes.Add(nt);
-					});
-
-					IsRefreshing = false;
-					OnPropertyChanged(nameof(ItemsAvailable));
+					return n2.LastEdited.CompareTo(n1.LastEdited);
 				});
+
+				notes.ForEach(note =>
+				{
+					var nt = note as Note;
+
+					if (nt.Type == null)
+					{
+						nt.Type = new NoteType()
+						{
+							Name = AppResources.Uncategorized,
+							Color = Constants.NotesColorsOptions.FirstOrDefault()
+						};
+					}
+
+					Notes.Add(nt);
+				});
+
+				IsRefreshing = false;
+				OnPropertyChanged(nameof(ItemsAvailable));
 			}
 			else
 			{

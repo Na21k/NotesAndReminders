@@ -14,7 +14,7 @@ namespace NotesAndReminders.Services
 		Task<bool> DeleteNoteTypeAsync(NoteType noteType);
 		Task<bool> UpdateNoteTypeAsync(NoteType noteType);
 		Task GetNoteAsync(string noteId, Action<IDBItem> onNoteRecievedCallback);
-		Task GetAllNotesAsync(Action<List<IDBItem>> onNotesRecievedCallback);
+		//Task GetAllNotesAsync(Action<List<IDBItem>> onNotesRecievedCallback);
 		Task GetNoteTypeAsync(string noteTypeId, Action<IDBItem> onNoteTypeRecievedCallback);
 		Task GetAllNoteTypesAsync(Action<List<IDBItem>> onNotesTypeRecievedCallback);
 		Task GetAllArchivedNotesAsync(Action<List<IDBItem>> onNotesRecievedCallback);

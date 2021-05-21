@@ -22,6 +22,7 @@ namespace NotesAndReminders.ViewModels
 			get => _isRefreshing;
 			set => SetProperty(ref _isRefreshing, value);
 		}
+		public bool ItemsAvailable => Notes.Count > 0;
 
 		public MyNotesViewModel() : base()
 		{
@@ -86,6 +87,7 @@ namespace NotesAndReminders.ViewModels
 					});
 
 					IsRefreshing = false;
+					OnPropertyChanged(nameof(ItemsAvailable));
 				});
 			}
 			else

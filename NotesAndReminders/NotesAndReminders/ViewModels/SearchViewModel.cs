@@ -52,7 +52,9 @@ namespace NotesAndReminders.ViewModels
 			FoundNotes.Clear();
 			Notes.ForEach(note =>
 			{
-				if ((note.Title != null && note.Title.Contains(SearchText)) || (note.Text != null && note.Text.Contains(SearchText)))
+				if ((note.Title != null && note.Title.Contains(SearchText)) ||
+				(note.Text != null && note.Text.Contains(SearchText)) ||
+				(note.Type != null && note.Type.Name.Contains(SearchText)))
 				{
 					FoundNotes.Add(note);
 				}

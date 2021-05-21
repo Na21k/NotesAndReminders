@@ -27,20 +27,20 @@ namespace NotesAndReminders.ViewModels
 			RefreshCommand = new Command(RefreshAsync);
 			EmptyTrashCommand = new Command(EmptyTrashAsync);
 
-			MessagingCenter.Subscribe<NoteDetailsViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdatedAsync);
-			MessagingCenter.Subscribe<MyNotesViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdatedAsync);
-			MessagingCenter.Subscribe<ArchivedNotesViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdatedAsync);
-			MessagingCenter.Subscribe<SearchViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdatedAsync);
+			MessagingCenter.Subscribe<NoteDetailsViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdated);
+			MessagingCenter.Subscribe<MyNotesViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdated);
+			MessagingCenter.Subscribe<ArchivedNotesViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdated);
+			MessagingCenter.Subscribe<SearchViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdated);
 			MessagingCenter.Subscribe<ProfileViewModel>(this, Constants.LoggedOutEvent, OnLoggedOut);
 		}
 
-		public override async void OnAppearing()
+		public override void OnAppearing()
 		{
 			base.OnAppearing();
 
 			if (Notes.Count == 0)
 			{
-				await ReloadDataAsync();
+				IsRefreshing = true;
 			}
 		}
 
@@ -75,24 +75,24 @@ namespace NotesAndReminders.ViewModels
 			}
 		}
 
-		private async void OnNotesUpdatedAsync(NoteDetailsViewModel vm)
+		private void OnNotesUpdated(NoteDetailsViewModel vm)
 		{
-			await ReloadDataAsync();
+			IsRefreshing = true;
 		}
 
-		private async void OnNotesUpdatedAsync(MyNotesViewModel vm)
+		private void OnNotesUpdated(MyNotesViewModel vm)
 		{
-			await ReloadDataAsync();
+			IsRefreshing = true;
 		}
 
-		private async void OnNotesUpdatedAsync(ArchivedNotesViewModel vm)
+		private void OnNotesUpdated(ArchivedNotesViewModel vm)
 		{
-			await ReloadDataAsync();
+			IsRefreshing = true;
 		}
 
-		private async void OnNotesUpdatedAsync(SearchViewModel vm)
+		private void OnNotesUpdated(SearchViewModel vm)
 		{
-			await ReloadDataAsync();
+			IsRefreshing = true;
 		}
 
 		private void OnLoggedOut(ProfileViewModel vm)

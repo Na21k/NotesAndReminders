@@ -87,6 +87,11 @@
 						</Frame>
 					</DataTemplate>
 				</CollectionView.ItemTemplate>
+				<CollectionView.Footer>
+					<Grid IsVisible="{Binding ItemsAvailable}"
+						  HeightRequest="77"
+						  HorizontalOptions="CenterAndExpand" />
+				</CollectionView.Footer>
 			</CollectionView>
 		</RefreshView>
 		<ImageButton AbsoluteLayout.LayoutBounds="0.98,0.98,56,56"

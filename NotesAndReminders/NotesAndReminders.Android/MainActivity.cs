@@ -10,7 +10,7 @@ using Firebase.Firestore;
 
 namespace NotesAndReminders.Droid
 {
-	[Activity(Label = "NotesAndReminders", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize)]
+	[Activity(Label = "Notes And Reminders", Icon = "@mipmap/ic_launcher", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize)]
 	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
 	{
 		protected override void OnCreate(Bundle savedInstanceState)
@@ -34,10 +34,9 @@ namespace NotesAndReminders.Droid
 				.Build();
 
 			FirebaseApp.InitializeApp(Application.Context);
-			
+
 			LoadApplication(new App());
 		}
-
 
 		public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
 		{

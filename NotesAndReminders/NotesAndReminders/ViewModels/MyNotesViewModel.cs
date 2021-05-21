@@ -22,6 +22,7 @@ namespace NotesAndReminders.ViewModels
 			get => _isRefreshing;
 			set => SetProperty(ref _isRefreshing, value);
 		}
+		public bool ItemsAvailable => Notes.Count > 0;
 
 		public MyNotesViewModel() : base()
 		{
@@ -31,21 +32,21 @@ namespace NotesAndReminders.ViewModels
 			NewNoteCommand = new Command(NewNoteAsync);
 			RefreshCommand = new Command(RefreshAsync);
 
-			MessagingCenter.Subscribe<NoteDetailsViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdatedAsync);
-			MessagingCenter.Subscribe<ArchivedNotesViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdatedAsync);
-			MessagingCenter.Subscribe<TrashViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdatedAsync);
-			MessagingCenter.Subscribe<SearchViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdatedAsync);
+			MessagingCenter.Subscribe<NoteDetailsViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdated);
+			MessagingCenter.Subscribe<NotesBaseViewModel>(this, Constants.NoteUnarchivedEvent, OnNoteUnarchived);
+			MessagingCenter.Subscribe<NotesBaseViewModel>(this, Constants.NoteRestoredFromTrashEvent, OnNoteRestoredFromTrash);
+			MessagingCenter.Subscribe<SearchViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdated);
 			MessagingCenter.Subscribe<ProfileViewModel>(this, Constants.LoggedOutEvent, OnLoggedOut);
-			MessagingCenter.Subscribe<NotesBaseViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdatedAsync);
+			MessagingCenter.Subscribe<NotesBaseViewModel>(this, Constants.NoteTypeSet, OnNoteTypeSet);
 		}
 
-		public override async void OnAppearing()
+		public override void OnAppearing()
 		{
 			base.OnAppearing();
 
 			if (Notes.Count == 0)
 			{
-				await ReloadDataAsync();
+				IsRefreshing = true;
 			}
 		}
 
@@ -55,11 +56,18 @@ namespace NotesAndReminders.ViewModels
 
 			if (_authorizationService.IsLoggedIn)
 			{
-				IsRefreshing = true;
-
 				await _dBService.GetAllNotesAsync(notes =>
 				{
 					Notes.Clear();
+
+					notes.Sort((el1, el2) =>
+					{
+						var n1 = el1 as Note;
+						var n2 = el2 as Note;
+
+						return n2.LastEdited.CompareTo(n1.LastEdited);
+					});
+
 					notes.ForEach(note =>
 					{
 						var nt = note as Note;
@@ -77,6 +85,7 @@ namespace NotesAndReminders.ViewModels
 					});
 
 					IsRefreshing = false;
+					OnPropertyChanged(nameof(ItemsAvailable));
 				});
 			}
 			else
@@ -102,29 +111,29 @@ namespace NotesAndReminders.ViewModels
 			await ReloadDataAsync();
 		}
 
-		private async void OnNotesUpdatedAsync(NoteDetailsViewModel vm)
+		private void OnNotesUpdated(NoteDetailsViewModel vm)
 		{
-			await ReloadDataAsync();
+			IsRefreshing = true;
 		}
 
-		private async void OnNotesUpdatedAsync(ArchivedNotesViewModel vm)
+		private void OnNoteUnarchived(NotesBaseViewModel vm)
 		{
-			await ReloadDataAsync();
+			IsRefreshing = true;
 		}
 
-		private async void OnNotesUpdatedAsync(TrashViewModel vm)
+		private void OnNoteRestoredFromTrash(NotesBaseViewModel vm)
 		{
-			await ReloadDataAsync();
+			IsRefreshing = true;
 		}
 
-		private async void OnNotesUpdatedAsync(SearchViewModel vm)
+		private void OnNotesUpdated(SearchViewModel vm)
 		{
-			await ReloadDataAsync();
+			IsRefreshing = true;
 		}
 
-		private async void OnNotesUpdatedAsync(NotesBaseViewModel vm)
+		private void OnNoteTypeSet(NotesBaseViewModel vm)
 		{
-			await ReloadDataAsync();
+			IsRefreshing = true;
 		}
 
 		private void OnLoggedOut(ProfileViewModel vm)

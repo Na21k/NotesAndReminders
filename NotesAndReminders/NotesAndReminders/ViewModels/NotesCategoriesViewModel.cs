@@ -45,17 +45,17 @@ namespace NotesAndReminders.ViewModels
 			DeleteCategoryCommand = new Command<NoteType>(DeleteCategoryAsync);
 			RefreshCommand = new Command(RefreshAsync);
 
-			MessagingCenter.Subscribe<NewOrEditCategoryViewModel>(this, Constants.NotesCategoriesUpdatedEvent, OnNotesCategoriesUpdatedAsync);
+			MessagingCenter.Subscribe<NewOrEditCategoryViewModel>(this, Constants.NotesCategoriesUpdatedEvent, OnNotesCategoriesUpdated);
 			MessagingCenter.Subscribe<ProfileViewModel>(this, Constants.LoggedOutEvent, OnLoggedOut);
 		}
 
-		public override async void OnAppearing()
+		public override void OnAppearing()
 		{
 			base.OnAppearing();
 
 			if (Categories.Count == 0)
 			{
-				await ReloadDataAsync();
+				IsRefreshing = true;
 			}
 		}
 
@@ -65,11 +65,18 @@ namespace NotesAndReminders.ViewModels
 
 			if (_authorizationService.IsLoggedIn)
 			{
-				IsRefreshing = true;
-
 				await _dBService.GetAllNoteTypesAsync(noteTypes =>
 				{
 					Categories.Clear();
+
+					noteTypes.Sort((el1, el2) =>
+					{
+						var nt1 = el1 as NoteType;
+						var nt2 = el2 as NoteType;
+
+						return nt1.Name.CompareTo(nt2.Name);
+					});
+
 					noteTypes.ForEach(noteType => Categories.Add(noteType as NoteType));
 
 					IsRefreshing = false;
@@ -117,9 +124,9 @@ namespace NotesAndReminders.ViewModels
 			await ReloadDataAsync();
 		}
 
-		private async void OnNotesCategoriesUpdatedAsync(NewOrEditCategoryViewModel vm)
+		private void OnNotesCategoriesUpdated(NewOrEditCategoryViewModel vm)
 		{
-			await ReloadDataAsync();
+			IsRefreshing = true;
 		}
 
 		private void OnLoggedOut(ProfileViewModel vm)

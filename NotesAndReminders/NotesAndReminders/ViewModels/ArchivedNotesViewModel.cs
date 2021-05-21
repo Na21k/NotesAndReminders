@@ -29,21 +29,21 @@ namespace NotesAndReminders.ViewModels
 
 			RefreshCommand = new Command(RefreshAsync);
 
-			MessagingCenter.Subscribe<NoteDetailsViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdatedAsync);
-			MessagingCenter.Subscribe<MyNotesViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdatedAsync);
-			MessagingCenter.Subscribe<TrashViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdatedAsync);
-			MessagingCenter.Subscribe<SearchViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdatedAsync);
+			MessagingCenter.Subscribe<NoteDetailsViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdated);
+			MessagingCenter.Subscribe<MyNotesViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdated);
+			MessagingCenter.Subscribe<TrashViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdated);
+			MessagingCenter.Subscribe<SearchViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdated);
 			MessagingCenter.Subscribe<ProfileViewModel>(this, Constants.LoggedOutEvent, OnLoggedOut);
-			MessagingCenter.Subscribe<NotesBaseViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdatedAsync);
+			MessagingCenter.Subscribe<NotesBaseViewModel>(this, Constants.NoteTypeSet, OnNoteTypeSet);
 		}
 
-		public override async void OnAppearing()
+		public override void OnAppearing()
 		{
 			base.OnAppearing();
 
 			if (Notes.Count == 0)
 			{
-				await ReloadDataAsync();
+				IsRefreshing = true;
 			}
 		}
 
@@ -53,11 +53,18 @@ namespace NotesAndReminders.ViewModels
 
 			if (_authorizationService.IsLoggedIn)
 			{
-				IsRefreshing = true;
-
 				await _dBService.GetAllArchivedNotesAsync(notes =>
 				{
 					Notes.Clear();
+
+					notes.Sort((el1, el2) =>
+					{
+						var n1 = el1 as Note;
+						var n2 = el2 as Note;
+
+						return n2.LastEdited.CompareTo(n1.LastEdited);
+					});
+
 					notes.ForEach(note =>
 					{
 						var nt = note as Note;
@@ -88,29 +95,29 @@ namespace NotesAndReminders.ViewModels
 			await ReloadDataAsync();
 		}
 
-		private async void OnNotesUpdatedAsync(NoteDetailsViewModel vm)
+		private void OnNotesUpdated(NoteDetailsViewModel vm)
 		{
-			await ReloadDataAsync();
+			IsRefreshing = true;
 		}
 
-		private async void OnNotesUpdatedAsync(MyNotesViewModel vm)
+		private void OnNotesUpdated(MyNotesViewModel vm)
 		{
-			await ReloadDataAsync();
+			IsRefreshing = true;
 		}
 
-		private async void OnNotesUpdatedAsync(TrashViewModel vm)
+		private void OnNotesUpdated(TrashViewModel vm)
 		{
-			await ReloadDataAsync();
+			IsRefreshing = true;
 		}
 
-		private async void OnNotesUpdatedAsync(SearchViewModel vm)
+		private void OnNotesUpdated(SearchViewModel vm)
 		{
-			await ReloadDataAsync();
+			IsRefreshing = true;
 		}
 
-		private async void OnNotesUpdatedAsync(NotesBaseViewModel vm)
+		private void OnNoteTypeSet(NotesBaseViewModel vm)
 		{
-			await ReloadDataAsync();
+			IsRefreshing = true;
 		}
 
 		private void OnLoggedOut(ProfileViewModel vm)

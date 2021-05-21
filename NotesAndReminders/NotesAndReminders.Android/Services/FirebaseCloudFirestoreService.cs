@@ -22,17 +22,17 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using System.IO;
 using Firebase.Storage;
+using System.Threading;
 
 [assembly: Dependency(typeof(FirebaseCloudFirestoreService))]
 namespace NotesAndReminders.Droid.Services
 {
+
 	public class FirebaseCloudFirestoreService : IDBService
 	{
 		private FirebaseFirestore _db = FirebaseFirestore.Instance;
 
 		private FirebaseAuth _auth = FirebaseAuth.Instance;
-
-
 		public async Task<bool> AddNoteAsync(Note note)
 		{
 			try
@@ -41,7 +41,7 @@ namespace NotesAndReminders.Droid.Services
 
 
 				var imgUrls = new Dictionary<string, string>();
-				if(note.Images != null)
+				if (note.Images != null)
 				{
 					imgUrls = await StoreImages(note.Images, docRef.Id);
 				}
@@ -94,7 +94,7 @@ namespace NotesAndReminders.Droid.Services
 
 		}
 
-		public async Task<Dictionary<string, string>> StoreImages(Dictionary<string,byte []> imageStream, string noteId)
+		public async Task<Dictionary<string, string>> StoreImages(Dictionary<string, byte[]> imageStream, string noteId)
 		{
 			try
 			{
@@ -112,7 +112,7 @@ namespace NotesAndReminders.Droid.Services
 
 				return result;
 			}
-			catch(Exception ex)
+			catch (Exception ex)
 			{
 				System.Diagnostics.Debug.WriteLine(ex.Message);
 				System.Diagnostics.Debug.WriteLine(ex.StackTrace);
@@ -121,7 +121,7 @@ namespace NotesAndReminders.Droid.Services
 			}
 		}
 
-		public async Task DeleteImage(string imageName, string noteId, Dictionary<string,byte[]> images)
+		public async Task DeleteImage(string imageName, string noteId, Dictionary<string, byte[]> images)
 		{
 			try
 			{
@@ -144,7 +144,7 @@ namespace NotesAndReminders.Droid.Services
 						.DeleteAsync();
 				}
 			}
-			catch(Exception ex)
+			catch (Exception ex)
 			{
 				System.Diagnostics.Debug.WriteLine(ex.Message);
 				System.Diagnostics.Debug.WriteLine(ex.StackTrace);
@@ -220,10 +220,79 @@ namespace NotesAndReminders.Droid.Services
 		{
 			try
 			{
+				var notesList = await FindNotesAsync(noteType);
+
+				await DeleteNoteWithType(notesList);
+
 				DocumentReference docRef = _db.Collection("NotesTypes").Document(noteType.Id.ToString());
 				await docRef.Delete();
 
 				return true;
+			}
+			catch (Exception ex)
+			{
+				System.Diagnostics.Debug.WriteLine(ex.Message);
+				System.Diagnostics.Debug.WriteLine(ex.StackTrace);
+
+				throw;
+			}
+		}
+
+		public async Task<List<Note>> FindNotesAsync(NoteType noteType)
+		{
+			try
+			{
+				var notesList = new List<Note>();
+				string noteTypeId = noteType.Id;
+
+				var item = await GetAllNotes();
+
+				item.ForEach(note =>
+				{
+					var nt = note as Note;
+					notesList.Add(nt);
+				});
+
+				return notesList;
+			}
+			catch (Exception ex)
+			{
+				System.Diagnostics.Debug.WriteLine(ex.Message);
+				System.Diagnostics.Debug.WriteLine(ex.StackTrace);
+
+				throw;
+			}
+		}
+
+		public async Task DeleteNoteWithType(List<Note> notesList)
+		{
+			try
+			{
+				foreach (var note in notesList)
+				{
+					note.Type = null;
+					note.NoteTypeId = null;
+
+					await DeleteNoteAsync(note, false);
+					await AddNoteAsync(note);
+				}
+			}
+			catch (Exception ex)
+			{
+				System.Diagnostics.Debug.WriteLine(ex.Message);
+				System.Diagnostics.Debug.WriteLine(ex.StackTrace);
+			}
+		}
+		public Task<List<IDBItem>> GetAllNotes()
+		{
+			try
+			{
+				var tcs = new TaskCompletionSource<List<IDBItem>>();
+
+				var query = _db.Collection("Notes");
+				query.WhereEqualTo("user_Id", _auth.CurrentUser.Uid).Get().AddOnCompleteListener(new Extensions.TaskListenere.OnCompleteListListener<Note>(tcs));
+
+				return tcs.Task;
 			}
 			catch (Exception ex)
 			{
@@ -250,6 +319,7 @@ namespace NotesAndReminders.Droid.Services
 				throw;
 			}
 		}
+
 
 		public async Task GetAllNoteTypesAsync(Action<List<IDBItem>> onNotesTypeRecievedCallback)
 		{
@@ -289,7 +359,7 @@ namespace NotesAndReminders.Droid.Services
 			{
 				DocumentReference docRef = _db.Collection("Notes").Document(noteId);
 				await docRef.Get().AddOnCompleteListener(new OnCompleteListener<Note>(onNoteRecievedCallback));
-				
+
 			}
 			catch (Exception ex)
 			{

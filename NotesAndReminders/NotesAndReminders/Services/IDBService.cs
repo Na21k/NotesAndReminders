@@ -20,5 +20,6 @@ namespace NotesAndReminders.Services
 		Task GetAllArchivedNotesAsync(Action<List<IDBItem>> onNotesRecievedCallback);
 		Task<bool> ArchiveNoteAsync(Note note);
 		Task<bool> UnarchiveNoteAsync(Note note);
+		Task<List<IDBItem>> GetAllNotes();
 	}
 }

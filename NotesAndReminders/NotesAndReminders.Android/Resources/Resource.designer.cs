@@ -9235,13 +9235,16 @@ namespace NotesAndReminders.Droid
 			public const int notify_panel_notification_icon_bg = 2131165371;
 			
 			// aapt resource value: 0x7F0700BC
-			public const int tooltip_frame_dark = 2131165372;
+			public const int playstore_icon = 2131165372;
 			
 			// aapt resource value: 0x7F0700BD
-			public const int tooltip_frame_light = 2131165373;
+			public const int tooltip_frame_dark = 2131165373;
 			
 			// aapt resource value: 0x7F0700BE
-			public const int xamarin_logo = 2131165374;
+			public const int tooltip_frame_light = 2131165374;
+			
+			// aapt resource value: 0x7F0700BF
+			public const int xamarin_logo = 2131165375;
 			
 			static Drawable()
 			{
@@ -10397,17 +10400,23 @@ namespace NotesAndReminders.Droid
 		public partial class Mipmap
 		{
 			
+			// aapt resource value: 0x7F0C0003
+			public const int icon = 2131492867;
+			
+			// aapt resource value: 0x7F0C0004
+			public const int icon_round = 2131492868;
+			
 			// aapt resource value: 0x7F0C0000
-			public const int app_icon = 2131492864;
+			public const int ic_launcher = 2131492864;
 			
 			// aapt resource value: 0x7F0C0001
-			public const int icon = 2131492865;
+			public const int ic_launcher_foreground = 2131492865;
 			
 			// aapt resource value: 0x7F0C0002
-			public const int icon_round = 2131492866;
+			public const int ic_launcher_round = 2131492866;
 			
-			// aapt resource value: 0x7F0C0003
-			public const int launcher_foreground = 2131492867;
+			// aapt resource value: 0x7F0C0005
+			public const int launcher_foreground = 2131492869;
 			
 			static Mipmap()
 			{

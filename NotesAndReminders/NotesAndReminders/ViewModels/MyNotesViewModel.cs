@@ -33,11 +33,11 @@ namespace NotesAndReminders.ViewModels
 			RefreshCommand = new Command(RefreshAsync);
 
 			MessagingCenter.Subscribe<NoteDetailsViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdated);
-			MessagingCenter.Subscribe<ArchivedNotesViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdated);
-			MessagingCenter.Subscribe<TrashViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdated);
+			MessagingCenter.Subscribe<NotesBaseViewModel>(this, Constants.NoteUnarchivedEvent, OnNoteUnarchived);
+			MessagingCenter.Subscribe<NotesBaseViewModel>(this, Constants.NoteRestoredFromTrashEvent, OnNoteRestoredFromTrash);
 			MessagingCenter.Subscribe<SearchViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdated);
 			MessagingCenter.Subscribe<ProfileViewModel>(this, Constants.LoggedOutEvent, OnLoggedOut);
-			MessagingCenter.Subscribe<NotesBaseViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdated);
+			MessagingCenter.Subscribe<NotesBaseViewModel>(this, Constants.NoteTypeSet, OnNoteTypeSet);
 		}
 
 		public override void OnAppearing()
@@ -116,12 +116,12 @@ namespace NotesAndReminders.ViewModels
 			IsRefreshing = true;
 		}
 
-		private void OnNotesUpdated(ArchivedNotesViewModel vm)
+		private void OnNoteUnarchived(NotesBaseViewModel vm)
 		{
 			IsRefreshing = true;
 		}
 
-		private void OnNotesUpdated(TrashViewModel vm)
+		private void OnNoteRestoredFromTrash(NotesBaseViewModel vm)
 		{
 			IsRefreshing = true;
 		}
@@ -131,7 +131,7 @@ namespace NotesAndReminders.ViewModels
 			IsRefreshing = true;
 		}
 
-		private void OnNotesUpdated(NotesBaseViewModel vm)
+		private void OnNoteTypeSet(NotesBaseViewModel vm)
 		{
 			IsRefreshing = true;
 		}

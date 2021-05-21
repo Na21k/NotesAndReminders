@@ -20,6 +20,9 @@ namespace NotesAndReminders
 		public const string EditCategoryEvent = nameof(EditCategoryEvent);
 		public const string HideSaveAndDeleteButtonsEvent = nameof(HideSaveAndDeleteButtonsEvent);
 		public const string ManageNoteReminderOpened = nameof(ManageNoteReminderOpened);
+		public const string NoteTypeSet = nameof(NoteTypeSet);
+		public const string NoteUnarchivedEvent = nameof(NoteUnarchivedEvent);
+		public const string NoteRestoredFromTrashEvent = nameof(NoteRestoredFromTrashEvent);
 
 		public static readonly List<NoteColorModel> NotesColorsOptions = new List<NoteColorModel>()
 		{

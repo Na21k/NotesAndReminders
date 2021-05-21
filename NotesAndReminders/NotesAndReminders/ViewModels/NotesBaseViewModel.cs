@@ -118,7 +118,7 @@ namespace NotesAndReminders.ViewModels
 			if (await _dBService.UnarchiveNoteAsync(note))
 			{
 				Notes.Remove(note);
-				MessagingCenter.Send(this, Constants.NotesUpdatedEvent);
+				MessagingCenter.Send(this, Constants.NoteUnarchivedEvent);
 			}
 			else
 			{
@@ -132,7 +132,7 @@ namespace NotesAndReminders.ViewModels
 			{
 				await _trashService.RestoreNoteFromTrashAsync(note);
 				Notes.Remove(note);
-				MessagingCenter.Send(this, Constants.NotesUpdatedEvent);
+				MessagingCenter.Send(this, Constants.NoteRestoredFromTrashEvent);
 			}
 			catch (Exception ex)
 			{
@@ -188,7 +188,7 @@ namespace NotesAndReminders.ViewModels
 					await _dBService.UpdateNoteAsync(note);
 				}
 
-				MessagingCenter.Send(this, Constants.NotesUpdatedEvent);
+				MessagingCenter.Send(this, Constants.NoteTypeSet);
 			});
 		}
 	}

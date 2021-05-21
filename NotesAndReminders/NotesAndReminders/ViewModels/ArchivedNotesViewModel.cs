@@ -34,7 +34,7 @@ namespace NotesAndReminders.ViewModels
 			MessagingCenter.Subscribe<TrashViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdated);
 			MessagingCenter.Subscribe<SearchViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdated);
 			MessagingCenter.Subscribe<ProfileViewModel>(this, Constants.LoggedOutEvent, OnLoggedOut);
-			MessagingCenter.Subscribe<NotesBaseViewModel>(this, Constants.NotesUpdatedEvent, OnNotesUpdated);
+			MessagingCenter.Subscribe<NotesBaseViewModel>(this, Constants.NoteTypeSet, OnNoteTypeSet);
 		}
 
 		public override void OnAppearing()
@@ -115,7 +115,7 @@ namespace NotesAndReminders.ViewModels
 			IsRefreshing = true;
 		}
 
-		private void OnNotesUpdated(NotesBaseViewModel vm)
+		private void OnNoteTypeSet(NotesBaseViewModel vm)
 		{
 			IsRefreshing = true;
 		}

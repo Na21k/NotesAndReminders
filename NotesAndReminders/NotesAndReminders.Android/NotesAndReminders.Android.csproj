@@ -94,6 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\JavaLangExtensions.cs" />
+    <Compile Include="Extensions\TaskListenere\OnCompleteListListener.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="OnCompletionListeners.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
@@ -725,7 +726,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties XamarinHotReloadDebuggerTimeoutExceptionNotesAndRemindersAndroidHideInfoBar="True" TriggeredFromHotReload="False" />
+      <UserProperties TriggeredFromHotReload="False" XamarinHotReloadDebuggerTimeoutExceptionNotesAndRemindersAndroidHideInfoBar="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

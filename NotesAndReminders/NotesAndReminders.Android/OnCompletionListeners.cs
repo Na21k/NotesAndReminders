@@ -108,9 +108,9 @@ namespace NotesAndReminders.Droid
 					var data = (JObject)JsonConvert.DeserializeObject(jsonStr,settings);
 					var lcolor = data["noteColorLight"].Value<string>();
 					var dcolor = data["noteColorDark"].Value<string>();
-					var color = Color.FromHex(lcolor);
-
 					nt.Color = new NoteColorModel();
+
+					var color = Color.FromHex(lcolor);
 					nt.Color.Light = color;
 
 					color = Color.FromHex(dcolor);

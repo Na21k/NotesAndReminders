@@ -153,6 +153,9 @@
   <data name="Delete" xml:space="preserve">
     <value>Delete</value>
   </data>
+  <data name="DeleteReminderForThisNoteQuestion" xml:space="preserve">
+    <value>Delete reminder for this note?</value>
+  </data>
   <data name="EditCategory" xml:space="preserve">
     <value>Edit category</value>
   </data>

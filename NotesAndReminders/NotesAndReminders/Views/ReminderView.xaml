@@ -6,6 +6,12 @@
 			 x:Name="page"
 			 Title="{x:Static resource:AppResources.Reminder}"
 			 Padding="10">
+	<ContentPage.ToolbarItems>
+		<ToolbarItem x:Name="deleteReminderBtn"
+					 Text="{x:Static resource:AppResources.Delete}"
+					 IconImageSource="{AppThemeBinding Light='icn_bellDelete_light', Dark='icn_bellDelete_dark'}"
+					 Command="{Binding DeleteReminderCommand}" />
+	</ContentPage.ToolbarItems>
 	<StackLayout Spacing="18"
 				 VerticalOptions="EndAndExpand">
 		<TimePicker Time="{Binding Time}"

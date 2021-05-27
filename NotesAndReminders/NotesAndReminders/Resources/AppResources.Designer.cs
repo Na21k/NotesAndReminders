@@ -169,6 +169,15 @@ namespace NotesAndReminders.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete reminder for this note?.
+        /// </summary>
+        internal static string DeleteReminderForThisNoteQuestion {
+            get {
+                return ResourceManager.GetString("DeleteReminderForThisNoteQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Edit category.
         /// </summary>
         internal static string EditCategory {

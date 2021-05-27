@@ -1,8 +1,6 @@
 ﻿using NotesAndReminders.Models;
 using NotesAndReminders.Resources;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -36,6 +34,7 @@ namespace NotesAndReminders.ViewModels
 		public DateTime MinimumDate => DateTime.Now.Date;
 
 		public ICommand SaveCommand { get; private set; }
+		public ICommand DeleteReminderCommand { get; private set; }
 
 		public ReminderViewModel() : base()
 		{
@@ -43,6 +42,7 @@ namespace NotesAndReminders.ViewModels
 			Date = DateTime.Now.AddDays(1).Date;
 
 			SaveCommand = new Command(SaveAsync);
+			DeleteReminderCommand = new Command(DeleteReminderAsync);
 
 			MessagingCenter.Subscribe<NoteDetailsViewModel>(this, Constants.ManageNoteReminderOpened, Init);
 		}
@@ -50,6 +50,19 @@ namespace NotesAndReminders.ViewModels
 		private void Init(NoteDetailsViewModel vm)
 		{
 			_note = vm.Note;
+
+			if (_note.NotificationTime.HasValue)
+			{
+				var noteNotificationTime = _note.NotificationTime.Value.TimeOfDay;
+				var noteNotificationDate = _note.NotificationTime.Value.Date;
+
+				Time = noteNotificationTime;
+				Date = noteNotificationDate;
+			}
+			else
+			{
+				MessagingCenter.Send(this, Constants.HideDeleteReminderButton);
+			}
 		}
 
 		private async void SaveAsync()
@@ -68,7 +81,26 @@ namespace NotesAndReminders.ViewModels
 				return;
 			}
 
+			IsSaving = true;
+			_note.NotificationTime = selectedValue;
 
+			await Shell.Current.Navigation.PopAsync();
+		}
+
+		private async void DeleteReminderAsync()
+		{
+			if (_note == null)
+			{
+				return;
+			}
+
+			if (await Shell.Current.DisplayAlert(null, AppResources.DeleteReminderForThisNoteQuestion, AppResources.Ok, AppResources.Cancel))
+			{
+				IsSaving = true;
+				_note.NotificationTime = null;
+
+				await Shell.Current.Navigation.PopAsync();
+			}
 		}
 	}
 }

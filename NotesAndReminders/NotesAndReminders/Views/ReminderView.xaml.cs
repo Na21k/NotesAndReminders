@@ -10,6 +10,13 @@ namespace NotesAndReminders.Views
 			InitializeComponent();
 
 			BindingContext = new ReminderViewModel();
+
+			MessagingCenter.Subscribe<ReminderViewModel>(this, Constants.HideDeleteReminderButton, HideDeleteButton);
+		}
+
+		public void HideDeleteButton(ReminderViewModel vm)
+		{
+			ToolbarItems.Remove(deleteReminderBtn);
 		}
 	}
 }

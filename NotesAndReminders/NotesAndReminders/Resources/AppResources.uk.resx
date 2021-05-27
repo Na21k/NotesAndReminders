@@ -153,6 +153,9 @@
   <data name="Delete" xml:space="preserve">
     <value>Видалити</value>
   </data>
+  <data name="DeleteReminderForThisNoteQuestion" xml:space="preserve">
+    <value>Видалити нагадування для цієї нотатки?</value>
+  </data>
   <data name="EditCategory" xml:space="preserve">
     <value>Редагувати категорію</value>
   </data>

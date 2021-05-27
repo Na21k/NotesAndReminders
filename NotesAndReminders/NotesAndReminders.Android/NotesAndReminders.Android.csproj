@@ -109,6 +109,7 @@
     <GoogleServicesJson Include="google-services.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </GoogleServicesJson>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
@@ -728,7 +729,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties XamarinHotReloadDebuggerTimeoutExceptionNotesAndRemindersAndroidHideInfoBar="True" TriggeredFromHotReload="False" />
+      <UserProperties TriggeredFromHotReload="False" XamarinHotReloadDebuggerTimeoutExceptionNotesAndRemindersAndroidHideInfoBar="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

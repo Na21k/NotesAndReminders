@@ -8,7 +8,8 @@ namespace NotesAndReminders.Services
 	{
 		event EventHandler NotificationReceived;
 		void Initialize();
-		void SendNotification(string title, string message, DateTime? notifyTime = null);
+		void SendNotification(string title, string message, int id, DateTime? notifyTime = null);
 		void ReceiveNotification(string title, string message);
+		void Cancel(int id);
 	}
 }

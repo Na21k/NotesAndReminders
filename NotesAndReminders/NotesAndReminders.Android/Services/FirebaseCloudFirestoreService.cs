@@ -1,28 +1,16 @@
-﻿using Android.App;
-using Android.Content;
-using Android.Gms.Extensions;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
+﻿using Android.Gms.Extensions;
 using Firebase.Auth;
 using Firebase.Firestore;
-using Java.Util;
 using NotesAndReminders.Droid.Services;
-using NotesAndReminders.Exceptions;
 using NotesAndReminders.Models;
 using NotesAndReminders.Services;
-using NotesAndReminders.Resources;
 using NotesAndReminders.Droid.Extensions;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using System.IO;
 using Firebase.Storage;
-using System.Threading;
 
 [assembly: Dependency(typeof(FirebaseCloudFirestoreService))]
 namespace NotesAndReminders.Droid.Services
@@ -51,7 +39,9 @@ namespace NotesAndReminders.Droid.Services
 
 				if(note.NotificationTime != null)
 				{
-					notificationManager.SendNotification(note.Title, note.Text, note.NotificationTime);
+					var rnd = new Random();
+					note.NotificationId = rnd.Next(0, 10000000);
+					notificationManager.SendNotification(note.Title, note.Text,note.NotificationId, note.NotificationTime);
 				}
 
 
@@ -81,7 +71,8 @@ namespace NotesAndReminders.Droid.Services
 						{ "state", NoteState.Regular.ToString()},
 						{ "checklist", note.Checklist},
 						{ "last_time_modifired", note.LastEdited},
-						{ "notification_time",  note.NotificationTime}
+						{ "notification_time",  note.NotificationTime},
+						{ "notificationId",  note.NotificationId}
 					};
 				}
 				else if (note.NotificationTime == null)
@@ -111,7 +102,8 @@ namespace NotesAndReminders.Droid.Services
 						{ "addition_content", imgUrls},
 						{ "checklist", note.Checklist},
 						{ "last_time_modifired", note.LastEdited},
-						{ "notification_time",  note.NotificationTime}
+						{ "notification_time",  note.NotificationTime},
+						{ "notificationId",  note.NotificationId}
 					};
 
 					
@@ -238,6 +230,8 @@ namespace NotesAndReminders.Droid.Services
 				{
 					await DeleteImage("DeleteFolder", note.Id, note.Images);
 				}
+
+				notificationManager.Cancel(note.NotificationId);
 
 				await docRef.Delete();
 
@@ -455,7 +449,11 @@ namespace NotesAndReminders.Droid.Services
 				}
 				if (note.NotificationTime != null)
 				{
-					notificationManager.SendNotification(note.Title, note.Text, note.NotificationTime);
+					notificationManager.SendNotification(note.Title, note.Text,note.NotificationId, note.NotificationTime);
+				}
+				else if(note.NotificationTime == null)
+				{
+					notificationManager.Cancel(note.NotificationId);
 				}
 
 
@@ -470,7 +468,8 @@ namespace NotesAndReminders.Droid.Services
 						{ "addition_content", imgUrls},
 						{ "checklist", note.Checklist},
 						{ "last_time_modifired", note.LastEdited},
-						{ "notification_time",  note.NotificationTime}
+						{ "notification_time",  note.NotificationTime},
+						{ "notificationId",  note.NotificationId}
 					};
 
 					await DeleteNoteAsync(note, false);
@@ -488,7 +487,8 @@ namespace NotesAndReminders.Droid.Services
 						{ "addition_content", imgUrls },
 						{ "checklist", note.Checklist},
 						{ "last_time_modifired", note.LastEdited},
-						{ "notification_time",  note.NotificationTime}
+						{ "notification_time",  note.NotificationTime},
+						{ "notificationId",  note.NotificationId}
 					};
 
 					await docRef.Update(updatedNote.Convert());

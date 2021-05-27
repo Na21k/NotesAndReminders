@@ -14,7 +14,7 @@ using NotesAndReminders.Services;
 
 namespace NotesAndReminders.Droid
 {
-	[Activity(LaunchMode = LaunchMode.SingleTop,Label = "Notes And Reminders", Icon = "@mipmap/ic_launcher", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize)]
+	[Activity(Label = "Notes And Reminders", Icon = "@mipmap/ic_launcher", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize)]
 	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
 	{
 		protected override void OnCreate(Bundle savedInstanceState)
@@ -41,14 +41,14 @@ namespace NotesAndReminders.Droid
 
 			LoadApplication(new App());
 
-			CreateNotificationFromEntent(Intent);
+			CreateNotificationFromIntent(Intent);
 		}
 
 		protected override void OnNewIntent(Intent intent)
 		{
-			CreateNotificationFromEntent(Intent);
+			CreateNotificationFromIntent(Intent);
 		}
-		private void CreateNotificationFromEntent(Intent intent)
+		private void CreateNotificationFromIntent(Intent intent)
 		{
 			if(intent?.Extras != null)
 			{

@@ -23,5 +23,7 @@ namespace NotesAndReminders.Models
 		public DateTime LastEdited { get; set; }
 		[JsonProperty("notification_time")]
 		public DateTime? NotificationTime { get; set; }
+		[JsonProperty("notificationId")]
+		public int NotificationId { get; set; }
 	}
 }

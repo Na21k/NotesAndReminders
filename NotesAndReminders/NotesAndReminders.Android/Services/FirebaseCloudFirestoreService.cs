@@ -29,12 +29,13 @@ namespace NotesAndReminders.Droid.Services
 			var time = (notifyTime - DateTime.Now).TotalSeconds;
 			return time;
 		}
-		public void CreateNotification(Note note)
+		public Note CreateNotification(Note note)
 		{
 			var rand = new Random();
 			note.NotificationId = rand.Next(0, 10000000);
 
 			CrossLocalNotifications.Current.Show(note.Title, note.Text, note.NotificationId, DateTime.Now.AddSeconds(GetNotifyTime((DateTime)note.NotificationTime)));
+			return note;
 		}
 		public async Task<bool> AddNoteAsync(Note note)
 		{

@@ -33,12 +33,15 @@ namespace NotesAndReminders.Droid.Services
 		private FirebaseFirestore _db = FirebaseFirestore.Instance;
 
 		private FirebaseAuth _auth = FirebaseAuth.Instance;
+
+		INotificationManager notificationManager = DependencyService.Get<INotificationManager>();
+
 		public async Task<bool> AddNoteAsync(Note note)
 		{
 			try
 			{
 				DocumentReference docRef = _db.Collection("Notes").Document();
-
+				Dictionary<string, object> noteDoc = new Dictionary<string, object>();
 
 				var imgUrls = new Dictionary<string, string>();
 				if (note.Images != null)
@@ -46,26 +49,58 @@ namespace NotesAndReminders.Droid.Services
 					imgUrls = await StoreImages(note.Images, docRef.Id);
 				}
 
-				if (note.Type == null)
+				if(note.NotificationTime != null)
+				{
+					notificationManager.SendNotification(note.Title, note.Text, note.NotificationTime);
+				}
+
+
+				
+				if (note.Type == null && note.NotificationTime == null)
 				{
 
-					Dictionary<string, object> noteDoc = new Dictionary<string, object>
+					noteDoc = new Dictionary<string, object>
 					{
 						{ "id", docRef.Id},
 						{ "user_Id", _auth.CurrentUser.Uid},
 						{ "title", note.Title },
 						{ "text", note.Text},
-						{ "state", NoteState.Regular.ToString()  },
-						{ "addition_content", imgUrls},
+						{ "state", NoteState.Regular.ToString()},
 						{ "checklist", note.Checklist},
 						{ "last_time_modifired", note.LastEdited}
 					};
-
-					await docRef.Set(noteDoc.Convert());
+				}
+				else if (note.Type == null)
+				{
+					noteDoc = new Dictionary<string, object>
+					{
+						{ "id", docRef.Id},
+						{ "user_Id", _auth.CurrentUser.Uid},
+						{ "title", note.Title },
+						{ "text", note.Text},
+						{ "state", NoteState.Regular.ToString()},
+						{ "checklist", note.Checklist},
+						{ "last_time_modifired", note.LastEdited},
+						{ "notification_time",  note.NotificationTime}
+					};
+				}
+				else if (note.NotificationTime == null)
+				{
+					noteDoc = new Dictionary<string, object>
+					{
+						{ "id", docRef.Id},
+						{ "user_Id", _auth.CurrentUser.Uid},
+						{ "title", note.Title },
+						{ "text", note.Text},
+						{ "state", NoteState.Regular.ToString()},
+						{ "checklist", note.Checklist},
+						{ "last_time_modifired", note.LastEdited},
+						{ "typeId", note.Type.Id}
+					};
 				}
 				else
 				{
-					Dictionary<string, object> noteDoc = new Dictionary<string, object>
+					noteDoc = new Dictionary<string, object>
 					{
 						{ "id", docRef.Id},
 						{ "user_Id", _auth.CurrentUser.Uid},
@@ -75,13 +110,14 @@ namespace NotesAndReminders.Droid.Services
 						{ "typeId", note.Type.Id},
 						{ "addition_content", imgUrls},
 						{ "checklist", note.Checklist},
-						{ "last_time_modifired", note.LastEdited}
+						{ "last_time_modifired", note.LastEdited},
+						{ "notification_time",  note.NotificationTime}
 					};
 
-					await docRef.Set(noteDoc.Convert());
+					
 				}
 
-
+				await docRef.Set(noteDoc.Convert());
 				return true;
 			}
 			catch (Exception ex)
@@ -417,6 +453,12 @@ namespace NotesAndReminders.Droid.Services
 				{
 					imgUrls = await StoreImages(note.Images, note.Id);
 				}
+				if (note.NotificationTime != null)
+				{
+					notificationManager.SendNotification(note.Title, note.Text, note.NotificationTime);
+				}
+
+
 				if (note.Type == null || note.Type.Name == "Uncategorized")
 				{
 					Dictionary<string, object> updatedNote = new Dictionary<string, object>
@@ -427,7 +469,8 @@ namespace NotesAndReminders.Droid.Services
 						{ "text", note.Text},
 						{ "addition_content", imgUrls},
 						{ "checklist", note.Checklist},
-						{ "last_time_modifired", note.LastEdited}
+						{ "last_time_modifired", note.LastEdited},
+						{ "notification_time",  note.NotificationTime}
 					};
 
 					await DeleteNoteAsync(note, false);
@@ -444,7 +487,8 @@ namespace NotesAndReminders.Droid.Services
 						{ "typeId", note.Type.Id},
 						{ "addition_content", imgUrls },
 						{ "checklist", note.Checklist},
-						{ "last_time_modifired", note.LastEdited}
+						{ "last_time_modifired", note.LastEdited},
+						{ "notification_time",  note.NotificationTime}
 					};
 
 					await docRef.Update(updatedNote.Convert());
@@ -511,7 +555,8 @@ namespace NotesAndReminders.Droid.Services
 						{ "state", NoteState.Archived.ToString()  },
 						{ "addition_content", imgUrls},
 						{ "checklist", note.Checklist},
-						{ "last_time_modifired", note.LastEdited}
+						{ "last_time_modifired", note.LastEdited},
+						{ "notification_time",  note.NotificationTime}
 					};
 
 					await docRef.Set(noteDoc.Convert());
@@ -528,7 +573,8 @@ namespace NotesAndReminders.Droid.Services
 						{ "typeId", note.Type.Id},
 						{ "addition_content", imgUrls },
 						{ "checklist", note.Checklist},
-						{ "last_time_modifired", note.LastEdited}
+						{ "last_time_modifired", note.LastEdited},
+						{ "notification_time",  note.NotificationTime}
 					};
 
 					await docRef.Set(noteDoc.Convert());

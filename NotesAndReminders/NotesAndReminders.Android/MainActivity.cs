@@ -7,10 +7,14 @@ using Android.Widget;
 using Android.OS;
 using Firebase;
 using Firebase.Firestore;
+using Android.Content;
+using NotesAndReminders.Droid.Services.NotificationService;
+using Xamarin.Forms;
+using NotesAndReminders.Services;
 
 namespace NotesAndReminders.Droid
 {
-	[Activity(Label = "Notes And Reminders", Icon = "@mipmap/ic_launcher", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize)]
+	[Activity(LaunchMode = LaunchMode.SingleTop,Label = "Notes And Reminders", Icon = "@mipmap/ic_launcher", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize)]
 	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
 	{
 		protected override void OnCreate(Bundle savedInstanceState)
@@ -33,9 +37,25 @@ namespace NotesAndReminders.Droid
 				.SetGcmSenderId("289508089037")
 				.Build();
 
-			FirebaseApp.InitializeApp(Application.Context);
+			FirebaseApp.InitializeApp(Android.App.Application.Context);
 
 			LoadApplication(new App());
+
+			CreateNotificationFromEntent(Intent);
+		}
+
+		protected override void OnNewIntent(Intent intent)
+		{
+			CreateNotificationFromEntent(Intent);
+		}
+		private void CreateNotificationFromEntent(Intent intent)
+		{
+			if(intent?.Extras != null)
+			{
+				string title = intent.GetStringExtra(AndroidNotificationManager.TitleKey);
+				string message = intent.GetStringExtra(AndroidNotificationManager.MessageKey);
+				DependencyService.Get<INotificationManager>().ReceiveNotification(title, message);
+			}
 		}
 
 		public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

@@ -21,5 +21,7 @@ namespace NotesAndReminders.Models
 		public NoteState State { get; set; }
 		[JsonProperty("last_time_modifired")]
 		public DateTime LastEdited { get; set; }
+		[JsonProperty("notification_time")]
+		public DateTime? NotificationTime { get; set; }
 	}
 }

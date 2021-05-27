@@ -43,7 +43,12 @@ namespace NotesAndReminders.Droid.Extensions
 				}
 				else if (key.Equals("last_time_modifired"))
 				{
-					DateTime dt = DateTime.ParseExact((string)val, "yyyy-MM-dd HH:mm", CultureInfo.InvariantCulture);
+					DateTime dt = DateTime.ParseExact((string)val, "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
+					dict.Add(key, dt);
+				}
+				else if (key.Equals("notification_time"))
+				{
+					DateTime dt = DateTime.ParseExact((string)val, "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
 					dict.Add(key, dt);
 				}
 				else if (key.Equals("checklist"))
@@ -146,7 +151,7 @@ namespace NotesAndReminders.Droid.Extensions
 				}
 				else if(val is DateTime dt)
 				{
-					javaVal = dt.ToString("yyyy-MM-dd HH:mm");
+					javaVal = dt.ToString("yyyy-MM-dd HH:mm:ss");
 				}
 				else if(val is bool boolVal)
 				{

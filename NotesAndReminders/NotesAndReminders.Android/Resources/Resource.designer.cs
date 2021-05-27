@@ -270,6 +270,7 @@ namespace NotesAndReminders.Droid
 			global::Plugin.CloudFirestore.Resource.Styleable.SignInButton_buttonSize = global::NotesAndReminders.Droid.Resource.Styleable.SignInButton_buttonSize;
 			global::Plugin.CloudFirestore.Resource.Styleable.SignInButton_colorScheme = global::NotesAndReminders.Droid.Resource.Styleable.SignInButton_colorScheme;
 			global::Plugin.CloudFirestore.Resource.Styleable.SignInButton_scopeUris = global::NotesAndReminders.Droid.Resource.Styleable.SignInButton_scopeUris;
+			global::Plugin.LocalNotifications.Resource.Drawable.plugin_lc_smallicon = global::NotesAndReminders.Droid.Resource.Drawable.plugin_lc_smallicon;
 			global::Xamarin.Essentials.Resource.Attribute.alpha = global::NotesAndReminders.Droid.Resource.Attribute.alpha;
 			global::Xamarin.Essentials.Resource.Attribute.font = global::NotesAndReminders.Droid.Resource.Attribute.font;
 			global::Xamarin.Essentials.Resource.Attribute.fontProviderAuthority = global::NotesAndReminders.Droid.Resource.Attribute.fontProviderAuthority;
@@ -9238,13 +9239,16 @@ namespace NotesAndReminders.Droid
 			public const int playstore_icon = 2131165372;
 			
 			// aapt resource value: 0x7F0700BD
-			public const int tooltip_frame_dark = 2131165373;
+			public const int plugin_lc_smallicon = 2131165373;
 			
 			// aapt resource value: 0x7F0700BE
-			public const int tooltip_frame_light = 2131165374;
+			public const int tooltip_frame_dark = 2131165374;
 			
 			// aapt resource value: 0x7F0700BF
-			public const int xamarin_logo = 2131165375;
+			public const int tooltip_frame_light = 2131165375;
+			
+			// aapt resource value: 0x7F0700C0
+			public const int xamarin_logo = 2131165376;
 			
 			static Drawable()
 			{

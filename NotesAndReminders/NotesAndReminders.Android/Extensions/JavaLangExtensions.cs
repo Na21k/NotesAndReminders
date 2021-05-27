@@ -105,6 +105,10 @@ namespace NotesAndReminders.Droid.Extensions
 				{
 					dict.Add(key, boolVal.BooleanValue());
 				}
+				else if(val is Java.Lang.Long longNumber)
+				{
+					dict.Add(key, (long)longNumber);
+				}
 				else if (val is System.Collections.ICollection coll)
 				{
 					var arrList = new ArrayList(coll);
@@ -181,6 +185,9 @@ namespace NotesAndReminders.Droid.Extensions
 					}
 
 					javaVal = map;
+				}else if(val is long longnumber)
+				{
+					javaVal = new Java.Lang.Long(longnumber);
 				}
 				
 				if(javaVal != null)

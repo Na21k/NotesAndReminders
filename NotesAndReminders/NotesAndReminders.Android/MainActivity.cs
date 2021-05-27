@@ -11,6 +11,7 @@ using Android.Content;
 using NotesAndReminders.Droid.Services.NotificationService;
 using Xamarin.Forms;
 using NotesAndReminders.Services;
+using Plugin.LocalNotifications;
 
 namespace NotesAndReminders.Droid
 {
@@ -22,6 +23,8 @@ namespace NotesAndReminders.Droid
 
 			TabLayoutResource = Resource.Layout.Tabbar;
 			ToolbarResource = Resource.Layout.Toolbar;
+
+			LocalNotificationsImplementation.NotificationIconId = Resource.Drawable.logo;
 
 			base.OnCreate(savedInstanceState);
 
@@ -54,6 +57,7 @@ namespace NotesAndReminders.Droid
 			{
 				string title = intent.GetStringExtra(AndroidNotificationManager.TitleKey);
 				string message = intent.GetStringExtra(AndroidNotificationManager.MessageKey);
+
 				DependencyService.Get<INotificationManager>().ReceiveNotification(title, message);
 			}
 		}

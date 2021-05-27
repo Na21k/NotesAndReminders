@@ -1,6 +1,7 @@
 ﻿using Android.App;
 using Android.Content;
 using Android.Graphics;
+using Android.Icu.Util;
 using Android.OS;
 using AndroidX.Core.App;
 using NotesAndReminders.Models;
@@ -8,8 +9,6 @@ using NotesAndReminders.Services;
 using System;
 using Xamarin.Forms;
 using AndroidApp = Android.App.Application;
-using System.Xml.Serialization;
-using System.IO;
 
 [assembly: Dependency(typeof(NotesAndReminders.Droid.Services.NotificationService.AndroidNotificationManager))]
 namespace NotesAndReminders.Droid.Services.NotificationService
@@ -37,7 +36,7 @@ namespace NotesAndReminders.Droid.Services.NotificationService
 
 		public void Initialize()
 		{
-			if(Instance == null)
+			if (Instance == null)
 			{
 				CreateNotificationChannel();
 				Instance = this;
@@ -59,25 +58,18 @@ namespace NotesAndReminders.Droid.Services.NotificationService
 
 			channelInitialized = true;
 		}
-
-		public void SendNotification(string title, string message,int id, DateTime? notifyTime = null)
+		public void SendNotification(string title, string message, int id, DateTime? notifyTime = null)
 		{
 			if (!channelInitialized)
 			{
 				CreateNotificationChannel();
 			}
 
-			if(notifyTime != null)
+			if (notifyTime != null)
 			{
-				var localNotification = new LocalNotification();
-				localNotification.Title = title;
-				localNotification.Body = message;
-				localNotification.Id = id;
-
-				var serialzedNoti = SerializeNotification(localNotification);
-
-				var intent = CreateIntent(id);
-				intent.PutExtra(AlarmHandler.LocalNotificationKey,serialzedNoti);
+				Intent intent = new Intent(AndroidApp.Context, typeof(AlarmHandler));
+				intent.PutExtra(TitleKey, title);
+				intent.PutExtra(MessageKey, message);
 
 				PendingIntent pendingIntent = PendingIntent.GetBroadcast(AndroidApp.Context, pendingIntentId++, intent, PendingIntentFlags.CancelCurrent);
 				long triggerTime = GetNotifyTime(notifyTime.Value);
@@ -88,28 +80,6 @@ namespace NotesAndReminders.Droid.Services.NotificationService
 			{
 				Show(title, message);
 			}
-		}
-		private string SerializeNotification(LocalNotification notification)
-		{
-			var xmlSerializer = new XmlSerializer(notification.GetType());
-			using (var stringWriter = new StringWriter())
-			{
-				xmlSerializer.Serialize(stringWriter, notification);
-				return stringWriter.ToString();
-			}
-		}
-
-		private long GetNotifyTime(DateTime value)
-		{
-			DateTime utcTime = TimeZoneInfo.ConvertTimeToUtc(value);
-			double epochDiff = (new DateTime(1970, 1, 1) - DateTime.MinValue).TotalSeconds;
-			long utcAlarmTime = utcTime.AddSeconds(-epochDiff).Ticks / 10000;
-			return utcAlarmTime;
-		}
-		public static Intent GetLauncherActivity()
-		{
-			var packageName = AndroidApp.Context.PackageName;
-			return AndroidApp.Context.PackageManager.GetLaunchIntentForPackage(packageName);
 		}
 
 		public void ReceiveNotification(string title, string message)
@@ -128,7 +98,7 @@ namespace NotesAndReminders.Droid.Services.NotificationService
 			intent.PutExtra(TitleKey, title);
 			intent.PutExtra(MessageKey, message);
 
-			PendingIntent pendingIntent = PendingIntent.GetActivities(AndroidApp.Context, pendingIntentId++, (Intent[])intent, PendingIntentFlags.UpdateCurrent);
+			PendingIntent pendingIntent = PendingIntent.GetActivity(AndroidApp.Context, pendingIntentId++, intent, PendingIntentFlags.UpdateCurrent);
 
 			NotificationCompat.Builder builder = new NotificationCompat.Builder(AndroidApp.Context, channelId)
 				.SetContentIntent(pendingIntent)
@@ -140,30 +110,29 @@ namespace NotesAndReminders.Droid.Services.NotificationService
 
 			Notification notification = builder.Build();
 			notificationManager.Notify(messageId++, notification);
-
 		}
 
-		private Intent CreateIntent(int id)
-		{
-			return new Intent(AndroidApp.Context, typeof(AlarmHandler))
-				.SetAction("LocalNotifierIntent" + id);
-		}
-		public void Cancel(int id)
-		{
-			var intent = CreateIntent(id);
-			var pendingIntent = PendingIntent.GetBroadcast(AndroidApp.Context, 0, intent, PendingIntentFlags.CancelCurrent);
 
-			var alarmManager = GetAlarmManager();
+		long GetNotifyTime(DateTime notifyTime)
+		{
+
+			DateTime epoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+			TimeSpan elapsedTime = notifyTime - epoch;
+
+			var time = elapsedTime.TotalMilliseconds;
+			return (long)time;
+		}
+
+
+		public void DeleteNotification(int id)
+		{
+			Intent intent = new Intent(AndroidApp.Context, typeof(AlarmHandler));
+			PendingIntent pendingIntent = PendingIntent.GetBroadcast(AndroidApp.Context, id, intent, PendingIntentFlags.CancelCurrent);
+			AlarmManager alarmManager = AndroidApp.Context.GetSystemService(Context.AlarmService) as AlarmManager;
 			alarmManager.Cancel(pendingIntent);
 
 			var notificationManager = NotificationManagerCompat.From(AndroidApp.Context);
 			notificationManager.Cancel(id);
-		}
-
-		private AlarmManager GetAlarmManager()
-		{
-			var alarmManager = AndroidApp.Context.GetSystemService(Context.AlarmService) as AlarmManager;
-			return alarmManager;
 		}
 
 	}

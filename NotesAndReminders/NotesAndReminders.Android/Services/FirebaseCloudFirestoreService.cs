@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using System.IO;
 using Firebase.Storage;
+using Plugin.LocalNotifications;
 
 [assembly: Dependency(typeof(FirebaseCloudFirestoreService))]
 namespace NotesAndReminders.Droid.Services
@@ -23,7 +24,18 @@ namespace NotesAndReminders.Droid.Services
 		private FirebaseAuth _auth = FirebaseAuth.Instance;
 
 		INotificationManager notificationManager = DependencyService.Get<INotificationManager>();
+		double GetNotifyTime(DateTime notifyTime)
+		{
+			var time = (notifyTime - DateTime.Now).TotalSeconds;
+			return time;
+		}
+		public void CreateNotification(Note note)
+		{
+			var rand = new Random();
+			note.NotificationId = rand.Next(0, 10000000);
 
+			CrossLocalNotifications.Current.Show(note.Title, note.Text, note.NotificationId, DateTime.Now.AddSeconds(GetNotifyTime((DateTime)note.NotificationTime)));
+		}
 		public async Task<bool> AddNoteAsync(Note note)
 		{
 			try
@@ -35,13 +47,6 @@ namespace NotesAndReminders.Droid.Services
 				if (note.Images != null)
 				{
 					imgUrls = await StoreImages(note.Images, docRef.Id);
-				}
-
-				if(note.NotificationTime != null)
-				{
-					var rnd = new Random();
-					note.NotificationId = rnd.Next(0, 10000000);
-					notificationManager.SendNotification(note.Title, note.Text,note.NotificationId, note.NotificationTime);
 				}
 
 
@@ -231,8 +236,7 @@ namespace NotesAndReminders.Droid.Services
 					await DeleteImage("DeleteFolder", note.Id, note.Images);
 				}
 
-				notificationManager.Cancel(note.NotificationId);
-
+				CrossLocalNotifications.Current.Cancel(note.NotificationId);
 				await docRef.Delete();
 
 				return true;
@@ -447,17 +451,14 @@ namespace NotesAndReminders.Droid.Services
 				{
 					imgUrls = await StoreImages(note.Images, note.Id);
 				}
-				if (note.NotificationTime != null)
+				if (note.NotificationTime == null)
 				{
-					notificationManager.SendNotification(note.Title, note.Text,note.NotificationId, note.NotificationTime);
-				}
-				else if(note.NotificationTime == null)
-				{
-					notificationManager.Cancel(note.NotificationId);
+					CrossLocalNotifications.Current.Cancel(note.NotificationId);
 				}
 
 
-				if (note.Type == null || note.Type.Name == "Uncategorized")
+
+				if ((note.Type == null || note.Type.Name == "Uncategorized") && note.NotificationTime == null)
 				{
 					Dictionary<string, object> updatedNote = new Dictionary<string, object>
 					{
@@ -468,8 +469,23 @@ namespace NotesAndReminders.Droid.Services
 						{ "addition_content", imgUrls},
 						{ "checklist", note.Checklist},
 						{ "last_time_modifired", note.LastEdited},
-						{ "notification_time",  note.NotificationTime},
-						{ "notificationId",  note.NotificationId}
+					};
+
+					await DeleteNoteAsync(note, false);
+					await docRef.Set(updatedNote.Convert());
+				}
+				else if (note.NotificationTime == null)
+				{
+					Dictionary<string, object> updatedNote = new Dictionary<string, object>()
+					{
+						{ "id", note.Id},
+						{ "user_Id", _auth.CurrentUser.Uid},
+						{ "title", note.Title },
+						{ "text", note.Text},
+						{ "typeId", note.Type.Id},
+						{ "addition_content", imgUrls },
+						{ "checklist", note.Checklist},
+						{ "last_time_modifired", note.LastEdited},
 					};
 
 					await DeleteNoteAsync(note, false);

@@ -21,6 +21,6 @@ namespace NotesAndReminders.Services
 		Task<bool> ArchiveNoteAsync(Note note);
 		Task<bool> UnarchiveNoteAsync(Note note);
 		Task<List<IDBItem>> GetAllNotes();
-		Note CreateNotification(Note note);
+		int CreateNotification(Note note);
 	}
 }

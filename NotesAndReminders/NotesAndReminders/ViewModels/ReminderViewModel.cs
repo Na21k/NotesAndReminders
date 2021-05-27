@@ -1,5 +1,6 @@
 ﻿using NotesAndReminders.Models;
 using NotesAndReminders.Resources;
+using NotesAndReminders.Services;
 using System;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -8,6 +9,7 @@ namespace NotesAndReminders.ViewModels
 {
 	public class ReminderViewModel : BaseViewModel
 	{
+		private IDBService _dBService;
 		private Note _note;
 		private TimeSpan _time;
 		private DateTime _date;
@@ -38,6 +40,8 @@ namespace NotesAndReminders.ViewModels
 
 		public ReminderViewModel() : base()
 		{
+			_dBService = DependencyService.Get<IDBService>();
+
 			Time = DateTime.Now.AddHours(1).TimeOfDay;
 			Date = DateTime.Now.AddDays(1).Date;
 
@@ -83,6 +87,8 @@ namespace NotesAndReminders.ViewModels
 
 			IsSaving = true;
 			_note.NotificationTime = selectedValue;
+			var notificationId = _dBService.CreateNotification(_note);
+			_note.NotificationId = notificationId;
 
 			await Shell.Current.Navigation.PopAsync();
 		}

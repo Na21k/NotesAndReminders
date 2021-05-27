@@ -24,7 +24,7 @@ namespace NotesAndReminders.Droid
 			TabLayoutResource = Resource.Layout.Tabbar;
 			ToolbarResource = Resource.Layout.Toolbar;
 
-			LocalNotificationsImplementation.NotificationIconId = Resource.Drawable.logo;
+			LocalNotificationsImplementation.NotificationIconId = Resource.Drawable.logo_large;
 
 			base.OnCreate(savedInstanceState);
 

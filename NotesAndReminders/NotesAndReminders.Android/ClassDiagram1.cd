@@ -3,7 +3,7 @@
   <Class Name="NotesAndReminders.Droid.AlarmHandler">
     <Position X="0.5" Y="0.5" Width="4.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAEAQAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAEAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>AlarmHandler.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -64,7 +64,7 @@
   <Class Name="NotesAndReminders.Droid.Services.FirebaseCloudFirestoreService" BaseTypeListCollapsed="true">
     <Position X="16" Y="0.5" Width="6.5" />
     <TypeIdentifier>
-      <HashCode>AAAAgAAhQARAkMAAAAREACIABAAAAQAAAAEBAAAAAAA=</HashCode>
+      <HashCode>AAAAwAAxQARAkMAAAAREACIABAAAAQAAAAEBAAAAAAA=</HashCode>
       <FileName>Services\FirebaseCloudFirestoreService.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -80,7 +80,7 @@
   <Class Name="NotesAndReminders.Droid.Services.NotificationService.AndroidNotificationManager" BaseTypeListCollapsed="true">
     <Position X="5.25" Y="0.5" Width="5.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAASQAAAAwAAAAlABIAEEAIEQAAAUABABAQEAAA=</HashCode>
+      <HashCode>AAAAAAASAAAAAQAAAAlAAAAAEAIEQAAAUAFABAQEAAA=</HashCode>
       <FileName>Services\NotificationService\AndroidNotificationManager.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />

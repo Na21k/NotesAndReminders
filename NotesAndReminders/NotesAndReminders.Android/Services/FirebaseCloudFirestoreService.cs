@@ -475,6 +475,24 @@ namespace NotesAndReminders.Droid.Services
 					await DeleteNoteAsync(note, false);
 					await docRef.Set(updatedNote.Convert());
 				}
+				else if(note.Type == null || note.Type.Name == "Uncategorized")
+				{
+					Dictionary<string, object> updatedNote = new Dictionary<string, object>
+					{
+						{ "id", docRef.Id},
+						{ "user_Id", _auth.CurrentUser.Uid},
+						{ "title", note.Title },
+						{ "text", note.Text},
+						{ "addition_content", imgUrls},
+						{ "checklist", note.Checklist},
+						{ "last_time_modifired", note.LastEdited},
+						{ "notification_time",  note.NotificationTime},
+						{ "notificationId",  note.NotificationId}
+					};
+
+					await DeleteNoteAsync(note, false);
+					await docRef.Set(updatedNote.Convert());
+				}
 				else if (note.NotificationTime == null)
 				{
 					Dictionary<string, object> updatedNote = new Dictionary<string, object>()

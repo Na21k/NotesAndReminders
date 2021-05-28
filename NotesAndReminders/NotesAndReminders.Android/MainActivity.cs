@@ -24,7 +24,7 @@ namespace NotesAndReminders.Droid
 			TabLayoutResource = Resource.Layout.Tabbar;
 			ToolbarResource = Resource.Layout.Toolbar;
 
-			LocalNotificationsImplementation.NotificationIconId = Resource.Drawable.logo_large;
+			LocalNotificationsImplementation.NotificationIconId = Resource.Drawable.logo;
 
 			base.OnCreate(savedInstanceState);
 
@@ -53,7 +53,7 @@ namespace NotesAndReminders.Droid
 		}
 		private void CreateNotificationFromIntent(Intent intent)
 		{
-			if(intent?.Extras != null)
+			if (intent?.Extras != null)
 			{
 				string title = intent.GetStringExtra(AndroidNotificationManager.TitleKey);
 				string message = intent.GetStringExtra(AndroidNotificationManager.MessageKey);
